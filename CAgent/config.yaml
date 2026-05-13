@@ -1,0 +1,103 @@
+# 本地开发/演示用配置 — 无需真实后端即可启动 Admin API
+jira:
+  - name: "Bosch_Jira"
+    base_url: "https://rb-tracker.bosch.com/tracker08"
+    username: ""  # Bosch NTID（auth_method=basic 时必填）
+    api_token: ""  # PAT (推荐, auth_method=bearer) 或 NTID 密码 (auth_method=basic)
+    project_key: ""
+    auth_method: "bearer"  # rb-tracker 推荐 PAT；改 "basic" 即用 NTID 密码
+    verify_ssl: false
+  - name: "Patac_Jira"
+    base_url: "https://jira-patac.apps.saic-gm.com"
+    username: "Pdoj2h"  # 与 Patac_RTC 共用账号
+    api_token: ""  # 密码或 API token，于 config.local.yaml 注入
+    project_key: "VCU"
+    auth_method: "basic"
+    verify_ssl: false
+  - name: "WR_Jira"
+    base_url: "https://rbw3pmt.atlassian.net"
+    username: ""           # Atlassian 账号邮箱（如 xxx@bosch.com），于 config.local.yaml 注入
+    api_token: ""          # Atlassian API Token（ATATT… 形式），于 config.local.yaml 注入
+    project_key: ""        # 该实例不限定单一项目（W0/<other> 都可），故留空
+    auth_method: "basic"   # atlassian.net Cloud 强制 email + token Basic Auth
+    verify_ssl: true
+
+dng:
+  base_url: "https://dng.example.com"
+  username: "demo"
+  password: "demo-pass"
+  verify_ssl: false
+
+git_repos:
+  repos: []
+  search_extensions: [".c", ".h", ".py"]
+  recent_commit_weeks: 4
+
+llm:
+  model: "claude-sonnet-4-20250514"
+  api_key: "sk-demo"
+  max_tokens: 4096
+  temperature: 0.0
+
+watcher:
+  mode: "webhook"
+  polling_interval_seconds: 60
+  jql_filter: 'issuetype = Bug AND status = Open'
+  webhook_secret: ""
+
+writer:
+  analyzed_label: "analyzed"
+  auto_create_related_bugs: false
+  notify_webhook: ""
+
+confluence:
+  base_url: "https://inside-docupedia.bosch.com"
+  context_path: "/confluence"
+  username: ""
+  api_token: "REDACTED_CONFLUENCE_TOKEN_1"
+  auth_method: "bearer"
+  verify_ssl: false
+  timeout: 30.0
+  max_concurrent_requests: 5
+  default_output_dir: "./confluence_downloads"
+  download_attachments: false
+  max_depth: 5
+  save_format: "pdf"
+  pdf_export_method: native   # 不需要 Chrome
+  # pdf_export_method: chrome 需要 Chrome
+  request_delay: 0.3          # 请求间隔（秒），全局限流防止服务器断连
+  max_retries: 3              # 失败重试次数（指数退避）
+
+ragflow:
+  base_url: "http://10.161.151.72:8880"
+  api_key: "ragflow-ViMjBkODVlMTJjNjExZjE5NDBiYzJlMW"
+  dataset_name: "taiji1.0"
+  auto_upload_after_confluence: false
+  parse_after_upload: true
+
+rtc:
+  - name: "Patac_RTC"
+    ccm_url: "https://peedp.saic-gm.com/ccm"
+    username: "Pdoj2h"
+    password: ""
+    project_area_name: ""
+    project_area_id: ""
+    verify_ssl: false
+    with_jazz: true
+    max_attachment_size_mb: 1024
+  - name: "Bosch_RTC"
+    ccm_url: "https://rb-alm-20-p.de.bosch.com/ccm"
+    username: "wvy1szh"
+    password: ""
+    project_area_name: "SGM Local 8155"
+    project_area_id: ""
+    verify_ssl: false
+    with_jazz: true
+    max_attachment_size_mb: 1024
+minio:
+  endpoint: "szh-c-006d3.sgh.apac.bosch.com:9000"
+  access_key: "bot"
+  secret_key: ""
+  bucket: "agent"
+  prefix: "tagent"
+  secure: false
