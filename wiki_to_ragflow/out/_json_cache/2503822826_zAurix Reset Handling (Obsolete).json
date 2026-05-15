@@ -1,0 +1,61 @@
+{
+  "page_id": "2503822826",
+  "title": "zAurix Reset Handling (Obsolete)",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/2503822826/zAurix+Reset+Handling+Obsolete",
+  "last_modified": "2023-01-20T08:54:32.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2672677122",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Proposed solution for A0 Sample:"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/zAurix%20Reset%20Handling%20(Obsolete)/image2022-11-9_12-1-20.png?api=v2",
+      "alt": "",
+      "local_path": "_images/zAurix Reset Handling (Obsolete)/image2022-11-9_12-1-20.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Reset solution Alternate 1:"
+    },
+    {
+      "type": "paragraph",
+      "text": "draw.io Diagram attachment access error: cannot display diagram"
+    },
+    {
+      "type": "paragraph",
+      "text": "Reset Solution Alternate 2:"
+    },
+    {
+      "type": "paragraph",
+      "text": "draw.io Diagram attachment access error: cannot display diagram"
+    },
+    {
+      "type": "paragraph",
+      "text": "After PORST reset, FSP0 will be LOW state, after enabling external watchdog, SW must call SMU_ReleaseFSP() so that FSP pin can move to HIGH state"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/zAurix%20Reset%20Handling%20(Obsolete)/image2022-10-13_16-2-26.png?api=v2",
+      "alt": "",
+      "local_path": "_images/zAurix Reset Handling (Obsolete)/image2022-10-13_16-2-26.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-11-9_12-1-20.png",
+      "download_link": "/download/attachments/2503822826/image2022-11-9_12-1-20.png?version=1&modificationDate=1668431604000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-10-13_16-2-26.png",
+      "download_link": "/download/attachments/2503822826/image2022-10-13_16-2-26.png?version=1&modificationDate=1668431604000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

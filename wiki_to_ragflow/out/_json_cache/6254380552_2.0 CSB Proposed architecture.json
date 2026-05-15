@@ -1,0 +1,39 @@
+{
+  "page_id": "6254380552",
+  "title": "2.0 CSB Proposed architecture",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/6254380552/2.0+CSB+Proposed+architecture",
+  "last_modified": "2025-09-16T10:20:09.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6125783649",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below is the proposed CSB architecture"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Context view"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20CSB%20Proposed%20architecture/V2_MB_CSB_SW_Architecture.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 CSB Proposed architecture/V2_MB_CSB_SW_Architecture.jpg"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "V2_MB_CSB_SW_Architecture.jpg",
+      "download_link": "/download/attachments/6254380552/V2_MB_CSB_SW_Architecture.jpg?version=1&modificationDate=1758010730000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

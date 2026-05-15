@@ -1,0 +1,152 @@
+{
+  "page_id": "4642895125",
+  "title": "1.0 SAIL SW Bringup - Overview",
+  "version": 16,
+  "url": "/spaces/CARSFW/pages/4642895125/1.0+SAIL+SW+Bringup+-+Overview",
+  "last_modified": "2024-10-24T08:08:09.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4704573818",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to summarize the dependencies of SAIL SW"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Compiler"
+    },
+    {
+      "type": "paragraph",
+      "text": "Qualcomm has developed their CDD and MCAL with 6.16.2 Fusa Arm compiler"
+    },
+    {
+      "type": "paragraph",
+      "text": "So we may go with Arm compiler for SAIL, not the GHS"
+    },
+    {
+      "type": "paragraph",
+      "text": "We have the 6.16.2 FuSa compiler in W3 FSI project"
+    },
+    {
+      "type": "paragraph",
+      "text": "How to get license for Arm FuSa compile"
+    },
+    {
+      "type": "paragraph",
+      "text": "RequestMembershipARM-UBL…"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "OS"
+    },
+    {
+      "type": "paragraph",
+      "text": "Vector delivery uses Safe RTOS."
+    },
+    {
+      "type": "paragraph",
+      "text": "But in the delivery to Bosch there is no Safe RTOS"
+    },
+    {
+      "type": "paragraph",
+      "text": "But we have RTA-OS which is developed for SAIL in QAM8775"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "MCAL"
+    },
+    {
+      "type": "paragraph",
+      "text": "QC MCAL and CDD"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "BSW"
+    },
+    {
+      "type": "paragraph",
+      "text": "Vector BSW"
+    },
+    {
+      "type": "paragraph",
+      "text": "How to work with ETAS RTA-OS and Vector BSW"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Task",
+        "Status",
+        "Comments"
+      ],
+      "rows": [
+        [
+          "Understand 6.16.2 Fusa Arm compiler",
+          "COMPLETED",
+          "https://developer.arm.com/documentation/102283/6-16-2LTS/?lang=en"
+        ],
+        [
+          "Debug setup in PRO with Lauterbach Arm",
+          "COMPLETED",
+          "SAIL JTAG connection - Pro 8255 - XC-CT China - Docupedia (bosch.com)"
+        ],
+        [
+          "Prepare Build environment - FSI",
+          "COMPLETED",
+          "Start creating folder - Use FSI Set up Arm compiler and license Understand LDS file syntax Use SAIL LD file Build Startup code and one file - Sample Arm Scatter file - How To - XC-CT China - Docupedia (bosch.com)"
+        ],
+        [
+          "Check MCAL comfiguration",
+          "",
+          ""
+        ],
+        [
+          "Build with CDD and MCAL",
+          "",
+          ""
+        ],
+        [
+          "Try to flash",
+          "INPROGRESS",
+          "SoC Flashing Guide With PCAT - GEN4 generic - Docupedia (bosch.com)"
+        ],
+        [
+          "RTA-OS integration",
+          "",
+          ""
+        ],
+        [
+          "Analyze how debugger can be connected to SAIL",
+          "",
+          ""
+        ],
+        [
+          "Vector BSW",
+          "",
+          ""
+        ],
+        [
+          "..............",
+          "",
+          ""
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "RequestMembershipARM-UBL-User.pdf",
+      "download_link": "/download/attachments/4642895125/RequestMembershipARM-UBL-User.pdf?version=1&modificationDate=1725439988000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

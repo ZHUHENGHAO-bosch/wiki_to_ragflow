@@ -1,0 +1,223 @@
+{
+  "page_id": "2825343500",
+  "title": "Safe States for SM - Discussion and lesson learnt",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2825343500/Safe+States+for+SM+-+Discussion+and+lesson+learnt",
+  "last_modified": "2023-03-11T05:54:58.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2419884724",
+  "children": [],
+  "content": [
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "SM",
+          "Safe State",
+          "SW Comments",
+          "System Comment"
+        ],
+        [
+          "Aurix based SMs and Other PF SMs",
+          "",
+          "",
+          ""
+        ],
+        [
+          "SM01 SCC RAM Monitoring",
+          "System Reset",
+          "",
+          ""
+        ],
+        [
+          "SM02 SCC ROM Monitoring",
+          "System Reset",
+          "",
+          ""
+        ],
+        [
+          "SM03 SafeOS and MCAL",
+          "",
+          "",
+          ""
+        ],
+        [
+          "SM04 Memory Protection",
+          "System Reset",
+          "",
+          ""
+        ],
+        [
+          "SM06 SCC Watchdog",
+          "System Reset",
+          "",
+          ""
+        ],
+        [
+          "SM9 Register Monitoring",
+          "System Reset",
+          "",
+          ""
+        ],
+        [
+          "SM12 Internal Voltage Monitoring",
+          "System Reset",
+          "We can enter recovery mode",
+          ""
+        ],
+        [
+          "SM12 External Voltage Monitoring",
+          "System Reset",
+          "Clear the Reset Count error is done in VCU Cyclic reset is acceptable External voltage monitor waits for QM voltage monitor to enter SCC-Only mode",
+          ""
+        ],
+        [
+          "SM13 Internal Temperature Monitoring",
+          "System Reset",
+          "We can enter recovery mode Check with IFX and Safety manual",
+          ""
+        ],
+        [
+          "SM14 Selftest on VCPU",
+          "System Reset",
+          "",
+          ""
+        ],
+        [
+          "SM18 SCC Clock Monitoring",
+          "System Reset",
+          "",
+          ""
+        ],
+        [
+          "SM19 SoC State Monitor",
+          "??",
+          "",
+          ""
+        ],
+        [
+          "SM23 Safe ADC Calibration and Plausibility check",
+          "System Reset",
+          "",
+          ""
+        ],
+        [
+          "SM20 Safe State Handler",
+          "",
+          "",
+          ""
+        ],
+        [
+          "SM15 - Safe DLT",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "SMs for SGs",
+          "",
+          "",
+          ""
+        ],
+        [
+          "SM52 Safe HMI Monitor",
+          "??",
+          "",
+          ""
+        ],
+        [
+          "SM53 Safe Telltale Monitor",
+          "??",
+          "",
+          ""
+        ],
+        [
+          "SM16 Safe Configuration",
+          "System Reset",
+          "",
+          ""
+        ],
+        [
+          "SM05 Safe E2E Protection",
+          "System Reset",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Acs to Support SGs",
+          "",
+          "",
+          ""
+        ],
+        [
+          "AC39 PMIC Supervision",
+          "??",
+          "",
+          ""
+        ],
+        [
+          "AC42 SoC Serialize Diagnostic",
+          "??",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Project specific SMs",
+          "",
+          "",
+          ""
+        ],
+        [
+          "AC57 Safe Touch",
+          "??",
+          "",
+          ""
+        ],
+        [
+          "Other Project specific SM llike Safe output signal",
+          "??",
+          "",
+          ""
+        ],
+        [
+          "External Temperature Monitoring",
+          "System Reset",
+          "Clear the Reset Count error is done in VCU ??",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

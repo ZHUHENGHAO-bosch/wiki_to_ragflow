@@ -1,0 +1,149 @@
+{
+  "page_id": "6989451061",
+  "title": "Taiji - VCU - Merge concept",
+  "version": 21,
+  "url": "/spaces/CARSFW/pages/6989451061/Taiji+-+VCU+-+Merge+concept",
+  "last_modified": "2026-05-08T12:00:54.000+02:00",
+  "last_modified_by": "GENG Zhongyang (BCSC/ENG1)",
+  "parent_id": "6979528509",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview Repo strategy Variant Matrix"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to summarize how to make common repos for VCU and Taiji"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Repo strategy"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Too many repos in Taiji (145 repos) - Taiji - Current VCU Repo and Folder structure - XC-CT China - Docupedia",
+        "We can go with VCU repo and folder structure - (41 repos)"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/6989451061/Taiji_Vcu_Strategy.png?version=8&modificationDate=1776150629000&api=v2",
+      "alt": "",
+      "local_path": "_images/Taiji - VCU - Merge concept/Taiji_Vcu_Strategy.png"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Folder",
+        "Repos",
+        "Comment",
+        "Discussion"
+      ],
+      "rows": [
+        [
+          "Restricted",
+          "VCU repos",
+          "Can we reuse the CCU repos?? We can create a special branch like Taiji_Vcu_Maindev",
+          ""
+        ],
+        [
+          "BswPlatform",
+          "Branch can be restricted to PATAC",
+          ""
+        ],
+        [
+          "BswPlatform_CFG",
+          "",
+          ""
+        ],
+        [
+          "Vector_bsw",
+          "",
+          ""
+        ],
+        [
+          "Vector_bsw_cfg",
+          "",
+          ""
+        ],
+        [
+          "Tools",
+          "",
+          ""
+        ],
+        [
+          "Build",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Variant Matrix"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Variant",
+        "Target Board",
+        "Stack"
+      ],
+      "rows": [
+        [
+          "TC37x",
+          "Chery/Maxus",
+          "Vector"
+        ],
+        [
+          "TC37x",
+          "Chery/Maxus",
+          "Cubas"
+        ],
+        [
+          "TC38x",
+          "CCU",
+          "Vector"
+        ],
+        [
+          "TC39x",
+          "VCUplus",
+          "Vector"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2026-4-28_14-11-7.png",
+      "download_link": "/download/attachments/6989451061/image-2026-4-28_14-11-7.png?version=1&modificationDate=1777356667000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Taiji_Vcu_Strategy",
+      "download_link": "/download/attachments/6989451061/Taiji_Vcu_Strategy?version=8&modificationDate=1776150629000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Taiji_Vcu_Strategy.png",
+      "download_link": "/download/attachments/6989451061/Taiji_Vcu_Strategy.png?version=8&modificationDate=1776150629000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "~Taiji_Vcu_Strategy.tmp",
+      "download_link": "/download/attachments/6989451061/~Taiji_Vcu_Strategy.tmp?version=95&modificationDate=1776150627000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

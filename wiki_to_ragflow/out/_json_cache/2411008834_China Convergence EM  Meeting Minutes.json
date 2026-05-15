@@ -1,0 +1,134 @@
+{
+  "page_id": "2411008834",
+  "title": "China Convergence EM  Meeting Minutes",
+  "version": 14,
+  "url": "/spaces/CARSFW/pages/2411008834/China+Convergence+EM+Meeting+Minutes",
+  "last_modified": "2022-09-09T09:21:52.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2653923512",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Date: 05 Sep 2022"
+    },
+    {
+      "type": "paragraph",
+      "text": "Agenda: Decision on Error and DLT logging mechanism"
+    },
+    {
+      "type": "paragraph",
+      "text": "Participants:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Mohan",
+        "Newton",
+        "Easwar",
+        "Senthil",
+        "Praveen",
+        "Carven",
+        "Prabu",
+        "Sudeep"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Mohan: ESP Workshop it is decided to use both FEL and EM since EM has the advantage of storing more data and FEL can store SoC failure information when SoC is not available"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "SWC → FEL → EM → INC → SOC"
+    },
+    {
+      "type": "paragraph",
+      "text": "Advantages: Read FEL value via Diagnostics over CAN (When SOC is not available)"
+    },
+    {
+      "type": "paragraph",
+      "text": "EM has the advantage of storing more data"
+    },
+    {
+      "type": "paragraph",
+      "text": "The data is stored in NVM → Reason for SoC not available"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "FEL in BL ? NVM is prerequisite",
+        "ESP → No Plan for implementation as of now",
+        "CART → What is their approach on logging error data",
+        "For our case, We have project callout to route the data"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Decision matrix: China Convergence EM and DLT Meeting Minutes - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Open points and Next Steps:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Discuss with CART → Have FEL",
+        "Be Cautious FEL is Safe module, Callout has to be handled via CA or in a safe module",
+        "CN Specific modules - What is the big Advantage of using EM",
+        "Reading FEL in BL"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "user-1f19a , To come up with overview concept for CN Convergence Platform"
+    },
+    {
+      "type": "paragraph",
+      "text": "Date: 09 Sep 2022"
+    },
+    {
+      "type": "paragraph",
+      "text": "Agenda: CN Conv PF EM Architecture"
+    },
+    {
+      "type": "paragraph",
+      "text": "Participants: Mohan, Newton, Easwar, Senthil, Praveen"
+    },
+    {
+      "type": "paragraph",
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Discussed the architecture"
+    },
+    {
+      "type": "paragraph",
+      "text": "China Convergence Error Logging Mechanism - Draft - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Try to use SafeErrorMemory module"
+    },
+    {
+      "type": "paragraph",
+      "text": "Next Steps:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Include the SafeError Memory in the architecture - user-1f19a"
+    }
+  ],
+  "attachments": []
+}

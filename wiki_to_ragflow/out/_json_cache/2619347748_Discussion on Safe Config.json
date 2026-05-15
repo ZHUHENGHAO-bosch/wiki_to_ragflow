@@ -1,0 +1,33 @@
+{
+  "page_id": "2619347748",
+  "title": "Discussion on Safe Config",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/2619347748/Discussion+on+Safe+Config",
+  "last_modified": "2022-12-30T06:42:15.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2615955936",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "We need to store Local Config and Car Config with CRC (like Geely)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Safe Config module will read data from Variant Handler and NVM and does the CRC check."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Discussion%20on%20Safe%20Config/image2022-12-30_13-41-7.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Discussion on Safe Config/image2022-12-30_13-41-7.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-12-30_13-41-7.png",
+      "download_link": "/download/attachments/2619347748/image2022-12-30_13-41-7.png?version=1&modificationDate=1672378867000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

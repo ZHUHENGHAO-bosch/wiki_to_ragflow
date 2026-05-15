@@ -1,0 +1,38 @@
+{
+  "page_id": "2365867025",
+  "title": "Aurix - China Convergence Safety",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/2365867025/Aurix+-+China+Convergence+Safety",
+  "last_modified": "2023-03-21T08:04:02.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2310024392",
+  "children": [
+    "2403660548",
+    "2411012902",
+    "3057794119",
+    "2435448116",
+    "4509929485",
+    "2410130115",
+    "4415558435"
+  ],
+  "content": [
+    {
+      "type": "table",
+      "headers": [
+        "Contact person",
+        "Mail ID"
+      ],
+      "rows": [
+        [
+          "Praveen Jayaraj",
+          "jayaraj.praveen@cn.bosch.com"
+        ],
+        [
+          "Gao Carven",
+          "carven.gao@cn.bosch.com"
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

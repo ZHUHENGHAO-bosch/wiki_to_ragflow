@@ -1,0 +1,311 @@
+{
+  "page_id": "7054228584",
+  "title": "3.1.1 Schema",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/7054228584/3.1.1+Schema",
+  "last_modified": "2026-05-08T04:13:54.000+02:00",
+  "last_modified_by": "LIU Dezhi (XC-CP/ESW2-CN)",
+  "parent_id": "7054226998",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "DRAFT : 由AI生成，仅供参考"
+    },
+    {
+      "type": "paragraph",
+      "text": "一句话总结 Schema 具体含什么"
+    },
+    {
+      "type": "paragraph",
+      "text": "Schema = JSON Schema (句法) + 安全元数据 (风险/权限/来源/速率) + 语义约束 (业务规则/ODD) + 溯源签名"
+    },
+    {
+      "type": "paragraph",
+      "text": "对应到 Step 1 \"静态校验\"，它做的事就是在这 4 层 Schema 里， 只做不需要运行时数据就能判断的那部分 ：结构、类型、范围、字段间关系的静态表达式。而运行时数据相关的（车速、驾驶模式、当前用户身份）留给后续 Step 2-5。"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "1. Tool Schema静态校验"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1.1. 什么是Schema"
+    },
+    {
+      "type": "paragraph",
+      "text": "Schema = \"Tool 的说明书 + 合同\"。它 严格、机读、可验证 地规定了："
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "这个 Tool 叫什么",
+        "做什么 （给 LLM 看的描述）",
+        "要哪些参数 （字段名、类型、范围、格式）",
+        "返回什么",
+        "附加约束 （频率、权限、ODD 等）"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "静态校验 = 在 Tool 真正执行之前 ，拿 LLM 吐出来的 {\"name\": ..., \"arguments\": {...}} 去和 Schema 比对。 只要结构/类型/范围对不上，就直接拒绝 ，根本不进入执行层。"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "2. Schema 长什么样 —— 分层 4 块"
+    },
+    {
+      "type": "paragraph",
+      "text": "一条完整的 Tool Schema 包含 4 层信息， 层次越往下，车载 LLM Agent 越特殊 。"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.1.1. 第 1 层: OpenAI / MCP 通用层 (LLM 能看到的部分)"
+    },
+    {
+      "type": "paragraph",
+      "text": "这是喂给 LLM 的，用 JSON Schema (Draft 2020-12) 标准格式。"
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "{\n  \"name\": \"set_window_position\",\n  \"description\": \"调整指定车窗的开合位置。仅在车速低于阈值且驾驶模式允许时可用。\",\n  \"parameters\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"window_id\": {\n        \"type\": \"string\",\n        \"enum\": [\"front_left\", \"front_right\", \"rear_left\", \"rear_right\", \"sunroof\"],\n        \"description\": \"要控制的车窗标识\"\n      },\n      \"position_percent\": {\n        \"type\": \"integer\",\n        \"minimum\": 0,\n        \"maximum\": 100,\n        \"description\": \"开合百分比，0=完全关闭，100=完全打开\"\n      },\n      \"speed\": {\n        \"type\": \"string\",\n        \"enum\": [\"slow\", \"normal\", \"fast\"],\n        \"default\": \"normal\"\n      }\n    },\n    \"required\": [\"window_id\", \"position_percent\"],\n    \"additionalProperties\": false\n  },\n  \"returns\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"success\": {\"type\": \"boolean\"},\n      \"actual_position\": {\"type\": \"integer\"},\n      \"error_code\": {\"type\": \"string\"}\n    }\n  }\n}"
+    },
+    {
+      "type": "paragraph",
+      "text": "这一层静态校验能抓到的问题 ："
+    },
+    {
+      "type": "table",
+      "headers": [
+        "攻击/错误",
+        "校验点"
+      ],
+      "rows": [
+        [
+          "LLM 幻觉出不存在的 Tool",
+          "name 不在注册表中 → 拒绝 (T-301)"
+        ],
+        [
+          "参数名写错 (如 windows_id )",
+          "additionalProperties: false → 拒绝"
+        ],
+        [
+          "少必填参数",
+          "required 校验 → 拒绝"
+        ],
+        [
+          "类型错 (字符串传数字)",
+          "type 校验 → 拒绝"
+        ],
+        [
+          "数值越界 ( position_percent: 150 )",
+          "minimum/ maximum → 拒绝 (T-302)"
+        ],
+        [
+          "枚举外值 ( window_id: \"trunk\" )",
+          "enum → 拒绝"
+        ],
+        [
+          "多塞字段 (注入 {\"window_id\":\"...\", \"force\":true} )",
+          "additionalProperties: false → 拒绝"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "关键 : additionalProperties: false 必须打开。默认的 JSON Schema 是允许多字段的，会成为注入通道。"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.1.2. 第 2 层: 安全元数据 (Security Annotation) —— SW2 的核心"
+    },
+    {
+      "type": "paragraph",
+      "text": "这一层 不给 LLM 看 ，是 SW2 的安全层独有的元数据，用来在静态校验阶段就做路由决策。"
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "# set_window_position.security.yaml\nsecurity:\n  # 风险分级\n  asil: A                       # QM/A/B/C/D\n  risk_category: vehicle_control\n  sensitivity: high\n  # 鉴权要求\n  required_capabilities:\n    - cap:vehicle.window.write\n  required_role: driver         # driver / passenger / guest / child\n  requires_voice_biometric: true  # 必须声纹验证\n  requires_hitl_approval: conditional  # never / conditional / always\n  # HITL 条件（哪些情况必须 HMI 二次确认）\n  hitl_conditions:\n    - window_id == \"sunroof\" AND vehicle_speed > 60\n    - window_id in [\"rear_left\", \"rear_right\"] AND child_lock_active\n  # 速率限制\n  rate_limit:\n    per_session: 10/minute\n    per_tool: 30/minute\n    cooldown_ms: 500\n  # 输入来源限制\n  allowed_input_sources:        # 哪些通道可以触发\n    - voice.driver\n    - voice.passenger           # 乘客也允许, 但 HITL 条件会更严\n    - touch.center_console\n  blocked_input_sources:\n    - text.external             # 外部文本绝对不能触发\n    - media.metadata\n  # 审计级别\n  audit_level: full             # none / basic / full\n  log_pii: false                # 是否记录 PII (脱敏)"
+    },
+    {
+      "type": "paragraph",
+      "text": "这一层静态校验能抓到的问题 ："
+    },
+    {
+      "type": "table",
+      "headers": [
+        "攻击/错误",
+        "校验点"
+      ],
+      "rows": [
+        [
+          "乘客触发驾驶员专属 Tool",
+          "required_role 与当前 session 不匹配 (T-201)"
+        ],
+        [
+          "通过 POI 注入触发车控",
+          "allowed_input_sources 不含 text.external (T-101)"
+        ],
+        [
+          "Token 未携带所需能力",
+          "required_capabilities 检查失败 (T-306)"
+        ],
+        [
+          "Tool 过度调用",
+          "rate_limit 拦截 (T-304)"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.1.3. 第 3 层: 业务语义约束 (Semantic Constraints)"
+    },
+    {
+      "type": "paragraph",
+      "text": "JSON Schema 只能表达 句法层 的约束。业务语义（字段间关系、ODD 前置条件）需要扩展："
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "semantic_constraints:\n  # 字段间关系 (crosspair 校验)\n  - rule: \"position_percent == 0 implies speed must be 'slow' or 'normal'\"\n    type: crosspair\n  - rule: \"window_id == 'sunroof' implies position_percent <= 50\"\n    type: business_rule\n    reason: \"天窗最大开度限制\"\n\n  # ODD 前置条件 (运行时数据检查)\n  preconditions:\n    - name: vehicle_speed_below_threshold\n      expression: \"vehicle.speed_kmh < 80\"\n      on_fail: reject_with_reason(\"高速行驶禁用车窗调整\")\n    - name: drive_mode_allowed\n      expression: \"vehicle.drive_mode in ['park', 'normal', 'sport']\"\n      on_fail: reject\n\n  # 后置条件 (执行后校验)\n  postconditions:\n    - \"response.actual_position matches request.position_percent ± 5\""
+    },
+    {
+      "type": "paragraph",
+      "text": "虽然\"ODD 前置条件\"在威胁模型里被拆到第 3 步检查，但 元数据本身是 Schema 的一部分 。 静态校验阶段做\"存在性/结构校验\"，第 3 步做\"运行时求值\"。"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.1.4. 第 4 层: 来源与完整性 (Provenance)"
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "provenance:\n  registered_by: SW3\n  reviewed_by: SW2\n  approval_date: 2026-04-15\n  signature: \"ed25519:9f2a...c8d1\"    # Tool 注册签名\n  source_idl: \"vehicle_control.fidl#setWindowPosition\"\n  generator_version: \"fdbus2tool@1.2.3\"\n  hash: \"sha256:abc123...\""
+    },
+    {
+      "type": "paragraph",
+      "text": "用途 ：防 T-311 (FDBus/SOMEIP→Tool 转换器漏洞) 和 T-312 (恶意 Tool 注册)。每次 Agent 启动或 Tool 更新时，先验签再加载。"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "3. 静态校验引擎的执行流水线"
+    },
+    {
+      "type": "paragraph",
+      "text": "以一次 LLM 输出 {\"name\":\"set_window_position\", \"arguments\":{\"window_id\":\"sunroof\",\"position_percent\":100,\"force_override\":true}} 为例："
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "┌─ Step 1.1 ─ Tool 存在性校验 ─────────────────┐\n│ 在 Tool 注册表中查找 name=\"set_window_...\"  │\n│   ✓ 找到 → 继续                              │\n│   ✗ 未找到 → 拒绝 \"Unknown tool\" (T-301)    │\n└──────────────────────────────────────────────┘\n                    ▼\n┌─ Step 1.2 ─ 签名校验 ─────────────────────────┐\n│ 验证 Tool Schema 的 provenance.signature    │\n│   ✗ 签名失败 → 拒绝 + 告警 (T-312)          │\n└──────────────────────────────────────────────┘\n                    ▼\n┌─ Step 1.3 ─ JSON Schema 校验 ─────────────────┐\n│ 用标准 JSON Schema 验证器 (ajv / jsonschema) │\n│  • 字段类型 ✓                                │\n│  • required 必填 ✓                           │\n│  • enum ✓                                    │\n│  • min/max ✓                                 │\n│  • additionalProperties: false ✓             │\n│                                              │\n│ 本例: force_override 不在 properties         │\n│       additionalProperties=false → 拒绝     │\n│       原因: \"Unknown argument: force_override\"│\n└──────────────────────────────────────────────┘\n                    ▼\n┌─ Step 1.4 ─ 语义约束校验 ─────────────────────┐\n│ 评估 semantic_constraints.crosspair 规则     │\n│   ✗ 违反 → 拒绝                              │\n└──────────────────────────────────────────────┘\n                    ▼\n              返回 \"Static OK\"\n              进入 Step 2 Capability 鉴权"
+    },
+    {
+      "type": "paragraph",
+      "text": "注意 : Step 1.3 已经拦截了恶意注入的 force_override 字段 。这就是 additionalProperties: false 的威力 —— 它让 \"参数注入\" 这类攻击在最外层就死掉，而不是渗透到业务逻辑里。"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "4. 为什么这一步这么关键 —— 4 个理由"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "成本最低 : 纯静态校验，单次 <1ms，不需要调用 LLM 或硬件",
+        "拦截率最高 : 根据 Anthropic 2025 的 LLM 工具调用实测， 30-40% 的异常调用 在 Schema 层就能拦掉",
+        "防御非恶意错误 : 很多时候不是攻击，是 LLM 幻觉或漂移，Schema 校验能优雅地拒绝而不是让它渗透下去",
+        "给 LLM 提供精确上下文 : Schema 里的 description / enum / constraints 同时作为 prompt 的一部分 发给 LLM，让 LLM \"一开始就不容易写错\""
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "5. Schema 管理的 3 个关键工程实践"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5.1. Single Source of Truth"
+    },
+    {
+      "type": "paragraph",
+      "text": "所有 Schema 信息必须从同一个源生成 ，避免 \"给 LLM 看的版本\" 和 \"校验用的版本\" 不一致： IDL (FIDL / .proto) │ ├─▶ Tool Schema (给 LLM 看) [SW5 生成器] ├─▶ 校验器配置 (给 SW2 用) [SW5 生成器] ├─▶ 客户端存根 (给 SW3 用) [SW5 生成器] └─▶ 安全元数据 (人工补充审核) [SW3 写, SW2 审]"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5.2. Schema-as-Code 纳入版本控制"
+    },
+    {
+      "type": "paragraph",
+      "text": "aiOS/tools/ ├─ vehicle_control/ │ ├─ set_window_position.schema.json ← 机器可读 │ ├─ set_window_position.security.yaml ← 安全元数据 │ ├─ set_window_position.test.yaml ← 单元测试用例 │ └─ set_window_position.approval.md ← 评审记录 ├─ navigation/ └─ spotify/"
+    },
+    {
+      "type": "paragraph",
+      "text": "每次 Schema 修改 → PR 评审 → SW2 签名 → 自动生成注册包 → OTA 下发。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5.3. 防注入的 3 个 \"一定要打开\""
+    },
+    {
+      "type": "table",
+      "headers": [
+        "选项",
+        "作用",
+        "示例"
+      ],
+      "rows": [
+        [
+          "\"additionalProperties\": false",
+          "禁止未声明字段",
+          "防 force_override 这类注入"
+        ],
+        [
+          "\"strict\": true (OpenAI 新特性)",
+          "LLM 输出严格符合 Schema",
+          "从源头降低幻觉率"
+        ],
+        [
+          "string 类型的 pattern / format",
+          "限制格式，防命令注入",
+          "\"pattern\": \"^[a-zA-Z0-9_-]{1,32}$\""
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "AI 生成的文档(by opus 4.7)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tool_Schema_Spec.md"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tool_Schema_Review_Checklist.md"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tool_Schema_Spec.md"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tool_Schema_Review_Checklist.md"
+    }
+  ],
+  "attachments": []
+}

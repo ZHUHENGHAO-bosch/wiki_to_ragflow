@@ -1,0 +1,125 @@
+{
+  "page_id": "2488263286",
+  "title": "Safety Traceability Overview",
+  "version": 34,
+  "url": "/spaces/CARSFW/pages/2488263286/Safety+Traceability+Overview",
+  "last_modified": "2023-03-27T03:23:46.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2410130115",
+  "children": [
+    "2679790211"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Decision:"
+    },
+    {
+      "type": "paragraph",
+      "text": "To support the project timeline and requirements, we will go with Solution 1. Once we make the exchange and linking properly, it will be easy for the future China projects"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Solution1: With both CART and China project in DOORS classic (DOORS exchange):"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pros:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Control is now completely with project"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Cons:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Complex structure",
+        "Needs DOORs exchange and need to run script",
+        "Need inspection review to make sure links are established properly"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2488263286/CnConvPf_Traceability.png?version=66&modificationDate=1679880216000&api=v2",
+      "alt": "",
+      "local_path": "_images/Safety Traceability Overview/CnConvPf_Traceability.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Solution 2: With CART in DNG and China project in DOORS classic (using specified by):"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pros:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Simple and less work",
+        "Project can concentrate only on Config part.",
+        "No big linking and inspection review effort for PF framework"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Cons:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "PF part control is completely with CART"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2488263286/Copy%20of%20CnConvPf_Traceability.png?version=16&modificationDate=1674871467000&api=v2",
+      "alt": "",
+      "local_path": "_images/Safety Traceability Overview/Copy of CnConvPf_Traceability.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "CnConvPf_Traceability",
+      "download_link": "/download/attachments/2488263286/CnConvPf_Traceability?version=66&modificationDate=1679880216000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "CnConvPf_Traceability.png",
+      "download_link": "/download/attachments/2488263286/CnConvPf_Traceability.png?version=66&modificationDate=1679880216000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Copy of CnConvPf_Traceability",
+      "download_link": "/download/attachments/2488263286/Copy%20of%20CnConvPf_Traceability?version=16&modificationDate=1674871467000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Copy of CnConvPf_Traceability.png",
+      "download_link": "/download/attachments/2488263286/Copy%20of%20CnConvPf_Traceability.png?version=16&modificationDate=1674871467000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Doors Setup",
+      "download_link": "/download/attachments/2488263286/Doors%20Setup?version=2&modificationDate=1667895040000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Doors Setup.png",
+      "download_link": "/download/attachments/2488263286/Doors%20Setup.png?version=2&modificationDate=1667895040000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

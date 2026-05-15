@@ -1,0 +1,64 @@
+{
+  "page_id": "4601799207",
+  "title": "SWC_OCD_GagesSensor_SRC",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/4601799207/SWC_OCD_GagesSensor_SRC",
+  "last_modified": "2024-08-14T11:17:12.000+02:00",
+  "last_modified_by": "SUN Xitong (XC-CP/ESW2-CN)",
+  "parent_id": "4630207908",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "该模块得主要功能是收集Gage模块所需要的例如燃油余量、冷却液温度等信息，在SUM_SUSD得允许执行条件下，向Gage模块输出已检查过得数据信息"
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "Gages_Sensors_m.c",
+          "GetPermitExecution from SUM_SUSD and send checked data to SWC_OCD_Gages"
+        ],
+        [
+          "",
+          "FuelLevelGageStatus"
+        ],
+        [
+          "",
+          "SpeedometerGageStatus"
+        ],
+        [
+          "",
+          "CoolantTemperatureGageStatus"
+        ],
+        [
+          "",
+          "TachometerHardwireInput"
+        ],
+        [
+          "",
+          "TachometerGageStatus"
+        ]
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_OCD_GagesSensor_SRC/image-2024-8-14_17-17-3.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_OCD_GagesSensor_SRC/image-2024-8-14_17-17-3.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-14_17-17-3.png",
+      "download_link": "/download/attachments/4601799207/image-2024-8-14_17-17-3.png?version=1&modificationDate=1723627024000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-14_17-16-21.png",
+      "download_link": "/download/attachments/4601799207/image-2024-8-14_17-16-21.png?version=1&modificationDate=1723626981000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

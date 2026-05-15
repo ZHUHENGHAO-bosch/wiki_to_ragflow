@@ -1,0 +1,254 @@
+{
+  "page_id": "4704583139",
+  "title": "4.0 SAIL Folder structure",
+  "version": 26,
+  "url": "/spaces/CARSFW/pages/4704583139/4.0+SAIL+Folder+structure",
+  "last_modified": "2024-12-02T08:02:57.000+01:00",
+  "last_modified_by": "LIU Dezhi (XC-CP/ESW2-CN)",
+  "parent_id": "4916777106",
+  "children": [
+    "4961270571",
+    "4961271371"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to create folder and repo structure for SAIL platform"
+    },
+    {
+      "type": "paragraph",
+      "text": "Follow J6E structure, Keep config inside the component folder itself"
+    },
+    {
+      "type": "panel",
+      "panel_type": "info",
+      "title": "Repo command for SAIL Platform",
+      "content": "repo init -u cm_gerrit:projects/taiji/manifests -b rb-ccufusion_main_dev -m rb-patac-ccufusion.xml -g sail"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "0602-[SGM CCU]Source Code download and build"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Legend:"
+    },
+    {
+      "type": "paragraph",
+      "text": "means repo"
+    },
+    {
+      "type": "paragraph",
+      "text": "First level folder"
+    },
+    {
+      "type": "paragraph",
+      "text": "Second level folder"
+    },
+    {
+      "type": "paragraph",
+      "text": "Third level folder"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Folder structure for SAIL platform"
+    },
+    {
+      "type": "paragraph",
+      "text": "c ust_apl"
+    },
+    {
+      "type": "paragraph",
+      "text": "lib"
+    },
+    {
+      "type": "paragraph",
+      "text": "patac_lib"
+    },
+    {
+      "type": "paragraph",
+      "text": "platform_lib"
+    },
+    {
+      "type": "paragraph",
+      "text": "asw"
+    },
+    {
+      "type": "paragraph",
+      "text": "asw_as"
+    },
+    {
+      "type": "paragraph",
+      "text": "build"
+    },
+    {
+      "type": "paragraph",
+      "text": "config"
+    },
+    {
+      "type": "paragraph",
+      "text": "cubas"
+    },
+    {
+      "type": "paragraph",
+      "text": "mcalQc"
+    },
+    {
+      "type": "paragraph",
+      "text": "qccfg"
+    },
+    {
+      "type": "paragraph",
+      "text": "platform"
+    },
+    {
+      "type": "paragraph",
+      "text": "rbBsw - Service layer components"
+    },
+    {
+      "type": "paragraph",
+      "text": "rbHsw - CDDs and Own MCAL components"
+    },
+    {
+      "type": "paragraph",
+      "text": "safetyApps"
+    },
+    {
+      "type": "paragraph",
+      "text": "stdcore - Core stack"
+    },
+    {
+      "type": "paragraph",
+      "text": "cubas"
+    },
+    {
+      "type": "paragraph",
+      "text": "qcbase"
+    },
+    {
+      "type": "paragraph",
+      "text": "rtaOs"
+    },
+    {
+      "type": "paragraph",
+      "text": "......."
+    },
+    {
+      "type": "paragraph",
+      "text": "sailtools"
+    },
+    {
+      "type": "paragraph",
+      "text": "discussed with integration team LU Weihua (XC-CP/ESA2-CN)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "path /tools  folder already exists in ccufusion project, should modify  → sailtools",
+        "repo name have rules"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20SAIL%20Folder%20structure/image-2024-11-13_16-29-43.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 SAIL Folder structure/image-2024-11-13_16-29-43.png"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Repo",
+        "path",
+        "description"
+      ],
+      "rows": [
+        [
+          "projects/ccufusion/sail/cust_apl/asw",
+          "cust_apl/asw",
+          "All application relevant components LIU Dezhi (XC-CP/ESW2-CN) Check with AS once"
+        ],
+        [
+          "projects/ccufusion/sail/cust_apl/lib/patac_lib",
+          "cust_apl/lib/patac_lib",
+          "Library from PATAC"
+        ],
+        [
+          "projects/ccufusion/sail/cust_apl/lib/plaform_lib",
+          "cust_apl/lib/plaform_lib",
+          "Sail bosch platform lib"
+        ],
+        [
+          "projects/ccufusion/sail/cust_apl/build",
+          "cust_apl/build",
+          "Build out folder, cmake and relevant folder and files"
+        ],
+        [
+          "projects/ccufusion/sail/cust_apl/config",
+          "cust_apl/config",
+          "Config for stdcore components liek Cubas, Rta-os, QcMcal"
+        ],
+        [
+          "cnconvbase/sail/platform/rbBsw",
+          "platform/rbBsw",
+          "All BSW and service layer components like com. lcm, diag,...."
+        ],
+        [
+          "cnconvbase/sail/platform/rbHsw",
+          "platform/rbHsw",
+          "All CDD and own Mcal related modules"
+        ],
+        [
+          "cnconvbase/sail/platform/stdcore/cubas",
+          "platform/stdcore/cubas",
+          "Cubas stack"
+        ],
+        [
+          "cnconvbase/sail/platform/stdcore/qcbase",
+          "platform/stdcore/qcbase",
+          "QC CDD and MCAL modules"
+        ],
+        [
+          "cnconvbase/sail/platform/stdcore/rtaOs",
+          "platform/stdcore/rtaOs",
+          "RTA-OS from ETAS"
+        ],
+        [
+          "cnconvbase/sail/platform/safetyApps",
+          "platform/safetyApps",
+          "All FuSa related components"
+        ],
+        [
+          "cnconvbase/sail/sailtools",
+          "sailtools",
+          "All tools can be kept here ![warning](https://inside-docupedia.bosch.com/confluence/plugins/servlet/twitterEmojiRedirector?id=26a0) If the tools size is big, better to use antifactory → not to deliver in this repo"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-11-13_16-29-43.png",
+      "download_link": "/download/attachments/4704583139/image-2024-11-13_16-29-43.png?version=1&modificationDate=1731486584000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "twitterEmojiRedirector.svg",
+      "download_link": "/download/attachments/4704583139/twitterEmojiRedirector.svg?version=1&modificationDate=1731395024000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "add.svg",
+      "download_link": "/download/attachments/4704583139/add.svg?version=1&modificationDate=1730970258000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

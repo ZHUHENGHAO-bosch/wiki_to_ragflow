@@ -1,0 +1,38 @@
+{
+  "page_id": "2705247449",
+  "title": "CNConvPF - IoHwAb",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/2705247449/CNConvPF+-+IoHwAb",
+  "last_modified": "2023-02-01T02:25:54.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2321473024",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "IoHwAb module is a config project module and shall handle all variant handling and Context abstraction activties."
+    },
+    {
+      "type": "paragraph",
+      "text": "With this layered approach we don't need to touch the other modules during different board bringups"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/CNConvPF%20-%20IoHwAb/IoHwAb_ContextView.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/CNConvPF - IoHwAb/IoHwAb_ContextView.bmp"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "IoHwAb_ContextView.bmp",
+      "download_link": "/download/attachments/2705247449/IoHwAb_ContextView.bmp?version=1&modificationDate=1675214630000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

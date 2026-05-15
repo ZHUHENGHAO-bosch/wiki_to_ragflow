@@ -1,0 +1,102 @@
+{
+  "page_id": "6546260728",
+  "title": "3.0 TC4x FuSa - Peripheral access",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/6546260728/3.0+TC4x+FuSa+-+Peripheral+access",
+  "last_modified": "2026-01-07T03:07:13.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6277467483",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This Use case is considering the scenario where a TriCore CPU with Lockstep (LS) monitoring enabled is accessing any peripheral device connected to the system interconnect."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Overview of Peripheral access"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.0%20TC4x%20FuSa%20-%20Peripheral%20access/image-2025-11-28_16-12-43.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 TC4x FuSa - Peripheral access/image-2025-11-28_16-12-43.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Access Paths"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.0%20TC4x%20FuSa%20-%20Peripheral%20access/PeripheralAccess.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 TC4x FuSa - Peripheral access/PeripheralAccess.jpg"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Safety mechanism",
+        "Description",
+        "Reset operational state",
+        "Configuration and Activation",
+        "Error Reaction"
+      ],
+      "rows": [
+        [
+          "ESM[SW]:WTU:TIMER_MONITOR",
+          "The application software shall test at least once per MPFDTI (Multiple-Point Fault Detection Time Interval) each of the WDT used for safety relevant applications against latent faults. For this purpose the application software shall use the System Timer (STM) to measure the counting time of the WDT. If the measured time is less than half or more than double of the expected value, then an appropriate safe reaction shall be triggered. The application software shall also test that the overflow alarm is working properly",
+          "",
+          "",
+          ""
+        ],
+        [
+          "SM[HW]:CPU:TRICORE_LOCKSTEP",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "SM[HW]:CPU:TRICORE_LOCKSTEP_SCC",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "SM[HW]:WTU:REG_MONITOR",
+          "The WTU implements safety flip-flops for detecting transient or permanent faults in the configuration registers and sequential logic.",
+          "NA",
+          "NA",
+          "Upon detection of an error, an alarm will be reported to the SMU"
+        ],
+        [
+          "SM[HW]:WTU:TEMPORAL_MONITORING",
+          "The WTU provides one dedicated watchdog timer (WDT) for each implemented CPU, for example CPU0 has WDTCPU0, CPU1 has WDTCPU1, etc, and one system WDT that is not assigned to a specific CPU and can be used by application software",
+          "This SM is reset by an application reset. WDTCPU0 and WDTSYS are enabled by the SYS_FW after a reset",
+          "NA",
+          "Upon detection of an error, an alarm will be reported to the SMU"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "PeripheralAccess.jpg",
+      "download_link": "/download/attachments/6546260728/PeripheralAccess.jpg?version=1&modificationDate=1764321325000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-28_16-12-43.png",
+      "download_link": "/download/attachments/6546260728/image-2025-11-28_16-12-43.png?version=1&modificationDate=1764317563000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "page_id": "6012896065",
+  "title": "4.0 ODI Data Analysis Script",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/6012896065/4.0+ODI+Data+Analysis+Script",
+  "last_modified": "2025-10-23T09:16:33.000+02:00",
+  "last_modified_by": "user-5e3f1",
+  "parent_id": "4577529786",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "1. Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page introduces inc_test.py — a Python - based ODI (Open Display Interface) data parsing script, covering its functions and usage.​ It focuses on 4 ODI message types, efficiently processing ODI protocol data."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "2. Document structure and functionality"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.1. Document structure"
+    },
+    {
+      "type": "paragraph",
+      "text": "The relevant files of this script mainly include inc_test.py,  update_CSV.py,  data_source.csv,  data_result.txt,  inc_log.txt,  and FU_HMI_List_PATAC_C180.5.0_20250530.xlsx , all of which work together in the same directory."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.2. Functions of each document"
+    },
+    {
+      "type": "paragraph",
+      "text": "(1) inc_test.py :"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is the core file of the script, which contains the parsing logic for the four types of messages in the ODI protocol: ODI_MSG_EVENT, ODI_MSG_INDICATION, ODI_MSG_DYN_DATA, and ODI_MSG_ACTION .Other messages will be displayed as unknown types."
+    },
+    {
+      "type": "paragraph",
+      "text": "(2) update_CSV.py"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a script for updating a csv file, which can generate a new csv file by reading data from an Excel spreadsheet."
+    },
+    {
+      "type": "paragraph",
+      "text": "Note ：If there are any changes in the Excel data, please use this script file to update the csv file data first."
+    },
+    {
+      "type": "paragraph",
+      "text": "(3) FU_HMI_List_PATAC_C180.5.0_20250530.xlsx"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is an Excel spreadsheet that stores the original DataId and DataName under different FUClass_ID, and a CSV file will be created by reading this spreadsheet."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20ODI%20Data%20Analysis%20Script/image-2025-7-15_16-22-50.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 ODI Data Analysis Script/image-2025-7-15_16-22-50.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "(4)data_source.csv："
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a CSV data file for input, mainly used to store the mapping relationship between protocol data and business logic, including fields such as typeID, FUClass_ID, DataId, DataName . Through these fields, the encoding information in the ODI protocol can be related to its actual meaning."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20ODI%20Data%20Analysis%20Script/image-2025-7-15_9-22-23.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 ODI Data Analysis Script/image-2025-7-15_9-22-23.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "(5) inc_log.txt："
+    },
+    {
+      "type": "paragraph",
+      "text": "As an input message log file, it provides the raw ODI message data waiting to be parsed, serving as the data source for the script parsing operation."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20ODI%20Data%20Analysis%20Script/image-2025-7-15_9-27-21.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 ODI Data Analysis Script/image-2025-7-15_9-27-21.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "(6) data_result.txt ："
+    },
+    {
+      "type": "paragraph",
+      "text": "Store the results of the script parsing.It includes timestamp, the original data, message type, FUClass ID, and parsing result."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20ODI%20Data%20Analysis%20Script/image-2025-7-15_9-33-4.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 ODI Data Analysis Script/image-2025-7-15_9-33-4.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Note : Currently, the parsing is targeted at four types of messages: ODI_MSG_EVENT(0x01), ODI_MSG_INDICATION(0x02), ODI_MSG_DYN_DATA(0x03), and ODI_MSG_ACTION(0x07). other messages are displayed as unknown types."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20ODI%20Data%20Analysis%20Script/image-2025-7-15_9-40-54.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 ODI Data Analysis Script/image-2025-7-15_9-40-54.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "3. How to use"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.1. step 1"
+    },
+    {
+      "type": "paragraph",
+      "text": "Please download through the link INC_TEST.zip to obtain related files ."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.2. step 2"
+    },
+    {
+      "type": "paragraph",
+      "text": "Open the VSCode software, click on 'File' → 'Open Folder', select and open the INC_TEST directory for further operations in VSCode."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20ODI%20Data%20Analysis%20Script/image-2025-7-15_16-28-6.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 ODI Data Analysis Script/image-2025-7-15_16-28-6.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.3. step 3"
+    },
+    {
+      "type": "paragraph",
+      "text": "Use the script update_CSV.py to read Excel data and create a CSV file. Fill in the Excel path and output CSV file path, keeping them in the same directory."
+    },
+    {
+      "type": "paragraph",
+      "text": "Note： If the Excel file is updated, the script needs to be run again to update the CSV file."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20ODI%20Data%20Analysis%20Script/image-2025-7-15_16-37-52.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 ODI Data Analysis Script/image-2025-7-15_16-37-52.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.4. step 4"
+    },
+    {
+      "type": "paragraph",
+      "text": "Replace the file name at the bottom of inc_test.py and ensure the path is correct.Then run the script and check the results in data_result.txt."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20ODI%20Data%20Analysis%20Script/image-2025-7-15_16-41-31.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 ODI Data Analysis Script/image-2025-7-15_16-41-31.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "INC_TEST.zip",
+      "download_link": "/download/attachments/6012896065/INC_TEST.zip?version=2&modificationDate=1752569028000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_16-41-31.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_16-41-31.png?version=1&modificationDate=1752568891000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_16-37-52.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_16-37-52.png?version=1&modificationDate=1752568672000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_16-37-39.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_16-37-39.png?version=1&modificationDate=1752568659000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_16-28-6.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_16-28-6.png?version=1&modificationDate=1752568087000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_16-22-50.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_16-22-50.png?version=1&modificationDate=1752567770000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_16-19-45.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_16-19-45.png?version=1&modificationDate=1752567585000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_16-18-56.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_16-18-56.png?version=1&modificationDate=1752567536000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_16-11-25.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_16-11-25.png?version=1&modificationDate=1752567086000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_10-11-47.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_10-11-47.png?version=1&modificationDate=1752545507000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_10-11-27.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_10-11-27.png?version=1&modificationDate=1752545487000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_10-3-40.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_10-3-40.png?version=1&modificationDate=1752545020000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_10-3-20.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_10-3-20.png?version=1&modificationDate=1752545000000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_9-40-54.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_9-40-54.png?version=1&modificationDate=1752543655000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_9-33-4.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_9-33-4.png?version=1&modificationDate=1752543184000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_9-31-41.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_9-31-41.png?version=1&modificationDate=1752543101000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_9-27-21.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_9-27-21.png?version=1&modificationDate=1752542841000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_9-22-23.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_9-22-23.png?version=1&modificationDate=1752542543000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_9-21-4.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_9-21-4.png?version=1&modificationDate=1752542465000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_9-14-16.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_9-14-16.png?version=1&modificationDate=1752542057000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_9-1-56.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_9-1-56.png?version=1&modificationDate=1752541317000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-7-15_9-0-42.png",
+      "download_link": "/download/attachments/6012896065/image-2025-7-15_9-0-42.png?version=1&modificationDate=1752541242000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

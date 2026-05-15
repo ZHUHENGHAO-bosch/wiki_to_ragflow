@@ -1,0 +1,129 @@
+{
+  "page_id": "2384997422",
+  "title": "Guidelines for Configuring Spinlock",
+  "version": 10,
+  "url": "/spaces/CARSFW/pages/2384997422/Guidelines+for+Configuring+Spinlock",
+  "last_modified": "2024-04-25T04:05:00.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2384995023",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Introduction"
+    },
+    {
+      "type": "paragraph",
+      "text": "Synchronization of cores is done by OS Spinlocks"
+    },
+    {
+      "type": "panel",
+      "panel_type": "info",
+      "title": "Spinlock Usage",
+      "content": "Spinlock can be used only in CAT 2 ISR and Task context"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Guidelines for Configuring Spinlock"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Short name: Give a proper name as per the module using the spinlock",
+        "Spinlock Lock Method:"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "As explained in Deadlock Use Case 1 - Preemptive Task in Same Core - XC-CT China - Docupedia (bosch.com) , there is a chance that deadlock may occur with Spinlock."
+    },
+    {
+      "type": "paragraph",
+      "text": "Thus, it is necessary to configure lock method for each spinlock"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "LOCK_CAT2_INTERRUPTS LOCK_ALL_INTERRUPTS LOCK_NOTHING - Will result in deadlock LOCK_WITH_RES_SCHEDULER"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "To Keep simple and to avoid deadlock, it is recommended to configure with LOCK_ALL_INTERRUPTS"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Spinlock Lock Type:"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "As explained in Deadlock Use Case 2 - Nesting Spinlock - XC-CT China - Docupedia (bosch.com) , we need to be careful in selecting which spinlock is required for our concept."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "STANDARD - AUTOSAR OS Spinlock type OPTIMIZIED - Vector specific OS Feature"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "AUTOSAR specified OS spinlocks cannot cause any deadlocks between cores (see unique order of nesting OS spinlocks in AUTOSAR OS standard). Therefore, some error checks on OS configuration data are necessary. The error checks are not performed with optimized spinlocks thus reducing the runtime of Spinlock API"
+    },
+    {
+      "type": "paragraph",
+      "text": "If our module has a chance for nesting of Spinlock then we should configure spinlock lock type as STANDARD. But if our implementation does not have nesting of spinlocks then we can go with OPTIMIZED spinlock"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Guidelines%20for%20Configuring%20Spinlock/image2022-12-27_14-43-18.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Guidelines for Configuring Spinlock/image2022-12-27_14-43-18.png"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Spinlock Successor: This is need if we configure spinlock type as STANDARD spinlock"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Guidelines%20for%20Configuring%20Spinlock/image2022-8-10_18-9-7.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Guidelines for Configuring Spinlock/image2022-8-10_18-9-7.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Reference:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Vector OS manual",
+        "MultiCore - OS Spinlock configuration guideline - XC-CT Cerberus Platform - Docupedia (bosch.com)",
+        "Safety analysis: Execution context of multi-core synchronization API - XC-CT Cerberus Platform - Docupedia (bosch.com)"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-12-27_14-43-18.png",
+      "download_link": "/download/attachments/2384997422/image2022-12-27_14-43-18.png?version=1&modificationDate=1672123399000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-10_18-9-7.png",
+      "download_link": "/download/attachments/2384997422/image2022-8-10_18-9-7.png?version=1&modificationDate=1660135152000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

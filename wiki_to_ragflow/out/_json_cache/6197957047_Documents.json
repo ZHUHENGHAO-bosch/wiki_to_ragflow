@@ -1,0 +1,67 @@
+{
+  "page_id": "6197957047",
+  "title": "Documents",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/6197957047/Documents",
+  "last_modified": "2025-09-16T11:36:03.000+02:00",
+  "last_modified_by": "user-073a8",
+  "parent_id": "4581590794",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "plc, system state, sum module related documents refer to below link:"
+    },
+    {
+      "type": "paragraph",
+      "text": "GB8002_AUTOSAR_Standard_… GM-VCU_Voltage_Strategy_… INC_Message_Definitions_… PIS-2046_SystemSettingV0… SFS_107_VCU_System State… SFS_123_VCU_VIP_PowerLif… SFS-107_VCU_System State… SFS-122_Supervision and … GB3001_PowerModeClientSp…"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "GB3001_PowerModeClientSpecification.pdf",
+      "download_link": "/download/attachments/6197957047/GB3001_PowerModeClientSpecification.pdf?version=1&modificationDate=1758015341000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SFS-122_Supervision and Recovery_v2.1_ via Ritu_Pande _ GM Confidential.pdf",
+      "download_link": "/download/attachments/6197957047/SFS-122_Supervision%20and%20Recovery_v2.1_%20via%20Ritu_Pande%20_%20GM%20Confidential.pdf?version=1&modificationDate=1756780565000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SFS-107_VCU_System State and PLC state HLD_v3.2_ via Ritu Pande _ GM Confidential.pdf",
+      "download_link": "/download/attachments/6197957047/SFS-107_VCU_System%20State%20and%20PLC%20state%20HLD_v3.2_%20via%20Ritu%20Pande%20_%20GM%20Confidential.pdf?version=1&modificationDate=1756780557000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SFS_123_VCU_VIP_PowerLifeCycle Management_V_1.18_ via SandeepKumar _ GM Confidential.pdf",
+      "download_link": "/download/attachments/6197957047/SFS_123_VCU_VIP_PowerLifeCycle%20Management_V_1.18_%20via%20SandeepKumar%20_%20GM%20Confidential.pdf?version=1&modificationDate=1756780541000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SFS_107_VCU_System State and PLC state HLD_v3.2_20250603.docx",
+      "download_link": "/download/attachments/6197957047/SFS_107_VCU_System%20State%20and%20PLC%20state%20HLD_v3.2_20250603.docx?version=1&modificationDate=1756780535000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "PIS-2046_SystemSettingV0.0.3.4 (1).docx",
+      "download_link": "/download/attachments/6197957047/PIS-2046_SystemSettingV0.0.3.4%20%281%29.docx?version=1&modificationDate=1756780529000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "INC_Message_Definitions_GM_Info_4.0_v2.0_Bosch_AddOn 1 (1).docx",
+      "download_link": "/download/attachments/6197957047/INC_Message_Definitions_GM_Info_4.0_v2.0_Bosch_AddOn%201%20%281%29.docx?version=1&modificationDate=1756780524000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "GM-VCU_Voltage_Strategy_v003.01.pdf",
+      "download_link": "/download/attachments/6197957047/GM-VCU_Voltage_Strategy_v003.01.pdf?version=1&modificationDate=1756780517000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "GB8002_AUTOSAR_Standard_Utility_Modules_Specification.pdf",
+      "download_link": "/download/attachments/6197957047/GB8002_AUTOSAR_Standard_Utility_Modules_Specification.pdf?version=1&modificationDate=1756780509000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "page_id": "6254380483",
+  "title": "1.0 MB - Localization of Tuner - Motivation",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/6254380483/1.0+MB+-+Localization+of+Tuner+-+Motivation",
+  "last_modified": "2025-09-16T10:17:39.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6125783649",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Localization of CSB"
+    },
+    {
+      "type": "paragraph",
+      "text": "Currently the CSB (Country Specific board) is using SBR ( Software-Defined Radio )"
+    },
+    {
+      "type": "paragraph",
+      "text": "What is SBR ? Software-Defined Radio (SDR) is a radio communication system where components traditionally implemented in hardware (like mixers, filters, modulators/demodulators) are instead processed using software on a computer or embedded system. This allows greater flexibility, reconfigurability, and adaptability compared to conventional radios"
+    },
+    {
+      "type": "paragraph",
+      "text": "Motivation: Global Civic based on CSB used SDR using Renesas RCar3 which is high cost, for CN market to reduce the cost, MB wants to replace SDR with HW defined radio with single core MCU."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence2/download/attachments/705203057/image-2025-8-7_19-59-50.png?version=1&modificationDate=1754568071000&api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 MB - Localization of Tuner - Motivation/image-2025-8-7_19-59-50.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "SW Architecture of CSB"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence2/download/attachments/705203057/image-2025-8-7_20-1-54-1.png?version=1&modificationDate=1754568114000&api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 MB - Localization of Tuner - Motivation/image-2025-8-7_20-1-54-1.png"
+    }
+  ],
+  "attachments": []
+}

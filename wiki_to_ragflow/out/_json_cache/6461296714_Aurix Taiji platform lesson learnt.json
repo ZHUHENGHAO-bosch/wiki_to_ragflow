@@ -1,0 +1,89 @@
+{
+  "page_id": "6461296714",
+  "title": "Aurix Taiji platform lesson learnt",
+  "version": 9,
+  "url": "/spaces/CARSFW/pages/6461296714/Aurix+Taiji+platform+lesson+learnt",
+  "last_modified": "2025-11-10T03:45:27.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2310024392",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Thia page is to list the issue in aurix based projects and make sure this is not followed in next project."
+    },
+    {
+      "type": "paragraph",
+      "text": "Focus on configuration repo, since it varies from project to project."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Lesson Leant"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "S/No",
+        "Issue overview",
+        "Issue root case",
+        "Who to check",
+        "Found in",
+        "How to fix or how to make sure issue not happens"
+      ],
+      "rows": [
+        [
+          "1",
+          "CSA Area out of DSPR region We found the CSA region size exceeds the DSPR region and when we flash it ends up in Class 4 TIN 2 (Data Synchronous) trap",
+          "CSA is kept at the end of DSPR region in LD file Since we use. += 16384, the linker will not throw an error even the memory exceeds the allocated DSPR in common LD file ![](_images/Aurix Taiji platform lesson learnt/image-2025-11-10_9-25-2.png)",
+          "FOs and who do LD changes",
+          "VCU plus, GHAC",
+          "Don't keep CSA or the startup stack at the end of DSPR region Keep some section below CSA like .SYS_FAST_RAM_DATA_CORE2          :>. So that linker can identify the limit exceeded and it can throw error during build"
+        ],
+        [
+          "2",
+          "1101 multiple retries SCC enters into bootloader",
+          "LCM has not clear the reset counter for 11 01 reset request",
+          "LCM and Diag developers",
+          "VCU plus",
+          "LCM to clear the reset counter for 11 01 reset request"
+        ],
+        [
+          "3",
+          "The Lbist  check failed into bootloader",
+          "when startup phase voltage instability，random occurrence libst check  termination  due to the occurrence of a Power On Reset，and the PBPORST bit set. ![](_images/Aurix Taiji platform lesson learnt/image-2025-11-10_10-36-2.png)",
+          "Fusa developer",
+          "VCU plus, CCU",
+          "add lbist retrigger once at after startup, when the cold startup LBIST termination due to PORST"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2025-11-10_10-36-2.png",
+      "download_link": "/download/attachments/6461296714/image-2025-11-10_10-36-2.png?version=1&modificationDate=1762742162000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-10_10-34-57.png",
+      "download_link": "/download/attachments/6461296714/image-2025-11-10_10-34-57.png?version=1&modificationDate=1762742097000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-10_10-33-43.png",
+      "download_link": "/download/attachments/6461296714/image-2025-11-10_10-33-43.png?version=1&modificationDate=1762742023000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-10_9-25-2.png",
+      "download_link": "/download/attachments/6461296714/image-2025-11-10_9-25-2.png?version=1&modificationDate=1762737903000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

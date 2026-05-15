@@ -1,0 +1,286 @@
+{
+  "page_id": "4913861696",
+  "title": "How to configure SAIL SPI",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/4913861696/How+to+configure+SAIL+SPI",
+  "last_modified": "2024-10-28T07:28:53.000+01:00",
+  "last_modified_by": "LI Minsheng (XC-CP/ESW2-CN)",
+  "parent_id": "4884496540",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "1. Overview"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Qualcomm Universal Peripheral (QUP) is a highly flexible and programmable module for supporting a wide range of serial interfaces (I2C, SPI, UART, and QSPI).",
+        "There are five SAILSS_QUP serial engines (SEs) available in SAIL_I/Os (SAIL domain)",
+        "Each QUP SE has up to seven lanes (I/O) numbered from 0 to 6"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-28_13-7-41.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-28_13-7-41.png"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "The supported assignments are listed in the table for each QUP",
+        "Only one protocol can be selected in one QUP SE at a time. For example, simultaneous UART and I2C functionality are no longer supported"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-28_12-46-16.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-28_12-46-16.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-23_17-15-49.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-23_17-15-49.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "2. Limitations"
+    },
+    {
+      "type": "paragraph",
+      "text": "SWS_Spi_00040:  SPI handler/driver handles only the Master mode. CDD for SPI slave driver will be planned."
+    },
+    {
+      "type": "paragraph",
+      "text": "SWS_Spi_00050:  SPI handler/driver only supports full-duplex mode"
+    },
+    {
+      "type": "paragraph",
+      "text": "SWS_Spi_00108:  Level 2 SPI handler/driver is specified for microcontrollers that must provide at least two SPI buses that use separated hardware units. Otherwise, this level of functionality does not make sense."
+    },
+    {
+      "type": "paragraph",
+      "text": "Only EB is supported."
+    },
+    {
+      "type": "paragraph",
+      "text": "SpiDataWidth supported is 8, 16, 32."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "3. Configuration"
+    },
+    {
+      "type": "paragraph",
+      "text": "For Level1 and Level2 operation, the SPI interrupt must be enabled. For an SE4 interrupt, the vector number is 406."
+    },
+    {
+      "type": "paragraph",
+      "text": "Due to memory limitations, only two SEs can be configured as SPI."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.1. PIN configuration"
+    },
+    {
+      "type": "paragraph",
+      "text": "Check the QAM8255P Pin Assignment and GPIO Configuration Spreadsheet (80-31749-1A) document."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-28_13-41-6.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-28_13-41-6.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Check schematic diagram"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-23_17-56-13.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-23_17-56-13.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-24_10-59-12.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-24_10-59-12.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Select the QUP I/O functions on GPIOs by writing to TLMM_GPIO_CFGn [FUNC_SEL] field."
+    },
+    {
+      "type": "paragraph",
+      "text": "Select and configure the serial protocol engine by writing to the QUP registers."
+    },
+    {
+      "type": "paragraph",
+      "text": "PortPinMode shall select PORT_PIN_MODE_1 according to QAM8255P Pin Assignment and GPIO Configuration Spreadsheet (80-31749-1A) document."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-28_13-52-50.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-28_13-52-50.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-28_13-42-57.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-28_13-42-57.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.2. Protocol selection"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-28_13-57-40.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-28_13-57-40.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "SPI for INC"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-23_18-36-45.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-23_18-36-45.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-23_18-4-55.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-23_18-4-55.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.3. Schematic diagram for OSPI"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-23_17-43-34.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-23_17-43-34.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20configure%20SAIL%20SPI/image-2024-10-23_17-44-14.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to configure SAIL SPI/image-2024-10-23_17-44-14.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-11-1_10-44-16.png",
+      "download_link": "/download/attachments/4913861696/image-2024-11-1_10-44-16.png?version=1&modificationDate=1730429057000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-11-1_10-39-47.png",
+      "download_link": "/download/attachments/4913861696/image-2024-11-1_10-39-47.png?version=1&modificationDate=1730428787000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-28_13-57-40.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-28_13-57-40.png?version=1&modificationDate=1730095060000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-28_13-52-50.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-28_13-52-50.png?version=1&modificationDate=1730094770000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-28_13-42-57.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-28_13-42-57.png?version=1&modificationDate=1730094177000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-28_13-41-6.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-28_13-41-6.png?version=1&modificationDate=1730094066000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-28_13-40-3.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-28_13-40-3.png?version=1&modificationDate=1730094004000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-28_13-16-19.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-28_13-16-19.png?version=1&modificationDate=1730092579000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-28_13-7-41.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-28_13-7-41.png?version=1&modificationDate=1730092061000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-28_12-59-46.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-28_12-59-46.png?version=1&modificationDate=1730091587000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-28_12-46-16.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-28_12-46-16.png?version=1&modificationDate=1730090776000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-24_10-59-12.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-24_10-59-12.png?version=1&modificationDate=1729738752000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SAIL SPI, UART, I2C, and CAN API Reference80-58613-1.pdf",
+      "download_link": "/download/attachments/4913861696/SAIL%20SPI%2C%20UART%2C%20I2C%2C%20and%20CAN%20API%20Reference80-58613-1.pdf?version=1&modificationDate=1729680350000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-23_18-36-45.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-23_18-36-45.png?version=1&modificationDate=1729679805000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-23_18-4-55.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-23_18-4-55.png?version=1&modificationDate=1729677895000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-23_17-56-13.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-23_17-56-13.png?version=1&modificationDate=1729677374000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-23_17-44-14.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-23_17-44-14.png?version=1&modificationDate=1729676654000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-23_17-43-34.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-23_17-43-34.png?version=1&modificationDate=1729676614000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-23_17-15-49.png",
+      "download_link": "/download/attachments/4913861696/image-2024-10-23_17-15-49.png?version=1&modificationDate=1729674949000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

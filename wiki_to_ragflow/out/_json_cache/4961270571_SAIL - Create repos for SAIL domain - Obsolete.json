@@ -1,0 +1,94 @@
+{
+  "page_id": "4961270571",
+  "title": "SAIL - Create repos for SAIL domain - Obsolete",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/4961270571/SAIL+-+Create+repos+for+SAIL+domain+-+Obsolete",
+  "last_modified": "2024-11-18T04:21:33.000+01:00",
+  "last_modified_by": "LIU Dezhi (XC-CP/ESW2-CN)",
+  "parent_id": "4704583139",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Need consider"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "for what",
+        "already existed",
+        "path",
+        "Comment"
+      ],
+      "rows": [
+        [
+          "QC baselined source code",
+          "Y",
+          "https://rbcm-gerrit.de.bosch.com/admin/repos/external/qualcomm/qnx/snapdragon-auto-hqx-4-5-6-0_hlos_dev_autosar,general",
+          "When  upgrading QC baseline, need keep in sync with MD"
+        ],
+        [
+          "3Party",
+          "N",
+          "",
+          "store 3Party’s Libs(or code)"
+        ],
+        [
+          "Platform",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "N",
+          "",
+          "Need subsystem repos?"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "Project",
+          "N",
+          "",
+          "Each Project Separate repo or in one repo？"
+        ],
+        [
+          "Tools?",
+          "N",
+          "",
+          ""
+        ],
+        [
+          "Platform Libs? (for 3Party use)",
+          "N",
+          "",
+          "No need. If have 3Party, integration team will push platform libs to 3Party gerrit server"
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

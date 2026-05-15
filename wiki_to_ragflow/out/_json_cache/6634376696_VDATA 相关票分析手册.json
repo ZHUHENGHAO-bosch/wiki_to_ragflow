@@ -1,0 +1,348 @@
+{
+  "page_id": "6634376696",
+  "title": "VDATA 相关票分析手册",
+  "version": 11,
+  "url": "/spaces/CARSFW/pages/6634376696/VDATA+%E7%9B%B8%E5%85%B3%E7%A5%A8%E5%88%86%E6%9E%90%E6%89%8B%E5%86%8C",
+  "last_modified": "2026-05-06T10:37:48.000+02:00",
+  "last_modified_by": "LI Minsheng (XC-CP/ESW2-CN)",
+  "parent_id": "4564545919",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "1. 前言"
+    },
+    {
+      "type": "paragraph",
+      "text": "VDATA作为CAN信号在MCU和SOC之间的通路，在软件实现完成后，仍需要大量时间进行后期维护和问题处理；"
+    },
+    {
+      "type": "paragraph",
+      "text": "本文章旨在减少VDATA的后期维护成本，同时为bug分析提供一个规则性的指导。"
+    },
+    {
+      "type": "paragraph",
+      "text": "正如所有软件模块一样，VDATA后期维护也会经历两个阶段，"
+    },
+    {
+      "type": "paragraph",
+      "text": "第一阶段是刚刚开发完成BOSCH内部会进行全量测试，所报出的问题称为 台架测试问题，特点为看现场方便"
+    },
+    {
+      "type": "paragraph",
+      "text": "第二阶段软件整体交付后，上实车或泛亚台架测试所报出的问题我们称为 实车问题，特点为难以看现场，工况相对复杂"
+    },
+    {
+      "type": "paragraph",
+      "text": "针对这两个阶段，总结遇到的问题如下："
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "2. 台架测试问题"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.1. 上抛失败"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题描述："
+    },
+    {
+      "type": "paragraph",
+      "text": "对手件发送的CAN信号变化正常，但从SOC的VDATA的log无法看到该信号上抛的log。（SOC侧VDATA属于QNX，SOC侧的VHAL属于安卓）"
+    },
+    {
+      "type": "paragraph",
+      "text": "可能原因："
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "没有接到正确的CAN总线上",
+        "COM没有上抛给VDATA（该报文被联电的防火墙拦截，需要转联电分析） Bug2643795",
+        "VDATA针对MAC报文的MASK没有更新，导致过滤掉了正常报文 Bug 1167390",
+        "台架模拟发送的CAN报文数据格式不对，数据库中是CANFD的，但实际模拟发送的是STD-CAN的 Bug VCU-482759"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.2. 下设失败"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题描述："
+    },
+    {
+      "type": "paragraph",
+      "text": "SOC侧的VDATA已经下发了某信号，但CAN总线上看不到该信号的任何变化 可能原因："
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "没有接到正确的CAN总线上",
+        "该信号同时被VIP侧的另一个SWC下发，导致VDATA发给COM的值被覆盖。转给系统工程师确认测试需求。Bug1225959",
+        "该信号属于MAC信号，已经下发给SUM，但SUM没有正确下发给COM，需要转给Security",
+        "内部信号的下发，如ENM_Int_MainLightReq_SG，检查挡位等信息，需要转给FUSA"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "3. 实车问题"
+    },
+    {
+      "type": "paragraph",
+      "text": "分析实车问题，尤其是4S店问题，主要依赖票上提供的数据，很难去复现。因此 对于数据的有效性校验必须作为第一优先级考虑 。"
+    },
+    {
+      "type": "paragraph",
+      "text": "如何确定CAN数据与gmlogger是否来自同一辆车？- 软件版本号，车辆VIN码，零件号"
+    },
+    {
+      "type": "paragraph",
+      "text": "如何确定CAN数据发生的时间节点？ - CAN总线有时间报文（0x536 /0x532）"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.1. 功能尚未完成"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题描述：（例如：Bug1225268， Bug1225250）"
+    },
+    {
+      "type": "paragraph",
+      "text": "一个功能会涉及多个控制器，座舱件已完成，但对手件未完成；"
+    },
+    {
+      "type": "paragraph",
+      "text": "一个功能涉及MCU和SOC上多个软件模组乃至多个公司和部门，MCU侧的SWC或SOC侧的APP未完成；"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题原因：(前期沟通问题，造成额外的工作量，需要重新沟通)"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "没有给测试输入正确的测试计划",
+        "开发没有如期完成待测功能"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "解决办法："
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "转给PM或FO去沟通测试或开发计划"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.2. 某路CAN挂了（小概率）"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题描述："
+    },
+    {
+      "type": "paragraph",
+      "text": "实车发现某路CAN因为CAN stack问题，导致进入busoff，从而无法发出对应的CAN信号。（ Bug 1213240 ）"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题界定："
+    },
+    {
+      "type": "paragraph",
+      "text": "当出现某个信号无法下发或接收时，需要排查这一路CAN上的其它报文是否在正常发送"
+    },
+    {
+      "type": "paragraph",
+      "text": "解决办法："
+    },
+    {
+      "type": "paragraph",
+      "text": "如确定整条CAN挂了，直接转给COM stack的owner"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.3. VHAL挂了（小概率）"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题描述："
+    },
+    {
+      "type": "paragraph",
+      "text": "某上抛信号，CAN总线显示该信号有变化，但VHAL的log中显示没有收到。（Bug1192779, Bug1193845）"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题原因："
+    },
+    {
+      "type": "paragraph",
+      "text": "实际上MCU已经把信号发给了SOC，但由于PullBack导致安卓重启，而QNX没有重启，从而VHAL接口运行异常，导致无法接收到该信号"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.4. INCTP层数据丢了（需要INCTP模块参与进一步分析）"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题描述："
+    },
+    {
+      "type": "paragraph",
+      "text": "某上抛信号，CAN总线显示该信号有变化，但对应时间点没有VHAL收到该信号的log。(泛亚票号BUG-1264880)"
+    },
+    {
+      "type": "paragraph",
+      "text": "进一步的分析手段："
+    },
+    {
+      "type": "paragraph",
+      "text": "检查该时间点是否有其它CAN信号正常上报到了VHAL，如果没有需要INCTP做进一步排查"
+    },
+    {
+      "type": "paragraph",
+      "text": "查看MCU侧的INCTP的DLT，检查是否有buffer满或者通信超时等错误log"
+    },
+    {
+      "type": "paragraph",
+      "text": "查看SOC侧的INCTP的log，检查是否有buffer满或者通信超时等错误log"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题原因：（这是一个SOC侧的问题，需要INCTP模块来分析）"
+    },
+    {
+      "type": "paragraph",
+      "text": "查看MCU侧的INCTP的DLT，未发现错误报错，但可以看到SOC发给MCU的数据出现了挤兑（消息的发送频率不再符合设计，例如：本该1S间隔发送的心跳，出现1S收到多次的情况）"
+    },
+    {
+      "type": "paragraph",
+      "text": "查看SOC侧的INCTP的DLT，发现出现了buffer满的log，一旦buffer满了，就会丢数据；"
+    },
+    {
+      "type": "paragraph",
+      "text": "上电阶段SOC侧的cpu loading会很高，这个时候IncRouter或者vdata的进程会被阻塞，没人再去消费INCTP的数据，最终导致INCTP的buffer满了，然后数据丢失；"
+    },
+    {
+      "type": "paragraph",
+      "text": "解决办法："
+    },
+    {
+      "type": "paragraph",
+      "text": "降低启动阶段QNX的负载；"
+    },
+    {
+      "type": "paragraph",
+      "text": "SOC侧提高消费进程的优先级；"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.5. 对手件发送的CAN报文格式错误"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题描述：（ VCU-469699 ）"
+    },
+    {
+      "type": "paragraph",
+      "text": "某报文中的信号回放是有变化的，但是VHAL那边自始至终没有收到过；本地台架验证该报文接收正常；"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题原因："
+    },
+    {
+      "type": "paragraph",
+      "text": "回放CAN总线数据发现，0x440报文的DLC是6字节，但对手件发送的DLC是8字节，最终由于DLC长度不匹配，被UAES的白表拦截了，导致无法上抛给SOC"
+    },
+    {
+      "type": "paragraph",
+      "text": "解决办法："
+    },
+    {
+      "type": "paragraph",
+      "text": "对手件更新数据库"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.6. 协助各个功能缩小问题范围（大部分属于这一类）"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题描述："
+    },
+    {
+      "type": "paragraph",
+      "text": "一般为应用层问题，但作为信号通路，需要协助界定是对手件问题，还是QNX上层应用问题"
+    },
+    {
+      "type": "paragraph",
+      "text": "分析条件："
+    },
+    {
+      "type": "paragraph",
+      "text": "1. 需要提供问题发生时的CAN数据和 gmlogger"
+    },
+    {
+      "type": "paragraph",
+      "text": "2. VHAL模块先做上一手分析，否则MCU的VDATA不介入分析"
+    },
+    {
+      "type": "paragraph",
+      "text": "问题难点："
+    },
+    {
+      "type": "paragraph",
+      "text": "CAN数据采集工具不统一，回放数据过程繁杂，且回放工具很卡。"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "4. 终章"
+    },
+    {
+      "type": "paragraph",
+      "text": "关于VDATA问题处理的总体原则："
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "所有VDATA来票均需要转到文琪账号",
+        "在每天下午3-5点专门处理VDATA票（不必即时响应，除非有人来催） （持保留意见，及时处理）",
+        "在造车节点会短期产生大量紧急票，需要两个人同时处理",
+        "本文章需要根据实际情况进行更新调整"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2026-5-6_16-18-30.png",
+      "download_link": "/download/attachments/6634376696/image-2026-5-6_16-18-30.png?version=1&modificationDate=1778055511000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

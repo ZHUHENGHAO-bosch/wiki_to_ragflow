@@ -1,0 +1,53 @@
+{
+  "page_id": "2887712810",
+  "title": "3. Adding Test Case for Module - UTF",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/2887712810/3.+Adding+Test+Case+for+Module+-+UTF",
+  "last_modified": "2023-03-25T09:48:24.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2885492965",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Steps to add Test cases inside an module"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 1: Write the test case in the respective modulename_TestCase.h (in our example, LCM_TestCase.h) file add your test case function in order. This file will be scanned by UTF generator tool to create test list in generated Modulename_TCContainer.c (in our case it is LCM_TCContainer.c) file"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20Adding%20Test%20Case%20for%20Module%20-%20UTF/image-2023-3-25_16-1-55.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. Adding Test Case for Module - UTF/image-2023-3-25_16-1-55.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Define the test case function in modulename_TestCase.c (in our example, LCM_TestCase.c)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Make sure the test case in modulename_TestCase.h is reflected in Modulename_TCContainer.c (in gen folder Config\\Autosar\\integration-test\\Service.UTFManager.Aurix\\gen)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20Adding%20Test%20Case%20for%20Module%20-%20UTF/image-2023-3-25_16-48-8.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. Adding Test Case for Module - UTF/image-2023-3-25_16-48-8.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-3-25_16-48-8.png",
+      "download_link": "/download/attachments/2887712810/image-2023-3-25_16-48-8.png?version=1&modificationDate=1679734088000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-25_16-1-55.png",
+      "download_link": "/download/attachments/2887712810/image-2023-3-25_16-1-55.png?version=1&modificationDate=1679732642000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

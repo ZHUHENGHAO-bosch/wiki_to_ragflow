@@ -1,0 +1,156 @@
+{
+  "page_id": "2394061660",
+  "title": "CDD for Multicore",
+  "version": 13,
+  "url": "/spaces/CARSFW/pages/2394061660/CDD+for+Multicore",
+  "last_modified": "2022-09-21T07:25:10.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2394053259",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "In case of CDD, multicore capability has to be ensured by implementation and design"
+    },
+    {
+      "type": "paragraph",
+      "text": "Methods to achieve consistency"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Avoid shared RMW data",
+        "Serialize access to shared resources",
+        "Partition awareness / Core dependent branching → Core specific behavior implementation"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Methods"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. Avoid RMW data (Same Code runs in different Cores)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Each CDD BSW instance should operate on its own set of RMW (Read-Modify-Write) data, reducing the serialization to maximum"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2394061660/Avoid%20RMW%20data.png?version=3&modificationDate=1663734074000&api=v2",
+      "alt": "",
+      "local_path": "_images/CDD for Multicore/Avoid RMW data.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Note: This approach this very difficult if MCAL runs only in BSW Core"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Serialize data"
+    },
+    {
+      "type": "paragraph",
+      "text": "Use Spinlock for shared data"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2394061660/Serialize%20data.png?version=6&modificationDate=1663734884000&api=v2",
+      "alt": "",
+      "local_path": "_images/CDD for Multicore/Serialize data.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Core specific Handling"
+    },
+    {
+      "type": "paragraph",
+      "text": "Core dependent branching"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Using GetCoreId() and GetApplicationId() APIs",
+        "Each core invokes different APIs in one module"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Example use case for Core specific Handling:"
+    },
+    {
+      "type": "paragraph",
+      "text": "MCAL only in BSW Core"
+    },
+    {
+      "type": "paragraph",
+      "text": "If the design is such a way that MCAL modules present only in BSW Core, then a satellite or proxy functions are required for CDD"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2394061660/CDD%20Proxy.png?version=5&modificationDate=1663737894000&api=v2",
+      "alt": "",
+      "local_path": "_images/CDD for Multicore/CDD Proxy.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "CDD Proxy",
+      "download_link": "/download/attachments/2394061660/CDD%20Proxy?version=5&modificationDate=1663737894000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "CDD Proxy.png",
+      "download_link": "/download/attachments/2394061660/CDD%20Proxy.png?version=5&modificationDate=1663737894000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Serialize data",
+      "download_link": "/download/attachments/2394061660/Serialize%20data?version=6&modificationDate=1663734884000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Serialize data.png",
+      "download_link": "/download/attachments/2394061660/Serialize%20data.png?version=6&modificationDate=1663734884000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Avoid RMW data",
+      "download_link": "/download/attachments/2394061660/Avoid%20RMW%20data?version=3&modificationDate=1663734074000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Avoid RMW data.png",
+      "download_link": "/download/attachments/2394061660/Avoid%20RMW%20data.png?version=3&modificationDate=1663734074000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-19_13-24-52.png",
+      "download_link": "/download/attachments/2394061660/image2022-8-19_13-24-52.png?version=1&modificationDate=1660895692000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-19_12-57-44.png",
+      "download_link": "/download/attachments/2394061660/image2022-8-19_12-57-44.png?version=1&modificationDate=1660894065000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-19_12-51-45.png",
+      "download_link": "/download/attachments/2394061660/image2022-8-19_12-51-45.png?version=1&modificationDate=1660893705000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "page_id": "3260200303",
+  "title": "Getting Complete Call stack - Aurix",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/3260200303/Getting+Complete+Call+stack+-+Aurix",
+  "last_modified": "2023-07-19T08:59:20.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "3251704611",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below steps explain how to get complete call stack and store into memory which can be used for issue analysis"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 1: Get the Current PCXI and calculate the CSA address. Below link explain more on this step on how to calculate CSA address"
+    },
+    {
+      "type": "paragraph",
+      "text": "Getting instruction address which caused NMI trap - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 2: To get the next level call stack we need to use the link word in the CSA  area"
+    },
+    {
+      "type": "paragraph",
+      "text": "Context lists are stored as in below picture"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 3: Get the Link word and store into a temp variable. Now calculate the next CSA address with this link word."
+    },
+    {
+      "type": "paragraph",
+      "text": "Now we need to check the UL bit of the link word which is stored in temp variable (from previous CSA). If the UL is 1, then RA is stored in fourth byte in current CSA. If UL is 0 then RA will be stored in second byte."
+    },
+    {
+      "type": "paragraph",
+      "text": "Store this RA."
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 4: Repeat this step for the n time to get n times RA."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Getting%20Complete%20Call%20stack%20-%20Aurix/image-2023-7-19_14-48-16.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Getting Complete Call stack - Aurix/image-2023-7-19_14-48-16.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example of ISR call stack"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Getting%20Complete%20Call%20stack%20-%20Aurix/image-2023-7-19_14-48-56.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Getting Complete Call stack - Aurix/image-2023-7-19_14-48-56.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Demo code used for above step"
+    },
+    {
+      "type": "paragraph",
+      "text": "The code is purely implemented for Demo purpose"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Getting%20Complete%20Call%20stack%20-%20Aurix/image-2023-7-19_14-54-29.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Getting Complete Call stack - Aurix/image-2023-7-19_14-54-29.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Getting%20Complete%20Call%20stack%20-%20Aurix/image-2023-7-19_14-55-38.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Getting Complete Call stack - Aurix/image-2023-7-19_14-55-38.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-7-19_14-55-38.png",
+      "download_link": "/download/attachments/3260200303/image-2023-7-19_14-55-38.png?version=1&modificationDate=1689749738000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-7-19_14-54-29.png",
+      "download_link": "/download/attachments/3260200303/image-2023-7-19_14-54-29.png?version=1&modificationDate=1689749669000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-7-19_14-48-56.png",
+      "download_link": "/download/attachments/3260200303/image-2023-7-19_14-48-56.png?version=1&modificationDate=1689749336000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-7-19_14-48-16.png",
+      "download_link": "/download/attachments/3260200303/image-2023-7-19_14-48-16.png?version=1&modificationDate=1689749295000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-7-19_14-41-42.png",
+      "download_link": "/download/attachments/3260200303/image-2023-7-19_14-41-42.png?version=1&modificationDate=1689748903000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "page_id": "2631313331",
+  "title": "MCU Flash Bootloader",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/2631313331/MCU+Flash+Bootloader",
+  "last_modified": "2024-04-24T10:11:07.000+02:00",
+  "last_modified_by": "NIU Newton (XC-CP/ESW2-CN)",
+  "parent_id": "2261153311",
+  "children": [
+    "6874275179",
+    "6874276598",
+    "6874275970",
+    "6973497990"
+  ],
+  "content": [],
+  "attachments": [
+    {
+      "title": "Untitled Diagram",
+      "download_link": "/download/attachments/2631313331/Untitled%20Diagram?version=1&modificationDate=1713946209000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Untitled Diagram.png",
+      "download_link": "/download/attachments/2631313331/Untitled%20Diagram.png?version=1&modificationDate=1713946209000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

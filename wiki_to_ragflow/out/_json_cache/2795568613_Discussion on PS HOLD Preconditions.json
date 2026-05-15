@@ -1,0 +1,43 @@
+{
+  "page_id": "2795568613",
+  "title": "Discussion on PS HOLD Preconditions",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/2795568613/Discussion+on+PS+HOLD+Preconditions",
+  "last_modified": "2023-03-01T10:58:46.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2509826406",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Ellen, Alex, Donghua, Huang Can, Praveen"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Discussed on below truth table. Since we have Safety Shutdown path where When SoC State monitor detects SoC is not powered ON it will have backlight OFF via Safety Shutdown path",
+        "Which means at least for Aurix Platform and Projects we don't need to consider serializer Power supply to monitor PS_HOLD as preconditions"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Discussion%20on%20PS%20HOLD%20Preconditions/image2023-3-1_17-57-2.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Discussion on PS HOLD Preconditions/image2023-3-1_17-57-2.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2023-3-1_17-57-2.png",
+      "download_link": "/download/attachments/2795568613/image2023-3-1_17-57-2.png?version=1&modificationDate=1677664622000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

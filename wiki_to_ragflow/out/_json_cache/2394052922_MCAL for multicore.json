@@ -1,0 +1,89 @@
+{
+  "page_id": "2394052922",
+  "title": "MCAL for multicore",
+  "version": 8,
+  "url": "/spaces/CARSFW/pages/2394052922/MCAL+for+multicore",
+  "last_modified": "2022-12-30T10:55:20.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2394053259",
+  "children": [
+    "2619348617",
+    "2619348647",
+    "2619348722",
+    "2619348817",
+    "2619348861",
+    "2619348896",
+    "2619348982",
+    "2619349058",
+    "2619349238",
+    "2619349270",
+    "2619349291",
+    "2619349297",
+    "2619349310"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Details are explained in below sub section"
+    },
+    {
+      "type": "paragraph",
+      "text": "00_MCAL Multicore: API Categorization - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "01_MCAL Multicore: Classification Criteria - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "02_MCAL Multicore: Module types - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "03_MCAL Multicore: Type Overview - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "04_MCAL Multicore: ADC - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "05_MCAL Multicore: SPI - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "06_MCAL Multicore: PORT and DIO - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "07_MCAL Multicore: PWM - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "08_MCAL Multicore: FEE & FLS - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "09_MCAL Multicore: WDG - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "10_MCAL Multicore: ASCLIN - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "11_MCAL_Multicore: MCU & GPT - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "12_MCAL Multicore: ICU and DMA - XC-CT China - Docupedia (bosch.com)"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-8-18_19-41-48.png",
+      "download_link": "/download/attachments/2394052922/image2022-8-18_19-41-48.png?version=1&modificationDate=1660831909000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "page_id": "2627171781",
+  "title": "LCM Status Meeting - 01-2023",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2627171781/LCM+Status+Meeting+-+01-2023",
+  "last_modified": "2023-01-12T08:25:50.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2421032631",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date : 12 Jan 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Shanhe, Joanna, Jolin, Can"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Status on all projects"
+    },
+    {
+      "type": "paragraph",
+      "text": "Zeekr - Memory Map, Multicore Startup, Code is now in Sync with BYD"
+    },
+    {
+      "type": "paragraph",
+      "text": "BYD - Diagnostic functionalities"
+    },
+    {
+      "type": "paragraph",
+      "text": "Chery - Bring up is almost done"
+    },
+    {
+      "type": "paragraph",
+      "text": "Geely - Issue fix and customer requirements."
+    },
+    {
+      "type": "paragraph",
+      "text": "General - Few are the project specific configuration are in PF, we need to move to project config repo. @Joanna - to come back on list"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Open points:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cyclic Reset Handling - Will be on hold till we find the Startup code responsible team",
+        "EcuM State Transition Wdg Mechanism",
+        "Wdg Monitoring for LCM components - Low priority",
+        "Thermal monitor",
+        "STR",
+        "Zeekr",
+        "HW monitoring - Very low prioirity",
+        "SWRS",
+        "BYD - very low priority",
+        "Aurix - Need to focus",
+        "Multicore"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date : 05 Jan 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: John, Joanna, Jolin"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Status on all projects"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Open points:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cyclic Reset Handling - Will be on hold till we find the Startup code responsible team",
+        "QM Wdg Handling",
+        "EcuM State Transition Wdg Mechanism",
+        "Wdg Monitoring for LCM components",
+        "Thermal monitor",
+        "STR",
+        "Zeekr",
+        "Geely",
+        "HW monitoring",
+        "SWRS",
+        "BYD"
+      ]
+    }
+  ],
+  "attachments": []
+}

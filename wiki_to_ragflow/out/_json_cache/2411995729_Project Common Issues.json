@@ -1,0 +1,42 @@
+{
+  "page_id": "2411995729",
+  "title": "Project Common Issues",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2411995729/Project+Common+Issues",
+  "last_modified": "2022-09-06T08:00:58.000+02:00",
+  "last_modified_by": "GAO Carven (XC-CP/ESW2-CN)",
+  "parent_id": "2411995676",
+  "children": [
+    "2417053658",
+    "2411995751",
+    "2412005815",
+    "2413429575",
+    "2412005807",
+    "2419182186",
+    "2451723175",
+    "2482525363",
+    "2799708905",
+    "3024540626",
+    "3029418543",
+    "3053624291",
+    "3117068981",
+    "3139348652",
+    "3422484106",
+    "3422484123",
+    "3422484192",
+    "3422484245",
+    "3468510280",
+    "4933326656",
+    "2419681759",
+    "5001750761",
+    "2451722990",
+    "2904701199"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "This page is intended to collect the common issues on RH850 platform as well as to apply the fix solution to all the projects if applicable."
+    }
+  ],
+  "attachments": []
+}

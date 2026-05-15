@@ -1,0 +1,42 @@
+{
+  "page_id": "3170508184",
+  "title": "AuSm - Hints and Lesson Learnt",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/3170508184/AuSm+-+Hints+and+Lesson+Learnt",
+  "last_modified": "2023-06-25T12:38:25.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2379247306",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Lesson 1:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Clearing an SMU alarm for a SSH (SRAM support Hardware) from application SW will not happen if ECCD of the corresponding SSH is set. So if you find an SMU alarm is not able to clear from application SW, check the corresponding ECCD register is cleared or not."
+    },
+    {
+      "type": "paragraph",
+      "text": "For example, as shown in below picture ECCD for CAN21 SSH is not cleared. With this when we test RAM FIT we got a Reset from AuSM_SMU_AlarmStatusClear API since the SBE alarm of CAN is not able to clear."
+    },
+    {
+      "type": "paragraph",
+      "text": "Issue Fix: We cleared the ECCD of CAN2, then the API AuSM_SMU_AlarmStatusClear passed."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/AuSm%20-%20Hints%20and%20Lesson%20Learnt/image-2023-6-25_18-35-21.png?api=v2",
+      "alt": "",
+      "local_path": "_images/AuSm - Hints and Lesson Learnt/image-2023-6-25_18-35-21.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-6-25_18-35-21.png",
+      "download_link": "/download/attachments/3170508184/image-2023-6-25_18-35-21.png?version=1&modificationDate=1687689321000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

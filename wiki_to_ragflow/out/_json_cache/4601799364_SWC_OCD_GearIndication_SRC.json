@@ -1,0 +1,519 @@
+{
+  "page_id": "4601799364",
+  "title": "SWC_OCD_GearIndication_SRC",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/4601799364/SWC_OCD_GearIndication_SRC",
+  "last_modified": "2024-08-29T09:56:49.000+02:00",
+  "last_modified_by": "SUN Xitong (XC-CP/ESW2-CN)",
+  "parent_id": "4653952956",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Requirment: <<PIS-2085 IPC SW Specification V3.0.docx >> 3.2.1.13    Gear indication"
+    },
+    {
+      "type": "paragraph",
+      "text": "此功能为驾驶员提供建议换档时间的信息，以及当前档位和要换档的档位的指示."
+    },
+    {
+      "type": "paragraph",
+      "text": "法规将要求手动和自动变速器车辆都具有此功能，以便客户能够对档位 (ERS 或 DSC) 进行 +/- 控制,所以软件里区分了自动变速箱和手动变速箱。"
+    },
+    {
+      "type": "paragraph",
+      "text": "代码中收集档位信息 并提供HMI 、HUD 及其他模块当前档位信息。"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_OCD_GearIndication_SRC/image-2024-8-29_15-54-51.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_OCD_GearIndication_SRC/image-2024-8-29_15-54-51.png"
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "ReadSignalValue",
+          "根据车型读取不同得ElecShfRng",
+          ""
+        ],
+        [
+          "HMI_ControlGearSelectedIndication_Run",
+          "重要：：SUSD允许下，根据电源模式，分别在HMI和HUD中显示Automatic Transmission Commanded Gear 和manual gear box ->HMI update { GetP_GEAR_LABEL（）   自动变速器有几个档位 GetP_GEAR_5POS_FWD_RANGE_B_IS_S（）   当前车型存在S档or M档 GetAutoTransCommandGear()   当前变速箱发出的Gear Command ECM / TCM哪个有效选哪个 GetP_CLUSTER_PRIMARY_PRNDL()  // Indicate if IPC is primary PRNDL GetP_MTA_TRANSMISSION_PRESENT()  是否包含手动挡变速器 如果是手动挡 { MANUAL_GEARBOX_INDICATION  指示为手动挡 -> IoHwAb Manul ->通知 DriveInfo模块此时非N档 MTA变速箱配置开启、EMT配置关闭时 -> 使能 u8ShowCurrentGear   -> HMI enable gear position display in cluster and HUD MTA变速箱配置关闭 、EMT配置开启时 ->禁止 u8ShowCurrentGear->HMI disable }",
+          ""
+        ],
+        [
+          "CalcGearRdn",
+          "计算剩余gear range",
+          "CeOCD_GSI_SHIFT_LEVER_POS_A_FORWARD :4 ~CeOCD_GSI_SHIFT_LEVER_POS_J_FORWARD :13 是什么档位划分规则？"
+        ],
+        [
+          "DisplayGear",
+          "HMI显示档位",
+          ""
+        ],
+        [
+          "GetPresentedGear",
+          "获取当前档位，如果是手动变速箱 另外置低速档位标志",
+          ""
+        ],
+        [
+          "IsBlinkActiveNoTapMode",
+          "Checks gear blink conditions",
+          ""
+        ],
+        [
+          "IsManualTapGear",
+          "Returns true if the gear is any of the manual tap gears (M1,M2,..)..",
+          ""
+        ],
+        [
+          "IsSignalsValid",
+          "",
+          ""
+        ],
+        [
+          "SetBlinkIndNoTapMode",
+          "Checks gear blink conditions and sets indication accordingly. No tap mode",
+          "tap mode是什么 Tap UP/Tap Down\"功能可以允许驾驶者手动地顺序挂挡（一次一挡），可以通过方向盘处的按钮控制升降挡"
+        ],
+        [
+          "SetBlinkIndTapMode",
+          "Checks gear blink conditions and sets indication accordingly. tap mode",
+          ""
+        ],
+        [
+          "SetDSCGearIndication",
+          "Indicates gear position in DSC tap state",
+          "DSC tap state是什么"
+        ],
+        [
+          "SetERSGearIndication",
+          "Indicates gear position in ERS tap state",
+          "ERS tap state？"
+        ],
+        [
+          "SetETRSIndication",
+          "",
+          ""
+        ],
+        [
+          "SetOffStateSignals",
+          "Sets signals to powermode off states.",
+          ""
+        ],
+        [
+          "SetLowSpeedGears",
+          "Value of signal Driver Shift Control Target Gear or difference between Transmission Shift Lever Position and P_TRANS_GEAR_RANGE",
+          ""
+        ],
+        [
+          "ShowActiveGear",
+          "This function handle the PRNDL funtionallity for mid display.",
+          ""
+        ],
+        [
+          "SetAutoTransmissionParkedState",
+          "Checks if transmission is in Park and signal is Valid",
+          ""
+        ],
+        [
+          "CheckETRSChimeTimers",
+          "Checks if ETRS chime timers are running. Once the timers expire, the corresponding ChimeEvents are set to No Action",
+          ""
+        ],
+        [
+          "CheckETRSValidity",
+          "checks if ETRS signal has passed MAC/ARC/PV checks and is available",
+          "问题： 1、 运动模式激活之后，需要将command gear偏移后传递给BSP a 档位小于 8th档 ，command档位减一 再偏移22（CeOCD_GSI_SPORT_DRIVE_GEAR_1） b档位等于9th档，10th档，command档位减一 再偏移50（CeOCD_GSI_DISP_GEAR_REVERSE_REQ_IN_PROGRESS）"
+        ],
+        [
+          "GetTmpDrvrShiftCtlAct",
+          "",
+          ""
+        ],
+        [
+          "GetElectRangeSelDrv",
+          "",
+          ""
+        ],
+        [
+          "GetDriverShfCtrlReqDndIndOn",
+          "",
+          ""
+        ],
+        [
+          "GetAutoTransCommandGear",
+          "",
+          ""
+        ],
+        [
+          "GetDrvrShfCtlTargetGear_Av",
+          "",
+          ""
+        ],
+        [
+          "GetTransTapUpDwnMdStat",
+          "",
+          ""
+        ],
+        [
+          "GetTransShiftLeverPstn",
+          "",
+          ""
+        ],
+        [
+          "GetTransmissionEngagedState",
+          "",
+          ""
+        ],
+        [
+          "GetDriverShfCtrlTargetGear",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "档位获取："
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "非ETRS配置： GetTransShiftLeverPstn()",
+          "Gas",
+          "ECM类型",
+          "有效性判断SUM",
+          "GetTransShfLeverPstn_ECM_Av()"
+        ],
+        [
+          "有效性判断",
+          "GetTransShfLeverPstnV_ECM()"
+        ],
+        [
+          "档位获取",
+          "GetTransShfLeverPstn_ECM()"
+        ],
+        [
+          "TCM类型",
+          "有效性判断SUM",
+          "GetTransShfLeverPstn_TCM_Av()"
+        ],
+        [
+          "有效性判断",
+          "GetTransShfLeverPstnV_TCM()"
+        ],
+        [
+          "档位获取",
+          "GetTransShfLeverPstn_TCM()"
+        ],
+        [
+          "HEV/BEV/PHEV",
+          "",
+          "有效性判断SUM",
+          "GetTrnsShftLvrPos_ECP_H1_Av()"
+        ],
+        [
+          "有效性判断",
+          "GetTrnsShftLvrPos_ECP_H1()"
+        ],
+        [
+          "档位获取",
+          "GetTrnsShftLvrPosV_ECP_H1()"
+        ],
+        [
+          "ETRS配置: CheckETRSValidity()",
+          "Gas",
+          "",
+          "档位获取",
+          "GetElecShfRngDisp()"
+        ],
+        [
+          "有效性判断",
+          "GetElecShfRngDisp_Av()"
+        ],
+        [
+          "HEV/BEV/PHEV",
+          "",
+          "档位获取",
+          "GetESRSDP_ElecShftRngSecDispAuth_BSM_HEV()"
+        ],
+        [
+          "有效性判断",
+          "GetESRSDP_ElecShftRngSecDispAuth_BSM_HEV_Av()"
+        ],
+        [
+          "!GetESRSDP_ElecShftRngSecDispAuth_BSM_HEV_FOFA()"
+        ],
+        [
+          "!GetESRSDP_ElecShftRngSecDispAuth_BSM_HEV_FCFA()"
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "手动档",
+          "HMI/HUD/BSP 显示若干手动挡信息"
+        ],
+        [
+          "自动挡",
+          "HMI/HUD/BSP 显示若干自动挡信息"
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "ACC",
+          "BSP、HMI   cluster和HUD 显示档位"
+        ],
+        [
+          "RUN",
+          "BSP、HMI   cluster和HUD 显示档位"
+        ],
+        [
+          "CRANK",
+          "BSP显示档位"
+        ],
+        [
+          "OFF",
+          "关闭显示"
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "R档信息",
+          "PutReverseGearEngaged",
+          "TellTales"
+        ],
+        [
+          "P档信息",
+          "PutAutoTransmissionInPark（）需要传递给",
+          "TellTales SWC"
+        ],
+        [
+          "Drive Info SWC"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "非ETRS配置时ECM和TCM类型："
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "非ETRS配置",
+          "ECM类型",
+          "TAP状态获取接口 GetTransTapUpDwnMdStat()",
+          "有效性判断",
+          "GetTransTUDMdStat_ECM_Av()"
+        ],
+        [
+          "状态获取",
+          "GetTransTUDMdStat_ECM()"
+        ],
+        [
+          "是否需要闪烁BlinkIndTapMode()",
+          "有效性判断",
+          "GetDrvShfCtlReqDndIndOn_ECM_Av()"
+        ],
+        [
+          "状态获取",
+          "GetDrvShfCtlReqDndIndOn_ECM()"
+        ],
+        [
+          "目标档位GetDriverShfCtrlTargetGear()",
+          "有效性判断",
+          "GetDrvrShfCtlTargetGear_ECM_Av()"
+        ],
+        [
+          "状态获取",
+          "GetDrvrShfCtlTargetGear_ECM()"
+        ],
+        [
+          "变速器结合状态GetTransmissionEngagedState()",
+          "有效性判断SUM",
+          "GetTransEngagedState_ECM_Av"
+        ],
+        [
+          "状态获取",
+          "GetTransEngagedState_ECM"
+        ],
+        [
+          "有效性判断",
+          "GetTransEngagedStateV_ECM"
+        ],
+        [
+          "档位指令 GetAutoTransCommandGear",
+          "有效性判断",
+          "GetAutoTransCmndGear_ECM_Av"
+        ],
+        [
+          "状态获取",
+          "GetAutoTransCmndGear_ECM"
+        ],
+        [
+          "GetElectRangeSelDrv",
+          "有效性判断",
+          "GetElcRngSelDrvAct_ECM_Av"
+        ],
+        [
+          "状态获取",
+          "GetElcRngSelDrvAct_ECM"
+        ],
+        [
+          "GetTmpDrvrShiftCtlAct",
+          "有效性判断",
+          "GetTmpDrvrShftCtlAct_ECM_Av"
+        ],
+        [
+          "状态获取",
+          "GetTmpDrvrShftCtlAct_ECM"
+        ],
+        [
+          "TCM类型",
+          "TAP状态获取接口 GetTransTapUpDwnMdStat()",
+          "有效性判断",
+          "GetTransTUDMdStat_TCM_Av()"
+        ],
+        [
+          "状态获取",
+          "GetTransTUDMdStat_TCM()"
+        ],
+        [
+          "是否需要闪烁BlinkIndTapMode()",
+          "有效性判断",
+          "GetDrvShfCtlReqDndIndOn_TCM_Av()"
+        ],
+        [
+          "状态获取",
+          "GetDrvShfCtlReqDndIndOn_TCM()"
+        ],
+        [
+          "目标档位GetDriverShfCtrlTargetGear()",
+          "有效性判断",
+          "GetDrvrShfCtlTargetGear_TCM_Av()"
+        ],
+        [
+          "状态获取",
+          "GetDrvrShfCtlTargetGear_TCM()"
+        ],
+        [
+          "变速器结合状态GetTransmissionEngagedState()",
+          "有效性判断SUM",
+          "GetTransEngagedState_TCM_Av"
+        ],
+        [
+          "状态获取",
+          "GetTransEngagedState_TCM"
+        ],
+        [
+          "有效性判断",
+          "GetTransEngagedStateV_TCM"
+        ],
+        [
+          "档位指令 GetAutoTransCommandGear",
+          "有效性判断",
+          "GetAutoTransCmndGear_TCM_Av"
+        ],
+        [
+          "状态获取",
+          "GetAutoTransCmndGear_TCM"
+        ],
+        [
+          "GetElectRangeSelDrv",
+          "有效性判断",
+          "GetElcRngSelDrvAct_TCM_Av"
+        ],
+        [
+          "状态获取",
+          "GetElcRngSelDrvAct_TCM"
+        ],
+        [
+          "GetTmpDrvrShiftCtlAct",
+          "有效性判断",
+          "GetTmpDrvrShftCtlAct_TCM_Av"
+        ],
+        [
+          "状态获取",
+          "GetTmpDrvrShftCtlAct_TCM"
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "TAP状态 Low Gear Indications",
+          "ERS",
+          "![](_images/SWC_OCD_GearIndication_SRC/image-2024-8-29_15-8-28.png)"
+        ],
+        [
+          "DSC",
+          "GetP_GEAR_SHOW_TEMP_TAP_AS_DX()"
+        ],
+        [
+          "CeOCD_GSI_GEAR_POS_5POS_LOW_RANGE_SEL || CeOCD_GSI_GEAR_LABEL_6POS_LOW_RANGE_SEL)"
+        ],
+        [
+          "OTHERS"
+        ],
+        [
+          "NO_ACTIVATION",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_OCD_GearIndication_SRC/image-2024-8-14_17-32-31.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_OCD_GearIndication_SRC/image-2024-8-14_17-32-31.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-29_15-54-51.png",
+      "download_link": "/download/attachments/4601799364/image-2024-8-29_15-54-51.png?version=1&modificationDate=1724918092000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-29_15-8-28.png",
+      "download_link": "/download/attachments/4601799364/image-2024-8-29_15-8-28.png?version=1&modificationDate=1724915309000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-29_15-6-25.png",
+      "download_link": "/download/attachments/4601799364/image-2024-8-29_15-6-25.png?version=1&modificationDate=1724915186000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-14_17-32-31.png",
+      "download_link": "/download/attachments/4601799364/image-2024-8-14_17-32-31.png?version=1&modificationDate=1723627951000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-14_17-31-15.png",
+      "download_link": "/download/attachments/4601799364/image-2024-8-14_17-31-15.png?version=1&modificationDate=1723627875000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

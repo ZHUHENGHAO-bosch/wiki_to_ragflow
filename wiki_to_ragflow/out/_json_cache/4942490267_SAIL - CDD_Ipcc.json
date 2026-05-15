@@ -1,0 +1,224 @@
+{
+  "page_id": "4942490267",
+  "title": "SAIL - CDD_Ipcc",
+  "version": 8,
+  "url": "/spaces/CARSFW/pages/4942490267/SAIL+-+CDD_Ipcc",
+  "last_modified": "2024-11-08T06:43:58.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4884496546",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "IPCC is inter-process communication controller"
+    },
+    {
+      "type": "paragraph",
+      "text": "IPCC uses signals for inter process communication. Signals are delivered as interrupts. IPC controller is a centralized block for managing IPC interrupts at SoC level. IPCC uses star topology and requires only one IRQ input wire per core per protocol. IPCC provides the functionality for multiple processors to communicate and synchronize"
+    },
+    {
+      "type": "paragraph",
+      "text": "There are two instances of IPCC, one instantiated at the SAILSS level and the other at the SoC level. IPCC is used to implement the internal and external mailbox feature to share data between the cores"
+    },
+    {
+      "type": "paragraph",
+      "text": "It replaces the mesh network of the IRQ lines between different subsystems with a centralized hardware block with routing logic (STAR topology). The IPCC provides the functionality for multiple processors to communicate and synchronize"
+    },
+    {
+      "type": "paragraph",
+      "text": "The IPCC implements different networks called protocols . Each protocol could support up to 64 clients, but the actual number for specific platform may vary. The register set of each client is on 4 KB boundary"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "IPCC Protocols"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below are the protocols uses in QAM8775"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "MPROC protocol",
+        "Compute0 protocol",
+        "Compute1 protocol",
+        "PCIEMSI protocol",
+        "SAIL Mproc protocol"
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Release Reference",
+        "protocol",
+        "signals",
+        "sender",
+        "receiver",
+        "Channels supported"
+      ],
+      "rows": [
+        [
+          "ES3 to ES5",
+          "IPCC_P_MPROC",
+          "8",
+          "IPCC_C_APPS",
+          "One of the SAIL cores",
+          "8"
+        ],
+        [
+          "ES6 to ES8",
+          "IPCC_P_MPROC",
+          "8",
+          "IPCC_C_APPS, IPCC_C_APSS_NS1, IPCC_C_APSS_NS2, IPCC_C_APSS_NS3",
+          "One of the SAIL cores",
+          "32"
+        ],
+        [
+          "ES9 onwards",
+          "IPCC_P_COMPUTEL1",
+          "32",
+          "IPCC_C_APPS",
+          "One of the SAIL cores",
+          "32"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Only Signal ID 3 can be used by user for ES6, all other channels are reserved for QTI"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Signal Allocation Macros",
+        "Signal",
+        "Comments"
+      ],
+      "rows": [
+        [
+          "TSM_RX_IDN_SIGID",
+          "0",
+          "Reserved for TZ SM communication"
+        ],
+        [
+          "SSM_RX_IDN_SIGID",
+          "1",
+          "Reserved for HLOS SM communication"
+        ],
+        [
+          "PMU_RX_IDN_SIGID",
+          "2",
+          "QTI reserved"
+        ],
+        [
+          "ULS_RX_IDN_SIGID",
+          "3",
+          "Demo free channel for end user"
+        ],
+        [
+          "TST_RX_IDN_SIGID",
+          "4",
+          "QTI reserved, for Qualcomm BSP MBTF framework. If MBTF framework is stripped out by end user, then its free to end user"
+        ],
+        [
+          "CONSOLE_TX_IDN_SIGID",
+          "5",
+          "QTI reserved, logger channel"
+        ],
+        [
+          "OTA_RX_IDN_SIGID",
+          "6",
+          "QTI reserved, OTA"
+        ],
+        [
+          "TMU_RX_IDN_SIGID",
+          "7",
+          "QTI reserved"
+        ],
+        [
+          "PTP_RX_IDN_SIGID",
+          "8",
+          "QTI reserved"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "SAIL_MPROC protocol"
+    },
+    {
+      "type": "paragraph",
+      "text": "From the SAIL perspective, The SAIL_MPROC protocol for multicore signaling and COMPUTE_L1 (as of ES9) for signaling between the SAIL and MD (that is, external mailbox) is enabled"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20-%20CDD_Ipcc/image-2024-11-1_17-51-13.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL - CDD_Ipcc/image-2024-11-1_17-51-13.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Configuration parameters"
+    },
+    {
+      "type": "paragraph",
+      "text": "IPCC configuration is very simple"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Parameter",
+        "Description",
+        "Comments"
+      ],
+      "rows": [
+        [
+          "IPCC channel ID",
+          "Channel ID - Uint32",
+          "-"
+        ],
+        [
+          "IPCC channel notification function",
+          "Notification function pointer type",
+          "-"
+        ],
+        [
+          "IPCC Protocol ID",
+          "Compute1 protocol - for APSS → SAIL SAIl Mproc for SAIl intra core communication",
+          "-"
+        ],
+        [
+          "IPCC sender ID",
+          "IPCC Sender ID assigned for the IPCC Channel",
+          "-"
+        ],
+        [
+          "IPCC receiver ID",
+          "IPCC Receiver ID assigned for the IPCC Channel",
+          "-"
+        ],
+        [
+          "IPCC Signal ID",
+          "Configures the IPCC signal ID for the IPCC channel",
+          "-"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-11-1_17-51-13.png",
+      "download_link": "/download/attachments/4942490267/image-2024-11-1_17-51-13.png?version=1&modificationDate=1730454673000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

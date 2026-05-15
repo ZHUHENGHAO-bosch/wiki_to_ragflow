@@ -1,0 +1,126 @@
+{
+  "page_id": "2894686385",
+  "title": "9. RFW Test case to inject and read DLT log",
+  "version": 10,
+  "url": "/spaces/CARSFW/pages/2894686385/9.+RFW+Test+case+to+inject+and+read+DLT+log",
+  "last_modified": "2023-03-29T11:38:57.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2885492965",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Below is the example for How to write test case for injecting a dlt command and reading the delt logs in RFW"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step1: Make sure the TestBench.py has correct configuration ."
+    },
+    {
+      "type": "paragraph",
+      "text": "Path: Config\\Autosar\\integration-test\\Service.UTFManager.Aurix\\RFW_UTF\\Configuration"
+    },
+    {
+      "type": "paragraph",
+      "text": "Make sure COM port is as per the device manager port"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/9.%20RFW%20Test%20case%20to%20inject%20and%20read%20DLT%20log/image-2023-3-29_16-12-35.png?api=v2",
+      "alt": "",
+      "local_path": "_images/9. RFW Test case to inject and read DLT log/image-2023-3-29_16-12-35.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 2: In Test Suite Initialize use the key word launch dlt connector to connect to launch connection to DLT daemon ."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/9.%20RFW%20Test%20case%20to%20inject%20and%20read%20DLT%20log/image-2023-3-29_16-16-37.png?api=v2",
+      "alt": "",
+      "local_path": "_images/9. RFW Test case to inject and read DLT log/image-2023-3-29_16-16-37.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 3: To inject we need to use injection key word. Explained the format in below picture"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/9.%20RFW%20Test%20case%20to%20inject%20and%20read%20DLT%20log/image-2023-3-29_16-37-42.png?api=v2",
+      "alt": "",
+      "local_path": "_images/9. RFW Test case to inject and read DLT log/image-2023-3-29_16-37-42.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "We can use searchstring and timeout in injection command to check the expected dlt log"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 4: Monitoring and Searching for a particular Dlt log"
+    },
+    {
+      "type": "paragraph",
+      "text": "we need to use two key words, one to start monitor and another to search the logs"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Start Monitoring",
+        "Search Logs <search_string> <timeout>"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/9.%20RFW%20Test%20case%20to%20inject%20and%20read%20DLT%20log/image-2023-3-29_16-47-42.png?api=v2",
+      "alt": "",
+      "local_path": "_images/9. RFW Test case to inject and read DLT log/image-2023-3-29_16-47-42.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 5: The output.xml in this path Config\\Autosar\\integration-test\\Service.UTFManager.Aurix\\RFW_UTF\\_Reports will have complete details on DLT logs"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/9.%20RFW%20Test%20case%20to%20inject%20and%20read%20DLT%20log/image-2023-3-29_17-37-26.png?api=v2",
+      "alt": "",
+      "local_path": "_images/9. RFW Test case to inject and read DLT log/image-2023-3-29_17-37-26.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "If the search string is found, the test case will pass, otherwise it will fail"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-3-29_17-37-26.png",
+      "download_link": "/download/attachments/2894686385/image-2023-3-29_17-37-26.png?version=1&modificationDate=1680082647000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-29_16-47-42.png",
+      "download_link": "/download/attachments/2894686385/image-2023-3-29_16-47-42.png?version=1&modificationDate=1680079662000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-29_16-37-42.png",
+      "download_link": "/download/attachments/2894686385/image-2023-3-29_16-37-42.png?version=1&modificationDate=1680079063000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-29_16-35-2.png",
+      "download_link": "/download/attachments/2894686385/image-2023-3-29_16-35-2.png?version=1&modificationDate=1680078902000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-29_16-16-37.png",
+      "download_link": "/download/attachments/2894686385/image-2023-3-29_16-16-37.png?version=1&modificationDate=1680077798000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-29_16-12-35.png",
+      "download_link": "/download/attachments/2894686385/image-2023-3-29_16-12-35.png?version=1&modificationDate=1680077555000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

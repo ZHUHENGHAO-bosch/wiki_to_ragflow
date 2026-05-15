@@ -1,0 +1,70 @@
+# SWC_HMIsw_SteeringWheelSwitch_SRC
+
+> Source: /spaces/CARSFW/pages/6939352602/SWC_HMIsw_SteeringWheelSwitch_SRC
+> Last modified: 2026-03-18T09:31:17.000+01:00
+
+---
+
+|   |   |   |   |   |
+| --- | --- | --- | --- | --- |
+| 1 | HMI_LINButtonManager_Init | Appl_Stubs.c  → AppSWC_Init | 初始化模块使用的全局变量 |  |
+| 2 | HMI_LINSwitch_Run | Rte_OsApplication_QM_Core0.c → TASK(TCI_AppTask1)  10ms | 监控SWC按键信号的状态打印Dlt log，提供按键状态接口通过IVI Handler :hardkey channel发送给soc |  |
+| 3 |  |  | 从CAN 总线读取dimming value , 经过 interpolate8_16_Client 计算后通过LIN 发送出去，DLT log 打印 dimming value |  |
+|  | interpolate8_16_Client |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+
+| Index | Rx Port | dependent modules | comment |  |
+| --- | --- | --- | --- | --- |
+| 0 | Rte_Read_SystemStateR_VeSystemState |  |  |  |
+| 1 | Rte_Read_PLCReflashStateR_Element |  |  |  |
+| 2 | Rte_Read_SWC_FavUp_60_1R_SWC_FavUp_60_1 | com |  |  |
+| 3 | Rte_Read_SWC_FavDn_60_1R_SWC_FavDn_60_1 | com |  |  |
+| 4 | Rte_Read_SWC_VolUp_60_1R_SWC_VolUp_60_1 | com |  |  |
+| 5 | Rte_Read_SWC_VolDn_60_1R_SWC_VolDn_60_1 | com |  |  |
+| 6 | Rte_Read_SWC_Up_60_1R_SWC_Up_60_1 | com |  |  |
+| 7 | Rte_Read_SWC_Down_60_1R_SWC_Down_60_1 | com |  |  |
+| 8 | Rte_Read_SWC_Source_60_1R_SWC_Source_60_1 | com |  |  |
+| 9 | Rte_Read_SWC_Cluster_View_60_1R_SWC_Cluster_View_60_1 | com |  |  |
+| 10 | Rte_Read_SWC_SET_60_1R_SWC_SET_60_1 | com |  |  |
+| 11 | Rte_Read_SWC_Phone_60_1R_SWC_Phone_60_1 | com |  |  |
+| 12 | Rte_Read_SWC_VR_60_1R_SWC_VR_60_1 | com |  |  |
+| 13 | Rte_Read_SWC_HangUp_Mute_60_1R_SWC_HangUp_Mute_60_1 | com |  |  |
+| 14 | Rte_Read_SWC_InfoMulti_60_1R_SWC_InfoMulti_60_1 | com |  |  |
+|  |  |  |  |  |
+| 15 | Rte_Read_IntDimLvlR_IntDimLvl | com | 读取CAN信号 IIntDimLvl 用于计算 LINSWLEDBrightnessLevel |  |
+| 16 | Rte_Read_IntDimDspLvlR_IntDimDspLvl | com | 读取CAN信号 IntDimDspLvl 用于计算 INSWDisplayBrightnessLevel LIN_Steering Wheel Control Dead Front Dimming Value |  |
+|  |  |  |  |  |
+| 17 | Rte_Read_SWC_PartNumber_60_1R_SWC_PartNumber_60_1 |  | 读取 LIN  SWC_PartNumber_60_1 |  |
+|  | Rte_Read_DispNtSchmAtvR_DispNtSchmAtv |  | 读取CAN IDispNtSchmAtv |  |
+|  |  |  |  |  |
+
+| Index | Tx Port | dependent modules | comment |
+| --- | --- | --- | --- |
+| 0 | Rte_Write_StrWhlCtlFvrtUpSwP_StrWhlCtlFvrtUpSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 1 | Rte_Write_StrWhlCtlFvrtDnSwP_StrWhlCtlFvrtDnSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 2 | Rte_Write_StrWhlCtlVolUpSwP_StrWhlCtlVolUpSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 3 | Rte_Write_StrWhlCtlVolDnSwP_StrWhlCtlVolDnSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 4 | Rte_Write_StrWhlCtUpSwP_StrWhlCtlUpSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 5 | Rte_Write_StrWhlCtDnSwP_StrWhlCtlDnSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 6 | Rte_Write_StrWhlCtLftSwP_StrWhlCtlLftSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 7 | Rte_Write_StrWhlCtRtSwP_StrWhlCtRtSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 8 | Rte_Write_StrWhlCtSelSwP_StrWhlCtSelSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 9 | Rte_Write_StrWhlCtlPshToTlkSwP_StrWhlCtlPshToTlkSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 10 | Rte_Write_StrWhlCtlEndSwP_StrWhlCtlEndSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 11 | Rte_Write_StrgWhlCtlInCarVcCommCtlSwP_StrgWhlCtlInCarVcCommCtlSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 12 | Rte_Write_StrgWhlCtlInCarVcComIfMltSwP_StrgWhlCtlInCarVcComIfMltSw |  | 提供按键状态 ，通过HARD KEY channel 发送到SOC |
+| 13 | Rte_Write_SwitchUnit1P_StrgWhlUnit1SwStat |  | 提供按键值给DID 4EC5 |
+|  |  |  |  |
+| 14 | Rte_Write_StrgWhlCtlBklgtDimVal_60_1P_StrgWhlCtlBklgtDimVal_60_1 |  | 更新LIN signal value：StrgWhlCtlBklgtDimVal_60_1 |
+| 15 | Rte_Write_StrgWhlCtlIndDimVal_60_1P_StrgWhlCtlIndDimVal_60_1 |  | 更新LIN signal value：StrgWhlCtlIndDimVal_60_1 |
+| 16 | Rte_Write_StrgWhlCtlDeadFrtDimVal_60_1P_StrgWhlCtlDeadFrtDimVal_60_1 |  | 更新LIN signal value：StrgWhlCtlDeadFrtDimVal_60_1 |
+|  |  |  |  |
+| 17 | Rte_Write_DayNightMode_60_1P_DayNightMode_60_1 |  | 更新LIN signal value：DayNightMode_60_1 |
+| 18 | Rte_Write_SWCPartNumberDiagP_VeSWCPartNumberDiag |  | 提供给诊断DID 4EBB 数据 |
+
+|  |  |  |  |
+| --- | --- | --- | --- |
+|  | HMIUpdateData_Client | LINSWLEDBrightnessLevel | 计算dimming value经过ODI发送给HMI |
+|  |  | LINSWDisplayBrightnessLevel | 计算dimming value经过ODI发送给HMI |
+|  |  |  |  |

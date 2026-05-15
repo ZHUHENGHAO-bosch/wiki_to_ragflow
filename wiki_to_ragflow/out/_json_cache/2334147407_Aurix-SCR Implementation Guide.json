@@ -1,0 +1,41 @@
+{
+  "page_id": "2334147407",
+  "title": "Aurix-SCR Implementation Guide",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/2334147407/Aurix-SCR+Implementation+Guide",
+  "last_modified": "2023-03-13T06:28:25.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2321473032",
+  "children": [
+    "2334147242",
+    "2334153600",
+    "2334147867"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Folder Structure:"
+    },
+    {
+      "type": "paragraph",
+      "text": "McAL.Scr Folder Structure - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "SCR Port to ISR:"
+    },
+    {
+      "type": "paragraph",
+      "text": "SCR Port pin to Interrupt functions - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Wakeup and ISR Configuration:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Wakeup and ISR Configuration - XC-CI China - Docupedia (bosch.com)"
+    }
+  ],
+  "attachments": []
+}

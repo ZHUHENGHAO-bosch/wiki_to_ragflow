@@ -1,0 +1,203 @@
+{
+  "page_id": "2511405479",
+  "title": "Sync Meeting - 2022",
+  "version": 24,
+  "url": "/spaces/CARSFW/pages/2511405479/Sync+Meeting+-+2022",
+  "last_modified": "2023-01-24T03:25:27.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2410130115",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 17 Nov 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Wei, ZHAO Yanqiang, Praveen, Prabu, Lakshmi"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Decision on Coverity or QAC",
+        "Whether project linking on first version will be maintained on the next exchange- user-14275 to confirm on this",
+        "Show the example in Nissan how the exchange is done",
+        "One sample exchange from CART",
+        "UTF availability in Zeekr - user-1f19a to confirm the date"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 01 Dec 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, ZHAO Yanqiang, Kumar"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Decision on Coverity or QAC",
+        "Whether project linking on first version will be maintained on the next exchange- user-14275 to confirm on this - COMPLETED",
+        "Show the example in Nissan how the exchange is done 08 Dec 2022",
+        "One sample exchange from CART 08 Dec 2022",
+        "UTF availability in Zeekr - user-1f19a to confirm the date 15 Dec 2022",
+        "Safe Error memory concept to be checked - Whether it uses SoC or only FEL in VIP? user-14275 08 Dec 2022"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 09 Dec 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Yanqiang, Kumar, Carven, Ellen"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Concluded to have PF TSR and shall be linked with PF SWRS, to minimize review efforts for future projects,",
+        "Testing traceability - Project Testing team to be invited for next meeting - @ZHAO Yanqiang (XC-CT/ESW2-CN)",
+        "Effort for inspection review saved - to be identified based on older projects - @ZHAO Yanqiang (XC-CT/ESW2-CN)",
+        "Test case re-use from PF",
+        "Below proposal shall be used for starting,  shall be fine tuned further,"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Sync%20Meeting%20-%202022/image2022-12-9_18-32-19.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Sync Meeting - 2022/image2022-12-9_18-32-19.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 16 Dec 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Yanqiang, Kumar, Carven, Praveen, Prabu"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Concluded to have PF TSR and shall be linked with PF SWRS, to minimize review efforts for future projects,",
+        "One sample exchange from CART",
+        "UTF availability in Zeekr - user-1f19a to confirm the date 15 Dec 2022",
+        "Testing traceability - Project Testing team to be invited for next meeting - @ZHAO Yanqiang (XC-CT/ESW2-CN)",
+        "Effort for inspection review saved - to be identified based on older projects - @ZHAO Yanqiang (XC-CT/ESW2-CN)",
+        "Test case re-use from PF",
+        "QAC report format mismatch between CART and Zeekr, to be clarified user-14275"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 22 Dec 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Yanqiang, Kumar, Praveen, Prabu, Henry"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Open point list was not discussed. will be discussed in next meeting",
+        "Henry presented the Test suit, Test case-RQM Id mapping with SWRS in DOORS",
+        "Discussion happened on how to map RQM ID with SWRS"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Open points:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Henry to check whether Test suite can be reused across the projects user-d2075",
+        "If the above one is possible then we need to check why we need to copy the PF TSR and PF SWRS to each project ?? Which attribute will create this duplication need ?"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "qCopy of SWRS-RQM linking.png",
+      "download_link": "/download/attachments/2511405479/qCopy%20of%20SWRS-RQM%20linking.png?version=2&modificationDate=1674527332000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "qCopy of SWRS-RQM linking",
+      "download_link": "/download/attachments/2511405479/qCopy%20of%20SWRS-RQM%20linking?version=1&modificationDate=1674527041000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "zCopy of SWRS-RQM linking",
+      "download_link": "/download/attachments/2511405479/zCopy%20of%20SWRS-RQM%20linking?version=1&modificationDate=1674526920000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "zCopy of SWRS-RQM linking.png",
+      "download_link": "/download/attachments/2511405479/zCopy%20of%20SWRS-RQM%20linking.png?version=1&modificationDate=1674526920000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Copy of SWRS-RQM linking",
+      "download_link": "/download/attachments/2511405479/Copy%20of%20SWRS-RQM%20linking?version=1&modificationDate=1674526865000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Copy of SWRS-RQM linking.png",
+      "download_link": "/download/attachments/2511405479/Copy%20of%20SWRS-RQM%20linking.png?version=1&modificationDate=1674526865000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SWRS-RQM linking.png",
+      "download_link": "/download/attachments/2511405479/SWRS-RQM%20linking.png?version=11&modificationDate=1671760842000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SWRS-RQM linking",
+      "download_link": "/download/attachments/2511405479/SWRS-RQM%20linking?version=11&modificationDate=1671760841000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-12-9_18-32-19.png",
+      "download_link": "/download/attachments/2511405479/image2022-12-9_18-32-19.png?version=1&modificationDate=1670590940000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-12-9_18-31-53.png",
+      "download_link": "/download/attachments/2511405479/image2022-12-9_18-31-53.png?version=1&modificationDate=1670590914000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

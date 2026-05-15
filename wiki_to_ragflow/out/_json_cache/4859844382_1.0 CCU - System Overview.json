@@ -1,0 +1,112 @@
+{
+  "page_id": "4859844382",
+  "title": "1.0 CCU - System Overview",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/4859844382/1.0+CCU+-+System+Overview",
+  "last_modified": "2024-10-12T05:01:29.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4859844379",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "CCU is a fusion product for SGM which will use TC387 as SCC and QAM8775 as SOC"
+    },
+    {
+      "type": "paragraph",
+      "text": "Important part of this fusion is the complete use of SAIL domain for ADAS processing"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Block diagram"
+    },
+    {
+      "type": "paragraph",
+      "text": "Overall Block diagram can be found in below path"
+    },
+    {
+      "type": "paragraph",
+      "text": "16_CCU - All Documents (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Our focus is on Autosar domain in SCC and SAIL domain"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Domain",
+        "Peripheral",
+        "Description"
+      ],
+      "rows": [
+        [
+          "SAIL",
+          "CAN 5 CAN channels are connected to SAIL",
+          "PCAN - TJA1044 CCAN - TJA1044 Corner Radar - TJA1044 Front Radar - TJA1044 Reserved - TJA4011"
+        ],
+        [
+          "Ethernet - RGMII",
+          "Ethernet from Gateway ECU"
+        ],
+        [
+          "SPI - 2 channels",
+          "USS is connected to SAIL via SPI"
+        ],
+        [
+          "UART",
+          "Connected to SCC"
+        ],
+        [
+          "OSPI",
+          "Connected to SNOR"
+        ],
+        [
+          "SCC",
+          "SPI",
+          "Inertial sensor SMI860"
+        ],
+        [
+          "SPI (2 channels)",
+          "Connected to DSP NOR Flash"
+        ],
+        [
+          "CAN (2 Channels)",
+          "ICAN - TJA1145 TCAN - TJA1042"
+        ],
+        [
+          "LIN (2 Channels)",
+          "SWC - Steering wheel switch SWT"
+        ],
+        [
+          "GPIO",
+          "ICC key * 2"
+        ]
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20CCU%20-%20System%20Overview/image-2024-10-12_10-20-12.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 CCU - System Overview/image-2024-10-12_10-20-12.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-10-12_10-20-12.png",
+      "download_link": "/download/attachments/4859844382/image-2024-10-12_10-20-12.png?version=1&modificationDate=1728699612000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-12_10-18-34.png",
+      "download_link": "/download/attachments/4859844382/image-2024-10-12_10-18-34.png?version=1&modificationDate=1728699514000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

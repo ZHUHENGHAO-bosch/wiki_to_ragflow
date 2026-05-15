@@ -1,0 +1,320 @@
+{
+  "page_id": "4630201187",
+  "title": "SWC_OCD_DriverInfoTime_SRC",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/4630201187/SWC_OCD_DriverInfoTime_SRC",
+  "last_modified": "2024-08-22T11:48:19.000+02:00",
+  "last_modified_by": "SUN Xitong (XC-CP/ESW2-CN)",
+  "parent_id": "4630207591",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "requirement ："
+    },
+    {
+      "type": "paragraph",
+      "text": "<PIS-2085 IPC SW Specification V3.0.docx>"
+    },
+    {
+      "type": "paragraph",
+      "text": "该模块主要处理与驾驶时间相关的功能"
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "driverinfotimerun_m.c",
+          "DriverInfoTime_Run",
+          "mainfunction   TCI_SumTask6_0_50ms",
+          ""
+        ],
+        [
+          "",
+          "ClockRun(); ElapsedTimeRun(); PerformancePageRun(); HourMeterRun();",
+          "",
+          ""
+        ],
+        [
+          "clock_m.c 3.2.1.14.10 Clock   EMPTY",
+          "1s per cycle",
+          "显示当前时钟",
+          ""
+        ],
+        [
+          "u8Hour    ->GetTOD_HrofDay_VCU ->from SWC_SignalDispatcher",
+          "",
+          ""
+        ],
+        [
+          "GetTOD_MinofHr_VCU",
+          "",
+          ""
+        ],
+        [
+          "format -> from SWC_INFO_RTC_TimeDispFormat: 24H/12H  如果12小时为单位再进行转换u8Hour % 12U",
+          "",
+          ""
+        ],
+        [
+          "根据时间输出AM/PM",
+          "",
+          ""
+        ],
+        [
+          "didwr_engineidleactivetime_m.c",
+          "DIDWr_EngineIdleActiveTime",
+          "诊断调用获取NVM中存储的最新Engine Idle Active time counter时间",
+          ""
+        ],
+        [
+          "didwr_enginerunactivetime_m.c",
+          "DIDWr_EngineRunActiveTime",
+          "诊断调用获取NVM中存储的最新Engine Run Active time counter时间",
+          ""
+        ],
+        [
+          "driverinfotimeinitialise_m.c",
+          "DriverInfoTimeInitialise",
+          "",
+          ""
+        ],
+        [
+          "ElapsedTime.c 3.2.1.14.21    Elapsed time",
+          "“已用时间”功能使用已用时间计时器测量自上次重置以来经过的时间。 经过时间功能可以打开或关闭 (打开 / 关闭状态)。",
+          "",
+          ""
+        ],
+        [
+          "InitElapsedTime",
+          "NVM中存储的是秒 取出来要转换成0xHH 0xMM 0xSS",
+          ""
+        ],
+        [
+          "ElapsedTimerCountMilliSecs",
+          "CeOCD_PM_RUN 或PROPULSION 下，u8ElapsedTimeTimerOn时，每次更新50ms 写入EEP 更新HMI",
+          ""
+        ],
+        [
+          "ElapsedTimeRun",
+          "1s cycle    u8ElapsedTimeTimerOff时 不更新，写入EEP更新HMI",
+          ""
+        ],
+        [
+          "ElapsedTime_ClearTimer",
+          "clear NVM 存储time",
+          ""
+        ],
+        [
+          "ElapsedTime_StartStop",
+          "切换timer start on、off   类似一个开环的开关   记录至NVM",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "ElapsedTime.c 3.2.1.14.21    Elapsed time",
+          "“已用时间”功能使用已用时间计时器测量自上次重置以来经过的时间。 经过时间功能可以打开或关闭 (打开 / 关闭状态)。",
+          "![](_images/SWC_OCD_DriverInfoTime_SRC/image-2024-8-22_17-43-49.png)",
+          ""
+        ],
+        [
+          "InitElapsedTime",
+          "NVM中存储的是秒 取出来要转换成0xHH 0xMM 0xSS",
+          ""
+        ],
+        [
+          "ElapsedTimerCountMilliSecs",
+          "CeOCD_PM_RUN 或PROPULSION 下，u8ElapsedTimeTimerOn时，每次更新50ms 写入EEP 更新HMI",
+          ""
+        ],
+        [
+          "ElapsedTimeRun",
+          "1s cycle    u8ElapsedTimeTimerOff时 不更新，写入EEP更新HMI",
+          ""
+        ],
+        [
+          "ElapsedTime_ClearTimer",
+          "clear NVM 存储time",
+          ""
+        ],
+        [
+          "ElapsedTime_StartStop",
+          "切换timer start on、off   类似一个开环的开关   记录至NVM",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "hourmeter_m.c 3.2.1.14.43    Hourmeter and Idlemeter (extended software set feature)",
+          "计时表用于显示发动机运行的小时数。 怠速表用于显示发动机怠速运行的小时数。",
+          "![](_images/SWC_OCD_DriverInfoTime_SRC/image-2024-8-22_17-47-56.png)",
+          ""
+        ],
+        [
+          ""
+        ],
+        [
+          ""
+        ],
+        [
+          ""
+        ],
+        [
+          ""
+        ],
+        [
+          "IsEngineIdleMeterValid",
+          "SUM_SSC判断的EngIdlAtv",
+          ""
+        ],
+        [
+          "IsEngineRunMeterValid",
+          "SUM_SSC 输出的发送机转速EngineSpeed高于预定值",
+          ""
+        ],
+        [
+          "CalcHourMeter",
+          "",
+          ""
+        ],
+        [
+          "SendHourMeterOnGMLan",
+          "Send the Engine Hour Data on GMLAN 空的接口",
+          "GMLAN???"
+        ],
+        [
+          "CalcHourMeterEngineRun",
+          "电源模式关闭时存储Timer和TimerCount IsEngineRunMeterValid有效时、RUN和PROPULSION下每三分存储一次NVM",
+          ""
+        ],
+        [
+          "CalcHourMeterEngineIdle",
+          "电源模式关闭时存储Timer和TimerCount IsEngineIdleMeterValid有效时、RUN和PROPULSION下每三分存储一次NVM",
+          ""
+        ],
+        [
+          "DisplayEngineRunMeter",
+          "数据发送到HMI",
+          ""
+        ],
+        [
+          "DisplayEngineIdleMeter",
+          "数据发送到HMI",
+          ""
+        ],
+        [
+          "HourMeterRun",
+          "CalcHourMeter   每10s运行一次",
+          "main"
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "PerformancePage.c 3.2.1.14.48 Performance Page (extended set software feature)",
+          "主要用于显示发动机油温，发动机增压、发送机油压、引擎虚拟设备可用性",
+          "![](_images/SWC_OCD_DriverInfoTime_SRC/image-2024-8-22_17-34-45.png)",
+          ""
+        ],
+        [
+          "",
+          "IsBoostPressureValid",
+          "u8EngBstPrIndValidity from COM GetEngBstPrsInd_Av \\GetEngSpd_Av from SUM_SSM",
+          ""
+        ],
+        [
+          "",
+          "IsOilPressureValid",
+          "",
+          ""
+        ],
+        [
+          "",
+          "IsOilTemperatureValid",
+          "",
+          ""
+        ],
+        [
+          "",
+          "CalcPerformancePage",
+          "OilTemperature   -> from COM",
+          ""
+        ],
+        [
+          "",
+          "",
+          "EngOilPrssure      -> from COM",
+          ""
+        ],
+        [
+          "",
+          "",
+          "EngAirIntBstPr    -> from SUM_SSC",
+          ""
+        ],
+        [
+          "",
+          "DisplayPerformancePage",
+          "",
+          ""
+        ],
+        [
+          "",
+          "PerformancePageRun",
+          "",
+          ""
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-22_17-47-56.png",
+      "download_link": "/download/attachments/4630201187/image-2024-8-22_17-47-56.png?version=1&modificationDate=1724320077000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-22_17-43-49.png",
+      "download_link": "/download/attachments/4630201187/image-2024-8-22_17-43-49.png?version=1&modificationDate=1724319829000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-22_17-41-35.png",
+      "download_link": "/download/attachments/4630201187/image-2024-8-22_17-41-35.png?version=1&modificationDate=1724319695000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-22_17-40-21.png",
+      "download_link": "/download/attachments/4630201187/image-2024-8-22_17-40-21.png?version=1&modificationDate=1724319622000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-22_17-34-45.png",
+      "download_link": "/download/attachments/4630201187/image-2024-8-22_17-34-45.png?version=1&modificationDate=1724319286000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-22_16-26-28.png",
+      "download_link": "/download/attachments/4630201187/image-2024-8-22_16-26-28.png?version=1&modificationDate=1724315189000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-22_15-45-9.png",
+      "download_link": "/download/attachments/4630201187/image-2024-8-22_15-45-9.png?version=1&modificationDate=1724312710000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

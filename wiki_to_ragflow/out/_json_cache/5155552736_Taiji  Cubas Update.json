@@ -1,0 +1,202 @@
+{
+  "page_id": "5155552736",
+  "title": "Taiji  Cubas Update",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/5155552736/Taiji+Cubas+Update",
+  "last_modified": "2024-12-17T10:14:55.000+01:00",
+  "last_modified_by": "ZHAO Yanqiang (XC-CP/ESW2-CN)",
+  "parent_id": "4204511237",
+  "children": [],
+  "content": [
+    {
+      "type": "table",
+      "headers": [
+        "",
+        "Question",
+        "",
+        ""
+      ],
+      "rows": [
+        [
+          "1",
+          "C:\\Repo\\taiji\\Autosar\\CnConvBase\\OsServices_RtaOS\\Service.ContextSwitcher\\ContextSwitcher_Os.c 24,9: #ifndef CUBAS_STACK_EN 42,8: #ifdef CUBAS_STACK_EN 44,11: #endif /* CUBAS_STACK_EN */ 144,9:     #ifdef CUBAS_STACK_EN 276,11:         #ifndef CUBAS_STACK_EN 278,13:         #endif /* CUBAS_STACK_EN */ 406,11:         #ifndef CUBAS_STACK_EN ![](_images/Taiji  Cubas Update/image-2024-12-17_15-18-21.png)",
+          "",
+          ""
+        ],
+        [
+          "2",
+          "![](_images/Taiji  Cubas Update/image-2024-12-17_15-18-38.png)",
+          "",
+          ""
+        ],
+        [
+          "3",
+          "How to fix ErrorHook ![](_images/Taiji  Cubas Update/image-2024-12-17_16-45-31.png)",
+          "",
+          ""
+        ],
+        [
+          "4",
+          "![](_images/Taiji  Cubas Update/image-2024-12-17_16-26-57.png)",
+          "",
+          ""
+        ],
+        [
+          "5",
+          "![](_images/Taiji  Cubas Update/image-2024-12-17_16-28-47.png)",
+          "",
+          ""
+        ],
+        [
+          "6",
+          "C:\\Repo\\taiji\\Config\\FuSa\\SafeStartup\\SafeStartup.Config\\src\\SafeStartup_Callout.c ![](_images/Taiji  Cubas Update/image-2024-12-17_16-30-42.png)",
+          "",
+          ""
+        ],
+        [
+          "7",
+          "![](_images/Taiji  Cubas Update/image-2024-12-17_16-32-5.png)",
+          "",
+          ""
+        ],
+        [
+          "8",
+          "C:\\Repo\\taiji\\Config\\FuSa\\Aurix\\FITManager\\FIT_MPU.Config\\FIT_MPU_Cfg.c ![](_images/Taiji  Cubas Update/image-2024-12-17_16-35-54.png)",
+          "",
+          ""
+        ],
+        [
+          "9",
+          "C:\\Repo\\taiji\\Config\\FuSa\\Aurix\\FITManager\\Au_FITM.Config\\Au_FITM_Cfg.c ![](_images/Taiji  Cubas Update/image-2024-12-17_16-37-47.png)",
+          "",
+          ""
+        ],
+        [
+          "10",
+          "C:\\Repo\\taiji\\Config\\Autosar\\stdcore\\Cubas\\CubasBSWCfgTemp\\BswStubs\\ContextSwitcher_SafeTag.h ![](_images/Taiji  Cubas Update/image-2024-12-17_16-41-47.png)",
+          "",
+          ""
+        ],
+        [
+          "11",
+          "C:\\Repo\\taiji\\Config\\Autosar\\os-services\\Service.ExceptionHandling\\ExceptionHandling_Callout.c ![](_images/Taiji  Cubas Update/image-2024-12-17_16-42-49.png)",
+          "",
+          ""
+        ],
+        [
+          "12",
+          "C:\\Repo\\taiji\\Config\\Autosar\\os-services\\Service.ContextSwitcher\\ContextSwitcher_Callouts.c 45,9: #ifndef CUBAS_STACK_EN 301,9: #ifndef CUBAS_STACK_EN C:\\Repo\\taiji\\Config\\Autosar\\os-services\\Service.ContextSwitcher\\ContextSwitcher_if_cfg.h 114,9: #ifndef CUBAS_STACK_EN 124,9: #ifndef CUBAS_STACK_EN",
+          "",
+          ""
+        ],
+        [
+          "13",
+          "C:\\Repo\\taiji\\Config\\Autosar\\lifecycle\\Service.EcuModeManagerEcuM\\EcuModeManagerEcuM_ProjectCallouts_Trusted.c",
+          "",
+          ""
+        ],
+        [
+          "14",
+          "C:\\Repo\\taiji\\Config\\Autosar\\bsp-tc377tp\\startup\\MCAL.Startup\\Startup_Core0.c 357,8: #ifdef CUBAS_STACK_EN",
+          "",
+          ""
+        ],
+        [
+          "15",
+          "![](_images/Taiji  Cubas Update/image-2024-12-17_16-51-31.png)",
+          "",
+          ""
+        ],
+        [
+          "16",
+          "C:\\Repo\\taiji\\Config\\Autosar\\bsp-tc377tp\\platform\\CNCONVBASE\\chery\\EcuAL.ExtWdg\\ExtWdg_Cfg.h 48,9: #ifndef CUBAS_STACK_EN",
+          "",
+          ""
+        ],
+        [
+          "17",
+          "C:\\Repo\\taiji\\Autosar\\CnConvBase\\lifecycle\\Service.EcuModeManagerEcuM\\EcuManager_OsInitTask_Core0_Asil.c 34,9: #ifndef CUBAS_STACK_EN /* Only Vector stack need this file */ 137,18: #endif /*#ifndef CUBAS_STACK_EN*/",
+          "",
+          ""
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-12-18_10-12-0.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-18_10-12-0.png?version=1&modificationDate=1734487920000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-18_9-46-11.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-18_9-46-11.png?version=1&modificationDate=1734486372000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-18_9-41-28.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-18_9-41-28.png?version=1&modificationDate=1734486088000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_16-51-31.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_16-51-31.png?version=1&modificationDate=1734425491000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_16-45-31.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_16-45-31.png?version=1&modificationDate=1734425131000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_16-42-49.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_16-42-49.png?version=1&modificationDate=1734424970000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_16-41-47.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_16-41-47.png?version=1&modificationDate=1734424908000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_16-37-47.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_16-37-47.png?version=1&modificationDate=1734424668000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_16-35-54.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_16-35-54.png?version=1&modificationDate=1734424555000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_16-32-5.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_16-32-5.png?version=1&modificationDate=1734424325000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_16-30-42.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_16-30-42.png?version=1&modificationDate=1734424243000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_16-28-47.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_16-28-47.png?version=1&modificationDate=1734424127000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_16-26-57.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_16-26-57.png?version=1&modificationDate=1734424017000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_15-18-38.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_15-18-38.png?version=1&modificationDate=1734419919000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-17_15-18-21.png",
+      "download_link": "/download/attachments/5155552736/image-2024-12-17_15-18-21.png?version=1&modificationDate=1734419902000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

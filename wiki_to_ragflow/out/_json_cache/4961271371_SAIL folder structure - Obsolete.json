@@ -1,0 +1,180 @@
+{
+  "page_id": "4961271371",
+  "title": "SAIL folder structure - Obsolete",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/4961271371/SAIL+folder+structure+-+Obsolete",
+  "last_modified": "2024-11-07T08:55:12.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4704583139",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to create the folder structure for SAIL in 8755/8255"
+    },
+    {
+      "type": "paragraph",
+      "text": "Most probably ADAS applications will run in SAIL. so the folder structure shall be based on ADAS application"
+    },
+    {
+      "type": "paragraph",
+      "text": "Need to Wait for the confirmation who will develop the Application in SAIL domain → PATAC or Bosch"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Considerations"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "The folder structure shall be in a way it shall support all project use cases"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Module Level Folder structure："
+    },
+    {
+      "type": "paragraph",
+      "text": "Module"
+    },
+    {
+      "type": "paragraph",
+      "text": "├── arch/                            # Module arch folder Contains files such as ,Flux or Arxml files ├── doc/                             # Documentation Folder: Includes design documents, user manuals, etc."
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── module.rst              # module documentation"
+    },
+    {
+      "type": "paragraph",
+      "text": "├── inc/                              # Header Files"
+    },
+    {
+      "type": "paragraph",
+      "text": "├── cfg/                              # Module Configuration Files: Variations according to project or functionality ├── src/                              # Source Code Folder ├── test/                             # Module Test Code"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── unittest                  #unit test"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── int_test                   #integration test, if any ├── CMakeLists.txt              #CMake file"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Top Level Folder structure"
+    },
+    {
+      "type": "paragraph",
+      "text": "Root_Folder/"
+    },
+    {
+      "type": "paragraph",
+      "text": "├── asw                            # Includes files such as DaCore, FCT, and integration tests, isolated from Hw+ files."
+    },
+    {
+      "type": "paragraph",
+      "text": "├── 3party                        #  thirdParty - Customer modules and Third Party libraries"
+    },
+    {
+      "type": "paragraph",
+      "text": "├── stdcore                      # Purchased AUTOSAR tool delivery packages or internal tool platform packages. Such as Cubas/Vector"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── cubas                        #   cubas deliver package"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── rtaos                         # etas Os"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── mom/rte                 # RTE │   └── mcal                    # MCAL"
+    },
+    {
+      "type": "paragraph",
+      "text": "├── config                      # Configuration projects and generated code for EB, CUBAS, DADY, and other configuration tools."
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── cubas_cfg               #   cubas cfg project and generate codes"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── rtaos_cfg                # etas Os cfg project and generate codes"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── scom/rte_cfg          # rte generate codes │   └── eb_mcal_cfg           # mcal generate codes"
+    },
+    {
+      "type": "paragraph",
+      "text": "├── cust_apl              #  project codes"
+    },
+    {
+      "type": "paragraph",
+      "text": "├── diag                          #  Diagnostic codes"
+    },
+    {
+      "type": "paragraph",
+      "text": "├── hsm                          #  Security codes"
+    },
+    {
+      "type": "paragraph",
+      "text": "├── platform                   #  Cp platform modules"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├──  rbBSW                   #  Abstract Layer Modules such as EINC, Globaltime, rbPdm, etc."
+    },
+    {
+      "type": "paragraph",
+      "text": "│   │   ├──  function            #  function modules such as EINC"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   │   ├──  service              #  service modules such as rbSyslog"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├──  rbHSW                 #  Hardware-related modules such as peripheral drivers, memory protection, bus protection, etc."
+    },
+    {
+      "type": "paragraph",
+      "text": "├── mt                            #  Measurement and test, fault injection and XCP code and projects."
+    },
+    {
+      "type": "paragraph",
+      "text": "├── tools # Files related to Build and debug setup, GoogleTest, QAC"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── btc_tools                # btc_tools, come from ip_if platform repo"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── GT                          # google test"
+    },
+    {
+      "type": "paragraph",
+      "text": "│   ├── QAC/Coverity        #  QAC/Coverity"
+    },
+    {
+      "type": "paragraph",
+      "text": "├── fbl                            #  bootloader project"
+    }
+  ],
+  "attachments": []
+}

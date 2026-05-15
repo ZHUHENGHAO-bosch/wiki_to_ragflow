@@ -1,0 +1,33 @@
+{
+  "page_id": "2399545096",
+  "title": "SM52 Safe HMI Monitor",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2399545096/SM52+Safe+HMI+Monitor",
+  "last_modified": "2022-09-27T07:32:39.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2411012902",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "For China Convergence, we will use Safe HMI monitor concept from GWM."
+    },
+    {
+      "type": "paragraph",
+      "text": "We may move once the CART concept is ready in 2023"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SM52%20Safe%20HMI%20Monitor/Safe%20HMI%20Monitor.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/SM52 Safe HMI Monitor/Safe HMI Monitor.jpg"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "Safe HMI Monitor.jpg",
+      "download_link": "/download/attachments/2399545096/Safe%20HMI%20Monitor.jpg?version=1&modificationDate=1661333418000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

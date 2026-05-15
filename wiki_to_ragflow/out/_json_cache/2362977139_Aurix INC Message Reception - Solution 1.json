@@ -1,0 +1,33 @@
+{
+  "page_id": "2362977139",
+  "title": "Aurix INC Message Reception - Solution 1",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2362977139/Aurix+INC+Message+Reception+-+Solution+1",
+  "last_modified": "2022-08-02T14:27:43.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2345532859",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Solution1: With Setting of Events to indicate Satellite modules about the message received in corresponding Channels Rx Queues"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below is the design to read the INC message in Multi Core Context"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Aurix%20INC%20Message%20Reception%20-%20Solution%201/Inc_Scc_ReadSequence.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/Aurix INC Message Reception - Solution 1/Inc_Scc_ReadSequence.bmp"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "Inc_Scc_ReadSequence.bmp",
+      "download_link": "/download/attachments/2362977139/Inc_Scc_ReadSequence.bmp?version=1&modificationDate=1658492769000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

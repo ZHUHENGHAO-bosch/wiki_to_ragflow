@@ -1,0 +1,29 @@
+{
+  "page_id": "2419884724",
+  "title": "SM20 Safe State Handling",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/2419884724/SM20+Safe+State+Handling",
+  "last_modified": "2023-01-10T09:28:07.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2411012902",
+  "children": [
+    "2830473399",
+    "2825343500",
+    "2923239587"
+  ],
+  "content": [
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SM20%20Safe%20State%20Handling/CN_Conv_PF%20Safe%20States.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/SM20 Safe State Handling/CN_Conv_PF Safe States.bmp"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "CN_Conv_PF Safe States.bmp",
+      "download_link": "/download/attachments/2419884724/CN_Conv_PF%20Safe%20States.bmp?version=2&modificationDate=1673339254000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

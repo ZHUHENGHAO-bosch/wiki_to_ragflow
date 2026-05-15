@@ -1,0 +1,29 @@
+{
+  "page_id": "3418387697",
+  "title": "WDG Flow - Startup, BM and APP",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/3418387697/WDG+Flow+-+Startup+BM+and+APP",
+  "last_modified": "2023-09-05T04:22:16.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2658504005",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Below diagram explains the WDG flow in more detail"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/WDG%20Flow%20-%20Startup,%20BM%20and%20APP/WDGwithStartup.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/WDG Flow - Startup, BM and APP/WDGwithStartup.bmp"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "WDGwithStartup.bmp",
+      "download_link": "/download/attachments/3418387697/WDGwithStartup.bmp?version=2&modificationDate=1693880518000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

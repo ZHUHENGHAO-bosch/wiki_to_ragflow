@@ -1,0 +1,65 @@
+{
+  "page_id": "2887712865",
+  "title": "4. Test Command format - DLT",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/2887712865/4.+Test+Command+format+-+DLT",
+  "last_modified": "2024-05-20T08:19:13.000+02:00",
+  "last_modified_by": "ZHANG Jolin (XC-CP/ESW2-CN)",
+  "parent_id": "2885492965",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Below is the command format for UTF"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Byte Order",
+        "Description",
+        "Comment"
+      ],
+      "rows": [
+        [
+          "First byte",
+          "Type of Testing",
+          "00 UTF Module Testing | 01 UTF Module Test Case"
+        ],
+        [
+          "Second byte",
+          "Input Length",
+          "Total command length"
+        ],
+        [
+          "Third and fourth byte",
+          "Module ID",
+          "Module ID is defined in UTFModuleDetails_t in the file \"gen\\UTFManager_cfg.h\""
+        ],
+        [
+          "Fifth and sixth byte",
+          "Test Case ID",
+          "The order which we define in Modulename_TestCase.h"
+        ],
+        [
+          "Seventh byte and ....",
+          "Payload data to test case",
+          "Data that can be used for each test case"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example,"
+    },
+    {
+      "type": "paragraph",
+      "text": "To trigger a test case 1 in Module 1"
+    },
+    {
+      "type": "paragraph",
+      "text": "01 06 00 01 00 01 00 02 XX XX"
+    }
+  ],
+  "attachments": []
+}

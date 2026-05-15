@@ -1,0 +1,138 @@
+{
+  "page_id": "3323072270",
+  "title": "China Convergence - LCM as System master",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/3323072270/China+Convergence+-+LCM+as+System+master",
+  "last_modified": "2023-08-07T07:56:03.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2311851815",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date : 07 Aug 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: John, Joanna, Shanhe, Jolin, Newton"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Attached slide has all details"
+    },
+    {
+      "type": "paragraph",
+      "text": "LCM_SystemMaster_Proposa…"
+    },
+    {
+      "type": "paragraph",
+      "text": "Discussed on the LCM SCC as master proposal"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/China%20Convergence%20-%20LCM%20as%20System%20master/UC9_SystemStateManagement_Proposal.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/China Convergence - LCM as System master/UC9_SystemStateManagement_Proposal.bmp"
+    },
+    {
+      "type": "paragraph",
+      "text": "Deployment view"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/China%20Convergence%20-%20LCM%20as%20System%20master/UC9_SystemStateManagement_deployment.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/China Convergence - LCM as System master/UC9_SystemStateManagement_deployment.bmp"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Next steps"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "List down the INC messages needed from SoC for this new design – Done – Huang Can"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "-Start with Chery requirement"
+    },
+    {
+      "type": "paragraph",
+      "text": "-Analyze all other project requirement, if there are any other common messages, consider those message"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Design a proper template for System State Controller"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "-Initial design considering Chery"
+    },
+    {
+      "type": "paragraph",
+      "text": "-Final design shall consider all requirement and try to create a proper template"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Implementation"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "-Initial implementation as per Chery"
+    },
+    {
+      "type": "paragraph",
+      "text": "-Final template implementation"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Clear Wiki on how to use the FSM logic",
+        "Deliver process – First delivery expected on 25-08-2023"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "-Taiji repo -> this will have Chery (20-08-2023)"
+    },
+    {
+      "type": "paragraph",
+      "text": "-This Taiji repo will have SCC as master and SoC as slave"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "LCM_SystemMaster_Proposal.pptx",
+      "download_link": "/download/attachments/3323072270/LCM_SystemMaster_Proposal.pptx?version=1&modificationDate=1691387743000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "UC9_SystemStateManagement_deployment.bmp",
+      "download_link": "/download/attachments/3323072270/UC9_SystemStateManagement_deployment.bmp?version=1&modificationDate=1691387655000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "UC9_SystemStateManagement_Proposal.bmp",
+      "download_link": "/download/attachments/3323072270/UC9_SystemStateManagement_Proposal.bmp?version=1&modificationDate=1691387591000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

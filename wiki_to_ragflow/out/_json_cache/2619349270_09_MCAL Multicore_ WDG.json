@@ -1,0 +1,59 @@
+{
+  "page_id": "2619349270",
+  "title": "09_MCAL Multicore: WDG",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/2619349270/09_MCAL+Multicore+WDG",
+  "last_modified": "2022-12-30T10:44:38.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2394052922",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "WDG is of type 2, Where kernel is multi core but HW mapping is core specific"
+    },
+    {
+      "type": "paragraph",
+      "text": "Type II = 1b + 2b + 3a"
+    },
+    {
+      "type": "paragraph",
+      "text": "Every CPU has one dedicated WDT. The global status variable is used to maintain the core-specific reload value, status (IDLE, BUSY, UNINIT), timeout counter value and mode (FAST, SLOW, OFF) of the WDT"
+    },
+    {
+      "type": "paragraph",
+      "text": "Initialization is core specific (CPUx can update/modify registers and variables for WDTx only. x = 0,1,2,3,4,5)"
+    },
+    {
+      "type": "paragraph",
+      "text": "The user should allocate resources of WDG to CPU cores at pre-compile time using the Resource manager module. WDG driver depends on resource manager if STM timer is configured for its timing needs. An STM timer should be allocated to the same core in the resource manager for which a CPU WDG is configured."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Architectural Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Overview of WDG architecture with external WDG"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/09_MCAL%20Multicore:%20WDG/image2022-12-30_17-44-32.png?api=v2",
+      "alt": "",
+      "local_path": "_images/09_MCAL Multicore_ WDG/image2022-12-30_17-44-32.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-12-30_17-44-32.png",
+      "download_link": "/download/attachments/2619349270/image2022-12-30_17-44-32.png?version=1&modificationDate=1672393472000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

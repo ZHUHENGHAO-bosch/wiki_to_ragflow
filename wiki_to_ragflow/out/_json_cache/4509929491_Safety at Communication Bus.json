@@ -1,0 +1,27 @@
+{
+  "page_id": "4509929491",
+  "title": "Safety at Communication Bus",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/4509929491/Safety+at+Communication+Bus",
+  "last_modified": "2024-07-22T05:19:57.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4509929485",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "To make sure the message sent between two ECUs or between ASICs and ECU is safe. we need to have some safety mechanism to make sure the data is safe."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Safety mechanisms"
+    }
+  ],
+  "attachments": []
+}

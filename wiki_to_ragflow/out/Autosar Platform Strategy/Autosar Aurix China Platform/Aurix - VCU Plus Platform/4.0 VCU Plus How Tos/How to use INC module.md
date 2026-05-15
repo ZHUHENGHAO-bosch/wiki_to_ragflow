@@ -1,0 +1,204 @@
+# How to use INC module
+
+> Source: /spaces/CARSFW/pages/5428558810/How+to+use+INC+module
+> Last modified: 2025-08-05T08:24:38.000+02:00
+
+---
+
+## 0.Introduction
+
+This document introduces the API interfaces provide by VipIncRouter and how to use them in VIP software components.
+
+## 1.Add header file in your component
+
+#include "VipIncRouter.h"
+
+## 2.Add dependencies in CMakeList.txt
+
+# Dependencies
+
+cmt_pf_module_addLibraries(Service.Nanopb)
+
+cmt_pf_module_addLibraries(Service.VipIncRouter)
+
+## 3.Define the initial and receive callback function in your component
+
+Next is an example function
+
+void Component_Init(void)
+
+{ if (E_NOT_OK == (VipIncRouter_ChnOpenClbkReg(CHANNEL_NUM, NULL, &Component_IncRxMsg))) { /*Need DLT*/ }
+
+}
+
+static void Component_IncRxMsg(uint8 u8ChannelNumber, uint8* au8pubuf, uint16* ps16lengthptr)
+
+{
+
+/*Break up and analysis the received data from au8pubuf*/
+
+}
+
+Note:
+
+Component_IncRxMsg() can't call VipIncRouter_Write() synchronously. VipIncRouter_Write() MUST called asynchronously.
+
+Otherwise OS will report OS_STATUS_NESTING_DEADLOCK due to spinlock nesting.
+
+![](../../../../_images/How%20to%20use%20INC%20module/image-2023-3-31_9-44-27.png)
+
+## 4.Define the INC frame send function in your component
+
+Next is an example function
+
+static void Component_IncTxMsg(uint8 *pu8msg_prt, const uint8 u8MsgLength) { uint8 ch_id = Component_CHANNEL_NUMBER; int intMsgLength = 0; /*Init intMsgLength, otherwise the high byte is random*/ Std_ReturnType ret;
+
+intMsgLength = (int)u8MsgLength; ret = VipIncRouter_Write(ch_id, pu8msg_prt, &intMsgLength); if(ret == E_OK) { /* Do nothing now */ } else {
+
+/*Please report the ret value;  E_OK(0) E_NOT_OK(1) E_FLOWCONTROL_INACTIVE(2) E_BUFFULL(3) E_CHAN_NOPEN(4)*/
+
+}
+
+}
+
+## 5.API provide by VipIncRouter
+
+### 5.1 VipIncRouter_ChnOpenClbkReg
+
+| Prototype |  |
+| --- | --- |
+| Std_ReturnType VipIncRouter_ChnOpenClbkReg(uint8 u8ChannelNumber,FlowControlCB vipFlowCtrlCB, RecieveMsgCB vipRxMsgCB) |  |
+| Parameter |  |
+| u8ChannelNumber | INC channel number used by your component |
+| vipFlowCtrlCB | Flow control callback ( If there is no flow control feature, you can use NULL ) |
+| vipRxMsgCB | Receive message callback (It should be defined by user) |
+| Return code |  |
+| E_OK | Register successfully |
+| E_NOT_OK | Register failed |
+| Description |  |
+| This Api will Open the channel in non blocking mode and it also registers the callback functions. |  |
+
+### 5.2 VipIncRouter_Write
+
+| Prototype |  |
+| --- | --- |
+| Std_ReturnType VipIncRouter_Write (uint8 u8ChannelNumber, uint8* pu8buf, int* lenPtr) |  |
+| Parameter |  |
+| u8ChannelNumber | INC channel number used by your component |
+| pu8buf | Pointer to buffer to write |
+| lenPtr | ointer to the Number of bytes to be written |
+| Return code |  |
+| (0)E_OK | Data is Written successful |
+| (1)E_NOT_OK | Write could not be performed. |
+| (2)E_FLOWCONTROL_INACTIVE | channel FlowControlStatus is not active |
+| (3)E_BUFFULL | Rbuf Full |
+| (4)E_CHAN_NOPEN | channel status is not open |
+| Description |  |
+| Once a channel is opened, it can be used to write messages. This interface is called to send a message by INC |  |
+
+### 5.3 VipIncRouter_GetChannelStatus
+
+| Prototype |  |
+| --- | --- |
+| void VipIncRouter_GetChannelStatus(uint8 u8ChannelNumber, uint8* channelStatus) |  |
+| Parameter |  |
+| u8ChannelNumber | Channel number whose status is required |
+| channelStatus | channel status Bit 0: CHANNEL_OPEN_STATUS (DC for phy_err Channel) Open : 1 Close: 0 BIT 2: CHANNEL_COMM_ERROR (Only valid for phy_err Channel) Error: 1 No Error: 0 BIT 3: RX_BUFFER_THRESHOLD_EXCEEDED (not implemented) BIT 4: LINK_OK (Only valid for phy_err channel) Link Up: 1 Link DOwn: 0 BIT 5: TX_BUFFER_THRESHOLD_EXCEEDED (not implemented) BIT 6 and BIT 7 are reserved |
+| Return code |  |
+| None |  |
+| Description |  |
+| To get status of a channel |  |
+
+### 5.4 VipIncRouter_Close
+
+| Prototype |  |
+| --- | --- |
+| Std_ReturnType VipIncRouter_Close(uint8 u8ChannelNumber) |  |
+| Parameter |  |
+| u8ChannelNumber | INC channel number used by your component |
+| Return code |  |
+| E_OK | Channel opened. |
+| E_NOT_OK | Channel could not be closed. |
+| Description |  |
+| This interface is used to close the channel. |  |
+
+### 5.5 VipIncRouter_getChannelIndex
+
+| Prototype |  |
+| --- | --- |
+| uint8 VipIncRouter_getChannelIndex(uint8 u8ChannelNumber) |  |
+| Parameter |  |
+| u8ChannelNumber | INC channel number used by your component |
+| Return code |  |
+| uint8 | the index of channels in Channel List Array |
+| Description |  |
+| This interface is used to get the index of channels in Channel List Array |  |
+
+### 5.6 VipIncRouter_getChannelIndex
+
+| Prototype |  |
+| --- | --- |
+| uint8 VipIncRouter_IsChanOpen(uint8 u8ChannelNumber) |  |
+| Parameter |  |
+| u8ChannelNumber | INC channel number used by your component |
+| Return code |  |
+| 0 | Flow control Inactive |
+| 1 | Flow control Active |
+| Description |  |
+| This interface can be used to check the current flow control status of a channel. |  |
+
+### 5.7 Component_IncRxMsg callback function which need define by user
+
+| Prototype |  |
+| --- | --- |
+| void(*RecieveMsgCB)(uint8 u8ChannelNumber, uint8 * pu8buf, int* lenptr) |  |
+| Parameter |  |
+| u8ChannelNumber | INC channel number used by your component |
+| pu8buf | Pointer to buffer to read |
+| lenPtr | pointer to the Number of bytes to be read |
+| Return code |  |
+| None |  |
+| Description |  |
+|  |  |
+
+## 6.INC channels provide to user ( VipIncRouter.h )
+
+| Channel Name | Channel Id | MCU to Soc buffer size | Soc to MCU buffer size | Note |
+| --- | --- | --- | --- | --- |
+| FLOW_CONTROL_CHANNEL | 0 | 100 | 100 | /*Flow control Channel*/ |
+| V_DATA_NO_RETR_CHANNEL | 1 | 2148 | 3 | 预留 |
+| SYSTEM_STATE_CHANNEL | 2 | 275 | 220 | /*LCM*/ |
+| V_DATA_CHANNEL | 3 | 2200 | 3350 | /*Vehicle Data-Vehicle Service*/ |
+| NAV_DATA_CHANNEL | 4 | 3 | 3 | 导航功能使用 |
+| DATE_TIME_CHANNEL | 5 | 220 | 220 | /*RTCHandler*/ |
+| HARD_KEYS_CHANNEL | 6 | 220 | 220 | 方控按键 |
+| DIAGNOSTICS_CHANNEL | 7 | 1023 | 1023 | /*Cdd_Diagnostic*/ |
+| CALIBRATION_CHANNEL | 8 | 3 | 3 | 标定数据使用 |
+| PROTO_KEY_CHANNEL | 9 | 220 | 220 | 预留 |
+| CHIMES_CONTROL_CHANNEL | 10 | 804 | 804 | 告警音 |
+| VIDEO_CONTROL_CHANNEL | 11 | 804 | 804 | 图像控制命令 |
+| AUDIO_CONTROL_CHANNEL | 12 | 220 | 220 | /*AudioAmpManager*/ |
+| SW_UPDATE_CHANNEL | 13 | 3 | 3 | 升级功能使用 |
+| POWER_LIFECYCLE_CHANNEL | 14 | 275 | 220 | LCM使用 |
+| ODI_DATA_CHANNEL | 15 | 3 | 3 | 仪表功能使用 |
+| ODI_SAFETY_DATA_CHANNEL | 16 | 300 | 300 | 仪表功能使用safty |
+| BRIGHTNESS_CHANNEL | 17 | 3 | 3 | 背光功能 |
+| SAFETY_CHANNEL | 18 | 804 | 804 | SAFETY |
+| ETHERNET_READY_CHANNEL | 19 | 3 | 3 | NA |
+| DEBUG_LOG_CHANNEL | 20 | 3 | 3 | 预留debug |
+| THERMAL_CONTROL_CHANNEL | 21 | 804 | 804 | /*Thermal Control Service*/ |
+| DLT_CHANNEL | 22 | 804 | 804 | DLT |
+| SENSORS_CHANNEL | 23 | 804 | 804 | 陀螺仪等 |
+| NFC_BT_CHANNEL | 24 | 804 | 804 | 预留 |
+| LIN_VIRTUAL_KEY | 25 | 3 | 3 | LIN按键 |
+| ERROR_MEMORY_CHANNEL | 26 | 3 | 3 | 传输故障信息 |
+| ENGINEERING_MENU_CHANNEL | 27 | 3 | 3 |  |
+| CM_Reserved1_CHANNEL | 28 | 3 | 3 |  |
+| CM_Reserved2_CHANNEL | 29 | 3 | 3 |  |
+| LCM_CHANNEL | 30 | 804 | 804 | LCM使用 |
+| PHY_ERR_CHANNEL | 31 | 3 | 3 |  |
+| DISPLAY_PWR_CHANNEL | 32 | 3 | 3 | 屏相关控制功能 |
+| VECHICLE_GREET_CHANNEL | 35 | 100 | 100 | /*迎宾语通道, MCU侧联电使用*/ |
+| ACCOUNT_CHANNEL | 36 | 500 | 500 | /*账户通道，MCU侧泛亚使用, VKM*/ |
+| DRIVING_CHANNEL | 37 | 500 | 500 | 驾驶模式，泛亚使用 |
+| EMERGENCY_PW_SAVE_CHANNEL | 38 | 40 | 40 | 应急节能模式，泛亚使用 |

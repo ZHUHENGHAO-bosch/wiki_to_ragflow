@@ -1,0 +1,150 @@
+{
+  "page_id": "4355263502",
+  "title": "How to get dng link and modify UDS md file",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/4355263502/How+to+get+dng+link+and+modify+UDS+md+file",
+  "last_modified": "2024-06-12T04:48:44.000+02:00",
+  "last_modified_by": "user-073a8",
+  "parent_id": "4204511237",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "1. Open chery 8255 Software Req_Cart and add module explorer widget"
+    },
+    {
+      "type": "paragraph",
+      "text": "here is the link below:"
+    },
+    {
+      "type": "paragraph",
+      "text": "https://rb-alm-20-p.de.bosch.com/rm/web#action=com.ibm.rdm.web.pages.showArtifactPage&artifactURI=https%3A%2F%2Frb-alm-20-p.de.bosch.com%2Frm%2Fresources%2FMD_EBI2qx5QEe-KXae95JKs7A&artifactInModule=https%3A%2F%2Frb-alm-20-p.de.bosch.com%2Frm%2Fresources%2FBI_EBSntR5QEe-KXae95JKs7A&componentURI=https%3A%2F%2Frb-alm-20-p.de.bosch.com%2Frm%2Frm-projects%2F_8HIsAOK7Ee6XXvwUSNli6A%2Fcomponents%2F_8aqE8OK7Ee6XXvwUSNli6A&vvc.configuration=https%3A%2F%2Frb-alm-20-p.de.bosch.com%2Frm%2Fcm%2Fstream%2F_8a8_5uK7Ee6XXvwUSNli6A"
+    },
+    {
+      "type": "paragraph",
+      "text": "Add module explorer to dashboard, so we can find specific SM easily"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20get%20dng%20link%20and%20modify%20UDS%20md%20file/image-2024-6-12_9-36-5.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to get dng link and modify UDS md file/image-2024-6-12_9-36-5.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "2. Save htm file to get link"
+    },
+    {
+      "type": "paragraph",
+      "text": "Go to a SM module, you can add some attributions in column,  and save the file as htm format.  Here is an example for SM13:"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20get%20dng%20link%20and%20modify%20UDS%20md%20file/image-2024-6-12_10-47-27.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to get dng link and modify UDS md file/image-2024-6-12_10-47-27.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20get%20dng%20link%20and%20modify%20UDS%20md%20file/image-2024-6-12_9-42-30.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to get dng link and modify UDS md file/image-2024-6-12_9-42-30.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Download .py file to generate the links of SWRS-HLR-xxx, put this python file in the folder where you save the htm file"
+    },
+    {
+      "type": "paragraph",
+      "text": "getLink.py"
+    },
+    {
+      "type": "paragraph",
+      "text": "Run .py file"
+    },
+    {
+      "type": "paragraph",
+      "text": "PS: this script is just a frame, you may modify it depending on the format of your htm file."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20get%20dng%20link%20and%20modify%20UDS%20md%20file/image-2024-6-12_10-39-19.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to get dng link and modify UDS md file/image-2024-6-12_10-39-19.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "3. Modify md file"
+    },
+    {
+      "type": "paragraph",
+      "text": "Open md file in below path:"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20get%20dng%20link%20and%20modify%20UDS%20md%20file/image-2024-6-12_10-43-59.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to get dng link and modify UDS md file/image-2024-6-12_10-43-59.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Update dng file and SWRS_HLR- number in md file"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20get%20dng%20link%20and%20modify%20UDS%20md%20file/image-2024-6-12_10-45-31.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to get dng link and modify UDS md file/image-2024-6-12_10-45-31.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "htmlGetLink.py",
+      "download_link": "/download/attachments/4355263502/htmlGetLink.py?version=2&modificationDate=1726213431000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-6-12_10-47-27.png",
+      "download_link": "/download/attachments/4355263502/image-2024-6-12_10-47-27.png?version=1&modificationDate=1718160447000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-6-12_10-45-31.png",
+      "download_link": "/download/attachments/4355263502/image-2024-6-12_10-45-31.png?version=1&modificationDate=1718160331000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-6-12_10-43-59.png",
+      "download_link": "/download/attachments/4355263502/image-2024-6-12_10-43-59.png?version=1&modificationDate=1718160239000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-6-12_10-39-19.png",
+      "download_link": "/download/attachments/4355263502/image-2024-6-12_10-39-19.png?version=1&modificationDate=1718159959000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "getLink.py",
+      "download_link": "/download/attachments/4355263502/getLink.py?version=1&modificationDate=1718156803000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-6-12_9-45-49.png",
+      "download_link": "/download/attachments/4355263502/image-2024-6-12_9-45-49.png?version=1&modificationDate=1718156749000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-6-12_9-42-30.png",
+      "download_link": "/download/attachments/4355263502/image-2024-6-12_9-42-30.png?version=1&modificationDate=1718156551000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-6-12_9-36-5.png",
+      "download_link": "/download/attachments/4355263502/image-2024-6-12_9-36-5.png?version=1&modificationDate=1718156165000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,523 @@
+{
+  "page_id": "7082017741",
+  "title": "4.0 Taiji AI Box - Orin Y Power Management",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/7082017741/4.0+Taiji+AI+Box+-+Orin+Y+Power+Management",
+  "last_modified": "2026-04-29T07:48:29.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "7043502288",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to understand the Orin Y Power sequence and the relevant code"
+    },
+    {
+      "type": "paragraph",
+      "text": "The orin_pwrmgr module is a component that runs on the AURIX TC3xx MCU and is responsible for managing the power lifecycle of an NVIDIA Orin SoC."
+    },
+    {
+      "type": "paragraph",
+      "text": "In plain terms: the MCU acts as a \"supervisor\" for the Orin SoC -- it controls power rails, monitors voltages and temperatures, handles safe boot chain selection, manages IST (In-System Test) execution, and processes critical failure reports from the SoC via SPI/Etherne"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Architecture Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "The module is composed of 4 major composites plus supporting layers:"
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "MCU_RefSwModules",
+          "Reference (reusable) SW: Platform Power Manager orchestration, I2C driver, Safety Monitor HW abstraction, IST Manager interfaces, Communication coordinator, Common interface"
+        ],
+        [
+          "NvMCU_SwModules",
+          "NVIDIA-MCU domain SW: Orin power control (VRS-10/11 regulators), voltage monitoring (VMON), temperature monitoring (TMON), IST Manager core, boot chain configuration, FOH (Fail Operational Handler), config/error codes"
+        ],
+        [
+          "MCU_PlaceHolder",
+          "Placeholder/adapter SW: Centralized error handler, Chain-C processing, debug shell"
+        ],
+        [
+          "MCU_NvStubs",
+          "NV stubs for NVM Info and Shell interfaces"
+        ],
+        [
+          "rte",
+          "Custom RTE layer bridging all composites via FIFO-based error notification, power request/state signaling, IST status sharing, UDP data exchange"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "MCU_RefSwModules -- Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "MCU_RefSwModules is the reusable reference software layer within orin_pwrmgr . It contains 9 modules that provide hardware abstraction, communication infrastructure, and coordination logi"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20Taiji%20AI%20Box%20-%20Orin%20Y%20Power%20Management/image-2026-4-27_13-5-15.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 Taiji AI Box - Orin Y Power Management/image-2026-4-27_13-5-15.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "OrinY Power sequence"
+    },
+    {
+      "type": "paragraph",
+      "text": "The power-up is driven by the pPltfPwrMgr_PwrUpOrinStJumpTable in SW_PltfPwrMgr.c . It consists of 14 sequential states executed cyclically from MCU_PltfPwrMgr_SW_RE_Cyclic"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20Taiji%20AI%20Box%20-%20Orin%20Y%20Power%20Management/image-2026-4-29_13-48-16.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 Taiji AI Box - Orin Y Power Management/image-2026-4-29_13-48-16.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 0: MCU_PLTFPWRMGR_PWRUP_ORIN_TRIG -- Pre-PowerUp"
+    },
+    {
+      "type": "paragraph",
+      "text": "lOrinPwrCtrl_PrePwrUp"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pin",
+        "Direction",
+        "Action",
+        "Purpose"
+      ],
+      "rows": [
+        [
+          "SOC_RESET",
+          "OUT",
+          "Set HIGH",
+          "Hold Orin in reset (active-low reset, inverted on P3710+)"
+        ],
+        [
+          "SOC_IST_REQ",
+          "OUT",
+          "Set LOW",
+          "De-assert IST request"
+        ],
+        [
+          "SOC_WAKE",
+          "OUT",
+          "Set LOW",
+          "De-assert wake signal"
+        ],
+        [
+          "SOC_SEQ_VMON_EN",
+          "OUT",
+          "Set LOW",
+          "Disable VRS10 sequencer/VMON"
+        ],
+        [
+          "SOC_SEQ_VMON_SLP",
+          "OUT",
+          "Set HIGH",
+          "Put VRS10 in sleep mode"
+        ],
+        [
+          "SOC_FORCE_RECOVERY",
+          "OUT",
+          "Set HIGH",
+          "De-assert force recovery (active-low)"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 1: MCU_PLTFPWRMGR_ENA_EXT_PWR -- Enable Pre-Regulator"
+    },
+    {
+      "type": "paragraph",
+      "text": "lPltfPwrMgr_EnablePREREG"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pin",
+        "Direction",
+        "Action",
+        "Purpose"
+      ],
+      "rows": [
+        [
+          "VRS11_U5V0S_ON",
+          "OUT",
+          "Set HIGH",
+          "Enable 5V switched supply rail"
+        ],
+        [
+          "(delay 500us)",
+          "--",
+          "wait",
+          "Settling time"
+        ],
+        [
+          "U15V5S_PRE_ON",
+          "OUT",
+          "Set HIGH",
+          "Enable 15.5V pre-regulator"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Wait: Polls for Power-Good (PG) with MCU_PLTFPWRMGR_PREREG_PG_WAIT_TIME time"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 2: MCU_PLTFPWRMGR_PWRUP_ORIN_CONDTION_CHECK -- Pre-condition Check"
+    },
+    {
+      "type": "paragraph",
+      "text": "lPltfPwrMgr_Hndl_PwrUpOrinCondCheck"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pin",
+        "Direction",
+        "Action",
+        "Purpose"
+      ],
+      "rows": [
+        [
+          "(ADC check)",
+          "IN",
+          "Read",
+          "Check pre-regulator voltage levels are within range"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Wait: Debounced check with MCU_PLTFPWRMGR_ORIN_POWERUP_COND_PASS_DEB_TIME using Time_GetEcuTimeMs timestamps. Also has a timeout MCU_PLTFPWRMGR_ORIN_POWERUP_CHECK_TIMEOUT"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 3: MCU_PLTFPWRMGR_TRIG_IST -- Trigger IST"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "lPltfPwrMgr_Hndl_TrigIST"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Configures IST Manager for this boot. No direct GPIO -- sets IST parameters via RTE."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 4: MCU_PLTFPWRMGR_INIT_TMON -- Initialize Temperature Monitor"
+    },
+    {
+      "type": "paragraph",
+      "text": "lPltfPwrMgr_Hndl_InitTMON"
+    },
+    {
+      "type": "paragraph",
+      "text": "Initializes the Orin TMON sensor over I2C (TMP451). No direct GPIO pin toggle."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 5: MCU_PLTFPWRMGR_INIT_VMON -- Initialize Voltage Monitor"
+    },
+    {
+      "type": "paragraph",
+      "text": "lPltfPwrMgr_Hndl_InitVMON"
+    },
+    {
+      "type": "paragraph",
+      "text": "Initializes voltage monitoring (VRS10/VRS11) over I2C. No direct GPIO toggle"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 6: MCU_PLTFPWRMGR_PROGRAM_VMON -- Program VMON Thresholds"
+    },
+    {
+      "type": "paragraph",
+      "text": "lPltfPwrMgr_Hndl_ProgramVMON"
+    },
+    {
+      "type": "paragraph",
+      "text": "Programs OV/UV thresholds on VRS10/VRS11 PMIC via I2C. No direct GPIO toggle."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 7: MCU_PLTFPWRMGR_PWRUP_VRS10 -- Power-Up VRS10 (Main Orin Supply)"
+    },
+    {
+      "type": "paragraph",
+      "text": "lPltfPwrMgr_Hndl_PwrUpVRS10"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pin",
+        "Direction",
+        "Action",
+        "Purpose"
+      ],
+      "rows": [
+        [
+          "VRS10_VRS11_NIRQ",
+          "IN",
+          "Read - expect HIGH",
+          "Verify no pre-existing faults on VMON"
+        ],
+        [
+          "(I2C)",
+          "--",
+          "VRS10_Init, VRS11_Init",
+          "Configure VRS10/VRS11 PMIC registers"
+        ],
+        [
+          "(I2C)",
+          "--",
+          "VRS10_Enable",
+          "Enable VRS10 power output"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Wait (RUNNING phase): Polls for NVMCU_ORINPWRCTRL_VRS10_PG_WAIT_TIME , then verifies"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pin / Signal",
+        "Direction",
+        "Expected",
+        "Purpose"
+      ],
+      "rows": [
+        [
+          "VRS10_VRS11_NIRQ",
+          "IN",
+          "HIGH",
+          "No fault interrupt from PMIC"
+        ],
+        [
+          "LCVR_PG_ADC",
+          "IN (ADC)",
+          "HIGH (voltage OK)",
+          "LCVR Power-Good"
+        ],
+        [
+          "LCVR_FSI_PG_ADC",
+          "IN (ADC)",
+          "HIGH (voltage OK)",
+          "FSI Power-Good"
+        ],
+        [
+          "LCVR_AO_PG_ADC",
+          "IN (ADC)",
+          "HIGH (voltage OK)",
+          "AO Power-Good"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "On success, enables FUNC_NIRQ continuous monitoring"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 8: MCU_PLTFPWRMGR_VERIFY_PWRUP_VMON -- Verify Power-Up Sequence"
+    },
+    {
+      "type": "paragraph",
+      "text": "lPltfPwrMgr_Hndl_VerifyPwrUpSeq"
+    },
+    {
+      "type": "paragraph",
+      "text": "Verifies all VMON rails are stable after VRS10 power-up. Reads voltage monitoring status."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 9: MCU_PLTFPWRMGR_XFI_SOPT -- XFI SOPT Test"
+    },
+    {
+      "type": "paragraph",
+      "text": "Handler: lPltfPwrMgr_Hndl_XfiSopt (line 2865)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Currently bypassed ( PWRSEQ_BYPASS ). Immediately advances."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 10: MCU_PLTFPWRMGR_BOOTCHAIN_SEL -- Boot Chain Selection"
+    },
+    {
+      "type": "paragraph",
+      "text": "lPltfPwrMgr_Hndl_BootChain_Sel"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pin",
+        "Direction",
+        "Action",
+        "Purpose"
+      ],
+      "rows": [
+        [
+          "SOC_BOOTCHAIN_0",
+          "OUT",
+          "HIGH or LOW",
+          "Boot chain bit 0 (selects A/B/C/D chain)"
+        ],
+        [
+          "SOC_BOOTCHAIN_1",
+          "OUT",
+          "HIGH or LOW",
+          "Boot chain bit 1"
+        ],
+        [
+          "SOC_IST_REQ",
+          "OUT",
+          "HIGH (if IST boot)",
+          "Signal IST boot to Orin"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 11: MCU_PLTFPWRMGR_SETPRERSTCOND -- Set Pre-Reset Conditions"
+    },
+    {
+      "type": "paragraph",
+      "text": "Handler: lPltfPwrMgr_Hndl_SetPreResetCond Delegates to: NvMCU_OrinPwrCtrl via NVMCU_ORINPWRCTRL_REQ_SETPRERESETCOND Impl: lOrinPwrCtrl_SetPreRstCond"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pin",
+        "Direction",
+        "Action",
+        "Purpose"
+      ],
+      "rows": [
+        [
+          "SOC_FORCE_RECOVERY",
+          "OUT",
+          "HIGH or LOW",
+          "Set recovery mode if requested (active-low)"
+        ],
+        [
+          "SOC_XFI_REFCLK_EN",
+          "OUT",
+          "Set HIGH",
+          "Enable XFI Ethernet reference clock to Orin"
+        ],
+        [
+          "(I2C)",
+          "--",
+          "VRS10_ClearFrcAct",
+          "Clear VRS10 Force-Active bit (allow sleep transitions)"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 12: MCU_PLTFPWRMGR_RLS_RST_TEGRA -- Release Orin Reset"
+    },
+    {
+      "type": "paragraph",
+      "text": "Handler: lPltfPwrMgr_Hndl_RlsRstTegra Delegates to: NvMCU_OrinPwrCtrl via NVMCU_ORINPWRCTRL_REQ_REL_RESET Impl: lOrinPwrCtrl_RlsRst"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pin",
+        "Direction",
+        "Action",
+        "Purpose"
+      ],
+      "rows": [
+        [
+          "SOC_RESET",
+          "OUT",
+          "Set LOW",
+          "Release Orin from reset (active-low, inverted) -- Orin starts booting"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Post-reset actions (same handler):"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Enables Orin TMON thermal monitoring",
+        "Enables VRS11 PG monitoring (if not in recovery mode)",
+        "Starts FOH (First Orin Heartbeat) monitoring with delay"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step 13: MCU_PLTFPWRMGR_PWRUP_ORIN_SEQ_COMPLETE -- Sequence Complete"
+    },
+    {
+      "type": "paragraph",
+      "text": "Handler: lPltfPwrMgr_Hndl_PwrUpOrinSeqEnd (line 3793)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Transitions state to MCU_PLTFPWRMGR_PWRUP_ORIN_FINISH . Orin is now booting."
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2026-4-29_13-48-16.png",
+      "download_link": "/download/attachments/7082017741/image-2026-4-29_13-48-16.png?version=1&modificationDate=1777441696000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-4-27_13-5-15.png",
+      "download_link": "/download/attachments/7082017741/image-2026-4-27_13-5-15.png?version=1&modificationDate=1777266315000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

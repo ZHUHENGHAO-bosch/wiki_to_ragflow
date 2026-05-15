@@ -1,0 +1,48 @@
+{
+  "page_id": "2394053313",
+  "title": "EcuM, BswM And OS for Multicore",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2394053313/EcuM+BswM+And+OS+for+Multicore",
+  "last_modified": "2022-08-18T17:46:07.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2394053259",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "BswM"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "On systems with distributed BSW there is one BSW Mode Manager (BswM) per partition",
+        "Each of these BswMs can be configured independently",
+        "A BswM mainly interacts with the state managers (ECU state manager and bus state managers, for instance) on the same partition",
+        "The BswM is also responsible for the initialization and shutdown of BSW modules running in the same partition"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "EcuM and OS"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "There should be one OS and EcuM per Core",
+        "Distributing the BSW is only possible when using the EcuM Flex; the EcuM Fixed does not support this",
+        "The EcuM in the master core starts some drivers, determines the Post Build configuration and starts all remaining cores with all their satellite EcuMs"
+      ]
+    },
+    {
+      "type": "panel",
+      "panel_type": "info",
+      "title": "",
+      "content": "Distributing the BSW is only possible when using the EcuM Flex; the EcuM Fixed does not support this"
+    }
+  ],
+  "attachments": []
+}

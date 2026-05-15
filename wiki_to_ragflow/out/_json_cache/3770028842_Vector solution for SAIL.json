@@ -1,0 +1,31 @@
+{
+  "page_id": "3770028842",
+  "title": "Vector solution for SAIL",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/3770028842/Vector+solution+for+SAIL",
+  "last_modified": "2023-12-15T08:47:02.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "3774777762",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "The update from Vector for SAIL is \" the current situation is that the derivative QAM8255 (SA8255) is under development \""
+    },
+    {
+      "type": "paragraph",
+      "text": "Attached mail for reference"
+    },
+    {
+      "type": "paragraph",
+      "text": "RE_ CS0759620 (3 - Mediu…"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "RE_ CS0759620 (3 - Medium) - Vector Product for SAIL in QAM8255 - Cortex R52 .msg",
+      "download_link": "/download/attachments/3770028842/RE_%20CS0759620%20%283%20-%20Medium%29%20-%20Vector%20Product%20for%20SAIL%20in%20QAM8255%20-%20Cortex%20R52%20.msg?version=1&modificationDate=1702626406000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

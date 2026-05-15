@@ -1,0 +1,100 @@
+{
+  "page_id": "2343488128",
+  "title": "Aurix - China Convergence Platform Module Guidelines",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/2343488128/Aurix+-+China+Convergence+Platform+Module+Guidelines",
+  "last_modified": "2023-01-18T11:04:06.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2321473024",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Introduction"
+    },
+    {
+      "type": "paragraph",
+      "text": "The modules developed in China Convergence Base should be designed and implemented in a way that it an be reused across multiple projects"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Repo Structure"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Platform repos"
+    },
+    {
+      "type": "paragraph",
+      "text": "All the platform code has to be implemented in the respective repos which is placed in below path"
+    },
+    {
+      "type": "paragraph",
+      "text": "Autosar\\cnconvbase"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example, For Audio modules"
+    },
+    {
+      "type": "paragraph",
+      "text": "Autosar\\cnconvbase\\audio"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Project repos"
+    },
+    {
+      "type": "paragraph",
+      "text": "All the project configuration of respective platform modules should be implemented in Config repos placed in below path"
+    },
+    {
+      "type": "paragraph",
+      "text": "Config\\Autosar\\audio"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Guidelines for Platform modules"
+    },
+    {
+      "type": "paragraph",
+      "text": "Make sure platform repo code only has the core logic and all project specific implementation has to be implemented as callouts and Configuration files in Config repos"
+    },
+    {
+      "type": "paragraph",
+      "text": "An example for State of Health module"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Aurix%20-%20China%20Convergence%20Platform%20Module%20Guidelines/image2022-7-5_15-15-27.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Aurix - China Convergence Platform Module Guidelines/image2022-7-5_15-15-27.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "All modules should have an done following tasks"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Functional Test Spec",
+        "Unit Test report (Google/CPPUnitTest)",
+        "QAC/Coverity report",
+        "Manual/Wiki for the project integration team"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-7-5_15-15-27.png",
+      "download_link": "/download/attachments/2343488128/image2022-7-5_15-15-27.png?version=1&modificationDate=1657014327000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "page_id": "2411020429",
+  "title": "China Conv DLT logging Meeting minutes",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/2411020429/China+Conv+DLT+logging+Meeting+minutes",
+  "last_modified": "2022-09-16T07:56:46.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2403658546",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 09 Sep 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Mohan, Newton, Praveen, Senthil"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Approach to use Vector DLT seems to be suitable for China Convergence Platform",
+        "Discuss the architecture with CART",
+        "Confirm Vector Cost on DLT"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Open Points and Next actions:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Discuss the architecture with CART user-1f19a"
+      ]
+    }
+  ],
+  "attachments": []
+}

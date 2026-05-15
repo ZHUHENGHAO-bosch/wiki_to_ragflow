@@ -1,0 +1,49 @@
+# Memory Protection Issue Analysis
+
+> Source: /spaces/CARSFW/pages/3116197246/Memory+Protection+Issue+Analysis
+> Last modified: 2023-07-13T14:07:20.000+02:00
+
+---
+
+### Overview
+
+Below is the memory protection analysis
+
+All Memory and Protection errors are reported as Traps in Aurix.
+
+For all use cases when protection hook is called below information has to be logged
+
+1. Exception Source - ExceptionContext.ExceptionSource
+2. Exception address - Os_GetExceptionAddress ();
+3. Program Status Word (Very important) - Os_GetExceptionContext (&ExceptionContext) -> This API can be used only in ProtectionHook API context
+4. Current TaskId - GetTaskID(&taskID)
+5. Current ISRId - GetISRID()
+
+#### Protection Hook Use cases
+
+|   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- |
+| Use case | Issue | Trap | Handled By | Logging | Steps |
+| UC1 | SFR write in User-1 mode | Class 4 TIN 3 | ProtectionHook followed by ShutdownHook E_OS_PROTECTION_EXCEPTION | SEH -> FEL, EM, DLT | Remove ALM 7[20] NMI config in SMU |
+| UC2 | ASIL memory write by QM | Class 1 TIN 3 | ProtectionHook followed by ShutdownHook E_OS_PROTECTION_MEMORY | SEH -> FEL, EM, DLT | Implement SEH in Exception handle as per design Remove FEL call in OsHooks_Callout_Shutdown_ErrorHandling and replace with SSH call |
+| UC3 | Stack Overflow | Class 1 TIN 3 | ProtectionHook followed by ShutdownHook E_OS_PROTECTION_MEMORY | SEH -> FEL, EM, DLT | Implement SEH in Exception handle as per design |
+| UC4 | interrupt requests from unassigned interrupt sources | TBD | ProtectionHook followed by ShutdownHook E_OS_SYS_PROTECTION_IRQ | SEH -> FEL, EM, DLT | Get the unhandled Interrupt from Os_GetUnhandledIrq and log it properly |
+| UC5 | unhandled syscall request | TBD | ProtectionHook followed by ShutdownHook E_OS_SYS_PROTECTION_SYSCALL | SEH -> FEL, EM, DLT | Get the serviceId OSErrorGetServiceId and log it properly |
+| UC6 | unhandled interrupt request | TBD | ProtectionHook followed by ShutdownHook E_OS_SYS_PROTECTION_IRQ | TBD | Get the unhandled Interrupt Os_GetUnhandledIrq and log it properly |
+| UC7 | Instruction which can be executed only in Supervisor rights is executed in user mode | Class 1 TIN 1 | ProtectionHook followed by ShutdownHook E_OS_PROTECTION_MEMORY | SEH -> FEL, EM, DL | Interestingly this ends up in E_OS_PROTECTION_MEMORY from OS |
+
+#### Panic Hook Use cases
+
+|   |   |   |   |   |   |
+| --- | --- | --- | --- | --- | --- |
+| UC1 | inconsistent OS internal state Unhandled interrupt request in User critical section Unhandled syscall request which has occurred within OS code Unhandled exception request which has occurred within OS code Memory protection violation exception which has occurred within critical user sections | NA | PanicHook | TBD | We cannot use GetTaskId and GetIsrId, Os_GetExceptionContext inside Panchook But we can get exception address Os_GetExceptionAddress And we can read exception source (TIN) from D[15] register |
+
+Note:
+
+In case of a severe error the PanicHook might not be called in all cases
+
+Before calling the PanicHook, the OS tries to disable all interrupts. If the OS is not in supervisor mode, a class 1 TIN 1 trap (privileged instruction) occurs. The OS will initiate protection violation handling and the ProtectionHook will be called instead of the PanicHook
+
+### Hints:
+
+![](../../../../../_images/Memory%20Protection%20Issue%20Analysis/image-2023-7-13_20-6-12.png)

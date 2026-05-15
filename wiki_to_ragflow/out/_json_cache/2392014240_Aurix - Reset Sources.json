@@ -1,0 +1,33 @@
+{
+  "page_id": "2392014240",
+  "title": "Aurix - Reset Sources",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/2392014240/Aurix+-+Reset+Sources",
+  "last_modified": "2022-08-17T06:51:03.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2379247242",
+  "children": [],
+  "content": [
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "We can use PORST pin to do a Warm Reset",
+        "We can configure SCU to do a Application or an System Reset"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Aurix%20-%20Reset%20Sources/image2022-8-17_10-19-7.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Aurix - Reset Sources/image2022-8-17_10-19-7.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-8-17_10-19-7.png",
+      "download_link": "/download/attachments/2392014240/image2022-8-17_10-19-7.png?version=1&modificationDate=1660711750000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

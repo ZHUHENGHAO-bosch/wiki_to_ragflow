@@ -1,0 +1,48 @@
+{
+  "page_id": "2377379990",
+  "title": "Aurix - Wakeup from Standby Mode",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2377379990/Aurix+-+Wakeup+from+Standby+Mode",
+  "last_modified": "2022-08-05T12:29:57.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2377378063",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "As mentioned in Aurix - Standby Power domain - XC-CI China - Docupedia (bosch.com) , we will use Topology of Type 2 (Where VEXT will be turned OFF)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below are the possible Wakeup sources that can move the Tricore to Normal Mode from Standby Mode"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Main VEXT supply ramps-up again if configured via PMSWCR0.PWRWKEN enable bit",
+        "Wake-up is triggered by Standby Controller if configured via PMSWCR0.SCRWKEN enable bit",
+        "Wake-up via Wake-up Timer if configured via PMSWCR0.WUTWKEN enable bit",
+        "Wake-up via Pin B (Pin 33.12) if configured via PMSWCR0.PINBWKEN enable bit"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "We need to enable Aurix Wakeup by SCR and during Power on Reset So, below bit has to be set before entering to SCR standby mode"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Enable PMSWCR0.PWRWKEN → Tricore wakeup on Power on Reset",
+        "Enable PMSWCR0.SCRWKEN → Tricore wakeup by SCR"
+      ]
+    }
+  ],
+  "attachments": []
+}

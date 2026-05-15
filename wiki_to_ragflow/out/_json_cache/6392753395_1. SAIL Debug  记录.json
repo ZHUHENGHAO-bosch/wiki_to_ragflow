@@ -1,0 +1,162 @@
+{
+  "page_id": "6392753395",
+  "title": "1. SAIL Debug  记录",
+  "version": 9,
+  "url": "/spaces/CARSFW/pages/6392753395/1.+SAIL+Debug+%E8%AE%B0%E5%BD%95",
+  "last_modified": "2025-11-03T09:02:23.000+01:00",
+  "last_modified_by": "CHEN Yongjie (XC-CP/ESW2-CN)",
+  "parent_id": "6372329005",
+  "children": [],
+  "content": [
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "CCU B1板子调试， 上电一段时间（几分钟）后会跑死："
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.%20SAIL%20Debug%20%20%E8%AE%B0%E5%BD%95/image-2025-10-22_14-9-53-1.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1. SAIL Debug  记录/image-2025-10-22_14-9-53-1.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.%20SAIL%20Debug%20%20%E8%AE%B0%E5%BD%95/image-2025-10-22_14-10-38-1.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1. SAIL Debug  记录/image-2025-10-22_14-10-38-1.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "目前看下来是因为板子温度过高，需要强制散热！"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.   劳特巴赫关于DualPort选项疑问   --待解决"
+    },
+    {
+      "type": "paragraph",
+      "text": "调试时如果需要劳特巴赫实时观测变量，需要使能 DUALPORT 选项。但是目前如果使能DUALPORT的话 SAIL 会跑死， 这个跑死原因是什么？ 是高通调试接口或hyperviser限制？还是Muiti-core OS限制？或是别的什么原因？"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "3.   CDD_DebugLog 串口优化"
+    },
+    {
+      "type": "paragraph",
+      "text": "之前如果打开DebugLog串口输出，（大概率是因为DebugLog_PrintToUart()函数会高频重复调用CDD_Mailbox_Write()函数占用IPCC channel）会影响MD-SAIL通信，SSM会报Safety错误，导致MD侧无法进入Andriod系统"
+    },
+    {
+      "type": "paragraph",
+      "text": "SAIL侧串口打印："
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.%20SAIL%20Debug%20%20%E8%AE%B0%E5%BD%95/image-2025-10-24_13-20-30-1.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1. SAIL Debug  记录/image-2025-10-24_13-20-30-1.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "MD侧slog2info："
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.%20SAIL%20Debug%20%20%E8%AE%B0%E5%BD%95/image-2025-10-24_13-21-23.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1. SAIL Debug  记录/image-2025-10-24_13-21-23.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "优化措施 ："
+    },
+    {
+      "type": "paragraph",
+      "text": "1）： CDD_DebugLog_SAILConsoleUarttask()函数作为串口打印异步函数，不能放在Log_Message函数中执行，需要放到5ms或10ms周期性任务中；"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.%20SAIL%20Debug%20%20%E8%AE%B0%E5%BD%95/image-2025-10-24_13-22-23.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1. SAIL Debug  记录/image-2025-10-24_13-22-23.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "2）：提高串口波特率，使得单次调用串口发送占用时间减小；"
+    },
+    {
+      "type": "paragraph",
+      "text": "MCAL里Uart波特率配置到921600："
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.%20SAIL%20Debug%20%20%E8%AE%B0%E5%BD%95/image-2025-10-24_13-27-16.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1. SAIL Debug  记录/image-2025-10-24_13-27-16.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "同时对应的MCU里QUP对应channel外设时钟需要改为100MHZ："
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.%20SAIL%20Debug%20%20%E8%AE%B0%E5%BD%95/image-2025-10-24_13-28-5.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1. SAIL Debug  记录/image-2025-10-24_13-28-5.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "修改完成后，SAIL串口可以以921600波特率正常打印，同时MD可以启动Andriod系统。"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2025-10-24_13-28-5.png",
+      "download_link": "/download/attachments/6392753395/image-2025-10-24_13-28-5.png?version=1&modificationDate=1761283687000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-10-24_13-27-16.png",
+      "download_link": "/download/attachments/6392753395/image-2025-10-24_13-27-16.png?version=1&modificationDate=1761283638000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-10-24_13-22-23.png",
+      "download_link": "/download/attachments/6392753395/image-2025-10-24_13-22-23.png?version=1&modificationDate=1761283345000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-10-24_13-21-23.png",
+      "download_link": "/download/attachments/6392753395/image-2025-10-24_13-21-23.png?version=1&modificationDate=1761283285000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-10-24_13-20-30-1.png",
+      "download_link": "/download/attachments/6392753395/image-2025-10-24_13-20-30-1.png?version=1&modificationDate=1761283232000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-10-22_14-49-39-1.png",
+      "download_link": "/download/attachments/6392753395/image-2025-10-22_14-49-39-1.png?version=1&modificationDate=1761115778000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-10-22_14-49-22-1.png",
+      "download_link": "/download/attachments/6392753395/image-2025-10-22_14-49-22-1.png?version=1&modificationDate=1761115762000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-10-22_14-10-38-1.png",
+      "download_link": "/download/attachments/6392753395/image-2025-10-22_14-10-38-1.png?version=1&modificationDate=1761113437000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-10-22_14-9-53-1.png",
+      "download_link": "/download/attachments/6392753395/image-2025-10-22_14-9-53-1.png?version=1&modificationDate=1761113392000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

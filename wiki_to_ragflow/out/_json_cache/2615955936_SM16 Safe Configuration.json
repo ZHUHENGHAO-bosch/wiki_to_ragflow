@@ -1,0 +1,50 @@
+{
+  "page_id": "2615955936",
+  "title": "SM16 Safe Configuration",
+  "version": 12,
+  "url": "/spaces/CARSFW/pages/2615955936/SM16+Safe+Configuration",
+  "last_modified": "2023-02-03T12:18:59.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2411012902",
+  "children": [
+    "2619347748",
+    "2635517217"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "For ZEEKR, we are going to reuse this SM from GEELY. Since CART has no plan for this SM as of now"
+    },
+    {
+      "type": "paragraph",
+      "text": "Safe Configuration provides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "From KDS memory - OTP section",
+        "Car configuration (Application will read Car Config from other ECU via FR and store it in NVM) - needed by SW Tell tales and Safe output signals. Below are the examples,",
+        "Local Configuration data (Calibration data via SW update process - This data also will be stored in DFLASH considering SWAP A/B feature) - needed by SW Tell tales and Safe output signals"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SM16%20Safe%20Configuration/SM16%20Safe%20Configuration.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/SM16 Safe Configuration/SM16 Safe Configuration.bmp"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "SM16 Safe Configuration.bmp",
+      "download_link": "/download/attachments/2615955936/SM16%20Safe%20Configuration.bmp?version=1&modificationDate=1675423113000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SM16 High Level Diagram.bmp",
+      "download_link": "/download/attachments/2615955936/SM16%20High%20Level%20Diagram.bmp?version=1&modificationDate=1672025661000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

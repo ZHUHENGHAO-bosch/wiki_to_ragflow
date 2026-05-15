@@ -1,0 +1,65 @@
+{
+  "page_id": "2825325172",
+  "title": "Safety Traceability meeting -03 - 2023",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/2825325172/Safety+Traceability+meeting+-03+-+2023",
+  "last_modified": "2023-03-16T12:16:00.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2667861564",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 16 Mar 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants:  Lakhsmi, Kumar, Senthil, Praveen"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Exchange from RNG to HI for SMs and making sure all traceability is maintained",
+        "For CART 1.5.1, exchange is planned by ECT.",
+        "Exchange from DNG to HI for SMs delivered by Germany CART. If this exchange is not supported by CART team, then we need to find a way by ourselves to achieve this.",
+        "PF CART SWRS maintenance in both Tai-ji and Zeekr , to arrive at a strategy to baseline/branching Jayaraj Praveen (BCSC/ENG1)",
+        "SWRS exchange from RNG to HI Doors PF for modules from Cerberus and Hydra",
+        "How to merge two SWRS – only Proof of concept - Only video has to be updated",
+        "Wiki page",
+        "Baseline and frequency of exchange to be defined, alligned with CART user-14275",
+        "UTF availability in Zeekr MPLETED",
+        "Testing traceability - Project Testing team to be invited for next meeting - @ZHAO Yanqiang (XC-CT/ESW2-CN)",
+        "Links Doors] How to Import SW-RS From CART to Tai Ji platform - XC-CT China Convergence - Docupedia (bosch.com) How to create links between two modules imported from CART - XC-CT China Convergence - Docupedia (bosch.com) How to export from DNG to DOORS Classic - XC-CT China Convergence - Docupedia (bosch.com) How to merge two Modules - XC-CT China Convergence - Docupedia (bosch.com) Method 2: How to link two modules in DOORS - XC-CT China Convergence - Docupedia (bosch.com)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 09 Mar 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants:  Easwar, Praveen, Ravi"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Exchange from RNG to HI for SMs and making sure all traceability is maintained",
+        "Exchange from DNG to HI for SMs delivered by Germany CART. If this exchange is not supported by CART team, then we need to find a way by ourselves to achieve this.",
+        "PF CART SWRS maintenance in both Tai-ji and Zeekr , to arrive at a strategy to baseline/branching Jayaraj Praveen (BCSC/ENG1)",
+        "SWRS exchange from RNG to HI Doors PF for modules from Cerberus and Hydra",
+        "How to merge two SWRS – only Proof of concept",
+        "Wiki page",
+        "Baseline and frequency of exchange to be defined, alligned with CART user-14275",
+        "UTF availability in Zeekr",
+        "Testing traceability - Project Testing team to be invited for next meeting - @ZHAO Yanqiang (XC-CT/ESW2-CN)"
+      ]
+    }
+  ],
+  "attachments": []
+}

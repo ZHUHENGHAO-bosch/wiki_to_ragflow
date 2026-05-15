@@ -1,0 +1,77 @@
+{
+  "page_id": "2509810464",
+  "title": "FuSa - Traceablity - Draft",
+  "version": 24,
+  "url": "/spaces/CARSFW/pages/2509810464/FuSa+-+Traceablity+-+Draft",
+  "last_modified": "2022-12-09T14:06:13.000+01:00",
+  "last_modified_by": "user-14275",
+  "parent_id": "2410130115",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Introduction"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page provides an overview for the establishing and maintaining the traceability for FuSa artifacts delivered from CART, with CN CONV project requirements (Ex: Zeeker)"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Artifacts from CART"
+    },
+    {
+      "type": "paragraph",
+      "text": "The following is the delivery plan committed from CART team,"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "„FRS (SWRS) - CART DOORS",
+        "„SWCDD – storage TBD for ConvBase",
+        "„Code",
+        "„UT",
+        "„QAC",
+        "„FIT",
+        "Inspection Reviews for ConvBase components"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Traceability process flow for requirements"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "FSHLR/SysRS/TSR are part of DOORS Hi Server in project area (Ex: Zeeker)",
+        "Using xChange tool, copy of the SWRS/HLR (for SMs) from CART shall be placed in CN CONV PF",
+        "Further linking from the copy here, shall be possible (Ex: to TSR, SWCDD etc)",
+        "Project config shall be updated with new sub module in DOORS project area(Zeeker) and linked",
+        "RQM/Test specification document link shall be added"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2509810464/Traceablity.png?version=15&modificationDate=1670577542000&api=v2",
+      "alt": "",
+      "local_path": "_images/FuSa - Traceablity - Draft/Traceablity.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "Traceablity",
+      "download_link": "/download/attachments/2509810464/Traceablity?version=15&modificationDate=1670577542000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Traceablity.png",
+      "download_link": "/download/attachments/2509810464/Traceablity.png?version=15&modificationDate=1670577542000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

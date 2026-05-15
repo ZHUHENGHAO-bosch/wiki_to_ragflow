@@ -1,0 +1,29 @@
+{
+  "page_id": "4565826946",
+  "title": "Aurix - VCU Plus Platform",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/4565826946/Aurix+-+VCU+Plus+Platform",
+  "last_modified": "2024-08-06T04:41:26.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2310024392",
+  "children": [
+    "4565826986",
+    "4565826990",
+    "4581590794",
+    "4565827001",
+    "4565826997",
+    "4572972739",
+    "4593454448",
+    "3625360195",
+    "4920974137",
+    "4933323744",
+    "5446836110"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "VCU plus AKA SGM local which uses Aurix Tricore + Qualcomm 8155"
+    }
+  ],
+  "attachments": []
+}

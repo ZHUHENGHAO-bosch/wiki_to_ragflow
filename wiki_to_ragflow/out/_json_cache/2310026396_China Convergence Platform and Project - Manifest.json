@@ -1,0 +1,159 @@
+{
+  "page_id": "2310026396",
+  "title": "China Convergence Platform and Project - Manifest",
+  "version": 8,
+  "url": "/spaces/CARSFW/pages/2310026396/China+Convergence+Platform+and+Project+-+Manifest",
+  "last_modified": "2023-01-18T11:04:59.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "3444337912",
+  "children": [],
+  "content": [
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/China%20Convergence%20Platform%20and%20Project%20-%20Manifest/image2022-6-8_19-37-36.png?api=v2",
+      "alt": "",
+      "local_path": "_images/China Convergence Platform and Project - Manifest/image2022-6-8_19-37-36.png"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Manifest of projects for CART Modules – Hydra and Cerberus, Cn Conv modules",
+        "CN Conv PF team shall give revision number of all CART and CN Conv PF modules in their release notes for each release",
+        "Project Manifest shall point CART & CN Conv PF modules to the revision mentioned in the release notes"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "CN Conv PF team shall give revision number of all CART and CN Conv Config repos"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Manifest of Project for Config modules"
+    },
+    {
+      "type": "paragraph",
+      "text": "Options:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "It will be good if we have config repos for each project",
+        "Another approach is to create branch for each project",
+        "Another option is to have different project folders inside the config folders -> But when we download one project repo, then it will have project folders inside config folders which is not good"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Decision:"
+    },
+    {
+      "type": "paragraph",
+      "text": "We will create one config repos for project and for next project we will create branch out of each config repos"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Application repo:"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/China%20Convergence%20Platform%20and%20Project%20-%20Manifest/image2022-6-14_12-47-30.png?api=v2",
+      "alt": "",
+      "local_path": "_images/China Convergence Platform and Project - Manifest/image2022-6-14_12-47-30.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "China Conv Base PF repos"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/China%20Convergence%20Platform%20and%20Project%20-%20Manifest/image2022-6-14_12-48-26.png?api=v2",
+      "alt": "",
+      "local_path": "_images/China Convergence Platform and Project - Manifest/image2022-6-14_12-48-26.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "China Conv Base PF repos"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/China%20Convergence%20Platform%20and%20Project%20-%20Manifest/image2022-6-14_12-59-11.png?api=v2",
+      "alt": "",
+      "local_path": "_images/China Convergence Platform and Project - Manifest/image2022-6-14_12-59-11.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Hydra Platform repos"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Cerberus PF Repos"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/China%20Convergence%20Platform%20and%20Project%20-%20Manifest/image2022-6-14_13-0-46.png?api=v2",
+      "alt": "",
+      "local_path": "_images/China Convergence Platform and Project - Manifest/image2022-6-14_13-0-46.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "CN Conv Config repos"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/China%20Convergence%20Platform%20and%20Project%20-%20Manifest/image2022-6-14_13-2-31.png?api=v2",
+      "alt": "",
+      "local_path": "_images/China Convergence Platform and Project - Manifest/image2022-6-14_13-2-31.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-6-14_13-2-31.png",
+      "download_link": "/download/attachments/2310026396/image2022-6-14_13-2-31.png?version=1&modificationDate=1655191952000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-14_13-0-46.png",
+      "download_link": "/download/attachments/2310026396/image2022-6-14_13-0-46.png?version=1&modificationDate=1655191847000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-14_13-0-15.png",
+      "download_link": "/download/attachments/2310026396/image2022-6-14_13-0-15.png?version=1&modificationDate=1655191816000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-14_12-59-42.png",
+      "download_link": "/download/attachments/2310026396/image2022-6-14_12-59-42.png?version=1&modificationDate=1655191784000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-14_12-59-11.png",
+      "download_link": "/download/attachments/2310026396/image2022-6-14_12-59-11.png?version=1&modificationDate=1655191751000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-14_12-48-26.png",
+      "download_link": "/download/attachments/2310026396/image2022-6-14_12-48-26.png?version=1&modificationDate=1655191107000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-14_12-47-30.png",
+      "download_link": "/download/attachments/2310026396/image2022-6-14_12-47-30.png?version=1&modificationDate=1655191050000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-8_19-37-36.png",
+      "download_link": "/download/attachments/2310026396/image2022-6-8_19-37-36.png?version=1&modificationDate=1654697257000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

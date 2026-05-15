@@ -1,0 +1,60 @@
+{
+  "page_id": "6546260448",
+  "title": "3.0 TC4x - CPU - Use Case 3: Shared memory using Software protection",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/6546260448/3.0+TC4x+-+CPU+-+Use+Case+3+Shared+memory+using+Software+protection",
+  "last_modified": "2025-11-27T03:14:25.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6504745915",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "The local memories of CPUy considered which has no lock step enabled"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "PSPR, DPSR and DLMU"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.0%20TC4x%20-%20CPU%20-%20Use%20Case%203:%20Shared%20memory%20using%20Software%20protection/Shared%20memory%20using%20Software%20protection.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 TC4x - CPU - Use Case 3_ Shared memory using Software protection/Shared memory using Software protection.jpg"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Safety mechanism",
+        "Description",
+        "Reset operational state",
+        "Configuration and Activation",
+        "Error Reaction"
+      ],
+      "rows": [
+        [
+          "ESM[SW]:CPU:DATA_INTEGRITY",
+          "System Integrator wants to store data at memory locations that do not fulfill the assigned ASIL requirements (PSPR or DSPR of a disabled or non-lockstep CPU), the Application SW shall monitor the corruption of data stored in those locations caused by random hardware faults by using information redundancy If the application software needs to use the data packet, the software should first copy the data packet to a memory supporting the ASIL requirements of the use case (for example PSPR, DSPR, DLMU or LMU). The software shall then store a calculated checksum for the copy of the data packet. After completion of the calculation, the software shall compare the calculated checksum and the expected checksum. If the calculated checksum and the expected checksum match, the software may use the data packet",
+          "NA",
+          "NA",
+          "Perform Reset if checksum fails"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "Shared memory using Software protection.jpg",
+      "download_link": "/download/attachments/6546260448/Shared%20memory%20using%20Software%20protection.jpg?version=1&modificationDate=1764208593000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

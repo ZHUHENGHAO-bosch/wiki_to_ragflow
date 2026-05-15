@@ -1,0 +1,96 @@
+{
+  "page_id": "2586503780",
+  "title": "Safety Meeting Minutes - 12-2022",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/2586503780/Safety+Meeting+Minutes+-+12-2022",
+  "last_modified": "2022-12-13T14:16:17.000+01:00",
+  "last_modified_by": "user-14275",
+  "parent_id": "2403660548",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 06 Dec 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants:"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Discussion on ROM Monitor"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Action Items:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Dependencies with CART - user-14275",
+        "Review of System requirements for SW telltale and Safe output signals - user-14275",
+        "Integration of external WDG for next sample Easwaran Mahalingam Devaraj (MS/ECT-XC plan accordingly",
+        "HSI delivery plan - WANG Wei (XC/ESS3-CN)",
+        "SMs relates to System has to be listed and check the CART status till November. If no status prepare a back up plan user-1f19a user-14275",
+        "TSR draft version WANG Wei (XC/ESS3-CN) shall be given before start of SW implementation, HSI and TSR (Draft) should be ready by 03 Jan 2023",
+        "Aurix - Safety Mechanism Status - XC-CI China - Docupedia (bosch.com) - user-14275 to update",
+        "Safety Dashboard - Prabu Dhandapani (MS/ENE-VD1-XC)",
+        "Follow up with CART - SCC Safe Startup - XC-CT China - Docupedia (bosch.com) - user-14275",
+        "Safe state for ROM monitoring - @Praveen, @Ellen"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 13 Dec 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants:"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Discussion on ROM Monitor"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Action Items:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Links to TSR from SWRS , new attribute shall be created ZHAO Yanqiang (XC-CP/ESW2-CN)",
+        "Car Config structure to be updated in HLR  - ZHAO Yanqiang (XC-CP/ESW2-CN)",
+        "Dependencies with CART - user-14275",
+        "Review of System requirements for SW telltale and Safe output signals - user-14275",
+        "Integration of external WDG for next sample Easwaran Mahalingam Devaraj (MS/ECT-XC plan accordingly",
+        "HSI delivery plan - WANG Wei (XC/ESS3-CN)",
+        "SMs relates to System has to be listed and check the CART status till November. If no status prepare a back up plan user-1f19a user-14275",
+        "TSR draft version WANG Wei (XC/ESS3-CN) shall be given before start of SW implementation, HSI and TSR (Draft) should be ready by 03 Jan 2023",
+        "Aurix - Safety Mechanism Status - XC-CI China - Docupedia (bosch.com) - user-14275 to update",
+        "Safety Dashboard - Prabu Dhandapani (MS/ENE-VD1-XC)",
+        "Follow up with CART - SCC Safe Startup - XC-CT China - Docupedia (bosch.com) - user-14275",
+        "Safe state for ROM monitoring - @Praveen, @Ellen",
+        "Tool classification"
+      ]
+    }
+  ],
+  "attachments": []
+}

@@ -1,0 +1,116 @@
+{
+  "page_id": "4976983838",
+  "title": "7.0 SAIL clock generation and edge detection",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/4976983838/7.0+SAIL+clock+generation+and+edge+detection",
+  "last_modified": "2024-11-13T07:48:24.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4916777034",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to analyze the solution for Clock generation and edge detection which is needed for USS in SAIL"
+    },
+    {
+      "type": "paragraph",
+      "text": "QC MCAL package doesn't include the PWM and ICU module"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "PWM generation"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Solution 1: Using Gpt and Dio (Workaround)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Can not go with this one, GPT timer is too slow"
+    },
+    {
+      "type": "paragraph",
+      "text": "We can generate PWM using timer and GPIO module"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Configure the frequency of GPT timer",
+        "Configure the interrupt for GPT timer",
+        "In the ISR, we can toggle the Pin"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Dependency:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "GPT and Port & Dio configuration"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/7.0%20SAIL%20clock%20generation%20and%20edge%20detection/image-2024-11-13_14-48-19.png?api=v2",
+      "alt": "",
+      "local_path": "_images/7.0 SAIL clock generation and edge detection/image-2024-11-13_14-48-19.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Solution 2: Using Clock IP"
+    },
+    {
+      "type": "paragraph",
+      "text": "Better solution, we will go with this and make this concept work"
+    },
+    {
+      "type": "paragraph",
+      "text": "QC has Clock generator hardware module which can be used to generate clock reference"
+    },
+    {
+      "type": "paragraph",
+      "text": "Main domain also has similar clock hardware module"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no MCAL configuration to configure clock, so we need to directly change the clock generator registers"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below is the register information to generate clock in SAIL_IO_59 pin"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/7.0%20SAIL%20clock%20generation%20and%20edge%20detection/image-2024-11-12_19-26-34.png?api=v2",
+      "alt": "",
+      "local_path": "_images/7.0 SAIL clock generation and edge detection/image-2024-11-12_19-26-34.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "We need to refer BSP code to detect GPIO edge detection and trigger interrupt"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-11-13_14-48-19.png",
+      "download_link": "/download/attachments/4976983838/image-2024-11-13_14-48-19.png?version=1&modificationDate=1731480500000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-11-12_19-26-34.png",
+      "download_link": "/download/attachments/4976983838/image-2024-11-12_19-26-34.png?version=1&modificationDate=1731410795000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

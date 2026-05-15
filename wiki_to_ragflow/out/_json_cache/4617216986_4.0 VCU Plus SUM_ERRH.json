@@ -1,0 +1,78 @@
+{
+  "page_id": "4617216986",
+  "title": "4.0 VCU Plus SUM_ERRH",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/4617216986/4.0+VCU+Plus+SUM_ERRH",
+  "last_modified": "2024-08-19T10:44:48.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4593454448",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Standard Utility Module Error Handler (SUM_ERRH) is a software composition located in the Application Layer of the standardized architecture of AUTOSAR."
+    },
+    {
+      "type": "paragraph",
+      "text": "This error may be responsible by Diagnostic team"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Main Tasks of SUM_ERRH"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "SUM_ERRH is notified of error events created by BSW Production Errors or SUM error events",
+        "SUM_ERRH filters the events with the appropriate debounce algorithm. Based on the result of the debounce algorithm, SUM_ERRH notifies Dem of an event and a test pass/fail for that event. Dem is responsible to maintain the status byte",
+        "Aggregation of BSW production error events from Dem",
+        "Aggregation of SUM error events from each SUM",
+        "Aggregation of deadline monitoring events from SUM_SSM for signals which are relevant to setting of node loss U-code DTC",
+        "Aggregation of DTC list from Dem",
+        "Precondition Check for Control DTC Setting request from DCM based on Channel and Tester information",
+        "Precondition Check for Clear Diagnostic request from DCM for OBD/Non-OBD ECUs"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "SUM_ERRH Interfaces"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20VCU%20Plus%20SUM_ERRH/image-2024-8-19_16-32-48.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 VCU Plus SUM_ERRH/image-2024-8-19_16-32-48.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "SUM_ERRH working with DEM"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20VCU%20Plus%20SUM_ERRH/image-2024-8-19_16-41-42.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 VCU Plus SUM_ERRH/image-2024-8-19_16-41-42.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-19_16-41-42.png",
+      "download_link": "/download/attachments/4617216986/image-2024-8-19_16-41-42.png?version=1&modificationDate=1724056902000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-19_16-32-48.png",
+      "download_link": "/download/attachments/4617216986/image-2024-8-19_16-32-48.png?version=1&modificationDate=1724056369000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "page_id": "2383057032",
+  "title": "Aurix - Multicore for China Convergence",
+  "version": 11,
+  "url": "/spaces/CARSFW/pages/2383057032/Aurix+-+Multicore+for+China+Convergence",
+  "last_modified": "2023-01-18T11:01:09.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2310024392",
+  "children": [
+    "2383057042",
+    "2383057423",
+    "2383058131",
+    "2384995023",
+    "2394053259",
+    "2396094469",
+    "2396096776",
+    "2396097495",
+    "2396097886",
+    "2427144578",
+    "2441659017",
+    "2730650123",
+    "2730650498",
+    "2499261360",
+    "2476796598",
+    "2468288545",
+    "2458140350"
+  ],
+  "content": [
+    {
+      "type": "table",
+      "headers": [
+        "Contact person",
+        "Mail ID"
+      ],
+      "rows": [
+        [
+          "Praveen Jayaraj",
+          "jayaraj.praveen@cn.bosch.com"
+        ],
+        [
+          "Gao Carven",
+          "carven.gao@cn.bosch.com"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "01_Multicore Introduction - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "02_Autosar - Multicore Partitioning and Architecture - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "03_Autosar - Multicore OS - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "04_Autosar - Multicore Spinlock - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "05_Autosar - Modules for Multicore - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "06_Autosar - BSW Split Architecture - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "07_Multicore Guidelines - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "08_Multicore Communication - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "09_Multicore Startup - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Multicore Design Patterns - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Theory on Speedup - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Multicore Status"
+    },
+    {
+      "type": "paragraph",
+      "text": "Multicore - Module status and plan - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Multicore Status Sync - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Important links"
+    },
+    {
+      "type": "paragraph",
+      "text": "Multi-core bring up guideline - XC-CT Cerberus Platform - Docupedia (bosch.com)"
+    }
+  ],
+  "attachments": []
+}

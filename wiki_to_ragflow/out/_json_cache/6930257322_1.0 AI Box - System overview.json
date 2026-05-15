@@ -1,0 +1,50 @@
+{
+  "page_id": "6930257322",
+  "title": "1.0 AI Box - System overview",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/6930257322/1.0+AI+Box+-+System+overview",
+  "last_modified": "2026-03-13T11:01:16.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6930250961",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to analyze the system overview and the MCU related component in the system"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "System overview"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence2/download/attachments/917696630/image-2026-1-27_14-44-29.png?version=1&modificationDate=1769496269000&api=v2",
+      "alt": "image-2026-1-27_14-44-29.png",
+      "local_path": "_images/1.0 AI Box - System overview/image-2026-1-27_14-44-29.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "MCU connection"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20AI%20Box%20-%20System%20overview/image-2026-3-13_18-1-3.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 AI Box - System overview/image-2026-3-13_18-1-3.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2026-3-13_18-1-3.png",
+      "download_link": "/download/attachments/6930257322/image-2026-3-13_18-1-3.png?version=1&modificationDate=1773396063000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

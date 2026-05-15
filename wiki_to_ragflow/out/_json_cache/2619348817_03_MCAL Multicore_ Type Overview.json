@@ -1,0 +1,210 @@
+{
+  "page_id": "2619348817",
+  "title": "03_MCAL Multicore: Type Overview",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2619348817/03_MCAL+Multicore+Type+Overview",
+  "last_modified": "2022-12-30T09:37:48.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2394052922",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Summary of MCAL type criteria"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/03_MCAL%20Multicore:%20Type%20Overview/image2022-12-30_16-31-47.png?api=v2",
+      "alt": "",
+      "local_path": "_images/03_MCAL Multicore_ Type Overview/image2022-12-30_16-31-47.png"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Driver",
+        "HW Natural Element",
+        "Mappable element (ME)",
+        "Relation ME:Core",
+        "Multi-core type"
+      ],
+      "rows": [
+        [
+          "Adc",
+          "HW Units",
+          "Channel group",
+          "n:m",
+          "Type IV - 1b + 2a + 3a, IFX – Type II"
+        ],
+        [
+          "CorTst",
+          "Core",
+          "Core",
+          "1:1",
+          "Type II - 1b + 2b + 3a"
+        ],
+        [
+          "Crypto",
+          "HSM",
+          "Job",
+          "n:1",
+          "Type II - 1b + 2b + 3a"
+        ],
+        [
+          "Dio",
+          "Port / Channel",
+          "Port / Channel",
+          "n:m",
+          "Type III = 1b + 2b + 3b"
+        ],
+        [
+          "Gpt",
+          "Timer Resource",
+          "Local Timer Global Timer",
+          "n:1 1:m",
+          "Type II - 1b + 2b + 3a Type III = 1b + 2b + 3b"
+        ],
+        [
+          "Icu",
+          "Timer / Edge Detector",
+          "ICU Channel",
+          "n:m",
+          "Type IV - 1b + 2a + 3a, IFX – Type II"
+        ],
+        [
+          "Mcu",
+          "Core",
+          "Core, System",
+          "1:1",
+          "Type II - 1b + 2b + 3a"
+        ],
+        [
+          "Port",
+          "Port / Channel",
+          "Port / Channel",
+          "n:m",
+          "Type III = 1b + 2b + 3b"
+        ],
+        [
+          "Pwm",
+          "Timer",
+          "PWM Channel",
+          "n:m",
+          "Type IV - 1b + 2a + 3a, IFX – Type II"
+        ],
+        [
+          "Spi",
+          "Channel",
+          "Spi Device",
+          "n:m",
+          "Type IV - 1b + 2a + 3a, IFX – Type II"
+        ],
+        [
+          "Wdg",
+          "Watchdog Driver",
+          "WDG Resource",
+          "n:1",
+          "Type II - 1b + 2b + 3a"
+        ],
+        [
+          "Communication Driver",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Can",
+          "CAN Controller",
+          "Network",
+          "n:1",
+          "Type II - 1b + 2b + 3a"
+        ],
+        [
+          "CanTrcv",
+          "Transceiver ASIC",
+          "Network",
+          "n:1",
+          "Type II - 1b + 2b + 3a"
+        ],
+        [
+          "Eth",
+          "MAC",
+          "Network",
+          "n:1",
+          "Type II - 1b + 2b + 3a"
+        ],
+        [
+          "EthSwt",
+          "Switch ASIC",
+          "Network",
+          "n:1",
+          "Type II - 1b + 2b + 3a"
+        ],
+        [
+          "EthTrcv",
+          "Transceiver ASIC",
+          "Network",
+          "n:1",
+          "Type II - 1b + 2b + 3a"
+        ],
+        [
+          "Lin",
+          "Lin Channel",
+          "Network",
+          "n:1",
+          "Type II - 1b + 2b + 3a"
+        ],
+        [
+          "LinTrcv",
+          "Transceiver ASIC",
+          "Network",
+          "n:1",
+          "Type II - 1b + 2b + 3a"
+        ],
+        [
+          "Memory Drivers",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Eep",
+          "EEPROM Driver",
+          "MCAL Module",
+          "1:1",
+          "Type I = 1a + 2a + 3a"
+        ],
+        [
+          "Fls",
+          "Flash",
+          "MCAL Module",
+          "1:1",
+          "Type I = 1a + 2a + 3a"
+        ],
+        [
+          "FlsTst",
+          "Flash Test",
+          "MCAL Module",
+          "1:1",
+          "Type I = 1a + 2a + 3a"
+        ],
+        [
+          "RamTst",
+          "Core",
+          "Core, System",
+          "n:1",
+          "Type II - 1b + 2b + 3a"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-12-30_16-31-47.png",
+      "download_link": "/download/attachments/2619348817/image2022-12-30_16-31-47.png?version=1&modificationDate=1672389108000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

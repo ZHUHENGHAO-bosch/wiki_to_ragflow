@@ -1,0 +1,182 @@
+{
+  "page_id": "2453431226",
+  "title": "Safety Meeting Minutes - 10-2022",
+  "version": 20,
+  "url": "/spaces/CARSFW/pages/2453431226/Safety+Meeting+Minutes+-+10-2022",
+  "last_modified": "2022-10-25T08:27:41.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2403660548",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 11 Oct 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Wang Wei, Praveen"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Discussion on timeline",
+        "Discussion on SafeTouch Ownership - WANG Wei (XC/ESS3-CN) China Project team",
+        "Discussion on Safety Path - next meeting",
+        "TSC plan - Any dependencies we will raise to system team to take on high priority",
+        "Safe Telltale and Safe Signal output - ECT has to take care",
+        "Discussion on ADC Handling - Next meeting",
+        "Discussion on Clock monitor - Next meeting"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Action Items:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Discussion with CART to update the timeline - WANG Wei (XC/ESS3-CN) and user-14275",
+        "External WDG chip finalization  - user-1f19a",
+        "All external circuit details for Safety - WANG Wei (XC/ESS3-CN) INPROGRESS - System team will give more input after system safety analysis",
+        "Draft version of safety path - COMPLETED",
+        "Share the concept from CART on SOC State monitor - user-14275",
+        "ADC Handling on HW level -whether we will receive ADC in two different pins and processed by two ADC Convertors Or Get ADC in a single pin and processed redundantly by different ADC convertor (May be another group or another cluster) WANG Wei (XC/ESS3-CN) - COMPLETED",
+        "Analyze SoCStateMonitor of GWM concept with CART - user-14275",
+        "DIA between Bosch and IFX/Vector → user-14275 Deadline: 21 Oct 2022",
+        "Easwar to send an invitation for Safe telltale overview and Safe output signal - user-14275"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 18 Oct 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Carven, Wang Wei, Praveen"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Timeline for Safety plan",
+        "Safe touch is QM for first release",
+        "Discussion on Safety Path - next meeting",
+        "Discussion on ADC Handling - Next meeting",
+        "Discussion on Clock monitor - Next meeting"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "SM05: E2ESignalProtection - Will be good if it is done along with dbc integration, So China team will take responsibility"
+    },
+    {
+      "type": "paragraph",
+      "text": "Safe HMI monitor → SCC part is also with China project team"
+    },
+    {
+      "type": "paragraph",
+      "text": "Safe SWC telltale and Safe output signal → ECT"
+    },
+    {
+      "type": "paragraph",
+      "text": "Discuss SM05 with CART"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Action Items:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Discussion with CART to update the timeline - WANG Wei (XC/ESS3-CN) and user-14275",
+        "All external circuit details for Safety - WANG Wei (XC/ESS3-CN) INPROGRESS - System team will give more input after system safety analysis",
+        "Analyze SoCStateMonitor of GWM concept with CART - user-14275",
+        "DIA between Bosch and IFX/Vector → user-1f19a Deadline: 21 Oct 2022 INPROGRESS",
+        "Easwar to send an invitation for Safe telltale overview and Safe output signal - user-14275 COMPLETED",
+        "Review of System requirements for SW telltale and Safe output signals - user-14275",
+        "Integration of external WDG for next sample user-14275 to plan accordingly",
+        "Which EA cloud area server to use for Safety"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 25 Oct 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Wang Wei, Praveen"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Timeline for Safety plan",
+        "Safety SW telltale and Safe output signals → ECT will take it up",
+        "Voltage rail on Safety path discussion",
+        "External WDG mechanism",
+        "VAREF - VAREF plausibility - XC-CI China - Docupedia (bosch.com)"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Safety%20Meeting%20Minutes%20-%2010-2022/image2022-10-25_11-25-32.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Safety Meeting Minutes - 10-2022/image2022-10-25_11-25-32.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Action Items:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Discussion with CART to update the timeline - WANG Wei (XC/ESS3-CN) and user-14275",
+        "All external circuit details for Safety - WANG Wei (XC/ESS3-CN) INPROGRESS - System team will give more input after system safety analysis",
+        "Analyze SoCStateMonitor of GWM concept with CART - user-14275",
+        "DIA between Bosch and IFX/Vector → user-1f19a Deadline: 21 Oct 2022 COMPLETED",
+        "Review of System requirements for SW telltale and Safe output signals - user-14275",
+        "Integration of external WDG for next sample Easwaran Mahalingam Devaraj (MS/ECT-XC plan accordingly",
+        "Which EA cloud area server to use for Safety COMPLETED",
+        "Voltage rail review",
+        "HSI delivery plan - WANG Wei (XC/ESS3-CN)",
+        "Why IN2 is connected to Ext WDG instead of directly to Backlight booster user-1f19a",
+        "Logical product structure in EA (from DOORs)"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-10-25_11-25-32.png",
+      "download_link": "/download/attachments/2453431226/image2022-10-25_11-25-32.png?version=1&modificationDate=1666677332000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

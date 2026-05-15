@@ -1,0 +1,129 @@
+{
+  "page_id": "2458131001",
+  "title": "LCM Status Meeting - 10-2022",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/2458131001/LCM+Status+Meeting+-+10-2022",
+  "last_modified": "2022-10-27T11:21:53.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2421032631",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Date : 12 Oct 2022"
+    },
+    {
+      "type": "paragraph",
+      "text": "Participants: Shanhe, Praveen, Joanna, John, Huang Can, Shang Hang,"
+    },
+    {
+      "type": "paragraph",
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Status on all projects"
+    },
+    {
+      "type": "paragraph",
+      "text": "Open points:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cyclic Reset Handling - Will be on hold till we find the Startup code responsible team",
+        "QM Wdg Handling",
+        "EcuM State Transition Wdg Mechanism",
+        "Wdg Monitoring for LCM components",
+        "Thermal monitor",
+        "STR",
+        "Zeekr",
+        "Geely",
+        "LCM Multicore",
+        "Thermal monitor",
+        "HW monitoring",
+        "Chery"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Date : 12 Oct 2022"
+    },
+    {
+      "type": "paragraph",
+      "text": "Participants: Shanhe, Praveen, Joanna, John, Huang Can, Shang Hang,"
+    },
+    {
+      "type": "paragraph",
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Status on all projects"
+    },
+    {
+      "type": "paragraph",
+      "text": "Open points:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cyclic Reset Handling - Will be on hold till we find the Startup code responsible team",
+        "QM Wdg Handling",
+        "EcuM State Transition Wdg Mechanism",
+        "Wdg Monitoring for LCM components",
+        "Thermal monitor",
+        "STR",
+        "Zeekr",
+        "Geely",
+        "LCM Multicore",
+        "Thermal monitor",
+        "HW monitoring",
+        "Chery",
+        "Chery schematic review on LCM part - TAN Shanhe (XC-CP/ESW2-CN) ZHAO Joanna (XC-CP/ESW2-CN)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Date : 27 Oct 2022"
+    },
+    {
+      "type": "paragraph",
+      "text": "Participants: Shanhe, John, Hunag Can, Joanna"
+    },
+    {
+      "type": "paragraph",
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Status on all projects"
+    },
+    {
+      "type": "paragraph",
+      "text": "Open points:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cyclic Reset Handling - Will be on hold till we find the Startup code responsible team",
+        "QM Wdg Handling",
+        "EcuM State Transition Wdg Mechanism",
+        "Wdg Monitoring for LCM components",
+        "Thermal monitor",
+        "STR",
+        "Zeekr",
+        "Geely",
+        "LCM Multicore",
+        "Thermal monitor",
+        "HW monitoring",
+        "Chery schematic review on LCM part - TAN Shanhe (XC-CP/ESW2-CN) ZHAO Joanna (XC-CP/ESW2-CN) INPROGRESS",
+        "SWRS"
+      ]
+    }
+  ],
+  "attachments": []
+}

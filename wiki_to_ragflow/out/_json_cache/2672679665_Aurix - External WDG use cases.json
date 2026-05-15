@@ -1,0 +1,30 @@
+{
+  "page_id": "2672679665",
+  "title": "Aurix - External WDG use cases",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/2672679665/Aurix+-+External+WDG+use+cases",
+  "last_modified": "2023-04-24T08:53:42.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2672677122",
+  "children": [],
+  "content": [
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Aurix%20-%20External%20WDG%20use%20cases/CnConvPf_Aurix_ExternalWatchDog_Usecases.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/Aurix - External WDG use cases/CnConvPf_Aurix_ExternalWatchDog_Usecases.bmp"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "CnConvPf_Aurix_ExternalWatchDog_Usecases.bmp",
+      "download_link": "/download/attachments/2672679665/CnConvPf_Aurix_ExternalWatchDog_Usecases.bmp?version=3&modificationDate=1682319199000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "ExternalWatchDog_Usecases.bmp",
+      "download_link": "/download/attachments/2672679665/ExternalWatchDog_Usecases.bmp?version=2&modificationDate=1674204854000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

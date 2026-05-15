@@ -1,0 +1,138 @@
+{
+  "page_id": "4600744573",
+  "title": "2.0 SUM SSC Functionality",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/4600744573/2.0+SUM+SSC+Functionality",
+  "last_modified": "2024-08-14T08:24:08.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4600744541",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below are the SCC responsibilities"
+    },
+    {
+      "type": "paragraph",
+      "text": "SUM_SSC is responsible for the following functions"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Transmitters of Authenticated Messages:"
+    },
+    {
+      "type": "paragraph",
+      "text": "In the below example, Signal A,B,C and D are protected signals, so instead of SWC directly passing the signal value to COM, it will send to SSC. SSC will add authentication to the payload and then transmit to COM"
+    },
+    {
+      "type": "paragraph",
+      "text": "In case of signal E which is unprotected, SWC can directly send to COM"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SUM%20SSC%20Functionality/image-2024-8-14_14-21-56.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SUM SSC Functionality/image-2024-8-14_14-21-56.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Aggregator of signals that compose the Transmit Data Region of an Authenticated Message Trigger the generation of the Alive Rolling Count (ARC), Protection Value (PV), CheckSum(CS) and/or CRC"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Generation of the Authentication Region of an Authenticated Message",
+        "Update the Authoritative Counter (Tx confirmation)",
+        "Transmit the Authoritative Counter in the Counter Sync Message",
+        "Error handling / storage",
+        "Ensure synchronization of Authoritative Counter value with regards to periodic message transmission"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Transmitters of Non-Authenticated Messages having an ARC, PV, CS and/or CRC:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Aggregator of the data signals that compose the Message",
+        "Trigger the generation of the Alive Rolling Count (ARC), Protection Value (PV), CheckSum(CS) and/or CR"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Receivers of Authenticated Messages:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Verification of the Authentication Region of an Authenticated Message",
+        "Receive the Authoritative Counter from the Counter Sync Message",
+        "Maintain a Tentative Counter",
+        "Update / Manage the Active Counter locally",
+        "Update / Manage the MAC Pass Counter",
+        "Update / Manage the MAC Fail Counter",
+        "Transmission of the signal(s) in the Transmit Data Region of a verified Authenticated",
+        "Passes the ARC, PV, CS and/or CRC for checking and status notification",
+        "Message to the appropriate functional SW-C(s)",
+        "Error handling / storage"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Receivers of Non-Authenticated Messages having an ARC, PV, CS and/or CRC:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Passes the ARC, PV, CS and/or CRC for checking and status notification",
+        "Message to the appropriate functional SW-C(s)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "ECU Unlock Functionality"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Processing of unique Seed / Key Challenge Response requests (based on security levels supported by ECU) received from Diagnostics modules",
+        "Random number seed generation",
+        "Use of Software Crypto Library or Crypto HW to support Seed/Key access based on ECU H/W requirements",
+        "Verification of Seed /Key Challenge response"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Security Peripheral Key Provisioning Support"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Generation of Security Peripheral Memory Update Messages",
+        "Manufacturing First Time Key Update",
+        "Provision of Security Peripheral General Keys",
+        "Error detection associated with Key Provisioning"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-14_14-21-56.png",
+      "download_link": "/download/attachments/4600744573/image-2024-8-14_14-21-56.png?version=1&modificationDate=1723616516000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

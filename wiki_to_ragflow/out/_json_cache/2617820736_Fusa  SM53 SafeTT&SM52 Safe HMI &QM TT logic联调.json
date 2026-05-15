@@ -1,0 +1,298 @@
+{
+  "page_id": "2617820736",
+  "title": "Fusa  SM53 SafeTT&SM52 Safe HMI &QM TT logic联调",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/2617820736/Fusa+SM53+SafeTT+SM52+Safe+HMI+QM+TT+logic%E8%81%94%E8%B0%83",
+  "last_modified": "2023-01-12T02:41:54.000+01:00",
+  "last_modified_by": "LIU Dezhi (XC-CP/ESW2-CN)",
+  "parent_id": "2451722990",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "GEELY 项目开发经验和教训，供后面的项目参考。"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2617820736/SM52%20UI.png?version=4&modificationDate=1672989224000&api=v2",
+      "alt": "",
+      "local_path": "_images/Fusa  SM53 SafeTT&SM52 Safe HMI &QM TT logic联调/SM52 UI.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "1. 联调需要调哪些内容"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1.1. 界面预定位置显示的图像跟MCU预存的CRC是否一致"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1.1.1. 验证的前提条件"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "UI team提供UI/UE",
+        "QM HMI能正确显示TT"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1.2. QM TT 和 SM53 Safe TT 逻辑是否一致"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1.2.1. 验证的前提条件"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "SM53 safe TT 功能自测ok",
+        "QM TT 功能自测ok"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "2. 联调过程中头疼的事"
+    },
+    {
+      "type": "paragraph",
+      "text": "这个功能涉及的team比较多，沟通和配合起来不如同一个team高效。"
+    },
+    {
+      "type": "paragraph",
+      "text": "geely项目上拉了个微信群，有问题再里面提，感觉效果也不是很好。"
+    },
+    {
+      "type": "paragraph",
+      "text": "可以试试每天highlight 未完成项，计划等。"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "找一个负责的接口人，而不是直接对接autolink的开发。细节的事，让他们自己内部协调。",
+        "前期他们不重视，我们邮件发过去或者强调的事情，对方就没有声音了。（一拳打在棉花上的感觉）",
+        "联调前，需要知道每个灯怎样才能点亮. 灯的显示是车联做的，所以可以找车联的测试要这块内容，bosch测试也要介入。"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.1. UI"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.1.1. UI 多变"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.1.2. QM HMI和SM52使用版本不同"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "UI改了，只给了autolink，没有同步bosch。"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "→ a, UI team → autolink team  系统同事 → 加上版本号 释放给bosch 系统同事 → 上传SharePoint →bosch sw 开发"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.2. QM HMI"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.2.1. 贴图贴不对或者设计参数不对"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.2.2. 不自测，反复错误"
+    },
+    {
+      "type": "paragraph",
+      "text": "提供了测试方法，但QM HMI的不自测。经常他们说改完了，但Bosch开发去截图一验，CRC还是不对。"
+    },
+    {
+      "type": "paragraph",
+      "text": "→ 让他们提供自测报告，他们经常不提供。最后让他们至少提供机器里的渲染后的截图。"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.2.3. 软件版本不稳定"
+    },
+    {
+      "type": "paragraph",
+      "text": "daily经常起不来，HMI显示不出来等等问题。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.3. QM TT和ＳＭ５３逻辑不一致"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.3.1. 需求不一致"
+    },
+    {
+      "type": "paragraph",
+      "text": "fusa需求是fusa 系统根据geely的需求整理到doors上的，autolink需求是autolink系统整理成的word格式的。所以会存在不一致的情况"
+    },
+    {
+      "type": "paragraph",
+      "text": "→ 联调中途发现了这个问题，然后开会，拉着系统和开发，过每个TT的每条需求。"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.3.2. 软件逻辑不一致"
+    },
+    {
+      "type": "paragraph",
+      "text": "两份需求，不同的开发来实现，理解可能存在不同。特别是TT逻辑中有延时的，经常会两边理解不一致；"
+    },
+    {
+      "type": "paragraph",
+      "text": "某个别的灯(挡位），需要的输入信号比较多，逻辑也比较复杂，较容易出错。"
+    },
+    {
+      "type": "paragraph",
+      "text": "- 对于复杂逻辑TT，也经常会出现部分逻辑OK，其他一部分逻辑有问题。"
+    },
+    {
+      "type": "paragraph",
+      "text": "→ 调试，测试 发现，反馈给车联"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.3.3. SM05接口"
+    },
+    {
+      "type": "paragraph",
+      "text": "前期autolin没有用SM05 E2E result的RTE接口。出了问题才知道要用。"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.3.4. SM16 safe config"
+    },
+    {
+      "type": "paragraph",
+      "text": "配置字不同，表现也不一致。也是经常出问题的地方。"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.3.5. 逻辑中有延时的"
+    },
+    {
+      "type": "paragraph",
+      "text": "双方理解不一样，对清延时的处理经常不一样。也是经常出问题的地方。"
+    },
+    {
+      "type": "paragraph",
+      "text": "SM53和QM TT逻辑不一致问题，后面项目可以考虑QM TT不再处理ASIL TT的逻辑，直接从SM53拿safe TT处理后的结果（灯 是亮 是灭或闪），QM TT 转发给QM HMI去显示。"
+    },
+    {
+      "type": "paragraph",
+      "text": "这样能避免逻辑不一致的问题。"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2617820736/updated%20SM53_QMTT.png?version=1&modificationDate=1672303181000&api=v2",
+      "alt": "",
+      "local_path": "_images/Fusa  SM53 SafeTT&SM52 Safe HMI &QM TT logic联调/updated SM53_QMTT.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "3. 后期优化"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.1. soc侧从autolink获取状态走标准的protobuf接口"
+    },
+    {
+      "type": "paragraph",
+      "text": "像自检，开机动画等状态；C区TT灯所在位置"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.2. 实车reset后问题定位"
+    },
+    {
+      "type": "paragraph",
+      "text": "后面比较头疼的事是，实车上因为SM52校验不过，reset了。如何定位问题。"
+    },
+    {
+      "type": "paragraph",
+      "text": "丰富log内容，定位问题原因"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "CRC问题",
+        "INC超时问题",
+        "SUC问题",
+        "哪个TT导致"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "附录："
+    },
+    {
+      "type": "paragraph",
+      "text": "SM53&SM52&QM TT联调冲刺"
+    },
+    {
+      "type": "paragraph",
+      "text": "Fusa 对UI/UE & SM52&SM53&QM TT联调的总结"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "SM52 UI.png",
+      "download_link": "/download/attachments/2617820736/SM52%20UI.png?version=4&modificationDate=1672989224000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SM52 UI",
+      "download_link": "/download/attachments/2617820736/SM52%20UI?version=4&modificationDate=1672989223000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "updated SM53_QMTT",
+      "download_link": "/download/attachments/2617820736/updated%20SM53_QMTT?version=1&modificationDate=1672303181000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "updated SM53_QMTT.png",
+      "download_link": "/download/attachments/2617820736/updated%20SM53_QMTT.png?version=1&modificationDate=1672303181000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

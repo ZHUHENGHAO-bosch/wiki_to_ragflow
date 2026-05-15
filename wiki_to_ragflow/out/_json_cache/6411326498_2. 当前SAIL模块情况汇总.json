@@ -1,0 +1,334 @@
+{
+  "page_id": "6411326498",
+  "title": "2. 当前SAIL模块情况汇总",
+  "version": 32,
+  "url": "/spaces/CARSFW/pages/6411326498/2.+%E5%BD%93%E5%89%8DSAIL%E6%A8%A1%E5%9D%97%E6%83%85%E5%86%B5%E6%B1%87%E6%80%BB",
+  "last_modified": "2025-12-11T03:59:45.000+01:00",
+  "last_modified_by": "CHEN Yongjie (XC-CP/ESW2-CN)",
+  "parent_id": "6372329005",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1、 QC MCAL & CDD"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "",
+        "",
+        "SAIL peripheral feature",
+        "当前工程验证状态",
+        "备注"
+      ],
+      "rows": [
+        [
+          "MCAL",
+          "MCU",
+          "PLL、MCU工作主频等EL1无法配置， 但是一些外设模块分频是可以修改配置的； Mcu_GetResetReason 不可用； Mcu_PerformReset 不可用；",
+          "COMPLETED 已验证可用， 可配置外设时钟",
+          "![](_images/2. 当前SAIL模块情况汇总/image-2025-10-27_13-35-2.png)"
+        ],
+        [
+          "DIO",
+          "Dio_ReadPort/Dio_WritePort/Dio_ReadChannelGroup/Dio_WriteChannelGroup等常用函数QC未实现；",
+          "COMPLETED 已验证可用，",
+          ""
+        ],
+        [
+          "PORT",
+          "",
+          "COMPLETED 已验证可用",
+          "How to Configure SAIL Port - XC-CT China - Docupedia"
+        ],
+        [
+          "SPI",
+          "SAIL 支持（2）路SPI（由QUP里分配的配置决定）； +2路OSPI : spinor(flash)专用；",
+          "COMPLETED 已验证可用，",
+          "How to configure SAIL SPI - XC-CT China - Docupedia"
+        ],
+        [
+          "WDG",
+          "每个core一个watchdog, 共4个； 配置为锁步时，shadow-core的窗口狗需要关闭； 支持普通狗和窗口狗两种模式；",
+          "",
+          ""
+        ],
+        [
+          "CAN",
+          "最多支持8路CAN/CANFD; 不支持Wake-up features;",
+          "COMPLETED 已验证可用",
+          "How to configure SAIL_CAN on CCU - XC-CT China - Docupedia Note: DV测试时CAN丢帧比较明显， 还需优化；"
+        ],
+        [
+          "ETH",
+          "一路ETH,  1000M, RGMII(only)",
+          "",
+          ""
+        ],
+        [
+          "CRYPTO",
+          "",
+          "",
+          ""
+        ],
+        [
+          "GPT",
+          "",
+          "",
+          ""
+        ],
+        [
+          "MEM",
+          "",
+          "部分验证",
+          "How to configure SAIL NorFlash - XC-CT China - Docupedia NVMstack intergration with uncomplete MemAcc/Mem module - XC-CT China - Docupedia Note: 写入和读取数据都有16byte对齐限制；"
+        ],
+        [
+          "MEMACC",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD",
+          "CDD_DebugLog",
+          "",
+          "COMPLETED 已验证可用",
+          "SAIL-CDD_Uart & CDD_DebugLog - XC-CT China - Docupedia"
+        ],
+        [
+          "CDD_I2C",
+          "",
+          "COMPLETED 已验证可用, Test with PMIC",
+          "How to configure I2C - XC-CT China - Docupedia"
+        ],
+        [
+          "CDD_UART",
+          "",
+          "COMPLETED 已验证可用,",
+          "SAIL-CDD_Uart & CDD_DebugLog - XC-CT China - Docupedia"
+        ],
+        [
+          "CDD_PMIC",
+          "",
+          "COMPLETED 已验证可用,",
+          "SAIL - CDD_Pmic - XC-CT China - Docupedia"
+        ],
+        [
+          "CDD_FUSA",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_SSM",
+          "",
+          "已集成验证部分功能",
+          ""
+        ],
+        [
+          "CDD_BootLogger",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_ACMU",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_IPCC",
+          "",
+          "COMPLETED 已验证可用",
+          "SAIL - CDD_Ipcc - XC-CT China - Docupedia SAIL - CDD_Mailbox - XC-CT China - Docupedia SAILdbg，DebugLog, SSM等模块有使用；"
+        ],
+        [
+          "CDD_Mailbox",
+          "",
+          "COMPLETED 已验证可用"
+        ],
+        [
+          "CDD_Dispatcher",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_ICB",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_ISD",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_Monitor",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_OTA",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_PSAIL",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_Qfprom",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_Tsens",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_Vsens",
+          "",
+          "",
+          ""
+        ],
+        [
+          "CDD_SecureStorage",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "待开发功能",
+          "QC 底软包升级",
+          "ES9 [r00011.1]   →    ES13 [r00016.3]",
+          "",
+          ""
+        ],
+        [
+          "地址分区(Linker文件)",
+          "Arm Linker文件语法； 代码，变量，stack（ .rodata/.text /  .bss/.stack/.data ）等地址分区；",
+          "部分验证",
+          "3. 代码和变量放在DDR运行 - XC-CT China - Docupedia Note: DDR性能高通没有明确说明:  CPU访问DDR总线速率/指令周期等， 待测试；"
+        ],
+        [
+          "SRAM->DDR运行",
+          ""
+        ],
+        [
+          "AUTOSAR (EL1) 与 Hypervisor(EL2) 的交互函数接口",
+          "",
+          "",
+          ""
+        ],
+        [
+          "OTA方案，UDS刷新， 操作FLASH接口& NorFLASH分区",
+          "",
+          "",
+          ""
+        ],
+        [
+          "上下电/休眠唤醒/ STR",
+          "",
+          "",
+          ""
+        ],
+        [
+          "security",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2、上一阶段/DV测试过程中发现的一些问题"
+    },
+    {
+      "type": "paragraph",
+      "text": "a). SAIL串口打印时， SOC侧Andriod无法启动；     --目前对串口打印进行了优化，可以正常打印同时启动Andriod;"
+    },
+    {
+      "type": "paragraph",
+      "text": "b). 稳定性问题： DV测试时有时跑一段时间会crash, 同时导致SOC侧异常；"
+    },
+    {
+      "type": "paragraph",
+      "text": "c). CAN丢帧： DV测试中CAN丢帧比较明显，需要排查或优化；"
+    },
+    {
+      "type": "paragraph",
+      "text": "d). 集成CDD_SSM时, 核间通信IOC部分接口改动较大，可能会影响报错或导致crash;"
+    },
+    {
+      "type": "paragraph",
+      "text": "e). 由于 hypervisor黑盒， 发生错误或者reset时无法直接定位问题；"
+    },
+    {
+      "type": "paragraph",
+      "text": "f). 只有MCAL集成手册，未释放芯片手册，部分模块缺少一些细节信息&高通支持较差；"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "3、作为独立MCU时可能存在的一些问题"
+    },
+    {
+      "type": "paragraph",
+      "text": "a). MCAL缺少部分标准模块："
+    },
+    {
+      "type": "paragraph",
+      "text": "缺少ADC，  无法对模拟信号采样，KL15, KL30等电压信号无法直接获取；"
+    },
+    {
+      "type": "paragraph",
+      "text": "缺少PWM, ICU 等， 无法直接输出/输入 pwm波；"
+    },
+    {
+      "type": "paragraph",
+      "text": "没有LIN;"
+    },
+    {
+      "type": "paragraph",
+      "text": "b). I2C， SPI 接口数量少， (按目前配置2路SPI, 2路I2C)，在外接部件较多（CanTrcv， SBC, FLASH, USS, 解串器， 加串器等.........）时可能不够；"
+    },
+    {
+      "type": "paragraph",
+      "text": "c). Can Controller 不支持唤醒功能， 不能单独进行网络管理；"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2025-10-27_13-35-2.png",
+      "download_link": "/download/attachments/6411326498/image-2025-10-27_13-35-2.png?version=1&modificationDate=1761543302000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

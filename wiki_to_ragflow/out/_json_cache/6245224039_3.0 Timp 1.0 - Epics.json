@@ -1,0 +1,126 @@
+{
+  "page_id": "6245224039",
+  "title": "3.0 Timp 1.0 - Epics",
+  "version": 14,
+  "url": "/spaces/CARSFW/pages/6245224039/3.0+Timp+1.0+-+Epics",
+  "last_modified": "2025-10-15T03:09:33.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "5156738958",
+  "children": [
+    "6245224211",
+    "6262851184",
+    "6262857486",
+    "6382063211"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This Page is to analyze how to merge Fusion Demo to Taiji Main branch without affecting existing projects"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Current Matrix"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tricore Version",
+        "TC377",
+        "TC38x",
+        "TC39x"
+      ],
+      "rows": [
+        [
+          "Vector",
+          "Taiji Chery 8155 Chery 8255",
+          "CCU",
+          "VCU Plus"
+        ],
+        [
+          "Cubas",
+          "Taiji Maxus",
+          "-",
+          "GHAC Fusion WIN2"
+        ],
+        [
+          "RTA-CAR",
+          "-",
+          "-",
+          "-"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Taiji platform board"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Variant",
+        "Board"
+      ],
+      "rows": [
+        [
+          "TC37x",
+          "Maxus/GHAC/Chery8255??"
+        ],
+        [
+          "TC38x",
+          "CCU"
+        ],
+        [
+          "TC39x",
+          "VCU Plus"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "First step in TIMP"
+    },
+    {
+      "type": "paragraph",
+      "text": "Make TIMP as complete platform for Tricore supporting - TC37x, TC38x and TC39x. And more to TC4x"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Top level Epics",
+        "Detailed features",
+        "Comments"
+      ],
+      "rows": [
+        [
+          "Repo restructure in Taiji Main",
+          "Remove dependency with GB Create meaningful repos in PF Concept for Config repo handling",
+          "Make sure it doesn't affect running project"
+        ],
+        [
+          "Taiji Fusion to Taiji Main - Autosar - AR TC39x",
+          "CMAKE Macro for TC39x MCAL integration for TC39x RTA-OS for TC397 with HW counter Option to add Flux, Scons and rbnetcom based on build Macro Cross Cutting concerns - RAMROM, LD, RTMO, MEMMAP Adapt the configuration to latest Cubas Enable RTE",
+          "Use Fusion board to Test"
+        ],
+        [
+          "Taiji Fusion to Taiji Main - Autosar - AR TC39x - Phase 2",
+          "XCP -Optimization Multicore LCM Mode management Multicore COM - If needed Logging LCM concept and Clean up and implementation considering ADAS product use cases - System Manager",
+          ""
+        ],
+        [
+          "Taiji Build platform",
+          "Create a build platform suitable to support multiple compiler and controller in TIMP - Concept Create a build platform suitable to support multiple compiler and controller in TIMP - for Tricore GHS .......................",
+          "......"
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

@@ -1,0 +1,39 @@
+{
+  "page_id": "4577535596",
+  "title": "3.0 Cluster message Rx - VIP",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/4577535596/3.0+Cluster+message+Rx+-+VIP",
+  "last_modified": "2024-08-07T13:18:17.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4577529786",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to give an overview of Rx of Cluster message in VIP from SoC"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Rx Sequence"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.0%20Cluster%20message%20Rx%20-%20VIP/ODI_Receive_Sequence.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 Cluster message Rx - VIP/ODI_Receive_Sequence.jpg"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "ODI_Receive_Sequence.jpg",
+      "download_link": "/download/attachments/4577535596/ODI_Receive_Sequence.jpg?version=1&modificationDate=1723029474000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

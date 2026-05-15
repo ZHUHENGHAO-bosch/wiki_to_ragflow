@@ -1,0 +1,69 @@
+{
+  "page_id": "4415558435",
+  "title": "Taiji - Aurix Safety guidelines",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/4415558435/Taiji+-+Aurix+Safety+guidelines",
+  "last_modified": "2024-06-25T14:23:17.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2365867025",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page summarizes the guidelines for use of Safety in Projects that is based on Taiji platform"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Guidelines"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Keep all Safety module in Core 0. Even though we have two cores with lock step, to make the architecture simple we shall keep all safety components in Core 0"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "This is just a guideline, but if project has performance issue and really need Core 1. still Taiji supports this use case."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Taiji%20-%20Aurix%20Safety%20guidelines/Taiji_Guideline_Architecture.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/Taiji - Aurix Safety guidelines/Taiji_Guideline_Architecture.bmp"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "All safety components variables must be located in Core 0 memory. Since only core 0 memory is protected with BUS MPU"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "If we need to use Core 1 memory, then BUS MPU and its FIT test cases has to be implemented"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Always use context switcher module for trusted functions to access ASIL API from QM context. Do not configure direct trusted API in configurator -> Context Switcher - Introduction and How To Configure - XC-CT China - Docupedia (bosch.com)",
+        "Service External WDG from Core 0 and internal WDG for all cores"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "Taiji_Guideline_Architecture.bmp",
+      "download_link": "/download/attachments/4415558435/Taiji_Guideline_Architecture.bmp?version=1&modificationDate=1719309303000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

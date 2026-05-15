@@ -1,0 +1,65 @@
+{
+  "page_id": "3074391640",
+  "title": "OPL",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/3074391640/OPL",
+  "last_modified": "2023-05-29T11:07:17.000+02:00",
+  "last_modified_by": "LUO Ellen (XC/ESS2-CN)",
+  "parent_id": "3074391600",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "1. Fault Handling - DIM shall go to the safe state and set a DTC. So has the DTC implemented by Diag Team?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Luo Ellen: few DTC needs to be recorded by SM53 as mentioned in Fault handling section in FSR."
+    },
+    {
+      "type": "paragraph",
+      "text": "2. Time out signals - Has the COM team implemented it?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Luo Ellen: timeout is detected by SM5 ZHAO Yanqiang (XC-CP/ESW2-CN)"
+    },
+    {
+      "type": "paragraph",
+      "text": "3. Child lock & Suspension Failure Telltales - E2E and timeout signals are available or not?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Luo Ellen: check with developer for SM5 ZHAO Yanqiang (XC-CP/ESW2-CN)"
+    },
+    {
+      "type": "paragraph",
+      "text": "4. In Suspension Failure Telltales what signal are these?"
+    },
+    {
+      "type": "paragraph",
+      "text": "CC#58 AIR SUSPENSION != 01:(Without air suspension)"
+    },
+    {
+      "type": "paragraph",
+      "text": "OR"
+    },
+    {
+      "type": "paragraph",
+      "text": "CC#59 ACTIVE SUSPENSION != 01:(Without Continuous Controlled Chassis)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Luo Ellen: CC is short for \"Car Configuration\""
+    },
+    {
+      "type": "paragraph",
+      "text": "5. Any Update on Take over warning"
+    },
+    {
+      "type": "paragraph",
+      "text": "Luo Ellen: Still under discussion with customer."
+    }
+  ],
+  "attachments": []
+}

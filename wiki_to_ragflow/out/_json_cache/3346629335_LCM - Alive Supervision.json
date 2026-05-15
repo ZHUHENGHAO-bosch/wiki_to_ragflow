@@ -1,0 +1,109 @@
+{
+  "page_id": "3346629335",
+  "title": "LCM - Alive Supervision",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/3346629335/LCM+-+Alive+Supervision",
+  "last_modified": "2023-08-15T05:14:51.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2311851815",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "we have enabled supervision at each transitional mode in EcuM so that system will not stuck due to issues in triggers."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Supervision Entity - Configuration"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Supervision Entity",
+        "Expected SP",
+        "Supervision Ref Cycle (10ms)",
+        "Max Margin",
+        "Min Margin",
+        "Failed Alive SP tolerance"
+      ],
+      "rows": [
+        [
+          "EcuM_AliveSupervision_OnEnterWakeup",
+          "1",
+          "3000",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "EcuM_AliveSupervision_OnEnterStartup",
+          "1",
+          "3000",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "EcuM_AliveSupervision_OnEnterStartup",
+          "1",
+          "3000",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "EcuM_AliveSupervision_OnEnterSccRun*",
+          "1",
+          "3000",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "EcuM_AliveSupervision_OnEnterSocRun*",
+          "1",
+          "3000",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "EcuM_AliveSupervision_OnEnterPostrun",
+          "1",
+          "10000",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "EcuM_AliveSupervision_OnEnterShutdown",
+          "1",
+          "3000",
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "*SCCRUN and SCORUN are stable state so we are not enabling this SEs"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Error Handling"
+    },
+    {
+      "type": "paragraph",
+      "text": "In case of any supervision enters Expired state we will do reset via FEL"
+    }
+  ],
+  "attachments": []
+}

@@ -1,0 +1,98 @@
+{
+  "page_id": "3223111526",
+  "title": "Improve OS ErrorHook log",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/3223111526/Improve+OS+ErrorHook+log",
+  "last_modified": "2023-07-28T07:07:23.000+02:00",
+  "last_modified_by": "LIU Dezhi (XC-CP/ESW2-CN)",
+  "parent_id": "2451722990",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Backgroud：GEELY  has OS ErrorHook issue Occasionally, only once."
+    },
+    {
+      "type": "paragraph",
+      "text": "After Analysis："
+    },
+    {
+      "type": "paragraph",
+      "text": "Wed Jun 14 08:52:14 2023"
+    },
+    {
+      "type": "paragraph",
+      "text": "0D0204010730390001"
+    },
+    {
+      "type": "paragraph",
+      "text": "Wed Jun 14 08:52:14 2023"
+    },
+    {
+      "type": "paragraph",
+      "text": "0D020401073039000C0107E5070701F3 -> 0x39 -> Vector OS ErrorHook error OSServiceId_SetRelAlarm , E_OS_STATE"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Improve%20OS%20ErrorHook%20log/image-2023-7-28_13-0-26.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Improve OS ErrorHook log/image-2023-7-28_13-0-26.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Most likely one of the three below："
+    },
+    {
+      "type": "paragraph",
+      "text": "SetRelAlarm(evtCfg->eventList[evID].osAlarm, waitTime, 0);"
+    },
+    {
+      "type": "paragraph",
+      "text": "SetRelAlarm(EventPropertiesPtr->eventConfig[evID].osAlarm,EventPropertiesPtr→eventConfig[evID].osWaitingTime_ms,0);"
+    },
+    {
+      "type": "paragraph",
+      "text": "SetRelAlarm(ALR_SystemM_CommonSequencer, SYSTEMMNGR_CYCLE_TIME, 0);"
+    },
+    {
+      "type": "paragraph",
+      "text": "But have no more information to Identify which one is."
+    },
+    {
+      "type": "paragraph",
+      "text": "So add more information in ErrorHook(), to print which Task, ISR, and Alarm if  OSServiceId_SetRelAlarm."
+    },
+    {
+      "type": "paragraph",
+      "text": "RTC:"
+    },
+    {
+      "type": "paragraph",
+      "text": "https://rb-alm-20-p.de.bosch.com/ccm/web/projects/ECARX#action=com.ibm.team.workitem.viewWorkItem&id=1808774"
+    },
+    {
+      "type": "paragraph",
+      "text": "Reference（SetRelAlarm issue in GW VCU）:"
+    },
+    {
+      "type": "paragraph",
+      "text": "GM-VCU shutdown pullback issue:"
+    },
+    {
+      "type": "paragraph",
+      "text": "FW Shutdown pullback during NvM_WriteAll.msg"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "FW Shutdown pullback during NvM_WriteAll.msg",
+      "download_link": "/download/attachments/3223111526/FW%20Shutdown%20pullback%20during%20NvM_WriteAll.msg?version=1&modificationDate=1690520762000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-7-28_13-0-26.png",
+      "download_link": "/download/attachments/3223111526/image-2023-7-28_13-0-26.png?version=1&modificationDate=1690520427000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

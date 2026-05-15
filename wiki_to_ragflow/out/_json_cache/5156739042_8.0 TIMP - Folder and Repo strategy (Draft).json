@@ -1,0 +1,292 @@
+{
+  "page_id": "5156739042",
+  "title": "8.0 TIMP - Folder and Repo strategy (Draft)",
+  "version": 19,
+  "url": "/spaces/CARSFW/pages/5156739042/8.0+TIMP+-+Folder+and+Repo+strategy+Draft",
+  "last_modified": "2025-09-17T10:00:49.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "5156738958",
+  "children": [
+    "6262851082"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is summarize the folder structure for TIMP"
+    },
+    {
+      "type": "paragraph",
+      "text": "Check this page for CP and AS strategy: Repo Strategy between CP and AS - XC-CT China - Docupedia"
+    },
+    {
+      "type": "paragraph",
+      "text": "Queries:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Whether to use flux for BSW platform modules",
+        "Whether to use Make or Ninja for Build system",
+        "Can we keep Mom and Vfc in Stdcore - dont care on these part since it belong to AS"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "We will try to reuse the existing repos which is in our control and create only required ones"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Folder structure"
+    },
+    {
+      "type": "paragraph",
+      "text": "Top level Folder"
+    },
+    {
+      "type": "paragraph",
+      "text": "Second level folder"
+    },
+    {
+      "type": "paragraph",
+      "text": "Repo"
+    },
+    {
+      "type": "paragraph",
+      "text": "fbl"
+    },
+    {
+      "type": "paragraph",
+      "text": "hsm"
+    },
+    {
+      "type": "paragraph",
+      "text": "autosar"
+    },
+    {
+      "type": "paragraph",
+      "text": "application"
+    },
+    {
+      "type": "paragraph",
+      "text": "idcAppl"
+    },
+    {
+      "type": "paragraph",
+      "text": "timpPlatformbase"
+    },
+    {
+      "type": "paragraph",
+      "text": "rbBsw"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Arch - Design artifacts test - UT and QAC reports xxIf xxCore"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "rbHsw"
+    },
+    {
+      "type": "paragraph",
+      "text": "safetyApps"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "AurixFusa J6EFusa SailFusa CommonFusa"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "stdcore"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "bswStack CubasAurix/Cubas_2024 CubasJ6E -2024_04 - double check should be version base ...... VectorAurix mcal Ifx Tricore j6E qC ....."
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "rtaos tricore qc j6E ...."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "buildPlatform = TIMP Build environment"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sailconfig (similar structure for FusionCfg)"
+    },
+    {
+      "type": "paragraph",
+      "text": "AutosarCfg"
+    },
+    {
+      "type": "paragraph",
+      "text": "rbBsw"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "xxCfg"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "rbHsw"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "xxCfg"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "safetyApps"
+    },
+    {
+      "type": "paragraph",
+      "text": "stdcoreCfg"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "cubasCfg mcalCfg"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "buildCfg"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Build batch files and debug scripts Artifactory scripts and Json config file Cmake and Linker files"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "toolCfg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Thirdparty"
+    },
+    {
+      "type": "paragraph",
+      "text": "custAppl - Modules that interact with AS application"
+    },
+    {
+      "type": "paragraph",
+      "text": "platformTools"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "better to keep common tools in Artifactory BtcTools Dlt parser Ramrom Core Abs Rtmo ..."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Existing Repos which can be reused in TIMP"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pf/Cfg",
+        "Repo",
+        "Existing",
+        "Description"
+      ],
+      "rows": [
+        [
+          "Platform",
+          "rbBsw",
+          "cnconvbase/sail/platform/rbBsw",
+          ""
+        ],
+        [
+          "rbHsw",
+          "cnconvbase/sail/platform/rbHsw",
+          ""
+        ],
+        [
+          "SafetyApps-SailFuSa",
+          "cnconvbase/sail/platform/safetyApps",
+          ""
+        ],
+        [
+          "PlatformTools",
+          "cnconvbase/sail/sailtools",
+          ""
+        ],
+        [
+          "Stdcore-Sail Cubas",
+          "cnconvbase/sail/platform/stdcore/cubas",
+          ""
+        ],
+        [
+          "Stdcore-Sail RTAOS",
+          "cnconvbase/sail/platform/stdcore/rtaOs",
+          ""
+        ],
+        [
+          "Config",
+          "CustAppl",
+          "projects/ccufusion/sail/cust_apl/asw",
+          ""
+        ],
+        [
+          "buildCfg",
+          "projects/ccufusion/sail/cust_apl/build",
+          ""
+        ],
+        [
+          "Stdcore-SailCfg",
+          "projects/ccufusion/sail/cust_apl/config",
+          ""
+        ],
+        [
+          "Stdcore-IdcTaijiCfg",
+          "projects/taiji/cnconv/config/autosar/stdcore/Chery",
+          ""
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "add.svg",
+      "download_link": "/download/attachments/5156739042/add.svg?version=1&modificationDate=1740736389000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "twitterEmojiRedirector.svg",
+      "download_link": "/download/attachments/5156739042/twitterEmojiRedirector.svg?version=1&modificationDate=1740736177000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

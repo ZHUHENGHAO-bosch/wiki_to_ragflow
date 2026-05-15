@@ -1,0 +1,16 @@
+# Wiki → RAGFlow 同步工具依赖
+
+# 配置加载
+pyyaml>=6.0
+pydantic>=2.9.0
+pydantic-settings>=2.6.0
+
+# HTTP 客户端 (Confluence REST API)
+httpx>=0.27.0
+requests>=2.31.0          # ragflow-sdk 底层依赖
+
+# HTML / Markdown 解析
+beautifulsoup4>=4.12.0
+
+# RAGFlow SDK
+ragflow-sdk>=0.24.0

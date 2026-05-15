@@ -1,0 +1,592 @@
+{
+  "page_id": "4933326515",
+  "title": "CCU 8775 HW Block review",
+  "version": 10,
+  "url": "/spaces/CARSFW/pages/4933326515/CCU+8775+HW+Block+review",
+  "last_modified": "2024-10-29T10:00:37.000+01:00",
+  "last_modified_by": "LIU Dezhi (XC-CP/ESW2-CN)",
+  "parent_id": "4859844379",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to review the CCU 8775 schematic with respect to SAIL"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "SAIL IOs"
+    },
+    {
+      "type": "paragraph",
+      "text": "Only 78 SAIL_IOs from SA8775P are routed to QAM8775P BGA. SAIL_IO_63 is not routed, and it is for internal use only"
+    },
+    {
+      "type": "paragraph",
+      "text": "Check SAIL_IO_47 and SAIL_IO_49 with HW team, may be the data sheet we use is old"
+    },
+    {
+      "type": "paragraph",
+      "text": "For USS, HW connection is ok, But better to check in detail"
+    },
+    {
+      "type": "paragraph",
+      "text": "Key Inputs to SAIL"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "5 CANs",
+        "Ethernet",
+        "OSPI",
+        "UART to SCC, UART to debug board",
+        "USS",
+        "GPIO to SCC"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Schematic is reviewed with 80-42841-1_REV_AG_QAM8775P_Data_Sheet"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "SAIL IO",
+        "Description",
+        "Purpose",
+        "OK/NOK",
+        "Review Comments"
+      ],
+      "rows": [
+        [
+          "SAIL_IO_0",
+          "MP_SAIL_0",
+          "Not used",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_1",
+          "MP_SAIL_1",
+          "Not used",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_2",
+          "UART_CTS",
+          "SCC_SAIL_INC_UART_1V8 UART INC Level Shifter CPU-SPI-M - level shifter is used to convert SCC_SAIL_INC_UART_1V8 to SCC_SAIL_INC_UART_3V3",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_3",
+          "UART_RTS",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_4",
+          "UART_TXD",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_5",
+          "UART_RXD / SCC_CPU_BOOT_1V8 (SAIL_FORCE_FASTBOOT)",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_6",
+          "UART_TXD  / SAIL_BOOTCFG_1V8",
+          "SAIL_DBG_UART_1V8 - SAIL UART to debug board SAILSS_BOOT_CONFIG[13] - SAIL_IO_6 SAILSS_BOOT_CONFIG[14] - SAIL_IO_7",
+          "OK",
+          "How to change the pin to Boot configuration ??"
+        ],
+        [
+          "SAIL_IO_7",
+          "UART_RXD / SAIL_BOOTCFG_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_8",
+          "I2C-SDA",
+          "CPU_SAIL_USS_I2C_1V8 SAIL I2C connection to USS",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_9",
+          "I2C-SCL",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_10",
+          "USS_MISO",
+          "CPU_SAIL_USS_CTRL_1V8 USS SPI connection with SAIL SAILSS boot configuration bit 6 - SAIL_IO_14",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_11",
+          "USS_MOSI",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_12",
+          "USS_SCK",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_13",
+          "USS_CSB_A",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_14",
+          "USS_CSB_B",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_15",
+          "SAIL_FORCE_USB",
+          "SCC_CPU_BOOT_1V8 - Force USB from SCC",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_16",
+          "CPU_SAIL_RUN",
+          "SCC_SAIL_CTRL_1V8 - To inform SCC that SAIl is running SAILSS_RGMII_VOL_SEL Input to SCC",
+          "OK",
+          "What is mean by SAILSS_RGMII_VOL_SEL ?"
+        ],
+        [
+          "SAIL_IO_17",
+          "USS_RFC",
+          "CPU_SAIL_USS_E2_CTRL_1V8 - Input to SAIL SAILSS_BOOT_CONFIG[11]",
+          "OK",
+          "What is the purpose ?"
+        ],
+        [
+          "SAIL_IO_18",
+          "USS_RESB",
+          "CPU_SAIL_USS_E2_CTRL_1V8 SAILSS_BOOT_CONFIG[12]",
+          "OK",
+          "What is the purpose ? reset , connect to E52142A_Elmos"
+        ],
+        [
+          "SAIL_IO_19",
+          "SAIL_ERR1",
+          "SCC_SAIL_CTRL_1V8 Output of SAIL to SCC",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_20",
+          "SAIL_ERR2",
+          "SCC_SAIL_CTRL_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_21",
+          "INT_B",
+          "Ethernet CPU_SAIL_RGMII0_CTRL_1V8",
+          "OK",
+          "SAILSS Ethernet interrupt 0"
+        ],
+        [
+          "SAIL_IO_22",
+          "MDC",
+          "OK",
+          "SAILSS RGMII 0 management interface clock"
+        ],
+        [
+          "SAIL_IO_23",
+          "MDIO",
+          "OK",
+          "SAILSS RGMII 0 management interface clock"
+        ],
+        [
+          "SAIL_IO_24",
+          "RXC",
+          "CPU_SAIL_RGMII0_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_25",
+          "RX_CTL",
+          "CPU_SAIL_RGMII0_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_26",
+          "RD0",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_27",
+          "RD1",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_28",
+          "RD2",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_29",
+          "RD3",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_30",
+          "TXC",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_31",
+          "TX_CTL",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_32",
+          "TD0",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_33",
+          "TD1",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_34",
+          "TD2",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_35",
+          "TD3",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_36",
+          "RST_B",
+          "CPU_SAIL_RGMII0_CTRL_1V8",
+          "OK",
+          "What is the purpose ? rg → sg, reset 9000BF"
+        ],
+        [
+          "SAIL_IO_37",
+          "CAN_TX",
+          "CPU_SAIL_CAN0_1V8 SAILSS_BOOT_CONFIG[0] - SAIL_IO_37 WDOG_OFF",
+          "OK",
+          "How the WDOG_OFF pin controls this pin ?"
+        ],
+        [
+          "SAIL_IO_38",
+          "CAN_RX",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_39",
+          "CAN_TX",
+          "CPU_SAIL_CAN1_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_40",
+          "CAN_RX",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_41",
+          "CAN_TX",
+          "CPU_SAIL_CAN2_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_42",
+          "CAN_RX",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_43",
+          "SCC_SYS_RSTWARN_CPU_B",
+          "SCC_SAIL_CTRL_1V8",
+          "OK",
+          "What is the purpose?"
+        ],
+        [
+          "SAIL_IO_44",
+          "OSPI_ECS_B",
+          "SAIL_OSPI_1V8",
+          "OK",
+          "What is the purpose?"
+        ],
+        [
+          "SAIL_IO_45",
+          "CAN_TX",
+          "CPU_SAIL_CAN4_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_46",
+          "CAN_RX",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_47",
+          "CAN_TX",
+          "CPU_SAIL_CAN5_1V8",
+          "NOK",
+          ""
+        ],
+        [
+          "SAIL_IO_48",
+          "CAN_RX",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_49",
+          "USS_RFC",
+          "CPU_SAIL_USS_E1_CTRL_1V8",
+          "NOK",
+          "What is the purpose? There is no Boot config for this pin ![](_images/CCU 8775 HW Block review/image-2024-10-29_15-44-23.png)"
+        ],
+        [
+          "SAIL_IO_50",
+          "USS_DCR1B",
+          "CPU_SAIL_USS_E1_CTRL_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_51",
+          "PCAN_EN",
+          "CPU_SAIL_CAN_CTRL_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_52",
+          "USS_DCR2B",
+          "CPU_SAIL_USS_E1_CTRL_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_53",
+          "USS_DCR1B",
+          "CPU_SAIL_USS_E2_CTRL_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_54",
+          "UDROP60_B",
+          "SCC_SAIL_CTRL_1V8",
+          "OK",
+          "action: to discuss with system team"
+        ],
+        [
+          "SAIL_IO_55",
+          "USS_INTB",
+          "CPU_SAIL_USS_CTRL_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_56",
+          "USS_RESB",
+          "CPU_SAIL_USS_E1_CTRL_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_57",
+          "RADAR_EN",
+          "CPU_SAIL_CAN_CTRL_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_58",
+          "CPU_SAIL_USS_PHTM_EN_1V8",
+          "",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_59",
+          "USS_CLKREF",
+          "CPU_SAIL_USS_CTRL_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_60",
+          "USS_DCR2B",
+          "CPU_SAIL_USS_E2_CTRL_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_61",
+          "SAIL_ALIVE_OUT",
+          "SYS_DBG_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_62",
+          "CPU_SCC_SAIL_XBL_INT_1V8",
+          "",
+          "OK",
+          "What is the purpose?"
+        ],
+        [
+          "SAIL_IO_63",
+          "Can not use",
+          "Can not use",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_64",
+          "SAIL_64",
+          "Not used",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_65",
+          "SAILSS_PWR_READY",
+          "Not used",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_66",
+          "SAILSS_SLP_EN",
+          "Not used",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_67",
+          "OSPI_CS_B",
+          "SAIL_OSPI_1V8",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_68",
+          "SPI_DQS",
+          "OK",
+          ""
+        ],
+        [
+          "SAIL_IO_69",
+          "SAIL_LUNB",
+          "SCC_CPU_BOOT_1V8",
+          "OK",
+          "What is the purpose? keep open now(not used)"
+        ],
+        [
+          "SAIL_IO_70",
+          "OSPI_SCLK",
+          "SAIL_OSPI_1V8",
+          "OK",
+          "CPU-SAIL-Boot OSPI - Connection to SNOR"
+        ],
+        [
+          "SAIL_IO_71",
+          "OSPI_D0",
+          "OK"
+        ],
+        [
+          "SAIL_IO_72",
+          "OSPI_D1",
+          "OK"
+        ],
+        [
+          "SAIL_IO_73",
+          "OSPI_D2",
+          "OK"
+        ],
+        [
+          "SAIL_IO_74",
+          "OSPI_D3",
+          "OK"
+        ],
+        [
+          "SAIL_IO_75",
+          "OSPI_D4",
+          "OK"
+        ],
+        [
+          "SAIL_IO_76",
+          "OSPI_D5",
+          "OK"
+        ],
+        [
+          "SAIL_IO_77",
+          "OSPI_D6",
+          "OK"
+        ],
+        [
+          "SAIL_IO_78",
+          "OSPI_D7",
+          "OK"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-10-29_15-57-47.png",
+      "download_link": "/download/attachments/4933326515/image-2024-10-29_15-57-47.png?version=1&modificationDate=1730188667000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-29_15-44-23.png",
+      "download_link": "/download/attachments/4933326515/image-2024-10-29_15-44-23.png?version=1&modificationDate=1730187863000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

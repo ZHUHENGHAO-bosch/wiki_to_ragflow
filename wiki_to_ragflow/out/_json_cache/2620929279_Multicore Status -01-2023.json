@@ -1,0 +1,128 @@
+{
+  "page_id": "2620929279",
+  "title": "Multicore Status -01-2023",
+  "version": 13,
+  "url": "/spaces/CARSFW/pages/2620929279/Multicore+Status+-01-2023",
+  "last_modified": "2023-04-07T08:09:41.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2468288545",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Santosh, Praveen, Priyanga, Senthil"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 03 Jan 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "[ZEEKR][MC]  Enable SC3 in OS – Sprint 1 – Santhosh – need to change to sprint 2",
+        "[CNCONVPF][MC] WDG Handling – Sprint 1 - Preethica"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "MCAL configuration - all three cores COMPLETED WDGM and WDGIf configuration COMPLETED Test in all core (With Test Spec) - with and without lauterbach COMPLETED QM low priority task monitoring - Master core 0 COMPLETED Create a sperate task for Inita and map all Init runnable to this task Change priority for 5ms and 10ms and monitor the lowest priority task in all three cores Pushed to Gerrit and testing in progress COMPLETED Logging External WDG handling in Core 0 - SP2 Tested locally, problem with manifest Check with Easwar on this part Wiki page and test spec"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "[CNCONVPF][MC] Error logging – FEL – Sprint 2- Priyanga Started from mid of Sprint 1",
+        "[CNCONVPF][MC]  Memory Stack Handling - Retention RAM – Sprint 1 - Priyanga - RetentionRAM not working currently",
+        "[CNCONVPF][MC]  Memory Stack Handling – NVM Sprint 2 and Sprint 3 - Ravindar"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Santosh, Praveen, Prabu"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 06 Jan 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "[ZEEKR][MC]  Enable SC3 in OS – Sprint 1 – Santhosh – need to change to sprint 2",
+        "[CNCONVPF][MC] WDG Handling  - Safety team"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "External WDG handling in Core 0 - SP2 Tested locally, problem with manifest Check with Easwar on this part Wiki page and test spec"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "[CNCONVPF][MC] Error logging – FEL – Sprint 2- Priyanga Started from mid of Sprint 1",
+        "[CNCONVPF][MC]  Memory Stack Handling - Retention RAM – Sprint 1 - Priyanga - RetentionRAM not working currently"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Santosh, Kumar, Lakshmi, Raghu, Prabu"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 10 Jan 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "[ZEEKR][MC]  Enable SC3 in OS – Sprint 1 – Santhosh – need to change to sprint 2",
+        "[CNCONVPF][MC] WDG Handling  - Safety team -"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "External WDG handling in Core 0 - SP2  - Dependency on A1 Sample Tested locally, problem with manifest Check with Easwar on this part - Discussed with Easwar , decision to be arrived whether to fetch from Cerberus or Config side changes Wiki page and test spec"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "[CNCONVPF][MC] Error logging – FEL – Sprint 2- Priyanga Started from mid of Sprint 1",
+        "[CNCONVPF][MC]  Memory Stack Handling - Retention RAM – Sprint 1 - Priyanga - RetentionRAM not working currently - Mail Shared to Cerberus team to fix the issue"
+      ]
+    }
+  ],
+  "attachments": []
+}

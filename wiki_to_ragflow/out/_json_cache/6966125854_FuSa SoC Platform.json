@@ -1,0 +1,87 @@
+{
+  "page_id": "6966125854",
+  "title": "FuSa SoC Platform",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/6966125854/FuSa+SoC+Platform",
+  "last_modified": "2026-03-25T06:03:40.000+01:00",
+  "last_modified_by": "ZHAO Yanqiang (XC-CP/ESW2-CN)",
+  "parent_id": "3625360175",
+  "children": [
+    "6966125955",
+    "6966126501"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "We need build SoC side applications for both QNX and linux  on Qualcomm/MTK."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "",
+        "Qualcomm",
+        "MTK"
+      ],
+      "rows": [
+        [
+          "QNX",
+          "",
+          "NA"
+        ],
+        [
+          "Linux",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Tasks"
+    },
+    {
+      "type": "paragraph",
+      "text": "Task1: 分析linux下差异及需要抽象化的功能。"
+    },
+    {
+      "type": "paragraph",
+      "text": "Task2: 对模块的重构， 兼容linux。 分析yocto 编译架构做兼容。 主要为 中间件，log 以及 display 接口的抽象和兼容。"
+    },
+    {
+      "type": "paragraph",
+      "text": "Task3: 合入taiji分支项目，并压测。"
+    },
+    {
+      "type": "paragraph",
+      "text": "Task4: 分析MTK Telltale 校验架构。"
+    },
+    {
+      "type": "paragraph",
+      "text": "Task5: 实现平台中的MTK 兼容。"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/6966125854/fusa%20soc%20different%20platform%20plan.png?version=4&modificationDate=1774259722000&api=v2",
+      "alt": "",
+      "local_path": "_images/FuSa SoC Platform/fusa soc different platform plan.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "fusa soc different platform plan",
+      "download_link": "/download/attachments/6966125854/fusa%20soc%20different%20platform%20plan?version=4&modificationDate=1774259722000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "fusa soc different platform plan.png",
+      "download_link": "/download/attachments/6966125854/fusa%20soc%20different%20platform%20plan.png?version=4&modificationDate=1774259722000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "~fusa soc different platform plan.tmp",
+      "download_link": "/download/attachments/6966125854/~fusa%20soc%20different%20platform%20plan.tmp?version=15&modificationDate=1774259718000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

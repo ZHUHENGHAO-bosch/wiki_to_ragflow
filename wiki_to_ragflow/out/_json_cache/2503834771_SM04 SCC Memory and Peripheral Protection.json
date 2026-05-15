@@ -1,0 +1,65 @@
+{
+  "page_id": "2503834771",
+  "title": "SM04 SCC Memory and Peripheral Protection",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/2503834771/SM04+SCC+Memory+and+Peripheral+Protection",
+  "last_modified": "2023-04-13T08:12:58.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2411012902",
+  "children": [
+    "2940961184",
+    "2940961931",
+    "2940967737",
+    "3245435640",
+    "3116197246"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Introduction"
+    },
+    {
+      "type": "paragraph",
+      "text": "Mechanism available in Aurix to support memory and peripherals from Freedom From Interference"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Memory Protection",
+        "Peripheral Protection"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Memory Protection (CPU MPU)"
+    },
+    {
+      "type": "paragraph",
+      "text": "CN Convergence - SCC Memory Protection - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Peripheral Protection - Register access Protection"
+    },
+    {
+      "type": "paragraph",
+      "text": "CN Convergence - SCC Peripheral Protection - XC-CT China - Docupedia (bosch.com)"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "SM04 Peripheral Protection.bmp",
+      "download_link": "/download/attachments/2503834771/SM04%20Peripheral%20Protection.bmp?version=1&modificationDate=1674893328000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SM04 Memory Protection.bmp",
+      "download_link": "/download/attachments/2503834771/SM04%20Memory%20Protection.bmp?version=1&modificationDate=1674893300000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

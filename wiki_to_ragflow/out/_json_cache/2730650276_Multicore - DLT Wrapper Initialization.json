@@ -1,0 +1,29 @@
+{
+  "page_id": "2730650276",
+  "title": "Multicore - DLT Wrapper Initialization",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/2730650276/Multicore+-+DLT+Wrapper+Initialization",
+  "last_modified": "2023-02-09T08:23:56.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2730650134",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Below pictures shows the init API of DLT wrapper"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Multicore%20-%20DLT%20Wrapper%20Initialization/Multicore_Dltwrapper_Init.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore - DLT Wrapper Initialization/Multicore_Dltwrapper_Init.bmp"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "Multicore_Dltwrapper_Init.bmp",
+      "download_link": "/download/attachments/2730650276/Multicore_Dltwrapper_Init.bmp?version=1&modificationDate=1675927395000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

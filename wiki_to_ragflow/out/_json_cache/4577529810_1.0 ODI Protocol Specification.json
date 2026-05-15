@@ -1,0 +1,298 @@
+{
+  "page_id": "4577529810",
+  "title": "1.0 ODI Protocol Specification",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/4577529810/1.0+ODI+Protocol+Specification",
+  "last_modified": "2024-08-07T13:14:49.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4577529786",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page summarizes the ODI (Open Display Interface) Concept"
+    },
+    {
+      "type": "paragraph",
+      "text": "In GM Application platform, different components (Called functional Units, FU) in the car can display information to the driver using the Open Display Interface Protocol."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is the concept of Database-Driven HMI"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "General Structure of ODI"
+    },
+    {
+      "type": "paragraph",
+      "text": "ODI message will have"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Message Name",
+        "Length",
+        "Description"
+      ],
+      "rows": [
+        [
+          "Msg Type",
+          "1",
+          "Type of ODI message"
+        ],
+        [
+          "Data",
+          "n",
+          "Payload"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Type of ODI message"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Msg ID",
+        "ODI msg Type",
+        "Description"
+      ],
+      "rows": [
+        [
+          "0x01",
+          "ODI_MSG_EVENT",
+          "Events are generated and send by VIP to SoC"
+        ],
+        [
+          "0x02",
+          "ODI_MSG_INDICATION",
+          "Indications are generated and send to SoC to indicate states"
+        ],
+        [
+          "0x03",
+          "ODI_MSG_DYN_DATA",
+          "Used to send data from VIP to SoC"
+        ],
+        [
+          "0x04",
+          "ODI_MSG_ENUM_DYN_DATA",
+          "Dynamic ENUM provided by VIP"
+        ],
+        [
+          "0x05",
+          "ODI_MSG_SUBSCRIPTION",
+          "Message sent by SoC to VIP to subscribe a dynamic message. The message will be VIP until it is unsubscribed"
+        ],
+        [
+          "0x06",
+          "ODI_MSG_UNSUBSCRIPTION",
+          "Message sent by SoC to VIP to unsubscribe a dynamic message"
+        ],
+        [
+          "0x07",
+          "ODI_MSG_ACTION",
+          "Message sent by SoC to send information and feedback to VIP"
+        ],
+        [
+          "0x08",
+          "Reserved",
+          "-"
+        ],
+        [
+          "0x09",
+          "ODI_MSG_TPDYN_STRDATA",
+          ""
+        ],
+        [
+          "0x0A",
+          "ODI_MSG_TX_ARRAY",
+          "Used by VIP to transfer larger data to SoC"
+        ],
+        [
+          "0x0B",
+          "ODI_MSG_RX_ARRAY",
+          "Used by SoC to transfer larger data to VIP"
+        ],
+        [
+          "0xEE",
+          "PRNDL",
+          "Sent by VIP to SoC BL untill SoC is fully operational"
+        ],
+        [
+          "0xFC, 0xFD, 0xFE",
+          "Reserved",
+          ""
+        ],
+        [
+          "0xFF",
+          "ODI_MSG_ACTIVATED",
+          "Sent by SoC to indicate that it is fully operational"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "ODI_MSG_EVENT"
+    },
+    {
+      "type": "paragraph",
+      "text": "Events are generated when a truly asynchronous event happens that is related to a change of state that can either be ON or OFF. This can be for example the pressing of a button."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20ODI%20Protocol%20Specification/image-2024-8-7_19-1-2.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 ODI Protocol Specification/image-2024-8-7_19-1-2.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "ODI_MSG_INDICATION"
+    },
+    {
+      "type": "paragraph",
+      "text": "Indications are sent on change or periodically. There can be up to 96 Indications supported by a FU Class. Each Indication represents a boolean data entry and can thus be either 'ON' or 'OFF' (true/false). The data is packed into a bit field. This is arranged in the following manner."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20ODI%20Protocol%20Specification/image-2024-8-7_19-2-14.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 ODI Protocol Specification/image-2024-8-7_19-2-14.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "ODI_MSG_DYN_DATA"
+    },
+    {
+      "type": "paragraph",
+      "text": "Functional Units shall respond to the 'ODIDynamicDataRequest 'message from an ODI Display with either a single or multiple frame response containing the requested data"
+    },
+    {
+      "type": "paragraph",
+      "text": "The length and type of the data is defined in the global Function Unit Database."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20ODI%20Protocol%20Specification/image-2024-8-7_19-5-7.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 ODI Protocol Specification/image-2024-8-7_19-5-7.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "ODI_MSG_SUBSCRIPTION"
+    },
+    {
+      "type": "paragraph",
+      "text": "The request for Dynamic Data is a subscription mechanism."
+    },
+    {
+      "type": "paragraph",
+      "text": "The display shall subscribe for any Dynamic data that it needs. Once the display subscribes for  specific Dynamic data, it display keeps  receiving data from the VP appl. until the subscription of the data is cancelled."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20ODI%20Protocol%20Specification/image-2024-8-7_19-7-6.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 ODI Protocol Specification/image-2024-8-7_19-7-6.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20ODI%20Protocol%20Specification/image-2024-8-7_19-10-5.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 ODI Protocol Specification/image-2024-8-7_19-10-5.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "ODI_MSG_ACTION"
+    },
+    {
+      "type": "paragraph",
+      "text": "Actions are used to trigger changes in a FU caused by direct user interaction. The display has generic functionality for mapping events to actions depending on what is currently displayed. There are three types of actions defined."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Simple Action containing no data, only the ActionId.",
+        "Value Action containing an integer value as well as the ActionId.",
+        "StringAction containing a string and the ActionId"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20ODI%20Protocol%20Specification/image-2024-8-7_19-13-13.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 ODI Protocol Specification/image-2024-8-7_19-13-13.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "ODI_MSG_ACTIVATED"
+    },
+    {
+      "type": "paragraph",
+      "text": "After the serial communication has been established, the GP sends an activation message to the VP. The activation message indicates that the GP is ready to render graphics on its screen"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20ODI%20Protocol%20Specification/image-2024-8-7_19-14-12.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 ODI Protocol Specification/image-2024-8-7_19-14-12.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-7_19-14-12.png",
+      "download_link": "/download/attachments/4577529810/image-2024-8-7_19-14-12.png?version=1&modificationDate=1723029253000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-7_19-13-13.png",
+      "download_link": "/download/attachments/4577529810/image-2024-8-7_19-13-13.png?version=1&modificationDate=1723029194000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-7_19-10-5.png",
+      "download_link": "/download/attachments/4577529810/image-2024-8-7_19-10-5.png?version=1&modificationDate=1723029006000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-7_19-9-57.png",
+      "download_link": "/download/attachments/4577529810/image-2024-8-7_19-9-57.png?version=1&modificationDate=1723028998000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-7_19-7-6.png",
+      "download_link": "/download/attachments/4577529810/image-2024-8-7_19-7-6.png?version=1&modificationDate=1723028826000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-7_19-5-7.png",
+      "download_link": "/download/attachments/4577529810/image-2024-8-7_19-5-7.png?version=1&modificationDate=1723028708000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-7_19-2-14.png",
+      "download_link": "/download/attachments/4577529810/image-2024-8-7_19-2-14.png?version=1&modificationDate=1723028534000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-7_19-1-2.png",
+      "download_link": "/download/attachments/4577529810/image-2024-8-7_19-1-2.png?version=1&modificationDate=1723028463000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

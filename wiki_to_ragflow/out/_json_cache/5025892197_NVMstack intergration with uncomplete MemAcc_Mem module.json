@@ -1,0 +1,187 @@
+{
+  "page_id": "5025892197",
+  "title": "NVMstack intergration with uncomplete MemAcc/Mem module",
+  "version": 8,
+  "url": "/spaces/CARSFW/pages/5025892197/NVMstack+intergration+with+uncomplete+MemAcc+Mem+module",
+  "last_modified": "2024-11-26T02:30:00.000+01:00",
+  "last_modified_by": "WU Jianqiang (XC-CP/ESW2-CN)",
+  "parent_id": "4875393026",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "1. Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to introduce current issue when integrated cubas MemStack. Creat the branch for validation:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Download source code:"
+    },
+    {
+      "type": "paragraph",
+      "text": "git clone --recurse-submodules ssh://git@sourcecode01.de.bosch.com:7999/pjw3/temp_j6e_mcu.git"
+    },
+    {
+      "type": "paragraph",
+      "text": "cd temp_j6e_mcu"
+    },
+    {
+      "type": "paragraph",
+      "text": "git lfs pull"
+    },
+    {
+      "type": "paragraph",
+      "text": "git checkout sail_bringup_nvmstack_validation"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1.1. module used on CUBAS Memstack"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "NVM",
+        "FEE (fs2)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1.2. module used for MCAL"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "MemAcc",
+        "Mem"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Currently, the memory driver missing some interface implementation,"
+    },
+    {
+      "type": "paragraph",
+      "text": "1. MemAcc_BlankCheck()."
+    },
+    {
+      "type": "paragraph",
+      "text": "2.MemAcc_Compare();"
+    },
+    {
+      "type": "paragraph",
+      "text": "3. Mem_BlankCheck();"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1.3. module  cfg  for MemAcc and Fee"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/NVMstack%20intergration%20with%20uncomplete%20MemAcc/Mem%20module/image-2024-11-20_17-22-41.png?api=v2",
+      "alt": "",
+      "local_path": "_images/NVMstack intergration with uncomplete MemAcc_Mem module/image-2024-11-20_17-22-41.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "MemAcc cfg:"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/NVMstack%20intergration%20with%20uncomplete%20MemAcc/Mem%20module/image-2024-11-20_17-32-19.png?api=v2",
+      "alt": "",
+      "local_path": "_images/NVMstack intergration with uncomplete MemAcc_Mem module/image-2024-11-20_17-32-19.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "FEE cfg:"
+    },
+    {
+      "type": "paragraph",
+      "text": "logical sector start address:0x40000 ---》Corresponding to MemAcc physical address is 0x1B6E000 (why set logical sector start address start with 0x40000,"
+    },
+    {
+      "type": "paragraph",
+      "text": "because cubas cfg remind the  sector start address  can not start with 0,Recommend using a value greater than 0x400(1024bytes)),"
+    },
+    {
+      "type": "paragraph",
+      "text": "so we assign the NVM used flash size with 2MB, but actual used (0x200000-0x4000), Of course, sector start address value can be reduced， but should greater than 0x400)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/NVMstack%20intergration%20with%20uncomplete%20MemAcc/Mem%20module/image-2024-11-20_17-25-11.png?api=v2",
+      "alt": "",
+      "local_path": "_images/NVMstack intergration with uncomplete MemAcc_Mem module/image-2024-11-20_17-25-11.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1.4. Current issue"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "after intergration MemStack, after FEE init work unproperly with Dummy interface for MemAcc_BlankCheck()/MemAcc_Compare()"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "FEE_init will do all fee cfg sector init, and do FAT/DAT with active slot, assured that there is at least one FAT-ACTIVE and one data sector, this operation will call MemAcc_BlankCheck()/MemAcc_Compare() do validation"
+    },
+    {
+      "type": "paragraph",
+      "text": "2. MemAcc interface limitation: (Test with Released MemAcc test code)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "MemAcc_Write (MemAcc_AddressAreaIdType addressAreaId, MemAcc_AddressType targetAddress, const MemAcc_DataType *sourceDataPtr, MemAcc_LengthType length)  , targetAddress and length should 16 byte alignment, otherwise mem driver will feedback error status: SPINOR_DEVICE_INVALID_PARAMETER",
+        "MemAcc_Read (MemAcc_AddressAreaIdType addressAreaId, MemAcc_AddressType sourceAddress, MemAcc_DataType *destinationDataPtr, MemAcc_LengthType length)  , sourceAddress and length should 16 byte alignment, otherwise mem driver will feedback error status: SPINOR_DEVICE_INVALID_PARAMETER"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Even i change the mcal driver cfg, the problem also, i guess there are restrictions on SNOR driver running on Hyper side."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/NVMstack%20intergration%20with%20uncomplete%20MemAcc/Mem%20module/image-2024-11-25_13-41-36.png?api=v2",
+      "alt": "",
+      "local_path": "_images/NVMstack intergration with uncomplete MemAcc_Mem module/image-2024-11-25_13-41-36.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-11-25_13-41-36.png",
+      "download_link": "/download/attachments/5025892197/image-2024-11-25_13-41-36.png?version=1&modificationDate=1732513296000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-11-20_17-32-19.png",
+      "download_link": "/download/attachments/5025892197/image-2024-11-20_17-32-19.png?version=1&modificationDate=1732095139000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-11-20_17-25-11.png",
+      "download_link": "/download/attachments/5025892197/image-2024-11-20_17-25-11.png?version=1&modificationDate=1732094711000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-11-20_17-22-41.png",
+      "download_link": "/download/attachments/5025892197/image-2024-11-20_17-22-41.png?version=1&modificationDate=1732094561000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

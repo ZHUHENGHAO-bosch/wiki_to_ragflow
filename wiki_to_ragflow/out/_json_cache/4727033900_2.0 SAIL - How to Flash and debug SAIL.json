@@ -1,0 +1,466 @@
+{
+  "page_id": "4727033900",
+  "title": "2.0 SAIL - How to Flash and debug SAIL",
+  "version": 23,
+  "url": "/spaces/CARSFW/pages/4727033900/2.0+SAIL+-+How+to+Flash+and+debug+SAIL",
+  "last_modified": "2025-08-21T08:06:43.000+02:00",
+  "last_modified_by": "NI Tiancheng (BCSC/ENG1)",
+  "parent_id": "4916777106",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. 1. Overview Download the Source code Build Source Code 1.1. Prerequisites Target Setup Flashing the SoC SW: Flashing SAIL SW Debugging the SAIL SW 1.2. A. Run the Debug cmd directly 1.3. B. Load the elf in t32 manually - deprecated"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to explain how to flash and debug SAIL in VCU PRO board"
+    },
+    {
+      "type": "paragraph",
+      "text": "Note:  not need to install the Trace debug tool, it will be installed automatically when debug the elf file."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Download the Source code"
+    },
+    {
+      "type": "paragraph",
+      "text": "We can download the source code using following command"
+    },
+    {
+      "type": "panel",
+      "panel_type": "info",
+      "title": "Download source code",
+      "content": "EMC_Pre_DV branch: repo init -u cm_gerrit:projects/taiji/manifests -b rb-ccufusion_hqx4560-es09_Pre-EMC -m rb-patac-ccufusion.xml -g sail repo sync -c -d --force-sync -j 8 2025.03.19 updated repo init -u cm_gerrit:projects/taiji/manifests -b rb-ccufusion_hqx4560-es09_Pre-EMC -m rb-patac-ccufusion_ssh.xml -g sail repo sync -c -d --force-sync -j 8 Main branch development - rb-taiji_main_dev branch 2025.05.07 updated We have moved the SAIL repos to Taiji platform so please use the below command to get latest main branch development code The below command will download entire Taiji code repo init -u cm_gerrit:projects/taiji/manifests -b rb-taiji_main_dev  -m rb-taiji-hqx121c1-pcs04.xml -g autosar,sail If you want Only SAIL repos use the below command repo init -u cm_gerrit:projects/taiji/manifests -b rb-taiji_main_dev  -m rb-taiji-hqx121c1-pcs04.xml -g sail Abandon: git clone --recurse-submodules ssh://git@sourcecode01.de.bosch.com:7999/pjw3/temp_j6e_mcu.git cd temp_j6e_mcu git lfs pull git checkout sail_bringup_dev git checkout sail_bringup (Obsolete)"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Build Source Code"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1.1. Prerequisites"
+    },
+    {
+      "type": "paragraph",
+      "text": "Make sure to have license for Arm Fusa compiler version. Follow below mail to get license for Arm compiler"
+    },
+    {
+      "type": "paragraph",
+      "text": "FW_ FSI Production Licen…"
+    },
+    {
+      "type": "panel",
+      "panel_type": "info",
+      "title": "Build command",
+      "content": "Enter this folder: temp_j6e_mcu\\Cust_apl\\Build and then execute the following batch file cmake_gen.bat -m -c"
+    },
+    {
+      "type": "paragraph",
+      "text": "Once build is successful we have find the ELF file in below path"
+    },
+    {
+      "type": "paragraph",
+      "text": "../temp_j6e_mcu\\Build\\DASY_win_R52_mcu"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Target Setup"
+    },
+    {
+      "type": "paragraph",
+      "text": "Board: VCU PRO A1 Sample"
+    },
+    {
+      "type": "paragraph",
+      "text": "Debug board: VCU PRO debug board"
+    },
+    {
+      "type": "paragraph",
+      "text": "Connect the Lauterbach with ARM connector as shown as below"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2024-9-14_10-56-38.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2024-9-14_10-56-38.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Flashing the SoC SW:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Download the SoC Version from artifacts"
+    },
+    {
+      "type": "paragraph",
+      "text": "https://rb-cmbinex-fe-p1.de.bosch.com/ui/repos/tree/General/patac-vcupro-repos/builds/rb-vcupro_main_dev/daily/rb-vcupro_main_dev_2024.36.1/rb-vcupro_main_dev_2024.36.1_userdebug.tgz"
+    },
+    {
+      "type": "paragraph",
+      "text": "Follow the below wiki to flash the whole SoC binary"
+    },
+    {
+      "type": "paragraph",
+      "text": "Install the Qualcomm package manager and download necessary software as mentioned in below wiki"
+    },
+    {
+      "type": "paragraph",
+      "text": "SoC Flashing Guide With PCAT - GEN4 generic - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "VCU Pro"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Flashing SAIL SW"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 1:"
+    },
+    {
+      "type": "paragraph",
+      "text": "A.Use the folder in the repo directly - recommend"
+    },
+    {
+      "type": "paragraph",
+      "text": "After executing building，all SAIL flashing related files will be automaticly updated in the path: \\cust_apl\\build\\Qcimages\\Prog_Sail"
+    },
+    {
+      "type": "paragraph",
+      "text": "Simply use this folder in Step 2 to flash the SAIL"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2025-8-15_10-49-44.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2025-8-15_10-49-44.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "B.Copy elf file manually - deprecated"
+    },
+    {
+      "type": "paragraph",
+      "text": "Copy the signed elf file from build repo and paste to build images with name as sailsw1.elf"
+    },
+    {
+      "type": "paragraph",
+      "text": "make sure you copy the signed elf. If you copy the normal elf, hypervisor will not load the El1 elf into SRAM."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2024-10-16_20-30-17.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2024-10-16_20-30-17.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Paste in below folder where we downloaded SOC binary"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2024-10-16_20-31-10.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2024-10-16_20-31-10.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Copy the Hypervisor elf from repo and paste to Sail image folder"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2024-10-10_16-56-27.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2024-10-10_16-56-27.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "If the hypervisor image is not flashed with the one in repo, the code will not jump to EL1 SW"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 2: Configure the PCAT and flash the SAIL Images"
+    },
+    {
+      "type": "paragraph",
+      "text": "Do steps 1 to 5 as shown in below image"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2024-9-14_11-2-55.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2024-9-14_11-2-55.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "we should see Build loading completed on the device"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Debugging the SAIL SW"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1.2. A. Run the Debug cmd directly"
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "cmake_gen.bat -d"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1.3. B. Load the elf in t32 manually - deprecated"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 1: Open t32start.exe from any of the trace32 installation folder - from antifactory or from J6E repo"
+    },
+    {
+      "type": "paragraph",
+      "text": "Select Power view instance as Arm and click on start"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2024-9-14_11-7-15.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2024-9-14_11-7-15.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Now the T32 Powerview window will be open as shown below"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2024-9-14_11-8-16.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2024-9-14_11-8-16.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 2: Configure DAP settings"
+    },
+    {
+      "type": "paragraph",
+      "text": "In T32 Power window, run the below attached CMM script → this will configure required DAP settings"
+    },
+    {
+      "type": "paragraph",
+      "text": "SAIL_Connect_XC.cmm"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2024-9-14_11-9-56.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2024-9-14_11-9-56.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Click Run script and choose the downloaded file"
+    },
+    {
+      "type": "paragraph",
+      "text": "No Errors should be there and there will be a Cortex R52 option in menu bar"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2024-9-14_11-12-23.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2024-9-14_11-12-23.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 3: Connect to CPU"
+    },
+    {
+      "type": "paragraph",
+      "text": "click on CPU → In the System window click on Attach , now the Mode will be automatically switch to Up and you can see running state in bottom right corner as marked in below picture"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2024-9-14_11-13-45.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2024-9-14_11-13-45.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 4: Load the elf"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Break the execution by clicking the Pause button in menu bar",
+        "Now load the elf using the below command"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Data.load.elf elf_file_path /Nocode"
+    },
+    {
+      "type": "paragraph",
+      "text": "elf_file_name = ..\\temp_j6e_mcu\\Build\\DASY_win_R52_mcu\\DASY_win_R52_mcu.elf"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example: Data.load.elf C:\\GIT\\Sail_J6E_Base\\temp_j6e_mcu\\Build\\DASY_win_R52_mcu\\DASY_win_R52_mcu.elf /Nocode"
+    },
+    {
+      "type": "paragraph",
+      "text": "Now we can see the execution will be the while loop. Change PC to main function and then we can see OS tasks will be scheduled."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20SAIL%20-%20How%20to%20Flash%20and%20debug%20SAIL/image-2024-9-29_13-45-47.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 SAIL - How to Flash and debug SAIL/image-2024-9-29_13-45-47.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "To reset and debug again → just follow step 4 after power reset"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2025-8-15_10-49-44.png",
+      "download_link": "/download/attachments/4727033900/image-2025-8-15_10-49-44.png?version=1&modificationDate=1755226184000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-8-15_10-49-11.png",
+      "download_link": "/download/attachments/4727033900/image-2025-8-15_10-49-11.png?version=1&modificationDate=1755226151000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-2-7_20-6-14.png",
+      "download_link": "/download/attachments/4727033900/image-2025-2-7_20-6-14.png?version=1&modificationDate=1738929974000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-16_20-31-10.png",
+      "download_link": "/download/attachments/4727033900/image-2024-10-16_20-31-10.png?version=1&modificationDate=1729081871000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-16_20-30-17.png",
+      "download_link": "/download/attachments/4727033900/image-2024-10-16_20-30-17.png?version=1&modificationDate=1729081818000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-10_16-56-27.png",
+      "download_link": "/download/attachments/4727033900/image-2024-10-10_16-56-27.png?version=1&modificationDate=1728550587000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-29_13-45-47.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-29_13-45-47.png?version=1&modificationDate=1727588747000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-29_13-42-55.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-29_13-42-55.png?version=1&modificationDate=1727588575000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-24-12.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-24-12.png?version=1&modificationDate=1726284252000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-23-2.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-23-2.png?version=1&modificationDate=1726284182000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-22-0.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-22-0.png?version=1&modificationDate=1726284120000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-20-43.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-20-43.png?version=1&modificationDate=1726284044000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-13-45.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-13-45.png?version=1&modificationDate=1726283625000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-12-23.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-12-23.png?version=1&modificationDate=1726283544000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-12-1.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-12-1.png?version=1&modificationDate=1726283521000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SAIL_Connect_XC.cmm",
+      "download_link": "/download/attachments/4727033900/SAIL_Connect_XC.cmm?version=1&modificationDate=1726283430000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-9-56.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-9-56.png?version=1&modificationDate=1726283396000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-8-16.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-8-16.png?version=1&modificationDate=1726283296000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-7-15.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-7-15.png?version=1&modificationDate=1726283235000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-2-55.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-2-55.png?version=1&modificationDate=1726282975000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-1-35.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-1-35.png?version=1&modificationDate=1726282895000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_11-0-51.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_11-0-51.png?version=1&modificationDate=1726282851000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-14_10-56-38.png",
+      "download_link": "/download/attachments/4727033900/image-2024-9-14_10-56-38.png?version=1&modificationDate=1726282599000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "FW_ FSI Production License Activation.msg",
+      "download_link": "/download/attachments/4727033900/FW_%20FSI%20Production%20License%20Activation.msg?version=1&modificationDate=1726277012000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

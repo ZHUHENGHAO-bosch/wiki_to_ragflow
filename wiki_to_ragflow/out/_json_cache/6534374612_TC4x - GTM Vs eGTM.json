@@ -1,0 +1,98 @@
+{
+  "page_id": "6534374612",
+  "title": "TC4x - GTM Vs eGTM",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/6534374612/TC4x+-+GTM+Vs+eGTM",
+  "last_modified": "2025-11-25T11:06:07.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "5983333834",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "TC4x introduced eGTM and many variants support only eGTM - 1.0 TC4x - variants and peripherals details - XC-CT China - Docupedia"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Difference between GTM and eGTM"
+    },
+    {
+      "type": "paragraph",
+      "text": "GTM (Generic Timer Module) : The established, highly complex timer subsystem from previous AURIX generations (TC2xx, TC3xx)"
+    },
+    {
+      "type": "paragraph",
+      "text": "eGTM (enhanced Generic Timer Module) : A completely redesigned, more flexible and scalable timer architecture in TC4xx"
+    },
+    {
+      "type": "panel",
+      "panel_type": "info",
+      "title": "In a nutshell",
+      "content": "The eGTM in TC4xx represents a fundamental redesign that addresses the complexity and limitations of the original GTM while maintaining backward compatibility at the functional level. It provides better performance, enhanced safety features, and significantly improved usability for complex automotive and industrial applications"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Architecture difference"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "GTM",
+        "eGTM"
+      ],
+      "rows": [
+        [
+          "Fixed, monolithic architecture",
+          "Modular, scalable architecture"
+        ],
+        [
+          "Pre-defined hardware resources",
+          "Configurable IP blocks"
+        ],
+        [
+          "Complex routing with limited flexibility",
+          "Simplified, more flexible routing"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "New in eGTM"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "TBU (Timer Base Unit) : Provides time bases",
+        "CCU (Channel Control Unit) : Contains configurable timer channels",
+        "MON (Monitor Unit) : For safety monitoring"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "eGTM Block diagram"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/TC4x%20-%20GTM%20Vs%20eGTM/image-2025-11-25_18-3-3.png?api=v2",
+      "alt": "",
+      "local_path": "_images/TC4x - GTM Vs eGTM/image-2025-11-25_18-3-3.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2025-11-25_18-3-3.png",
+      "download_link": "/download/attachments/6534374612/image-2025-11-25_18-3-3.png?version=1&modificationDate=1764064983000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

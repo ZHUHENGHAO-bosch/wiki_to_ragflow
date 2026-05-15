@@ -1,0 +1,31 @@
+# Taiji - VCU Features and Stories
+
+> Source: /spaces/CARSFW/pages/7035688778/Taiji+-+VCU+Features+and+Stories
+> Last modified: 2026-05-13T03:29:13.000+02:00
+
+---
+
+## Overview
+
+Features and Stories for Platformization
+
+### Board
+
+VCUplus Board - So we can run all variants
+
+### Features
+
+| F.No | Feature | Task | Owner | Status | Comments |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Complete Analysis | Fill owner name Have meeting with Owners Have deadline to finish | JIN John (XC-CP/ESW2-CN) NIU Newton (XC-CP/ESW2-CN) ZHAO Yanqiang (XC-CP/ESW2-CN) LIU Dezhi (XC-CP/ESW2-CN) | COMPLETED |  |
+| 2 | Finalize repo strategy and Manifest | Create Repos strategy Create Repo (if needed) Manifest update | Jayaraj Praveen (BCSC/ENG1) GENG Zhongyang (BCSC/ENG1) | COMPLETED | Discuss with Integration team to create a new branch "Taiji_vcu_maindev" ![warning](https://inside-docupedia.bosch.com/confluence/plugins/servlet/twitterEmojiRedirector?id=26a0) The branch should not be visible outside Bosch |
+| 3 | Create a Build environment - First step to build CCU modules in Taiji | Build environment concept - Support VCU and Taiji use cases Build environment setup Setup all required Tools Add a parameter in existing Taiji to support different variants like TC377, TC387 and TC397 and TC399 | GENG Zhongyang (BCSC/ENG1) | COMPLETED |  |
+| 4 | Bringup of Taiji to support all variants in VCUplus Board (TC39x) - Vector | MCAL variants - TAN Shanhe (XC-CP/ESW2-CN) Stdcore variants - LI Haixu (XC-CP/ESW2-CN) Startup code variants - ZHAO Minzhong (BCSC/ENG1) LD file concept and format - GENG Zhongyang (BCSC/ENG1) | TAN Shanhe (XC-CP/ESW2-CN) Jayaraj Praveen (BCSC/ENG1) GENG Zhongyang (BCSC/ENG1) |  |  |
+| 5 | Bringup of Taiji to support all variants in VCUplus Board (TC39x) - Cubas | Stdcore variants LD file and change | YU Xiaoyang (BCSC/ENG1) |  |  |
+| 6 | Module wise Analysis | Each module carefully compare the code in VCUplus, CCU, Taiji/Chery/Maxus and identify difference and update Taiji - VCU Component difference - XC-CT China - Docupedia If any Architecture difference update in Taiji - VCU Architecture difference - XC-CT China - Docupedia |  |  |  |
+| 7 | Module wise integration | Integrate module by module by changing Taiji to use CCU modules After test, remove code or repo from Taiji and point to CCU Deliver |  |  |  |
+| 8 | IFX base common platform | For IFX Global Repos start replacing with CCU Repos |  |  |  |
+| 9 | IFX Fusa common platform | For Fusa Global Repos start replacing with CCU Repos |  |  |  |
+| 10 | BSW common platform (CnConvBase) | BSW Platform start replace with CCU repos |  |  |  |
+| 11 | Build Framework | Make common Build framework for CCU and VCUplus |  |  |  |
+| 12 | Tools | Bring Common tools repo → Take from CCU |  |  |  |

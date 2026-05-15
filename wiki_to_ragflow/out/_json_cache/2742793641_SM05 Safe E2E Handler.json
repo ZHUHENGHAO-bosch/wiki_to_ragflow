@@ -1,0 +1,25 @@
+{
+  "page_id": "2742793641",
+  "title": "SM05 Safe E2E Handler",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/2742793641/SM05+Safe+E2E+Handler",
+  "last_modified": "2023-02-13T10:03:14.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2411012902",
+  "children": [],
+  "content": [
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SM05%20Safe%20E2E%20Handler/SM05%20E2EHandler.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/SM05 Safe E2E Handler/SM05 E2EHandler.bmp"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "SM05 E2EHandler.bmp",
+      "download_link": "/download/attachments/2742793641/SM05%20E2EHandler.bmp?version=1&modificationDate=1676278968000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

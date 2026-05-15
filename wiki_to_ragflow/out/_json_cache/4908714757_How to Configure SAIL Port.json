@@ -1,0 +1,251 @@
+{
+  "page_id": "4908714757",
+  "title": "How to Configure SAIL Port",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/4908714757/How+to+Configure+SAIL+Port",
+  "last_modified": "2024-11-04T13:31:50.000+01:00",
+  "last_modified_by": "LI Minsheng (XC-CP/ESW2-CN)",
+  "parent_id": "4884496540",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "The SAIL GPIO driver provides interfaces to configure, read input/output values, and write output values to a GPIO."
+    },
+    {
+      "type": "paragraph",
+      "text": "A GPIO is configured as input/output or as a special function GPIO."
+    },
+    {
+      "type": "paragraph",
+      "text": "The GPIO driver also supports receiving interrupts from GPIO. Interrupts are generated as level triggered, rising edge, falling edge, or dual edge triggered."
+    },
+    {
+      "type": "paragraph",
+      "text": "SAIL provide 79 GPIOs: SAIL[0]-SAIL[78] on QAM8255 and QAM8775."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20Configure%20SAIL%20Port/image-2024-11-4_20-31-37.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to Configure SAIL Port/image-2024-11-4_20-31-37.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Configuration"
+    },
+    {
+      "type": "paragraph",
+      "text": "SAIL GPIO/TLMM does not have a concept of ports. Therefore, one port corresponds to one channel. As a result, DioPortId and DioChannelID should be the same in symbolic value generation."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "GPIO Tools:"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20Configure%20SAIL%20Port/image-2024-10-22_16-28-12.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to Configure SAIL Port/image-2024-10-22_16-28-12.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Pin Configuration Tool"
+    },
+    {
+      "type": "paragraph",
+      "text": "Qualcomm pin configuration tool is available in CreatePoint to help customers with QUP assignments and avoid conflicts."
+    },
+    {
+      "type": "paragraph",
+      "text": "Link: Qualcomm Pin Configuration Tool"
+    },
+    {
+      "type": "paragraph",
+      "text": "Need your account check in."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. How to configure port for Uart ?"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1.1. check schematic diagram， SAIL_IO_6/7 used."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20Configure%20SAIL%20Port/image-2024-10-22_15-6-9.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to Configure SAIL Port/image-2024-10-22_15-6-9.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1.2. PortNumber: It defines the port number of SAIL domain."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20Configure%20SAIL%20Port/image-2024-10-22_15-15-29.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to Configure SAIL Port/image-2024-10-22_15-15-29.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20Configure%20SAIL%20Port/image-2024-10-22_15-16-37.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to Configure SAIL Port/image-2024-10-22_15-16-37.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1.3. Detail configuration"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20Configure%20SAIL%20Port/image-2024-10-22_15-38-26.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to Configure SAIL Port/image-2024-10-22_15-38-26.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "PortPinDirection :  It will define initial direction after Port_Init()."
+    },
+    {
+      "type": "paragraph",
+      "text": "PortPinDirectionChangeable: Port Pin direction changeable enabled.  API: Port_SetPinDirection()"
+    },
+    {
+      "type": "paragraph",
+      "text": "PortPinDriveStrength: Drive strength of the GPIO pin."
+    },
+    {
+      "type": "paragraph",
+      "text": "PortPinDriveStrengthChangeable: True: Port Pin Drive Strength changeable allowed. API: Port_SetPinDriveStrength()"
+    },
+    {
+      "type": "paragraph",
+      "text": "PortPinInitialMode: This should be check"
+    },
+    {
+      "type": "paragraph",
+      "text": "PortPinPullRes: Range: PORT_PIN_NO_PULL = 0 PORT_PIN_PULL_DOWN PORT_PIN_KEEPER PORT_PIN_PULL_UP"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. How to configure port for CAN?"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.1. Schematic diagram"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20Configure%20SAIL%20Port/image-2024-10-22_16-33-18.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to Configure SAIL Port/image-2024-10-22_16-33-18.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20Configure%20SAIL%20Port/image-2024-10-22_16-34-6.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to Configure SAIL Port/image-2024-10-22_16-34-6.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20Configure%20SAIL%20Port/image-2024-10-22_16-34-25.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to Configure SAIL Port/image-2024-10-22_16-34-25.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.2. Port configuretion"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20Configure%20SAIL%20Port/image-2024-10-22_16-36-47.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to Configure SAIL Port/image-2024-10-22_16-36-47.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/How%20to%20Configure%20SAIL%20Port/image-2024-10-22_16-37-6.png?api=v2",
+      "alt": "",
+      "local_path": "_images/How to Configure SAIL Port/image-2024-10-22_16-37-6.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-11-4_20-31-37.png",
+      "download_link": "/download/attachments/4908714757/image-2024-11-4_20-31-37.png?version=1&modificationDate=1730723498000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-22_16-37-6.png",
+      "download_link": "/download/attachments/4908714757/image-2024-10-22_16-37-6.png?version=1&modificationDate=1729586226000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-22_16-36-47.png",
+      "download_link": "/download/attachments/4908714757/image-2024-10-22_16-36-47.png?version=1&modificationDate=1729586208000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-22_16-34-25.png",
+      "download_link": "/download/attachments/4908714757/image-2024-10-22_16-34-25.png?version=1&modificationDate=1729586065000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-22_16-34-6.png",
+      "download_link": "/download/attachments/4908714757/image-2024-10-22_16-34-6.png?version=1&modificationDate=1729586047000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-22_16-33-52.png",
+      "download_link": "/download/attachments/4908714757/image-2024-10-22_16-33-52.png?version=1&modificationDate=1729586033000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-22_16-33-18.png",
+      "download_link": "/download/attachments/4908714757/image-2024-10-22_16-33-18.png?version=1&modificationDate=1729585998000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-22_16-28-12.png",
+      "download_link": "/download/attachments/4908714757/image-2024-10-22_16-28-12.png?version=1&modificationDate=1729585692000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-22_15-38-26.png",
+      "download_link": "/download/attachments/4908714757/image-2024-10-22_15-38-26.png?version=1&modificationDate=1729582707000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-22_15-16-37.png",
+      "download_link": "/download/attachments/4908714757/image-2024-10-22_15-16-37.png?version=1&modificationDate=1729581397000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-22_15-15-29.png",
+      "download_link": "/download/attachments/4908714757/image-2024-10-22_15-15-29.png?version=1&modificationDate=1729581330000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-22_15-6-9.png",
+      "download_link": "/download/attachments/4908714757/image-2024-10-22_15-6-9.png?version=1&modificationDate=1729580770000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "page_id": "6454255243",
+  "title": "TC4x- ADC ASIL-B and ASIL-D use cases",
+  "version": 8,
+  "url": "/spaces/CARSFW/pages/6454255243/TC4x-+ADC+ASIL-B+and+ASIL-D+use+cases",
+  "last_modified": "2025-11-12T11:14:34.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6355321163",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to analyze the ADC use cases for ASIL-B and ASIL-D applications"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Use cases"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "ASIL Level",
+        "Use cases"
+      ],
+      "rows": [
+        [
+          "ASIL-D",
+          "Diverse redundant ADC channels"
+        ],
+        [
+          "Homogenous redundant ADC channels"
+        ],
+        [
+          "ASIL-B",
+          "Single input redundant ADC channels"
+        ],
+        [
+          "Single input single ADC channel"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "ASIL-D Use cases"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Use case 1: Diverse redundant ADC channels"
+    },
+    {
+      "type": "paragraph",
+      "text": "The MCU receives independent redundant signals from the external analog device(s) which are processed by redundant and independent resources of the MCU. Each analog input signal processing result can be read by a bus master like for example CPU, DMA or PPU."
+    },
+    {
+      "type": "paragraph",
+      "text": "In this Use Case, 2 options of ADC diverse redundancy are available"
+    },
+    {
+      "type": "paragraph",
+      "text": "Not all AURIX TC4xx devices feature the DSADC or FCC converters. Please refer to the device’s datasheet for more information on the available converters"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/TC4x-%20ADC%20ASIL-B%20and%20ASIL-D%20use%20cases/Diverse%20redundant%20ADC%20channels.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/TC4x- ADC ASIL-B and ASIL-D use cases/Diverse redundant ADC channels.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "SMs needed for this use case"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "ESM[SW]:ADC:MODULE_REDUNDANCY",
+        "ESM[SW]:ADC:ISR_MONITOR",
+        "If the redundant ADC converters share a common VAREF input, then the system integrator shall ensure that the external safety mechanism shown below is implemented",
+        "ESM[SW]:ADC:RESULT_PLAUSIBILITY → However, if SM[HW]:ADC:RESULT_PLAUSIBILITY is used to perform plausibility checks on the signal properties, then these checks do not have to be implemented in software again"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Use case 2: Homogenous redundant ADC channels"
+    },
+    {
+      "type": "paragraph",
+      "text": "Which is same as above, but instead of diverse ADC units here we use same ADC conversion type units but with different MCU resources"
+    },
+    {
+      "type": "paragraph",
+      "text": "2 options of ADC homogeneous redundancy are available"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "TMADC + TMADC",
+        "DSADC + DSADC"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "ASIL-B Use cases"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Single input redundant ADC channels"
+    },
+    {
+      "type": "paragraph",
+      "text": "The MCU receives one signal from the external analog device. The signal, that is acquired through one single package pin, is then branched inside the MCU to two redundant and independent ADC converter modules (shared package pin). Each of the redundant module's process then the shared signal. Each analog signal processing result can be read by bus master"
+    },
+    {
+      "type": "paragraph",
+      "text": "In this use case, 3 different options of ADC redundancy are available"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "TMADC + TMADC",
+        "TMADC + DSADC",
+        "TMADC + FCC"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/TC4x-%20ADC%20ASIL-B%20and%20ASIL-D%20use%20cases/Homogenous%20redundant%20ADC%20channels.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/TC4x- ADC ASIL-B and ASIL-D use cases/Homogenous redundant ADC channels.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "SMs needed for this use case"
+    },
+    {
+      "type": "paragraph",
+      "text": "ESM[SW]:ADC:BROKEN_WIRE_DETECTION → New SM added for this case"
+    },
+    {
+      "type": "paragraph",
+      "text": "ESM[SW]:ADC:MODULE_REDUNDANCY"
+    },
+    {
+      "type": "paragraph",
+      "text": "ESM[SW]:ADC:ISR_MONITOR"
+    },
+    {
+      "type": "paragraph",
+      "text": "ESM[SW]:ADC:VAREF_PLAUSIBILITY"
+    },
+    {
+      "type": "paragraph",
+      "text": "SM[HW]:ADC:RESULT_PLAUSIBILITY"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Single input single ADC channel"
+    },
+    {
+      "type": "paragraph",
+      "text": "The MCU receives a single analog signal from an external analog device which is processed by a single TMADC channel"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/TC4x-%20ADC%20ASIL-B%20and%20ASIL-D%20use%20cases/Single%20input%20single%20ADC%20channel.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/TC4x- ADC ASIL-B and ASIL-D use cases/Single input single ADC channel.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "SMs needed for this use case"
+    },
+    {
+      "type": "paragraph",
+      "text": "ESM[SW]:ADC:BROKEN_WIRE_DETECTION"
+    },
+    {
+      "type": "paragraph",
+      "text": "ESM[SW]:ADC:CHANNEL_CORE_SELF_DIAGNOSIS - added for this use case"
+    },
+    {
+      "type": "paragraph",
+      "text": "ESM[SW]:ADC:ISR_MONITOR"
+    },
+    {
+      "type": "paragraph",
+      "text": "ESM[SW]:ADC:VAREF_PLAUSIBILITY"
+    },
+    {
+      "type": "paragraph",
+      "text": "SM[HW]:ADC:RESULT_PLAUSIBILIT"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "Single input single ADC channel.jpg",
+      "download_link": "/download/attachments/6454255243/Single%20input%20single%20ADC%20channel.jpg?version=1&modificationDate=1762512557000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Homogenous redundant ADC channels.jpg",
+      "download_link": "/download/attachments/6454255243/Homogenous%20redundant%20ADC%20channels.jpg?version=1&modificationDate=1762512290000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Diverse redundant ADC channels.jpg",
+      "download_link": "/download/attachments/6454255243/Diverse%20redundant%20ADC%20channels.jpg?version=2&modificationDate=1762512268000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "page_id": "3774777793",
+  "title": "SAIL architecture - AUTOSAR or Non-Autosar",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/3774777793/SAIL+architecture+-+AUTOSAR+or+Non-Autosar",
+  "last_modified": "2023-12-28T08:24:50.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "3774777762",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "We can have either Autosar architecture with OSEK OS or we can have an SafeRTOS without AUTOSAR architecture"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20architecture%20-%20AUTOSAR%20or%20Non-Autosar/image-2023-11-10_17-22-13.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL architecture - AUTOSAR or Non-Autosar/image-2023-11-10_17-22-13.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Option 1: SAIL with AUTOSAR architecture"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20architecture%20-%20AUTOSAR%20or%20Non-Autosar/image-2023-11-13_8-43-12.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL architecture - AUTOSAR or Non-Autosar/image-2023-11-13_8-43-12.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Option 2: SAIL with SafeRTOS solution"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20architecture%20-%20AUTOSAR%20or%20Non-Autosar/image-2023-11-13_8-43-48.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL architecture - AUTOSAR or Non-Autosar/image-2023-11-13_8-43-48.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-11-10_17-22-13.png",
+      "download_link": "/download/attachments/3774777793/image-2023-11-10_17-22-13.png?version=1&modificationDate=1702864660000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-11-13_8-43-12.png",
+      "download_link": "/download/attachments/3774777793/image-2023-11-13_8-43-12.png?version=1&modificationDate=1702864660000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-11-13_8-43-48.png",
+      "download_link": "/download/attachments/3774777793/image-2023-11-13_8-43-48.png?version=1&modificationDate=1702864660000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

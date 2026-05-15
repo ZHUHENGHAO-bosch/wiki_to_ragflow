@@ -1,0 +1,69 @@
+{
+  "page_id": "3029418543",
+  "title": "10_chery-idc code commit lesson learn",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/3029418543/10_chery-idc+code+commit+lesson+learn",
+  "last_modified": "2023-05-12T12:07:19.000+02:00",
+  "last_modified_by": "LIU Dezhi (XC-CP/ESW2-CN)",
+  "parent_id": "2411995729",
+  "children": [],
+  "content": [
+    {
+      "type": "table",
+      "headers": [
+        "Version",
+        "Detail",
+        "Date",
+        "Author",
+        "Comment"
+      ],
+      "rows": [
+        [
+          "v0.1",
+          "first version, provide PPT",
+          "2023.05.12",
+          "ZHAO Yanqiang (XC-CP/ESW2-CN) LIU Dezhi (XC-CP/ESW2-CN)",
+          "NA."
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "总结下："
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "问题发现的越晚，产生的影响越大，问题越难查",
+        "代码提交前，一定要自测，在RTC上提供测试证据。",
+        "修改系统性问题,要整编系统，然后自测",
+        "修改非自己仓库的代码时，gerrit review要加对应仓库的owner",
+        "提交代码要等服务器自动verify +1"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "详见："
+    },
+    {
+      "type": "paragraph",
+      "text": "chery-idc code commit lesson learn .pptx"
+    }
+  ],
+  "attachments": []
+}

@@ -1,0 +1,164 @@
+{
+  "page_id": "6442503828",
+  "title": "3. 代码和变量放在DDR运行",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/6442503828/3.+%E4%BB%A3%E7%A0%81%E5%92%8C%E5%8F%98%E9%87%8F%E6%94%BE%E5%9C%A8DDR%E8%BF%90%E8%A1%8C",
+  "last_modified": "2025-11-06T02:40:17.000+01:00",
+  "last_modified_by": "CHEN Yongjie (XC-CP/ESW2-CN)",
+  "parent_id": "6372329005",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1、 Qualcomm 8775 SAIL Memmap"
+    },
+    {
+      "type": "paragraph",
+      "text": "默认情况下，工程里代码和变量都一起加载在SRAM中， SRAM共计3MB。集成协议栈多时，可能SRAM会不够使用，需要分配到DDR区域。"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20%E4%BB%A3%E7%A0%81%E5%92%8C%E5%8F%98%E9%87%8F%E6%94%BE%E5%9C%A8DDR%E8%BF%90%E8%A1%8C/image-2025-11-5_10-26-3.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. 代码和变量放在DDR运行/image-2025-11-5_10-26-3.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20%E4%BB%A3%E7%A0%81%E5%92%8C%E5%8F%98%E9%87%8F%E6%94%BE%E5%9C%A8DDR%E8%BF%90%E8%A1%8C/image-2025-11-5_10-26-20.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. 代码和变量放在DDR运行/image-2025-11-5_10-26-20.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "SRAM 目前前面部分：0x08000000 - 0x080E1000 区域分配给SAIL PBL, EL2_DTB 和EL2(HYP)使用。"
+    },
+    {
+      "type": "paragraph",
+      "text": "AUTOSAR SW 从 0x080D3800 开始："
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20%E4%BB%A3%E7%A0%81%E5%92%8C%E5%8F%98%E9%87%8F%E6%94%BE%E5%9C%A8DDR%E8%BF%90%E8%A1%8C/image-2025-11-5_10-31-35.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. 代码和变量放在DDR运行/image-2025-11-5_10-31-35.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20%E4%BB%A3%E7%A0%81%E5%92%8C%E5%8F%98%E9%87%8F%E6%94%BE%E5%9C%A8DDR%E8%BF%90%E8%A1%8C/image-2025-11-5_10-31-51.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. 代码和变量放在DDR运行/image-2025-11-5_10-31-51.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20%E4%BB%A3%E7%A0%81%E5%92%8C%E5%8F%98%E9%87%8F%E6%94%BE%E5%9C%A8DDR%E8%BF%90%E8%A1%8C/image-2025-11-5_10-37-8.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. 代码和变量放在DDR运行/image-2025-11-5_10-37-8.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2、 通过scatter文件将变量和代码链接到DDR"
+    },
+    {
+      "type": "paragraph",
+      "text": "定义新的LR,  SAIL_DDR_DATA 块存放sail_ddr_data段定义的变量；"
+    },
+    {
+      "type": "paragraph",
+      "text": "SAIL_DDR_Text用来存放代码(和const变量)， 目前测试只将Rte_Task_C0_10ms.c 文件里的代码加载到固定DDR地址：0x20000100."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20%E4%BB%A3%E7%A0%81%E5%92%8C%E5%8F%98%E9%87%8F%E6%94%BE%E5%9C%A8DDR%E8%BF%90%E8%A1%8C/image-2025-11-5_10-47-11.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. 代码和变量放在DDR运行/image-2025-11-5_10-47-11.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "测试变量定义方法： 通过 section关键字指定测试变量链接地址"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20%E4%BB%A3%E7%A0%81%E5%92%8C%E5%8F%98%E9%87%8F%E6%94%BE%E5%9C%A8DDR%E8%BF%90%E8%A1%8C/image-2025-11-5_10-51-23.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. 代码和变量放在DDR运行/image-2025-11-5_10-51-23.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "编译后，可以在map文件中看到变量和Rte_Task_C0_10ms.c里的代码已经放到对应的DDR地址"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20%E4%BB%A3%E7%A0%81%E5%92%8C%E5%8F%98%E9%87%8F%E6%94%BE%E5%9C%A8DDR%E8%BF%90%E8%A1%8C/image-2025-11-5_10-53-52.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. 代码和变量放在DDR运行/image-2025-11-5_10-53-52.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "通过劳特巴赫调试器观察验证 ："
+    },
+    {
+      "type": "paragraph",
+      "text": "可以看到加载到DDR的代码和变量执行正常"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20%E4%BB%A3%E7%A0%81%E5%92%8C%E5%8F%98%E9%87%8F%E6%94%BE%E5%9C%A8DDR%E8%BF%90%E8%A1%8C/image-2025-11-5_11-1-15.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. 代码和变量放在DDR运行/image-2025-11-5_11-1-15.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2025-11-5_11-1-15.png",
+      "download_link": "/download/attachments/6442503828/image-2025-11-5_11-1-15.png?version=1&modificationDate=1762311676000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-5_10-54-27-1.png",
+      "download_link": "/download/attachments/6442503828/image-2025-11-5_10-54-27-1.png?version=1&modificationDate=1762311267000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-5_10-53-52.png",
+      "download_link": "/download/attachments/6442503828/image-2025-11-5_10-53-52.png?version=1&modificationDate=1762311232000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-5_10-51-23.png",
+      "download_link": "/download/attachments/6442503828/image-2025-11-5_10-51-23.png?version=1&modificationDate=1762311083000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-5_10-47-11.png",
+      "download_link": "/download/attachments/6442503828/image-2025-11-5_10-47-11.png?version=1&modificationDate=1762310831000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-5_10-37-8.png",
+      "download_link": "/download/attachments/6442503828/image-2025-11-5_10-37-8.png?version=1&modificationDate=1762310228000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-5_10-31-51.png",
+      "download_link": "/download/attachments/6442503828/image-2025-11-5_10-31-51.png?version=1&modificationDate=1762309911000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-5_10-31-35.png",
+      "download_link": "/download/attachments/6442503828/image-2025-11-5_10-31-35.png?version=1&modificationDate=1762309895000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-5_10-26-20.png",
+      "download_link": "/download/attachments/6442503828/image-2025-11-5_10-26-20.png?version=1&modificationDate=1762309580000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2025-11-5_10-26-3.png",
+      "download_link": "/download/attachments/6442503828/image-2025-11-5_10-26-3.png?version=1&modificationDate=1762309563000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

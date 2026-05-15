@@ -1,0 +1,42 @@
+{
+  "page_id": "2788621415",
+  "title": "HQAC for CN Conv PF",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2788621415/HQAC+for+CN+Conv+PF",
+  "last_modified": "2023-02-28T06:19:18.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2321473024",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Introduction:"
+    },
+    {
+      "type": "paragraph",
+      "text": "We decided for China Aurix Convergence Platform and projects, we will go with HQAC for static code analysis"
+    },
+    {
+      "type": "paragraph",
+      "text": "Links:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Overview: [Helix QAC] Overview - XC-CT Services and Solutions - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "User documentation: [Helix QAC] User documentation - XC-CT Services and Solutions - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "License and access: [Helix QAC] Access - XC-CT Services and Solutions - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Supports and Contacts: [Helix QAC] Support & Contacts - XC-CT Services and Solutions - Docupedia (bosch.com)"
+    }
+  ],
+  "attachments": []
+}

@@ -1,0 +1,87 @@
+{
+  "page_id": "2412005807",
+  "title": "04_Watchdog Reset",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/2412005807/04_Watchdog+Reset",
+  "last_modified": "2023-04-13T08:49:49.000+02:00",
+  "last_modified_by": "ZHAO Minzhong (BCSC/ENG1)",
+  "parent_id": "2411995729",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Issue 1 - Watchdog Reset during start up due to Secure boot Information Analysis Solution Fix Status"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Issue 1 - Watchdog Reset during start up due to Secure boot"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Information"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Found in Project",
+        "GWM V3.5",
+        "RTC Ticket",
+        ""
+      ],
+      "rows": []
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Analysis"
+    },
+    {
+      "type": "paragraph",
+      "text": "When secure boot is enabled, the ICUM core will calculate the CMAC for Application Hex during startup."
+    },
+    {
+      "type": "paragraph",
+      "text": "When SecOC is enabled, the application(HOST core) will requset the CMAC calculation from ICUM core, and the calculation is a synchronized call."
+    },
+    {
+      "type": "paragraph",
+      "text": "There is a possibility, HOST core requested SecOC CMAC calculation when the ICUM is still calculation the CMAC for Application Hex.  This operation will"
+    },
+    {
+      "type": "paragraph",
+      "text": "lead the HOST core pending in waiting for the CMAC calculation result , finally watchdog timeout will happen."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Solution"
+    },
+    {
+      "type": "paragraph",
+      "text": "Relax the watchdog supervision during startup phase."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fix Status"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Affected Project",
+        "Fix Status",
+        "linkage"
+      ],
+      "rows": [
+        [
+          "GWM V3.5",
+          "COMPLETED",
+          "https://rbcm-gerrit.de.bosch.com/q/topic:sop9_wdg_fix"
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

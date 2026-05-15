@@ -1,0 +1,47 @@
+{
+  "page_id": "2825344333",
+  "title": "Multicore - Status -03-2023",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2825344333/Multicore+-+Status+-03-2023",
+  "last_modified": "2023-03-11T03:24:56.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2468288545",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Joanna, Shanhe, Minsheng, Newton, Huang Can"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 10 Mar 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "RTMO report before your change and after your change"
+    },
+    {
+      "type": "paragraph",
+      "text": "Multicore - Module status and plan - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Multicore DLT → Delivered in both Zeekr and Chery",
+        "LCM - Check the design in EA",
+        "INC Optimization",
+        "FR to slave 1",
+        "Jayaraj Praveen (BCSC/ENG1) Boot time framework design to start on next week"
+      ]
+    }
+  ],
+  "attachments": []
+}

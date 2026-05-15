@@ -1,0 +1,127 @@
+{
+  "page_id": "2619348617",
+  "title": "00_MCAL Multicore: API Categorization",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2619348617/00_MCAL+Multicore+API+Categorization",
+  "last_modified": "2022-12-30T09:19:25.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2394052922",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Classification Type based on Core access"
+    },
+    {
+      "type": "paragraph",
+      "text": "Service APIs can be Categorized into two types based on core access"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Service API required by multiple cores for triggering and reading /writing of data",
+        "Service API which are required by one partition only (e.g., initialization, shutdown)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Classification Type based on functionality"
+    },
+    {
+      "type": "paragraph",
+      "text": "Service APIs are categorized into below types based on its functionality"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Trigger a control flow from service API to kernel API (if required including data)",
+        "Read of a symbol from a global buffer",
+        "Write a symbol to a global buffer, which is later-on polled by the kernel"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Classification Type based on functionality - Second Type"
+    },
+    {
+      "type": "paragraph",
+      "text": "APIs can be classified as below types based on its functionality as"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "User API – The APIs which are accessible by users (like CDD, IoHwAb) to  trigger a control or to Read/write data",
+        "Control APIs – Local core Scope APIs like Init, Deinit",
+        "Kernel APIs – typically implemented in MCAL module where on calling USER API will call an Kernel API in local core"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/00_MCAL%20Multicore:%20API%20Categorization/image2022-12-30_16-15-5.png?api=v2",
+      "alt": "",
+      "local_path": "_images/00_MCAL Multicore_ API Categorization/image2022-12-30_16-15-5.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example:"
+    },
+    {
+      "type": "paragraph",
+      "text": "CONTROL APIs with local scope"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/00_MCAL%20Multicore:%20API%20Categorization/image2022-12-30_16-17-56.png?api=v2",
+      "alt": "",
+      "local_path": "_images/00_MCAL Multicore_ API Categorization/image2022-12-30_16-17-56.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "USER_RW_API with global scope"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/00_MCAL%20Multicore:%20API%20Categorization/image2022-12-30_16-18-40.png?api=v2",
+      "alt": "",
+      "local_path": "_images/00_MCAL Multicore_ API Categorization/image2022-12-30_16-18-40.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "USER_TRIG_API and their mapping of KERNEL_API"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/00_MCAL%20Multicore:%20API%20Categorization/image2022-12-30_16-19-18.png?api=v2",
+      "alt": "",
+      "local_path": "_images/00_MCAL Multicore_ API Categorization/image2022-12-30_16-19-18.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-12-30_16-19-18.png",
+      "download_link": "/download/attachments/2619348617/image2022-12-30_16-19-18.png?version=1&modificationDate=1672388358000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-12-30_16-18-40.png",
+      "download_link": "/download/attachments/2619348617/image2022-12-30_16-18-40.png?version=1&modificationDate=1672388320000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-12-30_16-17-56.png",
+      "download_link": "/download/attachments/2619348617/image2022-12-30_16-17-56.png?version=1&modificationDate=1672388276000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-12-30_16-15-5.png",
+      "download_link": "/download/attachments/2619348617/image2022-12-30_16-15-5.png?version=1&modificationDate=1672388105000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

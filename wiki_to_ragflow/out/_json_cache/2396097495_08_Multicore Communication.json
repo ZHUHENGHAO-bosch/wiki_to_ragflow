@@ -1,0 +1,152 @@
+{
+  "page_id": "2396097495",
+  "title": "08_Multicore Communication",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2396097495/08_Multicore+Communication",
+  "last_modified": "2022-08-19T11:39:40.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2383057032",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Data exchange between core boundaries can be done in"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Proxy Component",
+        "Master-Satellite functionality"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Concepts"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Master-Satellite functionality"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "A BSW satellite is a part of a BSW service module",
+        "The idea is that the satellite offers services core-local, which means that it is executed on the same core as the accessing application SWC.",
+        "The functional scope of satellites ranges from full copies of the service to very basic functionality"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "With Microsar below modules use Satellites"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "WdgM",
+        "Dem",
+        "EcuM",
+        "Det"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Example WdgM,"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/08_Multicore%20Communication/image2022-8-19_15-6-17.png?api=v2",
+      "alt": "",
+      "local_path": "_images/08_Multicore Communication/image2022-8-19_15-6-17.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/08_Multicore%20Communication/image2022-8-19_15-7-2.png?api=v2",
+      "alt": "",
+      "local_path": "_images/08_Multicore Communication/image2022-8-19_15-7-2.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Proxy Component"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "A proxy translates the services of a BSW service module to a different interface type",
+        "The idea is to substitute the execution time expensive cross-core Client/Server operations with more lightweight Sender/Receiver Port Interfaces. Hence, whenever a SWC uses a service, it merely reads or writes data in shared RAM (Rte) instead of triggering a RPC",
+        "Proxies are located above the Rte",
+        "The usage of proxies requires a change of the SWC port interface from C/S to S/R. That is why a SWC must either be designed like this right from the beginning or allow such a modification during integration"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Modules which uses proxies:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "NvM-Proxy",
+        "Com-Proxy"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "COM"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Receives Tx signal data via S/R interface instead of C/S Calls",
+        "Passes latest data to COM immediately before transmission",
+        "Buffers Rx data in RTE to allow direct cross-core access"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "NVM"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Access to NV data via S/R interface instead of C/S calls"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/08_Multicore%20Communication/image2022-8-19_15-9-33.png?api=v2",
+      "alt": "",
+      "local_path": "_images/08_Multicore Communication/image2022-8-19_15-9-33.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-8-19_15-9-33.png",
+      "download_link": "/download/attachments/2396097495/image2022-8-19_15-9-33.png?version=1&modificationDate=1660901973000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-19_15-7-2.png",
+      "download_link": "/download/attachments/2396097495/image2022-8-19_15-7-2.png?version=1&modificationDate=1660901822000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-19_15-6-17.png",
+      "download_link": "/download/attachments/2396097495/image2022-8-19_15-6-17.png?version=1&modificationDate=1660901777000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

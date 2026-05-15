@@ -1,0 +1,44 @@
+{
+  "page_id": "2937267652",
+  "title": "Multicore Status -04-2023",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/2937267652/Multicore+Status+-04-2023",
+  "last_modified": "2023-04-12T13:06:19.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2468288545",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Joanna, Minsheng, Newton, Huang Can, Shanhe"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 12 Apr 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Multicore - Module status and plan - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Next step to move COM, vDataHandler and application to Core 1",
+        "In Current repo, Do we see any big loading issues ? Without moving COM and vDataHandler ?",
+        "UTF multicore",
+        "Multicore Startup",
+        "EM in multicore perspective Jayaraj Praveen (BCSC/ENG1)",
+        "Spinlock"
+      ]
+    }
+  ],
+  "attachments": []
+}

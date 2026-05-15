@@ -1,0 +1,90 @@
+{
+  "page_id": "2885492969",
+  "title": "1. RFW + UTF Introduction",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/2885492969/1.+RFW+UTF+Introduction",
+  "last_modified": "2023-03-25T10:56:23.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2885492965",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "For Aurix China convergence platform and projects, We have decided to use UTF (Unified Test Framework) and RFW (Robotic Framework) for integration testing."
+    },
+    {
+      "type": "paragraph",
+      "text": "We have predefined RFW scripts (which uses DLT plugins) to write our test cases which will execute in Host system."
+    },
+    {
+      "type": "paragraph",
+      "text": "UTM (UTF module in SCC) will be running in SCC side and will receive message via DLT and execute test cases based on input command from RFW"
+    },
+    {
+      "type": "paragraph",
+      "text": "Advantage of UTF over XTM"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Test Case logic is completely separated from the actual business logic",
+        "Separate binary for each Test Module",
+        "Usage of Wrap functionality - 6. Creating Wrap functions - XC-CT China - Docupedia (bosch.com)"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.%20RFW%20+%20UTF%20Introduction/image-2023-3-25_14-21-31.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1. RFW + UTF Introduction/image-2023-3-25_14-21-31.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Useful links:"
+    },
+    {
+      "type": "paragraph",
+      "text": "UTF"
+    },
+    {
+      "type": "paragraph",
+      "text": "[Tutorial] How to do UTFs - CT/ESC Software Home - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "UTF Video Demo - CMCI2_Project_Hydra - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "RFW + UTF test dev environment - CT/ESC Software Home - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "[Tutorial] How to Do FIT Tests Using UTF FIT - CT/ESC Software Home - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "RFW"
+    },
+    {
+      "type": "paragraph",
+      "text": "Robot Framework User Guide"
+    },
+    {
+      "type": "paragraph",
+      "text": "Robot Framework Tutorial - TestersDock"
+    },
+    {
+      "type": "paragraph",
+      "text": "https://robotframework.org/"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-3-25_14-21-31.png",
+      "download_link": "/download/attachments/2885492969/image-2023-3-25_14-21-31.png?version=1&modificationDate=1679725291000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

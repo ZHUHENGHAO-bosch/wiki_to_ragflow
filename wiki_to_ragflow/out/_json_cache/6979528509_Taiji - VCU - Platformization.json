@@ -1,0 +1,52 @@
+{
+  "page_id": "6979528509",
+  "title": "Taiji - VCU - Platformization",
+  "version": 17,
+  "url": "/spaces/CARSFW/pages/6979528509/Taiji+-+VCU+-+Platformization",
+  "last_modified": "2026-04-14T05:20:38.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2310025962",
+  "children": [
+    "6989450627",
+    "6989451061",
+    "7010069212",
+    "7035688768",
+    "7035688778",
+    "7108637151",
+    "7064277144"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Our motive is to have One architecture and code base for Taiji platform and VCU plus projects"
+    },
+    {
+      "type": "paragraph",
+      "text": "Taiji - VCU Component difference - XC-CT China - Docupedia"
+    },
+    {
+      "type": "paragraph",
+      "text": "Taiji - VCU Architecture difference - XC-CT China - Docupedia"
+    },
+    {
+      "type": "paragraph",
+      "text": "Taiji - VCU - Repo Next steps - XC-CT China - Docupedia"
+    },
+    {
+      "type": "paragraph",
+      "text": "Taiji - Current VCU Repo and Folder structure - XC-CT China - Docupedia"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "VcuPlus_Contextview.jpg",
+      "download_link": "/download/attachments/6979528509/VcuPlus_Contextview.jpg?version=1&modificationDate=1774602117000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

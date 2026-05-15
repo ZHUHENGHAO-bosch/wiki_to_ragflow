@@ -1,0 +1,100 @@
+{
+  "page_id": "2421032582",
+  "title": "LCM Status Meeting - 09-2022",
+  "version": 9,
+  "url": "/spaces/CARSFW/pages/2421032582/LCM+Status+Meeting+-+09-2022",
+  "last_modified": "2022-09-20T11:01:07.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2421032631",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Status sheet: CN_Conv_LCM_Planning.xlsx"
+    },
+    {
+      "type": "paragraph",
+      "text": "Last meeting open point"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cyclic Reset Handling"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Date : 14 Sep 2022"
+    },
+    {
+      "type": "paragraph",
+      "text": "Participants: Shanhe, Praveen, Joanna, John, Huang Can"
+    },
+    {
+      "type": "paragraph",
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Discussed on QM Wdg Handling"
+    },
+    {
+      "type": "paragraph",
+      "text": "Wdg transition of EcuM and next steps on identifying the list of runnable for WdgM configuration"
+    },
+    {
+      "type": "paragraph",
+      "text": "Open points:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cyclic Reset Handling",
+        "QM Wdg Handling",
+        "EcuM State Transition Wdg Mechanism",
+        "Wdg Monitoring for LCM components",
+        "Thermal monitor"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Date : 20 Sep 2022"
+    },
+    {
+      "type": "paragraph",
+      "text": "Participants: Shanhe, Praveen, Joanna, John, Huang Can, Shang Hang, Carven"
+    },
+    {
+      "type": "paragraph",
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Discussed on board bring up activities of Zeekr"
+    },
+    {
+      "type": "paragraph",
+      "text": "Discussed on logging part and STR implementation in BYD and Geely"
+    },
+    {
+      "type": "paragraph",
+      "text": "Open points:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cyclic Reset Handling - Will be on hold till we find the Startup code responsible team",
+        "QM Wdg Handling",
+        "EcuM State Transition Wdg Mechanism",
+        "Wdg Monitoring for LCM components",
+        "Thermal monitor",
+        "Logging",
+        "STR"
+      ]
+    }
+  ],
+  "attachments": []
+}

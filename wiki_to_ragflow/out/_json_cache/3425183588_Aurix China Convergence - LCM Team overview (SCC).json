@@ -1,0 +1,155 @@
+{
+  "page_id": "3425183588",
+  "title": "Aurix China Convergence - LCM Team overview (SCC)",
+  "version": 28,
+  "url": "/spaces/CARSFW/pages/3425183588/Aurix+China+Convergence+-+LCM+Team+overview+SCC",
+  "last_modified": "2023-09-08T03:15:47.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2311851815",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Roles and Responsibilities in Aurix Converence"
+    },
+    {
+      "type": "paragraph",
+      "text": "LCM (Life Cycle Management) team is responsible for"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Implementation and Integration of all Lifecycle modules in SCC",
+        "Support for all board bring up activities",
+        "Analysis of any system level issue in projects",
+        "Safety components in Life cycle management area",
+        "Implementation of project specific requirements"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Team Quote"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "\"No one can whistle a symphony. It takes a whole orchestra to play it.\""
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Team Overview (Aurix SCC LCM)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Name",
+        "Picture",
+        "Location",
+        "Platform Topics (Module level)",
+        "Platform Topics (Feature level)",
+        "Project Lead (LCM)"
+      ],
+      "rows": [
+        [
+          "Praveen Jayaraj",
+          "![](_images/Aurix China Convergence - LCM Team overview (SCC)/Aurix China Convergence - LCM Team overview (SCC)/Dan.jpg?api=v2)",
+          "Wuxi",
+          "Software Architecture",
+          "NA",
+          "NA"
+        ],
+        [
+          "TAN Shanhe",
+          "![](_images/Aurix China Convergence - LCM Team overview (SCC)/Aurix China Convergence - LCM Team overview (SCC)/333.jpg?api=v2)",
+          "Shanghai",
+          "EcuM, PowerM, SCR",
+          "Startup (with MC) Shutdown (with MC) SCR Voltage Management STR",
+          "ZEEKR"
+        ],
+        [
+          "ZHAO Joanna",
+          "![](_images/Aurix China Convergence - LCM Team overview (SCC)/Aurix China Convergence - LCM Team overview (SCC)/zhao%20joanna.jpg?api=v2)",
+          "Shanghai",
+          "PSC, SystemM, LCM IncDispatcher",
+          "SoC startup and Shutdown SOH MC Mode handling Reset Handling Pullback",
+          "CHERY, BYD"
+        ],
+        [
+          "HUANG Can",
+          "![](_images/Aurix China Convergence - LCM Team overview (SCC)/Aurix China Convergence - LCM Team overview (SCC)/image-2023-9-7_13-51-37.png?api=v2)",
+          "Shanghai",
+          "SSC, SoC State Monitor",
+          "SoC State Monitor QM WDG Monitoring System State Controller",
+          "GEELY"
+        ],
+        [
+          "ZHANG Jolin",
+          "![](_images/Aurix China Convergence - LCM Team overview (SCC)/Aurix China Convergence - LCM Team overview (SCC)/image-2023-9-7_10-51-55.png?api=v2)",
+          "Suzhou",
+          "Thermal, Logging (FEL and EM)",
+          "Thermal Diag Other project specific requirement",
+          "CHERY"
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-9-7_13-51-37.png",
+      "download_link": "/download/attachments/3425183588/image-2023-9-7_13-51-37.png?version=1&modificationDate=1694065897000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-9-7_13-49-33.png",
+      "download_link": "/download/attachments/3425183588/image-2023-9-7_13-49-33.png?version=1&modificationDate=1694065774000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-9-7_10-51-55.png",
+      "download_link": "/download/attachments/3425183588/image-2023-9-7_10-51-55.png?version=1&modificationDate=1694055115000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "333.jpg",
+      "download_link": "/download/attachments/3425183588/333.jpg?version=1&modificationDate=1694053925000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "3333.jpg",
+      "download_link": "/download/attachments/3425183588/3333.jpg?version=1&modificationDate=1694053898000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "3333 (2).jpg",
+      "download_link": "/download/attachments/3425183588/3333%20%282%29.jpg?version=1&modificationDate=1694053645000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "zhao joanna.jpg",
+      "download_link": "/download/attachments/3425183588/zhao%20joanna.jpg?version=1&modificationDate=1694052788000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Dan.jpg",
+      "download_link": "/download/attachments/3425183588/Dan.jpg?version=1&modificationDate=1694051876000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "20230514_095918 - Copy.jpg",
+      "download_link": "/download/attachments/3425183588/20230514_095918%20-%20Copy.jpg?version=1&modificationDate=1694051830000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

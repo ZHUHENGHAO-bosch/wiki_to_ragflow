@@ -1,0 +1,51 @@
+{
+  "page_id": "4593456161",
+  "title": "3.0 VCUPlus SUM_SUSD States",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/4593456161/3.0+VCUPlus+SUM_SUSD+States",
+  "last_modified": "2024-08-12T07:15:28.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4593454612",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to summarize the SUM_SUSD States"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "SUM_SUSD States"
+    },
+    {
+      "type": "paragraph",
+      "text": "SUM_INIT: Initial state until Application State Manager completes initialization"
+    },
+    {
+      "type": "paragraph",
+      "text": "SUM_RUN: Next state after initialization. In this state, SUM_SUSD is requesting BswM to keep the BSW in the RUN state"
+    },
+    {
+      "type": "paragraph",
+      "text": "SUM_SLEEP: Low Power state requested. ONLY for ECUs which have project specific HW designs which can detect their own wakeups in all vehicle power modes"
+    },
+    {
+      "type": "paragraph",
+      "text": "SUM_RESET: Reset the ECU requested."
+    },
+    {
+      "type": "paragraph",
+      "text": "SUM_BOOT: Reprogramming request from diagnostic tool successfully received and all SW-C have voted for shutdown"
+    },
+    {
+      "type": "paragraph",
+      "text": "SUM_SHUTDOWN: Perform ECU Shutdown process, for ECUs that may not support retained power w.r.t memory content"
+    }
+  ],
+  "attachments": []
+}

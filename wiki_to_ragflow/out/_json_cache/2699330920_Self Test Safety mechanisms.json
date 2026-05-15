@@ -1,0 +1,134 @@
+{
+  "page_id": "2699330920",
+  "title": "Self Test Safety mechanisms",
+  "version": 9,
+  "url": "/spaces/CARSFW/pages/2699330920/Self+Test+Safety+mechanisms",
+  "last_modified": "2023-01-29T06:51:59.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2699330911",
+  "children": [],
+  "content": [
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "Safety Mechanism",
+          "Description",
+          "Alarms"
+        ],
+        [
+          "Power Built-In Self Test (PBIST) - Executed by SSW",
+          "",
+          ""
+        ],
+        [
+          "SM[HW]:PMS:PBIST",
+          "A Power Built-In-Self-Test (PBIST) at start-up allows the testing of supply levels, power functions and voltage monitors before cold PORST reset release.",
+          "SSW"
+        ],
+        [
+          "Logic Built-In Self-Test (LBIST) - Can be executed by SSW or application SW",
+          "",
+          ""
+        ],
+        [
+          "SM[HW]:MCU:LBIST",
+          "LBIST is a safety mechanism which executes structural test and checks the MCU digital logic to detect Hard Errors: latent and multi-point faults.",
+          ""
+        ],
+        [
+          "SMC[SW]:MCU:LBIST_CFG",
+          "This SMC is needed if the LBIST is done by application SW. The Application SW shall configure LBIST parameters via LBISTCTRL0, LBISTCTRL1, LBISTCTRL2 and start LBIST execution according to the description provided in the User Manual. After cold power-on reset FW can also configure LBIST parameters via UCB registers and start LBIST execution according to the User Manual description (Configuration A).",
+          ""
+        ],
+        [
+          "ESM[SW]:MCU:LBIST_RESULT",
+          "The Application SW shall check the LBIST results and compare it with the expected value after LBIST execution is finished. Before checking the MISR signature the Application SW shall verify if the previously triggered LBIST-run terminated successfully by checking if LBISTCTRL0.LBISTDONE='1' and RSTSTAT.LBTERM='1'. Afterwards the 32-bit MISR-signature result from LBISTCTRL3.SIGNATURE shall be compared with the expected MISR-result. In this conjunction it shall be regarded that the expected MISR-signature result is depending on the product version, the number of applied LBISTpatterns (LBISTCTRL0.PATTERNS) and the LBIST-config bits in LBISTCTRL1-register (including the BODY-bit). For a successful LBIST-execution it is essential that the default value in LBISTCTRL2.LENGTH field has not been modified by Application SW. Note: It shall be regarded that LBIST is a structural test method which is causing a high switching activity and requires stable environmental voltage and temperature conditions. Therefore it might happen that under extreme operation conditions a single LBIST run might fail by showing an unexpected MISR-result",
+          ""
+        ],
+        [
+          "Monitor Built-in Self Test (MONBIST)",
+          "",
+          ""
+        ],
+        [
+          "SM[HW]:PMS:MONBIST",
+          "To increase the latent fault coverage, an additional test called MONBIST is performed after PBIST and PORST After reset release, MONBIST for the secondary monitors and alarm generation path may be carried out by Application SW. Secondary Monitor BIST ensures a higher latent fault coverage for the secondary monitors and the associated alarm and Error Pin (FSP) fault logic routed to SMU",
+          ""
+        ],
+        [
+          "SMC[SW]:PMS:MONBIST_CFG",
+          "The Application SW shall configure MONBIST parameters and start MONBIST execution according to the User Manual description",
+          ""
+        ],
+        [
+          "ESM[SW]:PMS:MONBIST_RESULT",
+          "The Application SW shall check the MONBIST results in MONBISTSTAT register after MONBIST execution is finished",
+          ""
+        ],
+        [
+          "Memory Built-in Self Test (MBIST)",
+          "",
+          ""
+        ],
+        [
+          "SM[HW]:VMT:MBIST",
+          "MBIST is a safety mechanism which detects structural problems and checks SRAM to detect permanent random hardware faults in memory cells and memory controller.If MBIST is not run permanent random fault could remain latent in memory cells and memory controller.",
+          ""
+        ],
+        [
+          "SMC[SW]:VMT:MBIST",
+          "Application SW shall configure the MTU for performing MBIST by setting MCx_CONFIG0, MCx_CONFIG1 and MCx_MCONTROL registers, where x identifiesthe SRAM instance",
+          ""
+        ],
+        [
+          "ESM[SW]:VMT:MBIST",
+          "MBIST shall be executed at least once per driving cycle on all SRAM that are used by Application SW. The MBIST result shall be read by Application SW in MCx_ECCD and MCx_ETRR registers.",
+          ""
+        ],
+        [
+          "MCU_FW_CHECK",
+          "",
+          ""
+        ],
+        [
+          "ESM[SW]:SYS:MCU_FW_CHECK",
+          "Before entering the run mode, the Application SW shall evaluate the following conditions in order to prove the FW execution terminated correctly COLD POWER-ON RESET After a Cold Power-on Reset and LBIST execution the registers and alarms listed in\"TC3xx Cold Power-On Reset After LBIST Execution\" tables in Appendix A shall beread and their values compared with those shown in the tables in Appendix A ( ESM CPU FW CHECK - Appendix A - XC-CT China - Docupedia (bosch.com) ) In addition, the user shall consider potential timing related or stuck-at failures related to the ESR0 pin signal handling e.g. system level application to monitor releasing of ESR0. At the end of FW execution after Cold Power-on Reset, during the FW evaluation by Application SW: • In case all registers and SMU alarms report the expected values, the Application SW shall: - clear the content of the registers mentioned in the table (except STMEM3..6 and LCLCON0.1), - clear the SMU alarms SMU_AG0..11, - clear the corresponding reset status bits in RSTSTAT register. - proceed further. • If any of the registers do not report the expected values, it shall assumed that the FW has not been executed as expected. In this case an appropriate reaction at system level shall be taken. It is recommended to perform a second attempt within an application-dependent time by triggering a new Cold Power-on Reset. If a mismatch is detected at the second attempt, it shall be assumed that the FW is affected by a permanent fault and the device shall be considered faulty. STANDBY MODE EXIT At the exit of standby mode, the Application SW shall perform the same checks as listed in the \"TC3xx Cold Power-On Reset After LBIST Execution\" tables in Appendix A ( ESM CPU FW CHECK - Appendix A - XC-CT China - Docupedia (bosch.com) ) , considering the exceptions listed in the Notes. WARM POWER-ON RESET After a Warm Power-on Reset the registers and alarms listed in \"TC3xx Warm Power-On Reset\" tables in Appendix A shall be read and their values compared with those shown in these tables . In addition, the user shall consider potential timing related or stuck-at failures related to the ESR0 pin signal handling e.g. system level application to monitor releasing of ESR0 At the end of FW execution after Warm Power-on Reset, during the FW evaluation by Application SW: • In case all registers and SMU alarms report the expected values, the Application SW shall: - clear the content of the registers mentioned in the table (except STMEM3..6 and LCLCON0.1), - clear the SMU alarms SMU_AG0..11, - clear the corresponding reset status bits in RSTSTAT register. - proceed further. • If any of the registers do not report the expected values, it shall assumed that the FW has not been executed as expected. In this case an appropriate reaction at system level shall be taken. It is recommended to perform a second attempt within an application-dependent time by triggering a new Warm Power-on Reset. If a mismatch is detected at the second attempt, it shall be assumed that the FW is affected by a permanent fault and the device shall be considered faulty. SYSTEM RESET After a System Reset the registers and alarms listed in \"TC3xx System Reset\" tables in Appendix A shall be read and their values compared with those shown in these tables. At the end of FW execution after System Reset, during the FW evaluation by Application SW: In case all registers and SMU alarms report the expected values, the Application SW shall: - clear the content of the registers mentioned in the table (except STMEM3..6 and LCLCON0.1), - clear the SMU alarms SMU_AG0..11, - clear the corresponding reset status bits in RSTSTAT register. - proceed further. If any of the registers do not report the expected values, it shall assumed that the FW has not been executed as expected. In this case an appropriate reaction at system level shall be taken. It is recommended to perform a second attempt within an application-dependent time by triggering a new System Reset. If a mismatch is detected at the second attempt, it shall be assumed that the FW is affected by a permanent fault and the device shall be considered faulty.",
+          ""
+        ],
+        [
+          "MCU_STARTUP - Register Check",
+          "",
+          ""
+        ],
+        [
+          "ESM[SW]:SYS:MCU_STARTUP",
+          "Before entering the run mode, the Application SW shall monitor the corruption of data stored in the following safety relevant registers.. Safety-relevant registers are to be checked are: •DMU_HP_PROCONPpx (p,x=0..5) • DMU_HF_PROCONPF.RPRO • DMU_HF_PROCONUSR • DMU_HF_PROCONDF • DMU_HF_PROCONRAM • DMU_HF_PROCONDBG (if used) • DMU_SP_PROCONHSM (if used) • DMU_SF_PROCONUSR • DMU_SP_PROCONHSMCBS (if used) • DMU_SP_PROCONHSMCX0/1 (if used) • DMU_SP_PROCONHSMCOTP0/1 (if used) • DMU_SP_PROCONHSMCFG (if used) • DMU_HP_PROCONOTPpx (p,x=0..5) • DMU_HP_PROCONWOPpx (p,x=0..5) • DMU_HF_PROCONTP • RIFx_LVDSCON1.RTERM (x=0..1) • STSTAT.HWCFG Additionally, the user is responsible for selecting all relevant configuration registers for his application and verify their content before entering the run mode The user shall store a data checksum accumulated over all safety relevant registers and application dependent safety registers. The checksum shall be stored in NVM. The calculation of the checksum should be of a suitably robust implementation (e.g. IEEE 802.3 standard or AUTOSAR CRC32P4 standard). When the MCU starts up, the Application SW shall first calculate a data checksum for all the data stored in the safety relevant registers and application dependent safety registers. On completion of the calculation the Application SW shall compare the calculated data checksum with the expected data checksum stored in NVM. If the Application SW matches the calculated data checksum and the expected data checksum, the MCU has loaded the configuration data successfully. If the Application SW does not match the calculated data checksum and the expected data checksum, the Application SW has detected a corruption of the configuration data and must take an application dependent reaction.",
+          ""
+        ],
+        [
+          "SMU:ALIVE_ALARM_TEST",
+          "",
+          ""
+        ],
+        [
+          "ESM[SW]:SMU:ALIVE_ALARM_TEST",
+          "The Application SW shall, at least once per driving cycle, test the SMU core alive monitor and its connection to the SMU standby by triggering the alive alarm using SMU_AliveTest() command as described in the user manual",
+          ""
+        ],
+        [
+          "SMU:REG_MONITOR_TEST",
+          "",
+          ""
+        ],
+        [
+          "ESM[SW]:SMU:REG_MONITOR_TEST",
+          "The Application SW shall execute the REGISTER MONITOR test of all relevant functional blocks by setting the related bit in RMCTL register. Once started, [Application SW] shall check that REGISTER_MONITOR test execution time does not exceed expected value. At the end of the test, Application SW shall check selftest results by reading RMEF register",
+          ""
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

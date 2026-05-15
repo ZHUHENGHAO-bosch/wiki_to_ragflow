@@ -1,0 +1,179 @@
+{
+  "page_id": "2885492989",
+  "title": "2. Build UTF Test case Example",
+  "version": 14,
+  "url": "/spaces/CARSFW/pages/2885492989/2.+Build+UTF+Test+case+Example",
+  "last_modified": "2023-03-25T10:00:15.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2885492965",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Steps for initial build"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 1: Copy the folder UTFTestModuleName from the path Autosar\\clusterbase\\integration-test\\Service.UTFManager and place it inside Config\\Autosar\\integration-test\\Service.UTFManager.Aurix"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 2: Rename ModuleName with the actual module name (in this example we are taking LCM as module name)  and remove _template from file name"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.%20Build%20UTF%20Test%20case%20Example/image-2023-3-25_15-0-37.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2. Build UTF Test case Example/image-2023-3-25_15-0-37.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 3: Cmake changes"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Change the actual module name in LINKER_FLAGS"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.%20Build%20UTF%20Test%20case%20Example/image-2023-3-25_15-23-53.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2. Build UTF Test case Example/image-2023-3-25_15-23-53.png"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Change the module name in inFiles section",
+        "Change the module name in cmt_pf_module_newConfig option",
+        "add the required libraries using cmt_pf_module_addLibraries",
+        "We need to add -no_data_delete option in cmake (This is needed because of special linking in UTM mdoule) target_compile_options(UTFTestLCM PRIVATE -no_data_delete)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 4: Add our test case folder in Service.UTFManager.Aurix cmake by using add_subdirectory"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 5: Add our module in FeatureListAurix.txt which is located in this path Config\\Autosar\\integration-test\\Service.UTFManager.Aurix"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Order we define in this list will be the Module ID which will be used in injectionm command"
+    },
+    {
+      "type": "paragraph",
+      "text": "For example, Module ID for our example is 1"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.%20Build%20UTF%20Test%20case%20Example/image-2023-3-25_16-10-35.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2. Build UTF Test case Example/image-2023-3-25_16-10-35.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 6: Add our module in Main Cmake file (CMakeLists.cmake)"
+    },
+    {
+      "type": "paragraph",
+      "text": "It is important to add INTTEST so that the folder will be included in UTF binary creation."
+    },
+    {
+      "type": "paragraph",
+      "text": "cmt_use_pf_features(UTFTestXXX    INCLUDEPATH LIBRARY INTTEST)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.%20Build%20UTF%20Test%20case%20Example/image-2023-3-25_16-14-6.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2. Build UTF Test case Example/image-2023-3-25_16-14-6.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 7: Change Modulename inside each file that we copied in Step 1"
+    },
+    {
+      "type": "paragraph",
+      "text": "Do this change in all files"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.%20Build%20UTF%20Test%20case%20Example/image-2023-3-25_16-18-40.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2. Build UTF Test case Example/image-2023-3-25_16-18-40.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 8: Now give normal build (Build.bat xxx)"
+    },
+    {
+      "type": "paragraph",
+      "text": "You will find a seperate binary for our module inside software packets folder. Below is the .out for our example"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.%20Build%20UTF%20Test%20case%20Example/image-2023-3-25_16-22-49.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2. Build UTF Test case Example/image-2023-3-25_16-22-49.png"
+    },
+    {
+      "type": "panel",
+      "panel_type": "info",
+      "title": "Flashing",
+      "content": "For each Module a separate binary will be generated, and this binary shall be used for integration test cases for that module."
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-3-25_16-22-49.png",
+      "download_link": "/download/attachments/2885492989/image-2023-3-25_16-22-49.png?version=1&modificationDate=1679732569000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-25_16-18-40.png",
+      "download_link": "/download/attachments/2885492989/image-2023-3-25_16-18-40.png?version=1&modificationDate=1679732320000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-25_16-14-6.png",
+      "download_link": "/download/attachments/2885492989/image-2023-3-25_16-14-6.png?version=1&modificationDate=1679732046000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-25_16-10-35.png",
+      "download_link": "/download/attachments/2885492989/image-2023-3-25_16-10-35.png?version=1&modificationDate=1679731835000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-25_16-1-55.png",
+      "download_link": "/download/attachments/2885492989/image-2023-3-25_16-1-55.png?version=1&modificationDate=1679731315000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-25_16-1-37.png",
+      "download_link": "/download/attachments/2885492989/image-2023-3-25_16-1-37.png?version=1&modificationDate=1679731297000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-25_15-23-53.png",
+      "download_link": "/download/attachments/2885492989/image-2023-3-25_15-23-53.png?version=1&modificationDate=1679729033000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-25_15-23-6.png",
+      "download_link": "/download/attachments/2885492989/image-2023-3-25_15-23-6.png?version=1&modificationDate=1679728986000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-25_15-0-37.png",
+      "download_link": "/download/attachments/2885492989/image-2023-3-25_15-0-37.png?version=1&modificationDate=1679727637000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

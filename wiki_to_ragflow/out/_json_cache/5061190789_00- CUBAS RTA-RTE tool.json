@@ -1,0 +1,79 @@
+{
+  "page_id": "5061190789",
+  "title": "00- CUBAS RTA-RTE tool",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/5061190789/00-+CUBAS+RTA-RTE+tool",
+  "last_modified": "2024-11-28T10:13:04.000+01:00",
+  "last_modified_by": "WU Jianqiang (XC-CP/ESW2-CN)",
+  "parent_id": "5061188613",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "RTARTE tool generator dependencies"
+    },
+    {
+      "type": "paragraph",
+      "text": "This graph depicts the dependencies of the RTE towards surrounding entities"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/00-%20CUBAS%20RTA-RTE%20tool/image-2024-11-28_15-32-45.png?api=v2",
+      "alt": "",
+      "local_path": "_images/00- CUBAS RTA-RTE tool/image-2024-11-28_15-32-45.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"Real\" dependency given in RTE Delivery Information ....:"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/00-%20CUBAS%20RTA-RTE%20tool/image2022-11-14_12-29-57.png?api=v2",
+      "alt": "",
+      "local_path": "_images/00- CUBAS RTA-RTE tool/image2022-11-14_12-29-57.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "... and CUBAS Release Note, e.g."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/00-%20CUBAS%20RTA-RTE%20tool/image-2024-11-28_17-9-57.png?api=v2",
+      "alt": "",
+      "local_path": "_images/00- CUBAS RTA-RTE tool/image-2024-11-28_17-9-57.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "... and also in CUBAS package release in \"project_tools.xml\""
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/00-%20CUBAS%20RTA-RTE%20tool/image-2024-11-28_17-12-32.png?api=v2",
+      "alt": "",
+      "local_path": "_images/00- CUBAS RTA-RTE tool/image-2024-11-28_17-12-32.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-11-28_17-12-32.png",
+      "download_link": "/download/attachments/5061190789/image-2024-11-28_17-12-32.png?version=1&modificationDate=1732785152000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-11-28_17-9-57.png",
+      "download_link": "/download/attachments/5061190789/image-2024-11-28_17-9-57.png?version=1&modificationDate=1732784998000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-11-28_15-32-45.png",
+      "download_link": "/download/attachments/5061190789/image-2024-11-28_15-32-45.png?version=1&modificationDate=1732779165000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-11-14_12-29-57.png",
+      "download_link": "/download/attachments/5061190789/image2022-11-14_12-29-57.png?version=1&modificationDate=1732779078000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

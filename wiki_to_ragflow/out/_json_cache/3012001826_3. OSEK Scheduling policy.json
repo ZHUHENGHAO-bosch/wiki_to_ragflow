@@ -1,0 +1,101 @@
+{
+  "page_id": "3012001826",
+  "title": "3. OSEK Scheduling policy",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/3012001826/3.+OSEK+Scheduling+policy",
+  "last_modified": "2023-05-06T10:19:51.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "3011088327",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Introduction"
+    },
+    {
+      "type": "paragraph",
+      "text": "OSEK supports two scheduling policy"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Full preemptive scheduling",
+        "Non preemptive scheduling"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Non preemptive scheduling"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below is the example for Non preemptive scheduling,"
+    },
+    {
+      "type": "paragraph",
+      "text": "Task T1 - High Priority - Non-Preemptive"
+    },
+    {
+      "type": "paragraph",
+      "text": "Task T2 - Low Priority - Non-Preemptive"
+    },
+    {
+      "type": "paragraph",
+      "text": "Task T1 activates when Task T2 is in running state, even though Task T1 has high priority it has to wait till Task T2 is suspended (Since Task T2 is a non-preemptive task)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20OSEK%20Scheduling%20policy/image-2023-5-6_14-26-19.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. OSEK Scheduling policy/image-2023-5-6_14-26-19.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Preemptive scheduling"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below is the example for Preemptive scheduling,"
+    },
+    {
+      "type": "paragraph",
+      "text": "Task T1 - High Priority - Preemptive"
+    },
+    {
+      "type": "paragraph",
+      "text": "Task T2 - Low Priority - Preemptive"
+    },
+    {
+      "type": "paragraph",
+      "text": "In this case, When Task T1 is activated, it preempts the Task T2 which is still running (Since Task T2 is preemptive)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.%20OSEK%20Scheduling%20policy/image-2023-5-6_16-2-43.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3. OSEK Scheduling policy/image-2023-5-6_16-2-43.png"
+    },
+    {
+      "type": "panel",
+      "panel_type": "info",
+      "title": "GetResource or Lock ISRs",
+      "content": "In the case of a full preemptive system, the user shall constantly expect preemption of the running task. If a task fragment shall not be preempted, this can be achieved by blocking the scheduler temporarily via the system service GetResource or Lock interrupts"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-5-6_16-2-43.png",
+      "download_link": "/download/attachments/3012001826/image-2023-5-6_16-2-43.png?version=1&modificationDate=1683360163000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-5-6_14-26-19.png",
+      "download_link": "/download/attachments/3012001826/image-2023-5-6_14-26-19.png?version=1&modificationDate=1683354379000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

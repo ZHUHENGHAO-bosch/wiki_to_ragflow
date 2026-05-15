@@ -1,0 +1,39 @@
+{
+  "page_id": "4577535552",
+  "title": "2.0 Cluster message Tx - VIP",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/4577535552/2.0+Cluster+message+Tx+-+VIP",
+  "last_modified": "2024-08-07T13:18:50.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4577529786",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to give an overview of Tx sequence from VIP to SOC"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Tx Sequence"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20Cluster%20message%20Tx%20-%20VIP/ODI_Send_Sequence.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 Cluster message Tx - VIP/ODI_Send_Sequence.jpg"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "ODI_Send_Sequence.jpg",
+      "download_link": "/download/attachments/4577535552/ODI_Send_Sequence.jpg?version=1&modificationDate=1723029376000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

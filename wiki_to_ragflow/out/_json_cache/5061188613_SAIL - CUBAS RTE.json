@@ -1,0 +1,53 @@
+{
+  "page_id": "5061188613",
+  "title": "SAIL - CUBAS RTE",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/5061188613/SAIL+-+CUBAS+RTE",
+  "last_modified": "2024-12-23T08:13:34.000+01:00",
+  "last_modified_by": "WU Jianqiang (XC-CP/ESW2-CN)",
+  "parent_id": "5061188575",
+  "children": [
+    "5061190789",
+    "5061188880",
+    "5061189514",
+    "5070331448"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Introduction to Opening Method for Cubas RTE configure:"
+    },
+    {
+      "type": "paragraph",
+      "text": "1."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20-%20CUBAS%20RTE/image-2024-12-23_15-10-24.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL - CUBAS RTE/image-2024-12-23_15-10-24.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "2. Select the AUTOSAR View (ISOLAR-A)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20-%20CUBAS%20RTE/image-2024-12-23_15-13-18.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL - CUBAS RTE/image-2024-12-23_15-13-18.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-12-23_15-13-18.png",
+      "download_link": "/download/attachments/5061188613/image-2024-12-23_15-13-18.png?version=1&modificationDate=1734937998000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-23_15-10-24.png",
+      "download_link": "/download/attachments/5061188613/image-2024-12-23_15-10-24.png?version=1&modificationDate=1734937825000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

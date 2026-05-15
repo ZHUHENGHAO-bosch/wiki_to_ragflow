@@ -1,0 +1,60 @@
+{
+  "page_id": "2396097886",
+  "title": "09_Multicore Startup",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2396097886/09_Multicore+Startup",
+  "last_modified": "2024-01-29T07:53:24.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2383057032",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Startup code needs to be executed before calling main",
+        "In Multicore architecture, all cores has to execute startup code",
+        "Only Master Core starts automatically on power up, Slave cores has to be started by the OS in master core"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/09_Multicore%20Startup/EcuM_StartPhase.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/09_Multicore Startup/EcuM_StartPhase.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Init Task Synchronization"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/09_Multicore%20Startup/MultiCore_StartupPhase_InitTaskSynchronization.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/09_Multicore Startup/MultiCore_StartupPhase_InitTaskSynchronization.bmp"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "MultiCore_StartupPhase_InitTaskSynchronization.bmp",
+      "download_link": "/download/attachments/2396097886/MultiCore_StartupPhase_InitTaskSynchronization.bmp?version=1&modificationDate=1663657511000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-19_15-15-49.png",
+      "download_link": "/download/attachments/2396097886/image2022-8-19_15-15-49.png?version=1&modificationDate=1660902349000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "EcuM_StartPhase.jpg",
+      "download_link": "/download/attachments/2396097886/EcuM_StartPhase.jpg?version=1&modificationDate=1660902245000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

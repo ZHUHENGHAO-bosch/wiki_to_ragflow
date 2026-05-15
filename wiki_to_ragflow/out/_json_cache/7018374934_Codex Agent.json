@@ -1,0 +1,95 @@
+{
+  "page_id": "7018374934",
+  "title": "Codex Agent",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/7018374934/Codex+Agent",
+  "last_modified": "2026-04-13T09:10:53.000+02:00",
+  "last_modified_by": "ZHAO Yanqiang (XC-CP/ESW2-CN)",
+  "parent_id": "4204511237",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "codex 是OpenAI 出的开源的可以嵌入到vscode中的ai agent， 可以帮助补充代码，支持skills等等，可以一段时间免费有一些token。 windows下的使用 WSL2 中的使用"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "codex 是OpenAI 出的开源的可以嵌入到vscode中的ai agent， 可以帮助补充代码，支持skills等等，可以一段时间免费有一些token。"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "windows下的使用"
+    },
+    {
+      "type": "paragraph",
+      "text": "1 . 在vscode中安装 continue 和 codex 插件。"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Codex%20Agent/image-2026-4-9_16-43-20.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Codex Agent/image-2026-4-9_16-43-20.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "2. 由于codex默认用的是 chatgpt， 需要登陆chatgpt账号。  可以自己注册一个账号就可以使用。"
+    },
+    {
+      "type": "paragraph",
+      "text": "打开后会出现登陆的界面，登陆对应账号。"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Codex%20Agent/image-2026-4-9_16-56-43.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Codex Agent/image-2026-4-9_16-56-43.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "3. 如果不想用默认的模型， 可以自己在本地用ollama部署 模型， 后端模型改成ollama部署的模型 。 部署方法。"
+    },
+    {
+      "type": "paragraph",
+      "text": "可以下载开源的ollama 软件，配置下载的模型。"
+    },
+    {
+      "type": "paragraph",
+      "text": "然后下载 qwen2.5-coder 大模型， https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/tree/main"
+    },
+    {
+      "type": "paragraph",
+      "text": "配合codex 或者continue 来使用。"
+    },
+    {
+      "type": "paragraph",
+      "text": "但目前使用下来 qwen2.5-coder 返回的json格式 codex没识别， 没能进一步自动操作本地code。"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "WSL2 中的使用"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "除了在windows上安装的continue 和 codex， 再安装remote  explorer.",
+        "通过remote explorer 登陆到 WSL TARGETS中的工程文件夹。"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2026-4-9_16-56-43.png",
+      "download_link": "/download/attachments/7018374934/image-2026-4-9_16-56-43.png?version=1&modificationDate=1775725004000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-4-9_16-43-20.png",
+      "download_link": "/download/attachments/7018374934/image-2026-4-9_16-43-20.png?version=1&modificationDate=1775724201000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

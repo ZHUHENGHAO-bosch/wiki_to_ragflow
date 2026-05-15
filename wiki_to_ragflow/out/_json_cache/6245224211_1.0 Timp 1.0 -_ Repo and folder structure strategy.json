@@ -1,0 +1,49 @@
+{
+  "page_id": "6245224211",
+  "title": "1.0 Timp 1.0 -> Repo and folder structure strategy",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/6245224211/1.0+Timp+1.0+-+Repo+and+folder+structure+strategy",
+  "last_modified": "2025-09-19T04:42:48.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6245224039",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to summarize the repo and folder strategy for Taiji Aurix platform"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Taiji_2_0_Proposal.zip"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Folder and Repo Structure"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20Timp%201.0%20-%3E%20Repo%20and%20folder%20structure%20strategy/Taiji_Timp_2.1_Folder_structure.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 Timp 1.0 -_ Repo and folder structure strategy/Taiji_Timp_2.1_Folder_structure.jpg"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "Taiji_2_0_Proposal.zip",
+      "download_link": "/download/attachments/6245224211/Taiji_2_0_Proposal.zip?version=1&modificationDate=1758096407000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Taiji_Timp_2.1_Folder_structure.jpg",
+      "download_link": "/download/attachments/6245224211/Taiji_Timp_2.1_Folder_structure.jpg?version=1&modificationDate=1758018754000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

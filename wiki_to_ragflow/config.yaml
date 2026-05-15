@@ -1,0 +1,33 @@
+# Wiki → RAGFlow 同步配置
+#
+# 用法：
+#   python main.py --confluence-to-ragflow <URL_OR_PAGE_ID>
+#
+# 如需覆盖敏感字段（如 api_token、api_key），可创建同目录下的 config.local.yaml
+# 只填要覆盖的字段即可，会按字段级深合并到本文件。
+
+confluence:
+  base_url: "https://inside-docupedia.bosch.com"
+  context_path: "/confluence"
+  username: ""                  # auth_method=basic 时必填
+  # api_token: "REDACTED_CONFLUENCE_TOKEN_1"  # Confluence PAT (bearer) 或密码 (basic)
+  api_token: "REDACTED_CONFLUENCE_TOKEN_2"  # Confluence PAT (bearer) zhu henghao
+  auth_method: "bearer"
+  verify_ssl: false
+  timeout: 30.0
+  max_concurrent_requests: 5
+  default_output_dir: "./confluence_downloads"
+  download_attachments: false
+  max_depth: 5
+  save_format: "md"             # md / json
+  request_delay: 0.3            # 请求间隔（秒），防止服务器断连
+  max_retries: 3                # 失败重试次数（指数退避）
+
+ragflow:
+  base_url: "http://10.161.151.72:8880"   # RAGFlow API 端口（非 Web UI 端口）
+  api_key: "REDACTED_RAGFLOW_KEY"   # 你个人账号的 RAGFlow API key
+  dataset_name: "taiji_test"      # 目标知识库名称（不存在则自动创建）
+  auto_upload_after_confluence: false
+  parse_after_upload: true
+  parse_timeout: 600.0
+  parse_poll_interval: 5.0

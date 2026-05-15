@@ -1,0 +1,102 @@
+# Taiji - VCU Component difference
+
+> Source: /spaces/CARSFW/pages/7035688768/Taiji+-+VCU+Component+difference
+> Last modified: 2026-05-15T07:48:42.000+02:00
+
+---
+
+## Overview
+
+This page is to summarize the difference and owner
+
+### Repo structure
+
+### Component difference
+
+| Use case | Module | Different (Yes/No) | Details of difference | Owner | Status (Taiji Comparasion) | Status (Cerberus upgrade) | Cubas Support | Should we keep common repo - Taiji & VCU | Is it already common in CCU and VCU plus | TC3xx - variant dependency | Merge  Status | Action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Bosch Restricted |  |  |  |  |  |  |  |  |  |  |  |  |
+| Bosch Restricted - MCAL | EcuAL.ExtWdg | Yes | Difference in UT Difference in Config | ZHAO Yanqiang (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES | YES | Different in config |  | NO |
+| EcuAL.I2cHandler | No | Slightly in CMAKE. | LI Minsheng (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES |  | NO |  |  |
+| EcuAL.UARTBufferHandler | No | Slightly in CMAKE. | WU Mingen (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES |  | NO |  |  |
+| McAL.AurixCoreDriver | No |  | NIU Newton (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES |  | NO |  |  |
+| McAL.Stmr | No |  | LI Haixu (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES |  | NO |  |  |
+| McAL.TempSensor_Aurix | No | NA | JIANG Jimmy (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES | YES | YES，each core has its Temp Sensor |  |  |
+| Service.ContextAbstractionMcal |  | Add DMA interface Difference in Icu interface | ZHAO Yanqiang (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES | YES | NO |  |  |
+| MCAL.Startup | No |  | ZHAO Minzhong (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES |  |  |  |  |
+| MCAL.Startup.Safety | Yes | Used Code in path: Bosch_restricted\Bosch_MCAL\MCAL_CFG\CCU 1. Startup_Cfg_Safety.c, different MCU has different Cfg 2. SM_LBIST.c, bugfix in CCU, need update taiji source code | ZHAO Minzhong (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES | YES | YES ,Startup_Cfg_Safety.c, different MCU has different Cfg |  | during merge, Startup_Cfg_Safety.c, should be consider TC3 series SM LBIST should use CCU code |
+| Bosch_restricted - Ifxbase | AdcController | No | Same | JIN John (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES |  |  |  |  |
+| integration-test/Service.UTFManager | Yes | NA | YANG Jianhua (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES | YES | Different in config |  | NO |
+| LibraryPlatform | Yes | addLibraries in CMAKE | YU Xiaoyang (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES |  | NO |  |  |
+| LoggingServices/Service.FatalErrorLogger | Yes | static code: The differences are minimal, with some variations in macro naming. config code: The differences are minimal, Taiji Platform supports the difference of CUBAS-STACK-IN | LI Haixu (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES | NO | NO |  |  |
+| LoggingServices/Service.TimeStampLogger | No |  | LI Haixu (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES | NO | NO |  |  |
+| MemServices/Service.NVAbstraction | Yes | static code: The differences are minimal config code: No differences | LI Minsheng (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES | NO | NO |  |  |
+| OsServices/Service.ContextSwitcher | No | NA | JIANG Jimmy (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES | YES | NO |  | NO |
+| OsServices/Service.ExceptionHandling | Yes | cfg : Different in callout function | HUANG Kewei (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES | YES | Different in config |  | Merge different part |
+| OsServices/Service.OsHooks | Yes | New vector sip change os api | HUANG Kewei (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES | YES | Different in config |  | Merge different part |
+| OsServices/Service.RealTimeMeasurement | Yes | less improvement for UT and  source code Cmake is also different. | GENG Zhongyang (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | Yes | No, but can plan it | NO |  |  |
+| TimeServices/Service.SystemTimer | Yes | UT & QAC | WU Mingen (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES |  | NO |  |  |
+| TimeServices/Service.Time | Yes | UT & QAC | WU Mingen (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES |  | NO |  |  |
+| Bosch_restricted - IfxFusabase | AurixSafetyManager | No | NA | JIANG Jimmy (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | NA | NA | NA |  | NO |
+| AurixSafetyStartup | Yes | Platform Part: very small diff in ut cmakelist.txt Config Part: small difference. because VCU Lite add CAN Shutdown Path SelfTest | JI Congfei (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES | YES | NO |  | NO |
+| Clocksupervision | YES | Platform Part: very small diff in ut cmakelist.txt Config Part: no diff | LIU Dezhi (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES | YES | NO |  | check to use which ut cmakelist.txt during merge |
+| PeripheralProtection | Yes | Difference in Config | ZHAO Minzhong (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES | YES | Different in config |  | NO |
+| PflashCRCchecker | Yes | Difference in design, code, UT | LIU Dezhi (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES | YES | Different in config |  | Merge different part |
+| RegisterMonitor | Yes | Difference in Cmake, UT | LIU Dezhi (XC-CP/ESW2-CN) | DONE | INPROGRESS | INPROGRESS | YES | YES | Different in config |  | Merge different part |
+| SafeADC |  | Difference in UT | YANG Jianhua (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES | YES | Different in config |  | Merge different part |
+| SafeStartup | YES | Platform Part: small diff in ut cmakelist.txt Config Part: little diff | JI Congfei (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES | YES | NO |  | check to use which ut cmakelist.txt during merge |
+| SafeStateHandler | YES | Platform Part:little diff .  SEH – little diff; SSH – add PATAC specific Config Part: little diff. configuration difference | LI Xiang (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES | YES | NO |  | need move project specific out of platfom code to Cfg part during merge |
+| SafeVoltageMonitor | Yes | Small difference | LI Xiang (BCSC/ENG1) | DONE | INPROGRESS | INPROGRESS | YES | YES | NO |  | NO |
+| BswPlatform |  |  |  |  |  |  |  |  |  |  |  |  |
+| Audio | Service.AudioAmpManager | NA | not used in ccu and vcu plus | HUANG Kewei (BCSC/ENG1) |  |  |  | Yes | NO | NO |  | NO |
+| Service.AudioAmpHandler |  | Big difference in code | HUANG Kewei (BCSC/ENG1) |  |  |  |  | need move project specific out of platfom code to Cfg part during merge |
+| CDD_AncMicDriver | Yes | Big difference in code | HUANG Kewei (BCSC/ENG1) |  |  |  |  | need move project specific out of platfom code to Cfg part during merge |
+| CDD_HfMicDriver | No | not used in ccu and vcu plus | HUANG Kewei (BCSC/ENG1) |  |  |  |  |  |
+| EcuAL.AudioAmpDriver | Yes | Small difference | HUANG Kewei (BCSC/ENG1) |  |  |  |  | need move project specific out of platfom code to Cfg part during merge |
+| Logging | Service.ResetHistory | - | Not used in Taiji platform | JIN John (XC-CP/ESW2-CN) |  |  |  | Yes | Planned |  |  |  |
+| DLT/ECUAL.DLTIF | Yes | RetentionRam enabling. improvement in CCU. | GENG Zhongyang (BCSC/ENG1) | DONE |  |  | YES | Planned | NO |  |  |
+| DLT/Service.Cdd_DltIf | Yes | lot of differences: Taji has only one source file for cubas and vector. CCU has separated folder for cubas and vector. | GENG Zhongyang (BCSC/ENG1) | DONE |  |  | YES |  |  |
+| DLT/Service.DltWrapper | Yes | completely differences: CCU is from VCU 1.0. | GENG Zhongyang (BCSC/ENG1) | DONE |  |  | YES |  |  |
+| Inc Stack | Service.inc_tp | Yes | Completed the improvement in CCU, in order to support mutil-cores for all project. | LI Minsheng (XC-CP/ESW2-CN) GENG Zhongyang (BCSC/ENG1) | DONE |  |  |  | Yes | Different in config |  |  |
+| Service.VipIncRouter |  | Not used in VCU plus & CCU | LI Minsheng (XC-CP/ESW2-CN) GENG Zhongyang (BCSC/ENG1) |  |  |  | NA | NA | NA |  |  |
+| Service.Nanopb |  |  |  |
+| KDS | CDD_KDS |  |  | GUO Yiren (BCSC/ENG1) SHAO Licheng (BCSC/ENG1) JIN John (XC-CP/ESW2-CN) | DONE |  |  |  | Yes |  |  |  |
+| RTC | RTC/ECUAL.RTC | Yes | less difference. | GUO Yiren (BCSC/ENG1) SHAO Licheng (BCSC/ENG1) GENG Zhongyang (BCSC/ENG1) | DONE |  |  | YES | Yes | NO |  |  |
+| RTC/Service.RTCHandler | Yes | lot of differences, but can adapt easy. | GUO Yiren (BCSC/ENG1) SHAO Licheng (BCSC/ENG1) GENG Zhongyang (BCSC/ENG1) | DONE |  |  | YES |  |  |
+| ThermalMgnt | Service.ThermalManager | Yes | Big differences | SHAO Licheng (BCSC/ENG1) LI Haixu (XC-CP/ESW2-CN) | DONE |  |  |  | Yes |  |  |  |
+| LifeCycleMgnt | Service.EcuModeManager | Yes | Big differences | TAN Shanhe (XC-CP/ESW2-CN) JIN John (XC-CP/ESW2-CN) | DONE |  |  |  |  |  |  | Enable Ecum Supervision |
+| Service.EcuModeManagerEcuM | Yes | Very few difference, but can be adapted | TAN Shanhe (XC-CP/ESW2-CN) JIN John (XC-CP/ESW2-CN) | DONE |  |  |  |  |  |  |  |
+| Service.PowerManager | Yes | Big differences | ZHANG Jolin (XC-CP/ESW2-CN) TAN Shanhe (XC-CP/ESW2-CN) | DONE |  |  |  |  |  |  |  |
+| Service.SystemManager |  | Not in Platform folder | ZHANG Jolin (XC-CP/ESW2-CN) JIN John (XC-CP/ESW2-CN) | DONE |  |  |  |  |  |  |  |
+| Service.LCMChnDispatcher |  | Not used in VCUplus and CCU | ZHANG Jolin (XC-CP/ESW2-CN) ZHAO Joanna (XC-CP/ESW2-CN) TAN Shanhe (XC-CP/ESW2-CN) | NA |  |  | NA | NA |  |  |  |
+| Service.PowerStateController |  |  |  |
+| Service.SystemStateController |  |  |  |
+| Platformivi | CDD_ErrorMemory |  |  | ZHAO Joanna (XC-CP/ESW2-CN) | DONE |  |  | YES |  |  |  |  |
+| PlatformHeaders |  |  | ZHAO Joanna (XC-CP/ESW2-CN) | DONE |  |  | YES |  |  |  | Merge different part |
+| Rbuf | No | only cmake is different. | LI Minsheng (XC-CP/ESW2-CN) GENG Zhongyang (BCSC/ENG1) | DONE |  |  | YES | No, but can plan it | NO |  |  |
+| SWUpdate | SERVICE.SWUpdate |  |  | ZHAO Joanna (XC-CP/ESW2-CN) | DONE |  |  | Taiji have no this part | No, but can plan it |  |  |  |
+| VariantHandling | SERVICE.VariantHandler |  |  | ZHAO Joanna (XC-CP/ESW2-CN) | DONE |  |  | YES |  |  |  |  |
+| SafetyApps |  |  |  |  |  |  |  |  |  |  |  |  |
+| SafetyApps | AliveSupervisionIf | YES | Difference in cmake, code | ZHAO Yanqiang (XC-CP/ESW2-CN) | DONE |  |  | Yes | YES | No |  | cmakelist should be update during merge |
+| BoschSafetyMonitor | Yes | Big difference in code （SM52） | JIANG Jimmy (XC-CP/ESW2-CN) | DONE |  |  | YES | YES | NO |  |  |
+| ECUAL.SafeIOHWAB | NA | taiji has  no this module | LIU Dezhi (XC-CP/ESW2-CN) | DONE |  |  | NA | YES | NO |  | move this module to project special part during merge |
+| SafeSoCStateMonitor | No | NA | ZHAO Minzhong (BCSC/ENG1) | DONE |  |  | YES | YES | NO |  |  |
+| SafetyAppsINCDispatcher | Yes | Difference in CMake | ZHAO Yanqiang (XC-CP/ESW2-CN) | DONE |  |  | YES | YES | NO |  | merge cmake |
+| Service.DPUConfigVerifier | NA | Only in CCU, not in platform taiji | LI Xiang (BCSC/ENG1) | DONE |  |  | YES | YES | NO |  |  |
+| Service.FIDMDiagnostic | NA | Only in CCU, not in platform taiji | LI Xiang (BCSC/ENG1) | DONE |  |  | YES | YES | NO |  |  |
+| SERVICE.HSMDiagnostic | NA | Only in CCU, not in platform taiji | LI Xiang (BCSC/ENG1) | DONE |  |  | YES | YES | NO |  |  |
+| Service.SerializerDiagnostic | NA | Used in platform taiji, not used in CCU | LI Xiang (BCSC/ENG1) | DONE |  |  | NA | YES | NO |  |  |
+| Service.SVHTelltales | Yes | less difference.(SM52) | JIANG Jimmy (XC-CP/ESW2-CN) |  |  |  | YES | NO | NO |  |  |
+| CDD.SafetyConfig | Yes | Project Config Code is Different | ZHAO Minzhong (BCSC/ENG1) | DONE |  |  | YES | NO | NO |  | NO |
+| BL |  |  |  |  |  |  |  |  |  |  |  |  |
+| BL | Support both CUBAS and Vector | NA |  | WU Qi (XC-CP/ESW2-CN) |  |  |  |  |  |  |  |  |
+| Support all variants[TC3XX] | NA |  | ZHANG Xiaochen (BCSC/ENG1) |  |  |  |  |  |  |  |  |
+| Build & Tools |  |  |  |  |  |  |  |  |  |  |  |  |
+| Build | Build framework - Cmake |  | Even Build has to be made PF and Config architecture |  |  |  |  |  |  |  |  |  |
+| Tools | All Tools |  |  |  |  |  |  |  |  |  |  |  |
+| Others |  |  |  |  |  |  |  |  |  |  |  |  |
+|  | Compiler flag | YES |  |  |  |  |  |  |  |  |  |  |
+|  | RAM optimization | YES |  |  |  |  |  |  |  |  |  |  |
+|  | Check Stack of each Task in real Car - RTMO |  |  |  |  |  |  |  |  |  |  |  |
+
+![](../../../../../_images/Taiji%20-%20VCU%20Component%20difference/VcuPlus_Contextview.jpg)

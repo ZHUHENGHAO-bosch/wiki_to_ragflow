@@ -1,0 +1,49 @@
+{
+  "page_id": "2832083790",
+  "title": "MCU_STARTUP",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/2832083790/MCU_STARTUP",
+  "last_modified": "2023-03-13T07:10:16.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2699330911",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Before entering the run mode, the Application SW shall monitor the corruption of data stored in the safety relevant registers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Safety-relevant registers are to be checked are:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "DMU_HP_PROCONPpx (p,x=0..5)",
+        "DMU_HF_PROCONPF.RPRO",
+        "DMU_HF_PROCONUSR",
+        "DMU_HF_PROCONDF",
+        "DMU_HF_PROCONRAM",
+        "DMU_HF_PROCONDBG (if used)",
+        "DMU_SP_PROCONHSM (if used)",
+        "DMU_SF_PROCONUSR",
+        "DMU_SP_PROCONHSMCBS (if used)",
+        "DMU_SP_PROCONHSMCX0/1 (if used)",
+        "DMU_SP_PROCONHSMCOTP0/1 (if used)",
+        "DMU_SP_PROCONHSMCFG (if used)",
+        "DMU_HP_PROCONOTPpx (p,x=0..5)",
+        "DMU_HP_PROCONWOPpx (p,x=0..5)",
+        "DMU_HF_PROCONTP",
+        "RIFx_LVDSCON1.RTERM (x=0..1)",
+        "STSTAT.HWCFG"
+      ]
+    }
+  ],
+  "attachments": []
+}

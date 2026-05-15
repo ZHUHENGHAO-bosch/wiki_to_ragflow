@@ -1,0 +1,80 @@
+{
+  "page_id": "2423638171",
+  "title": "DLT and EM Architecture meeting with CART",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2423638171/DLT+and+EM+Architecture+meeting+with+CART",
+  "last_modified": "2022-09-16T08:13:58.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2403658546",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 16 Sep 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Agenda: To sync Dlt mechanism and Error logging with CART modules"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants:"
+    },
+    {
+      "type": "paragraph",
+      "text": "From CART:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Kavitha,",
+        "Karthik V"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "From CNConvPF"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Praveen",
+        "Senthil"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Discussed on DLT architecture China Convergence - Dlt logging - XC-CI China - Docupedia (bosch.com)",
+        "Discussed on EM architecture China Convergence Error Logging Mechanism - Draft - XC-CI China - Docupedia (bosch.com)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Open Points and Next actions:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Identify the CART (Including Cerberus and Hydra) modules which are not doing dlt logging via Wrapper in Config repo Responsible: user-81080",
+        "Safety modules DLT logging has to be make sure that they are logging via an wrapper in Config repo. Responsible: Karthik Vangili (MS/ENE-VD-EP1-XC)",
+        "ECT has to add this Super OPL and has to take care of tracking it further Prabu Dhandapani (MS/ENE-VD1-XC)",
+        "All CART modules shall use FEL (Not the EM) user-81080 Karthik Vangili (MS/ENE-VD-EP1-XC)"
+      ]
+    }
+  ],
+  "attachments": []
+}

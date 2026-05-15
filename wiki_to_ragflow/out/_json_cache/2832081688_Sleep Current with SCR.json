@@ -1,0 +1,106 @@
+{
+  "page_id": "2832081688",
+  "title": "Sleep Current with SCR",
+  "version": 9,
+  "url": "/spaces/CARSFW/pages/2832081688/Sleep+Current+with+SCR",
+  "last_modified": "2023-11-10T03:21:18.000+01:00",
+  "last_modified_by": "TAN Shanhe (XC-CP/ESW2-CN)",
+  "parent_id": "2321473032",
+  "children": [],
+  "content": [
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Sleep%20Current%20with%20SCR/image-2023-6-28_10-22-27.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Sleep Current with SCR/image-2023-6-28_10-22-27.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Zeekr project"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Board variant",
+        "Sleep type",
+        "Sleep current",
+        "Comment"
+      ],
+      "rows": [
+        [
+          "A0",
+          "SCR",
+          "210uA",
+          ""
+        ],
+        [
+          "A2",
+          "SCR",
+          "1.02mA (2023.03.13)",
+          "With U33S_SCC_ON high"
+        ],
+        [
+          "A3",
+          "SCR",
+          "1.2mA",
+          "STR power mode, could be optimized later"
+        ],
+        [
+          "B1",
+          "SCR",
+          "370uA",
+          "SCR sleep mode"
+        ],
+        [
+          "STR",
+          "12mA",
+          "STR mode"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Chery project"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Board variant",
+        "Sleep type",
+        "Sleep current",
+        "Comment"
+      ],
+      "rows": [
+        [
+          "A0",
+          "SCR",
+          "160uA",
+          ""
+        ],
+        [
+          "B1",
+          "SCR",
+          "150uA",
+          "SCR sleep mode, turn off U33S_SCC"
+        ],
+        [
+          "STR",
+          "55mA",
+          "STR mode, do not turn off U33S_SCC"
+        ],
+        [
+          "STR",
+          "4.8mA",
+          "STR mode, after HW changing and turn off U33S_SCC"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-6-28_10-22-27.png",
+      "download_link": "/download/attachments/2832081688/image-2023-6-28_10-22-27.png?version=1&modificationDate=1687918947000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

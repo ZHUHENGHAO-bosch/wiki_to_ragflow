@@ -1,0 +1,86 @@
+{
+  "page_id": "4593454945",
+  "title": "1.0 VCU Plus - SUSD with EcuModeManager",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/4593454945/1.0+VCU+Plus+-+SUSD+with+EcuModeManager",
+  "last_modified": "2024-08-12T07:53:38.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4593454612",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to describe the relationship between ECU Mode Manager and SUM_SUSD"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "SUSD role in Shutdown sequence"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20VCU%20Plus%20-%20SUSD%20with%20EcuModeManager/image-2024-8-12_11-26-12.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 VCU Plus - SUSD with EcuModeManager/image-2024-8-12_11-26-12.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "During the Init sequence, there is no relationship between SUSD and EcuModeManger."
+    },
+    {
+      "type": "paragraph",
+      "text": "EcuModeManager along with EcuM and BswM, will propagate to SOC_RUN after Powering up all the necessary peripherals as shown in below State machine"
+    },
+    {
+      "type": "paragraph",
+      "text": "But for the Shutdown sequence, It is always initiated by SUM_SUSD."
+    },
+    {
+      "type": "paragraph",
+      "text": "The Application State Manager function of SUM_SUSD is responsible to implement this decision. SUM_SUSD makes this decision based on receiving notifications from project specific SW-C via the <SUM/SWC>_SUSD_ShutdownPermission interface. Once SUM_SUSD determines that a shutdown of the ECU is required, it issues the corresponding mode request to BswM"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Configuration of Shutdown Permission"
+    },
+    {
+      "type": "paragraph",
+      "text": "We need to configure the Shutdown permission ports in ASM, which can hold the SUM state moving to SLEEP when there is no Wakeup sources"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20VCU%20Plus%20-%20SUSD%20with%20EcuModeManager/image-2024-8-12_13-53-30.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 VCU Plus - SUSD with EcuModeManager/image-2024-8-12_13-53-30.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20VCU%20Plus%20-%20SUSD%20with%20EcuModeManager/Autosar_SoC_LowlevelShutdown.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 VCU Plus - SUSD with EcuModeManager/Autosar_SoC_LowlevelShutdown.jpg"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-12_13-53-30.png",
+      "download_link": "/download/attachments/4593454945/image-2024-8-12_13-53-30.png?version=1&modificationDate=1723442010000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-12_11-26-12.png",
+      "download_link": "/download/attachments/4593454945/image-2024-8-12_11-26-12.png?version=1&modificationDate=1723433173000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Autosar_SoC_LowlevelShutdown.jpg",
+      "download_link": "/download/attachments/4593454945/Autosar_SoC_LowlevelShutdown.jpg?version=1&modificationDate=1723431942000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

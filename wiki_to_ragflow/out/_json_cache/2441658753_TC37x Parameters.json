@@ -1,0 +1,56 @@
+{
+  "page_id": "2441658753",
+  "title": "TC37x Parameters",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2441658753/TC37x+Parameters",
+  "last_modified": "2022-09-29T07:09:42.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2321473024",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "This page is to capture the TC37x specific parameters"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/TC37x%20Parameters/image2022-9-29_9-12-42.png?api=v2",
+      "alt": "",
+      "local_path": "_images/TC37x Parameters/image2022-9-29_9-12-42.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/TC37x%20Parameters/image2022-9-29_10-38-59.png?api=v2",
+      "alt": "",
+      "local_path": "_images/TC37x Parameters/image2022-9-29_10-38-59.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/TC37x%20Parameters/image2022-9-29_10-39-35.png?api=v2",
+      "alt": "",
+      "local_path": "_images/TC37x Parameters/image2022-9-29_10-39-35.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-9-29_10-39-35.png",
+      "download_link": "/download/attachments/2441658753/image2022-9-29_10-39-35.png?version=1&modificationDate=1664428176000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-9-29_10-38-59.png",
+      "download_link": "/download/attachments/2441658753/image2022-9-29_10-38-59.png?version=1&modificationDate=1664428139000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-9-29_10-38-18.png",
+      "download_link": "/download/attachments/2441658753/image2022-9-29_10-38-18.png?version=1&modificationDate=1664428099000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-9-29_9-12-42.png",
+      "download_link": "/download/attachments/2441658753/image2022-9-29_9-12-42.png?version=1&modificationDate=1664422999000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

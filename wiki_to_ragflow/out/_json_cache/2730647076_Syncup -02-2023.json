@@ -1,0 +1,179 @@
+{
+  "page_id": "2730647076",
+  "title": "Syncup -02-2023",
+  "version": 11,
+  "url": "/spaces/CARSFW/pages/2730647076/Syncup+-02-2023",
+  "last_modified": "2023-02-23T03:40:32.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2509826984",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 23 Feb 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Praveen, John, Yanqiang, Jolin"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting minutes:"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "DLT:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pending tasks:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "To test non-verbose mode with xml in Zeekr once ECT delivers JIN John (XC-CP/ESW2-CN) - On Hold",
+        "To deliver non-verbose and test in Chery JIN John (XC-CP/ESW2-CN) INPROGRESS",
+        "Wiki page to use non-verbose mode",
+        "Test non verbose mode works with the file saved in SoC JIN John (XC-CP/ESW2-CN)",
+        "How many dlt files will be saved in SoC and how they are clearing the files"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "EM"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pending Tasks"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Test EM with SCC in Zeekr/Chery 23 Feb 2023 will be started in next week",
+        "Improve EM in SoC to accommodate both QM and Safe EM logs",
+        "Intense test to make sure no logs are missed",
+        "Analyze VCU EM and adapt local EM module in SoC and SCC"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 09 Feb 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Praveen, John, Yanqiang, Jolin"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Problem statement 1: DLT uses Verbose mode"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "We are using DLT verbose mode"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Solution:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "We will move to Non-verbose mode",
+        "Non-verbose handling",
+        "How to use non-verbose mode - Wiki page JIN John (XC-CP/ESW2-CN) INPROGRESS",
+        "Module Ids, Session and App ids for each module"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Pending tasks:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "To test non-verbose mode with xml in Zeekr once ECT delivers JIN John (XC-CP/ESW2-CN)",
+        "Test non verbose mode works with the file saved in SoC JIN John (XC-CP/ESW2-CN)",
+        "How many dlt files will be saved in SoC and how they are clearing the files"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Problem statement 2: QM modules does not used EM"
+    },
+    {
+      "type": "paragraph",
+      "text": "In local projects, only Safety modules used EM. But in Aurix PF we need to make all modules shall report error via EM"
+    },
+    {
+      "type": "paragraph",
+      "text": "Solution:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Proposed architecture: Error logging - Decision matrix - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "SCC EM module integration COMPLETED",
+        "SoC side only supports Safe Error Memory",
+        "As an next step we can analyze VCU SoC side EM implementation"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Discussion points:"
+    },
+    {
+      "type": "paragraph",
+      "text": "VCU EM supports for storing QM data.  EM User can define the EM log file size in script according to  VCU EM design. The log file size is 10M in VCU manual. It have backup and overwrite mechanism."
+    },
+    {
+      "type": "paragraph",
+      "text": "Due to difference of architecture on SoC side between VCU EM and Zeekr, we can’t reuse VCU EM  without adaption."
+    },
+    {
+      "type": "paragraph",
+      "text": "VCU EM functionality supports parsing coredump file of QNX / tombstone of android and store qnx slog, but I think these are not necessary for us now.  We can deal with these functions in the end."
+    },
+    {
+      "type": "paragraph",
+      "text": "At first we can only integrate function of storing QM data from SCC. But EM have dependencies on other system components."
+    },
+    {
+      "type": "paragraph",
+      "text": "Below adaptions are necessary if store SCC data via  EM:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Make/CMake compile toolchain",
+        "SoC side INC message interface",
+        "STR  interface and signal flow.",
+        "SUSD dynamic lib, strategy and interface different."
+      ]
+    }
+  ],
+  "attachments": []
+}

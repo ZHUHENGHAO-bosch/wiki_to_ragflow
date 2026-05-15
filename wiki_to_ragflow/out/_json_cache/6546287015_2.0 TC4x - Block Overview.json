@@ -1,0 +1,39 @@
+{
+  "page_id": "6546287015",
+  "title": "2.0 TC4x - Block Overview",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/6546287015/2.0+TC4x+-+Block+Overview",
+  "last_modified": "2025-11-28T08:45:23.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6527386980",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to show the overall Block overview of TC4x"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Block Diagram:"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20TC4x%20-%20Block%20Overview/image-2025-11-28_15-45-13.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 TC4x - Block Overview/image-2025-11-28_15-45-13.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2025-11-28_15-45-13.png",
+      "download_link": "/download/attachments/6546287015/image-2025-11-28_15-45-13.png?version=1&modificationDate=1764315913000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

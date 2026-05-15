@@ -1,0 +1,34 @@
+{
+  "page_id": "2379247286",
+  "title": "Aurix - Reset Configuration Register",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2379247286/Aurix+-+Reset+Configuration+Register",
+  "last_modified": "2022-08-08T06:59:28.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2379247242",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "What type of Reset to be triggered is decided on the configuration of Reset Configuration Register (RSTCON)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Aurix%20-%20Reset%20Configuration%20Register/image2022-8-8_10-29-21.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Aurix - Reset Configuration Register/image2022-8-8_10-29-21.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-8-8_10-29-21.png",
+      "download_link": "/download/attachments/2379247286/image2022-8-8_10-29-21.png?version=1&modificationDate=1659934761000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

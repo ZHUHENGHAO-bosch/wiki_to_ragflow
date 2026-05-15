@@ -1,0 +1,125 @@
+{
+  "page_id": "4676423493",
+  "title": "SWC_OCD_DriverInfoFuel_SRC",
+  "version": 8,
+  "url": "/spaces/CARSFW/pages/4676423493/SWC_OCD_DriverInfoFuel_SRC",
+  "last_modified": "2024-09-04T04:41:10.000+02:00",
+  "last_modified_by": "SUN Xitong (XC-CP/ESW2-CN)",
+  "parent_id": "4630207591",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "该模块主要处理与燃油相关得仪表显示信息，包括油量、效率等内容。"
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "AFEStatistics.c",
+          "3.2.1.14.69 EcoDrive AFE Statistics Page (extended software set feature)",
+          "EcoDrive AFE Statistics (EcoDrive AFE 统计) 功能可计算，存储和显示最后 Y 公里 / 英里的平均油耗。 在第一步中，统计数据将计算下一个 X 公里 / 英里的平均油耗。 在距离 X 的经过时间内，该值被存储 / 推入阵列，阵列被映射到统计图形。 此功能仅对燃油类型 = 汽油有效 (必须为 CNG ， LPG 校准)"
+        ],
+        [
+          "",
+          "",
+          "FU21_Action44P → AFEStatisticsActionHandler（reset) AFEStatistics_Run  -> CalcAndUpdateAFEStatistics   ->  DisplayAFEStatistics"
+        ],
+        [
+          "AverageFuelEconomy.c",
+          "3.2.1.14.6 Average Fuel Economy (AFE)",
+          "AFE 函数计算自上次重置该函数以来的平均油耗。 显示乘员的平均油耗。 AFE 可以采用不同的格式显示，具体取决于设置。 现有格式为 •美国 •英制 •公制 (L/100 公里) •日语 (公里 / 小时)"
+        ],
+        [
+          "",
+          "",
+          "AverageFuelEconomy_Run ->    ResetCheckAFE ->   CalcAverageFuelConsumption  ( DriverInfoFuel_CalculateDeltaVehOdo  -> DriverInfoFuel_CalculateDeltaFlInjRlCnt) -> Save TRIP_ACCUM & FUEL_ACCUM to NVM -> HMIUpdateIndication ->CalcAverageFuelConsumption   U32DeltaFuel/u32DeltaTrip ->DisplayAFE   ( RUN) -> HMIUpdateData ->DisplayHybTripSummary     g_stDriveCycleAFE  Trip Time"
+        ],
+        [
+          "BestCurrentAFE.c",
+          "3.2.1.14.59 AFE Best and Current for Given Distance (Extended software set feature)",
+          "此功能向驾驶员提供反馈，说明他们在选定距离内的当前燃油经济性，以及他们在同一距离内所实现的最佳经济性。"
+        ],
+        [
+          "",
+          "",
+          "三段距离 BestCurrentAFE_Run -> ResetCheckBFE  Keep a reset freeze value on screen during a reset ->CalcCurrentBestAFE ->DisplayCurrentBestAFE -> HMIUpdateIndication -> ShiftAccumulators     g_u16AFE_Current_Distance[ 3][21 ]三段标定里程，每个20等分，current放在0上，每次0记录距离大于1/20，数据后移，扔掉最后得值 -> CalcCurrentBestAFE 冒泡  增减都是按照单位0.1逐个增减 -> DisplayCurrentBestAFE FU21_Action42P -> AFEResetActionHandler"
+        ],
+        [
+          "driverinfofuel_initialize.c",
+          "",
+          ""
+        ],
+        [
+          "driverinfofuel_run.c",
+          "",
+          ""
+        ],
+        [
+          "EcoIndexShiftGearState.c",
+          "3.2.1.14.58 Eco Index (Extended software set feature)",
+          "此功能向驾驶员提供有关其驾驶时燃油效率的相对值的反馈。 该百分比根据当前油耗与校准设置的预期值确定。 EcoIndexShiftGearState_Run ->HMIUpdateIndication ->CalcEcoIndex ->get from COM ->InterPolateEcoIndexValue 插值 ->FilterInterpolateEcoIndex -> 计算百分比 ->HMIUpdateData"
+        ],
+        [
+          "FuelAlcoholMix.c",
+          "3.2.1.14.42 Fuel Alcohol Mix (BioPower)",
+          "empty FuelAlcoholMix_Run -> DisplayFuelAlcoholMix RTE接口被注释"
+        ],
+        [
+          "FuelFilterLife.c",
+          "3.2.1.14.38 Fuel Filter Life (extended software set feature)",
+          "燃油滤清器使用寿命是燃油滤清器剩余使用寿命的估计百分比。 该值为乘员显示。 FuelFilterLife_Run ->CalcFuelFilterLife   SUM_SSC ->DisplayFuelFilterLife FU21_Action25P ->FuelFilterLifeActionHandler"
+        ],
+        [
+          "FuelRange.c",
+          "3.2.1.14.24 Fuel range",
+          "功能燃油范围提供车辆在燃油油耗尽前可以行驶的估计距离信息。 燃油范围可以采用不同的格式： •正常燃油量程 •无燃油量程值 (低) •燃油量程值错误 (–) FuelRange_Run g_u8VehicleAssemblyMode ! ->Get Signal ->CalcFuelRange ->DisplayFuelRange FU21_Action54P->FuelRangeResetActionHandler"
+        ],
+        [
+          "FuelUsed.c",
+          "3.2.1.14.37 Fuel Used",
+          "燃油使用功能计算自上次重置功能以来的油耗。 所用燃油用于乘员。 所用燃油可以采用不同的格式显示，具体取决于设置。 现有格式为 •美国 •英制 •公制 FuelUsed_Run ->HMIUpdateIndication ->CalcFuelUsed ->DriverInfoFuel_CalculateDeltaFlInjRlCnt ->DisplayFuelUsed FU21_Action24P->FuelUsedActionHandler"
+        ],
+        [
+          "InstantaneousFuelEconomy.c",
+          "3.2.1.14.25 Instantaneous Fuel Economy (IFE)",
+          "该功能为乘客提供瞬时燃油经济性 (IFE)。 IFE 是周期性计算的。 该功能的输入是喷油量和行驶距离 InstantaneousFuelEconomy_Run ->DetermineDisplayState  Determine display mode, liter/hour or liter/distance mode ->CalcIFE_LiterPerHour Calc IFE liter/hour every 500 msec  记录四段500ms（2s)得瞬时油耗 转换为每小时油耗 ->Display new value every second ->CalcIFE   记录四段500ms（2s)得瞬时油耗 转换为百公里油耗，其中速度低时用平均车速估算距离，反之用瞬时车速 ->HMIUpdateData"
+        ],
+        [
+          "NonActiveFuelPercent.c",
+          "UNKNOW",
+          ""
+        ],
+        [
+          "rid_0252_fuelrelfeatresetservicetoolrequest_start.c",
+          "",
+          "RID_0252_FuelRelFeatResetServiceToolRequest_Start. SecurityLevel_IsLevel0x03 reset tripA/B?"
+        ],
+        [
+          "TopFuelConsumer.c",
+          "3.2.1.14.68 Top Fuel Consumer of Fuel Page (Deleted)",
+          "Deleted. Signals are removed from database. 根据耗能对象判断当前最大得耗油量 如：车窗是否打开、空调是否打开、雾灯远光灯是否打开、座椅通风加热是否打开、风扇转速等"
+        ]
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_OCD_DriverInfoFuel_SRC/image-2024-9-3_17-22-2.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_OCD_DriverInfoFuel_SRC/image-2024-9-3_17-22-2.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-9-3_17-22-2.png",
+      "download_link": "/download/attachments/4676423493/image-2024-9-3_17-22-2.png?version=1&modificationDate=1725355326000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-9-3_17-20-7.png",
+      "download_link": "/download/attachments/4676423493/image-2024-9-3_17-20-7.png?version=1&modificationDate=1725355207000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

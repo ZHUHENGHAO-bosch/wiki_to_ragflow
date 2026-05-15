@@ -1,0 +1,81 @@
+{
+  "page_id": "7054225415",
+  "title": "1.0 AI Safety 调研",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/7054225415/1.0+AI+Safety+%E8%B0%83%E7%A0%94",
+  "last_modified": "2026-05-08T04:17:17.000+02:00",
+  "last_modified_by": "LIU Dezhi (XC-CP/ESW2-CN)",
+  "parent_id": "7054225408",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "1. 是什么"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "2. 做什么"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.1. scope"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "3. 怎么做"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "4. 参考资料"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "W3 AI Safety  系列",
+        "ADAS Trim Platform",
+        "XC ADAS wiki",
+        "ISO/PAS 8800"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4.1. Security 相关"
+    },
+    {
+      "type": "paragraph",
+      "text": "https://inside-docupedia.bosch.com/confluence/spaces/GG/pages/757825789/Security"
+    },
+    {
+      "type": "paragraph",
+      "text": "https://bosch.mediaspace.de.kaltura.com/tag?tagid=threat%20analysis%20and%20risk%20assessment"
+    },
+    {
+      "type": "paragraph",
+      "text": "https://inside-docupedia.bosch.com/confluence/x/i6rbXQ"
+    },
+    {
+      "type": "paragraph",
+      "text": "J6M Security High Level Arch https://inside-docupedia.bosch.com/confluence2/spaces/XCJ6EHW/pages/220471645/BSW+SW+Arch+-+Securit…"
+    },
+    {
+      "type": "paragraph",
+      "text": "J6M Security SWCDD http://rb-xccp-documentation.apac.bosch.com/middletrim_xccn/jetour_d01/latest/components/security/s…"
+    },
+    {
+      "type": "paragraph",
+      "text": "https://inside-docupedia.bosch.com/confluence/spaces/safety/pages/3815317838/Security+SoC"
+    },
+    {
+      "type": "paragraph",
+      "text": "https://inside-docupedia.bosch.com/confluence/spaces/safety/pages/4977707285/05-AI+Security"
+    }
+  ],
+  "attachments": []
+}

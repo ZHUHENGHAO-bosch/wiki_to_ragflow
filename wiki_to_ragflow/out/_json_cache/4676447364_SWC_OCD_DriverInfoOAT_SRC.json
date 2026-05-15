@@ -1,0 +1,98 @@
+{
+  "page_id": "4676447364",
+  "title": "SWC_OCD_DriverInfoOAT_SRC",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/4676447364/SWC_OCD_DriverInfoOAT_SRC",
+  "last_modified": "2024-09-04T12:24:07.000+02:00",
+  "last_modified_by": "SUN Xitong (XC-CP/ESW2-CN)",
+  "parent_id": "4630207591",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "本模块接收外部空气温度校正值信号 并显示在HMI外部空气温度页面上"
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "active_app_id_action_handler_m.c",
+          "",
+          "GetFU21_Action64存储NVM-> HMI"
+        ],
+        [
+          "active_page_id_action_handler_m.c",
+          "",
+          "GetFU21_Action65存储NVM->HMI"
+        ],
+        [
+          "clusterhmianimation_action_handler_m.c",
+          "",
+          "GetFU180_Action2 ???   无人使用"
+        ],
+        [
+          "clusterhmireadiness_m.c",
+          "",
+          ""
+        ],
+        [
+          "clusterhmiready_action_handler_m.c",
+          "",
+          "GetFU180_Action3???   无人使用"
+        ],
+        [
+          "customization_stng_id1_action_handler_m.c",
+          "",
+          "GetFU21_Action66   RTE接口未输出"
+        ],
+        [
+          "customization_stng_id2_action_handler_m.c",
+          "",
+          "GetFU21_Action67  RTE接口未输出"
+        ],
+        [
+          "customization_stng_id3_action_handler_m.c",
+          "",
+          "GetFU21_Action68   RTE接口未输出"
+        ],
+        [
+          "customization_stng_id4_action_handler_m.c",
+          "",
+          "GetFU21_Action69   RTE接口未输出"
+        ],
+        [
+          "customization_stng_id5_action_handler_m.c",
+          "",
+          "GetFU21_Action70    RTE接口未输出"
+        ],
+        [
+          "HMI_ReadOATSensor.c",
+          "",
+          "HMI_ReadOATSensor_Run从Diag模块读取u16OutsideAirTemperaturePct然后线性插值 RTE输出口被移出"
+        ],
+        [
+          "menupageacrossreset_m.c",
+          "",
+          "存一些NVM数据"
+        ],
+        [
+          "OutsideAirTemp.c",
+          "3.2.1.14.28 Outside Air Temperature",
+          "DriverInfoOAT_Run ->SupportForInfo3D0Run 给HMI上传0x3d0各种信息 ->MenuPageAcrossResetRun查询HMI下设得各类信息 ->UpdateOutsideAirTemp from CAN ->DiagRunningReset 诊断服务清除数据 已关闭 ->OatStateMachine 根据车速选择不同滤波时间，车速越快滤波时间系数越大，最终计算出OAT value ->DisplayOutsideAirTemp"
+        ],
+        [
+          "supportforinfo3d0_m.c",
+          "",
+          "各种HMIUpdateIndication_Client 基本包括所有DriveInfo得功能配置"
+        ],
+        [
+          "SWC_OCD_DriverInfoOAT_Variables.c",
+          "",
+          ""
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

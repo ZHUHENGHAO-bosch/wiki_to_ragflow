@@ -1,0 +1,84 @@
+{
+  "page_id": "2917677656",
+  "title": "Lessons Learnt - Spinlock",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/2917677656/Lessons+Learnt+-+Spinlock",
+  "last_modified": "2023-04-05T06:20:44.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2384995023",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Issue 1: ErrorHook called when INC tries to log message via DLT in Core 2"
+    },
+    {
+      "type": "paragraph",
+      "text": "DLT and INC both uses Spinlock for Multicore handling."
+    },
+    {
+      "type": "paragraph",
+      "text": "Currently both INC and DLT spinlock are configured as STANDARD"
+    },
+    {
+      "type": "paragraph",
+      "text": "Now in Slave Core 2, Inc Tries to log an DLT message inside its own spinlock. Since DLT also has a spinlock mechanism, when it tries to Get its Spinlock ErrorHook is called with E_OS_NESTING_DEADLOCK"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Solution 1: Make DLT spinlock as Optimized"
+    },
+    {
+      "type": "paragraph",
+      "text": "Since inside DLT we are sure that we will not call any other Spinlock, there is no chance of Deadlock as explained in Deadlock Use Case 2 - Nesting Spinlock - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "So we can configure DLT spinlock type as Optimized. Since for Optimized spinlock, nesting order will not be checked by OS, we will not get ErroHook"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Lessons%20Learnt%20-%20Spinlock/image-2023-4-5_12-16-16.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Lessons Learnt - Spinlock/image-2023-4-5_12-16-16.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Solution 2:  Configure Nesting Order for DLT and INC"
+    },
+    {
+      "type": "paragraph",
+      "text": "Configure the Nesting order for INC spinlock. This will make sure ErrorHook will not be called"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Lessons%20Learnt%20-%20Spinlock/image-2023-4-5_12-19-9.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Lessons Learnt - Spinlock/image-2023-4-5_12-19-9.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Decision:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Since we confirm that DLT will not have any nesting of Spinlock and Optmized Spinlock will improve performance we will go with Solution 1: Make DLT spinlock as Optimized"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-4-5_12-19-9.png",
+      "download_link": "/download/attachments/2917677656/image-2023-4-5_12-19-9.png?version=1&modificationDate=1680668350000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_12-16-16.png",
+      "download_link": "/download/attachments/2917677656/image-2023-4-5_12-16-16.png?version=1&modificationDate=1680668177000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

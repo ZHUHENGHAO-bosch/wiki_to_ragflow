@@ -1,0 +1,134 @@
+{
+  "page_id": "4654160823",
+  "title": "SAIL JTAG connection - Pro 8255",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/4654160823/SAIL+JTAG+connection+-+Pro+8255",
+  "last_modified": "2024-08-29T13:36:12.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4916777106",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "To debug SAIL domain we need to connect the Lauterbach with SAIL JTAG. This page is to analyze the JTAG connection of SAIL"
+    },
+    {
+      "type": "paragraph",
+      "text": "Seems all the HW connection are already available in VCU PROs 8255"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "SAIL JTAG"
+    },
+    {
+      "type": "paragraph",
+      "text": "SAIL domain has JTAG connection as shown below"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20JTAG%20connection%20-%20Pro%208255/image-2024-8-29_13-39-2.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL JTAG connection - Pro 8255/image-2024-8-29_13-39-2.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20JTAG%20connection%20-%20Pro%208255/image-2024-8-29_13-40-19.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL JTAG connection - Pro 8255/image-2024-8-29_13-40-19.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "VCU Pro SAIL JTAG"
+    },
+    {
+      "type": "paragraph",
+      "text": "SAIL JTAG connection line"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20JTAG%20connection%20-%20Pro%208255/image-2024-8-29_13-45-32.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL JTAG connection - Pro 8255/image-2024-8-29_13-45-32.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "SAIL JTAG line connection to debug board conector"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20JTAG%20connection%20-%20Pro%208255/image-2024-8-29_13-46-43.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL JTAG connection - Pro 8255/image-2024-8-29_13-46-43.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Debug Board Connector with SAIL"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20JTAG%20connection%20-%20Pro%208255/image-2024-8-29_19-19-51.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL JTAG connection - Pro 8255/image-2024-8-29_19-19-51.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL%20JTAG%20connection%20-%20Pro%208255/image-2024-8-29_19-23-26.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL JTAG connection - Pro 8255/image-2024-8-29_19-23-26.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "J6E has a Lauterbach with this connector - How to choose a Lauterbach cable For J6E - XC J6E HW+ - Docupedia II (bosch.com)"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-29_19-23-26.png",
+      "download_link": "/download/attachments/4654160823/image-2024-8-29_19-23-26.png?version=1&modificationDate=1724930607000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-29_19-21-43.png",
+      "download_link": "/download/attachments/4654160823/image-2024-8-29_19-21-43.png?version=1&modificationDate=1724930503000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-29_19-19-51.png",
+      "download_link": "/download/attachments/4654160823/image-2024-8-29_19-19-51.png?version=1&modificationDate=1724930391000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-29_13-46-43.png",
+      "download_link": "/download/attachments/4654160823/image-2024-8-29_13-46-43.png?version=1&modificationDate=1724910403000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-29_13-45-32.png",
+      "download_link": "/download/attachments/4654160823/image-2024-8-29_13-45-32.png?version=1&modificationDate=1724910332000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-29_13-45-2.png",
+      "download_link": "/download/attachments/4654160823/image-2024-8-29_13-45-2.png?version=1&modificationDate=1724910303000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-29_13-40-19.png",
+      "download_link": "/download/attachments/4654160823/image-2024-8-29_13-40-19.png?version=1&modificationDate=1724910020000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-29_13-39-2.png",
+      "download_link": "/download/attachments/4654160823/image-2024-8-29_13-39-2.png?version=1&modificationDate=1724909942000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

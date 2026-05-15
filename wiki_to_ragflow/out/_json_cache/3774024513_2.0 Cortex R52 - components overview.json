@@ -1,0 +1,170 @@
+{
+  "page_id": "3774024513",
+  "title": "2.0 Cortex R52 - components overview",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/3774024513/2.0+Cortex+R52+-+components+overview",
+  "last_modified": "2023-12-18T09:08:41.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "3774778106",
+  "children": [],
+  "content": [
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20Cortex%20R52%20-%20components%20overview/image-2023-12-18_10-42-38.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 Cortex R52 - components overview/image-2023-12-18_10-42-38.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Instruction Fetch"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Prefetch Unit (PFU) obtains instructions from the instruction cache, TCM, or from external memory and predicts the outcome of branches in the instruction stream and passes the instructions to the Data Processing Unit (DPU) for processing"
+    },
+    {
+      "type": "paragraph",
+      "text": "The PFU fetches 64 bits per cycle from memory"
+    },
+    {
+      "type": "paragraph",
+      "text": "Instruction fetches in the Cortex-R52 processor are always little-endian."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Advanced SIMD (Single instruction, Multiple Data) and floating-point support"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Advanced SIMD and floating-point feature provides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Instructions for single-precision (C programming language float type) data-processing operations",
+        "Optional instructions for double-precision (C double type) data-processing operations",
+        "Combined Multiply and Accumulate instructions for increased precision (Fused MAC).",
+        "Hardware support for conversion, addition, subtraction, multiplication with optional accumulate, division, and square-root.",
+        "For single-precision floating-point, there are 32 32-bit single-precision registers or 16 64-bit double precision registers"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "GIC Distributor (Generic Interrupt Controller)"
+    },
+    {
+      "type": "paragraph",
+      "text": "The GIC Distributor receives, prioritizes, and routes physical interrupts to the appropriate interrupt target."
+    },
+    {
+      "type": "paragraph",
+      "text": "The output of the GIC Distributor is the highest priority pending interrupt for each interrupt target. An interrupt target is either the GIC CPU interface for a core or an export port for connection to an external device such as a Direct Memory Access (DMA) controller"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "GIC CPU interface"
+    },
+    {
+      "type": "paragraph",
+      "text": "The GIC CPU interfaces handle interrupt preemption for both physical and virtual interrupts for each core."
+    },
+    {
+      "type": "paragraph",
+      "text": "The virtual part of each GIC CPU interface is divided into hypervisor registers and guest OS registers."
+    },
+    {
+      "type": "paragraph",
+      "text": "The hypervisor generates interrupts to the guest OS using the GIC CPU interface"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Memory system"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Cortex-R52 memory system provides different memories and interfaces depending on your implementation"
+    },
+    {
+      "type": "paragraph",
+      "text": "each Cortex-R52 core can have"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "T hree unified TCMs, each 8KB-1MB providing lowest-latency access for instructions and data",
+        "Optionally, 32-bit AXI4 LLPP interface for device data accesses to private peripherals",
+        "128-bit read-only Flash interface",
+        "ECC protection for all TCM and flash memories providing SECDED protection",
+        "TCM access for DMA through the AXIS interface",
+        "TCM testing using the MBIST interface"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Each Cortex-R52 core has optional Harvard caches, which can be used to cache data from the Flash interface and the AXIM interface"
+    },
+    {
+      "type": "paragraph",
+      "text": "Each core has:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Store buffer with merging and forwarding (as appropriate) for stores",
+        "4-way instruction cache of 4-32KB",
+        "Instruction linefill buffering",
+        "4 -way data cache of 4-32KB with Write-Through behavior",
+        "Data read buffers",
+        "ECC protection for all cache memories (including tag RAM).",
+        "64-bit data path for loads and stores to caches",
+        "Cache maintenance operations according to Arm architecture",
+        "Cache memory testing using the MBIST interface"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Memory management"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Memory Protection Unit (MPU) determines the attributes for each memory location including permissions, type, and cacheability"
+    },
+    {
+      "type": "paragraph",
+      "text": "Two programmable MPU are provided, controlled from EL (Exception Level)1 and EL2 respectively"
+    },
+    {
+      "type": "paragraph",
+      "text": ".Access permissions determine which levels of privilege are permitted to access a location and whether write access or instruction execution are permitted."
+    },
+    {
+      "type": "paragraph",
+      "text": "Memory type and cacheability affect how the processor handles particular accesses, for example, if the processor permits two stores to be merged into a single write access. These attributes and their meanings are defined by the Arm architecture"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Debug, trace, and test"
+    },
+    {
+      "type": "paragraph",
+      "text": "The invasive debug features include hardware exception catching, breakpoints and watchpoints, data transfer through a Debug Communications Channel, and single-stepping. Invasive debug modes are selfhosted (or monitor) debug and external (or halting) debug. Invasive debug impacts the performance of the processor, although you can schedule self-hosted debug if time permits"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-12-18_10-42-38.png",
+      "download_link": "/download/attachments/3774024513/image-2023-12-18_10-42-38.png?version=1&modificationDate=1702867358000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

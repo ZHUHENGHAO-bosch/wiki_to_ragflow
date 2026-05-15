@@ -1,0 +1,147 @@
+{
+  "page_id": "2825339626",
+  "title": "Multicore mode handling using BswM",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2825339626/Multicore+mode+handling+using+BswM",
+  "last_modified": "2023-04-05T11:15:49.000+02:00",
+  "last_modified_by": "ZHAO Joanna (XC-CP/ESW2-CN)",
+  "parent_id": "2917667492",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "2. Multi Partition in one core"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Multicore%20mode%20handling%20using%20BswM/image-2023-4-5_16-37-32.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore mode handling using BswM/image-2023-4-5_16-37-32.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Multicore%20mode%20handling%20using%20BswM/image-2023-4-5_16-38-12.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore mode handling using BswM/image-2023-4-5_16-38-12.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Multicore%20mode%20handling%20using%20BswM/image-2023-4-5_16-38-43.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore mode handling using BswM/image-2023-4-5_16-38-43.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Multicore%20mode%20handling%20using%20BswM/image-2023-4-5_16-33-44.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore mode handling using BswM/image-2023-4-5_16-33-44.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Multicore%20mode%20handling%20using%20BswM/image-2023-4-5_16-33-9.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore mode handling using BswM/image-2023-4-5_16-33-9.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Multicore%20mode%20handling%20using%20BswM/image-2023-4-5_16-36-34.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore mode handling using BswM/image-2023-4-5_16-36-34.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Multicore%20mode%20handling%20using%20BswM/image-2023-4-5_16-40-13.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore mode handling using BswM/image-2023-4-5_16-40-13.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Multicore%20mode%20handling%20using%20BswM/image-2023-4-5_16-41-28.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore mode handling using BswM/image-2023-4-5_16-41-28.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Multicore%20mode%20handling%20using%20BswM/image-2023-4-5_16-43-46.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore mode handling using BswM/image-2023-4-5_16-43-46.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-4-5_16-43-46.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-43-46.png?version=1&modificationDate=1680684226000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-41-28.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-41-28.png?version=1&modificationDate=1680684089000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-40-13.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-40-13.png?version=1&modificationDate=1680684014000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-38-43.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-38-43.png?version=1&modificationDate=1680683923000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-38-12.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-38-12.png?version=1&modificationDate=1680683893000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-37-32.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-37-32.png?version=1&modificationDate=1680683852000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-36-34.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-36-34.png?version=1&modificationDate=1680683795000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-34-51.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-34-51.png?version=1&modificationDate=1680683691000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-34-21.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-34-21.png?version=1&modificationDate=1680683662000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-33-44.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-33-44.png?version=1&modificationDate=1680683624000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-33-9.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-33-9.png?version=1&modificationDate=1680683589000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-32-10.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-32-10.png?version=1&modificationDate=1680683530000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-31-18.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-31-18.png?version=1&modificationDate=1680683478000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-30-40.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-30-40.png?version=1&modificationDate=1680683440000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-5_16-30-10.png",
+      "download_link": "/download/attachments/2825339626/image-2023-4-5_16-30-10.png?version=1&modificationDate=1680683410000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

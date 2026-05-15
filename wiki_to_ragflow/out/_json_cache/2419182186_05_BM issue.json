@@ -1,0 +1,106 @@
+{
+  "page_id": "2419182186",
+  "title": "05_BM issue",
+  "version": 8,
+  "url": "/spaces/CARSFW/pages/2419182186/05_BM+issue",
+  "last_modified": "2023-03-30T03:43:22.000+02:00",
+  "last_modified_by": "ZHAO Minzhong (BCSC/ENG1)",
+  "parent_id": "2411995729",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Information"
+    },
+    {
+      "type": "paragraph",
+      "text": "New project should complete BM code as early as better. Because BM could not upgrade by USB or OTA, only update by E1.When the DHU is installed in the car, it's very difficult to update BM in large quantities."
+    },
+    {
+      "type": "paragraph",
+      "text": "So, the combination of  old BM + new APP is very common scenario,  with the constant upgrading of USB or OTA."
+    },
+    {
+      "type": "paragraph",
+      "text": "Issues of BM encountered on GEELY project："
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "no safe reset test  in BM and HSMU in old BM. So the SM14 safe reset test's result is failed  in main() of new APP. And then reset.",
+        "no reset counter in retention Ram in old BM. So if APP implement  this requirement\"app reset 25 times jump to boot\", APP have to read the counter related variables. And then cause 2 bit ECC error... reset."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "To solve the above issues, BM version had to be used to adapt new and old BM.But new branches are constantly being added, e.g. MAIN, IP5, SOP, SOP2. There is no fixed rules to define branch names. So, it is not easy to get BM version."
+    },
+    {
+      "type": "paragraph",
+      "text": "If not get a valid version, it could not solve the above issues, what's more, it can lead to new issue..."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Analysis"
+    },
+    {
+      "type": "paragraph",
+      "text": "NA."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Solution"
+    },
+    {
+      "type": "paragraph",
+      "text": "For Fusa Project, It is better to compare with GEELY's BM, and update."
+    },
+    {
+      "type": "paragraph",
+      "text": "Complete BM code before the first delivery of the DHU. BM is mainly  responsible for jumping BL or APP.  Fusa project requires two additional functions"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Safe Reset Test（partly in HSMU, another in BM）",
+        "APP Reset 25 times Jump to BL",
+        "BoadID( BYD used to identify HW version)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Make a BM version name rule with integration engineer is another good method. In case BM have to update, because of bugs or new features in BM."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Fix Status"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Affected Project",
+        "FixStatus",
+        "linkage"
+      ],
+      "rows": [
+        [
+          "GEELY",
+          "COMPLETED",
+          "safe reset test in BM： https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/autosar/bootmanager-rh850/bosch/startup/+/456210 safe reset test in HSMU: https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/autosar/hsm/vector_D00/+/455501 APP Reset 25 times Jump to BL： https://rb-alm-20-p.de.bosch.com/ccm/web/projects/ECARX#action=com.ibm.team.workitem.viewWorkItem&id=1419673"
+        ],
+        [
+          "GAC",
+          "COMPLETED",
+          "https://rbcm-gerrit.de.bosch.com/q/topic:RESET_TEST"
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

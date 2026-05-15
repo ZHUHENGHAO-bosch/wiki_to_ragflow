@@ -1,0 +1,126 @@
+{
+  "page_id": "4920972316",
+  "title": "3.0 SAIL Boot sequence",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/4920972316/3.0+SAIL+Boot+sequence",
+  "last_modified": "2024-10-29T02:25:04.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4916777034",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to summarizes the boot sequence of QAM 8225/8775"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Processors available in Chipset (8255)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Subsystem",
+        "Executes in"
+      ],
+      "rows": [
+        [
+          "Application processor subsystem (APSS)",
+          "APSS bootROM, IMEM, and LPDDR5"
+        ],
+        [
+          "Safety Island (SAIL)",
+          "SAIL boot NOR, SRAM"
+        ],
+        [
+          "Always-on processor (AOP)",
+          "AOP code RAM"
+        ],
+        [
+          "System hub resource manager (SHRM)",
+          "SHRM code RAM"
+        ],
+        [
+          "SSC –Qualcomm®Hexagon™DSP",
+          "LPDDR5"
+        ],
+        [
+          "APPS CPUSS control processor (CPUCP)",
+          "IMEM, LPDDR5"
+        ],
+        [
+          "Video processing unit (VPU)",
+          "LPDDR5"
+        ],
+        [
+          "Low-power audio subsystem (LPASS)",
+          "LPDDR5"
+        ],
+        [
+          "Compute subsystem",
+          "LPDDR5"
+        ],
+        [
+          "Camera image signal processor (ISP)",
+          "LPDDR5"
+        ],
+        [
+          "Qualcomm®Neural Processing SDK (NPU)",
+          "LPDDR5"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Boot up sequence of SAIL and MD"
+    },
+    {
+      "type": "paragraph",
+      "text": "1. After the chipset is reset, the SAIL and Qualcomm Kryo CPUGold core 0 comes out of reset"
+    },
+    {
+      "type": "paragraph",
+      "text": "1a. SAIL configures the pre-built-in self-test (pre-BIST) and go into wait for interrupt (WFI) and hardware BIST controller unit (HBCU), which is a hardware controller performs the BIST on SAIL. SAIL PBL initializes hardware and loads SAIL hypervisor to run"
+    },
+    {
+      "type": "paragraph",
+      "text": "1b. SAIL hypervisor loads the EL1 image"
+    },
+    {
+      "type": "paragraph",
+      "text": "1c. APPS core0 executes application primary boot loader (APPS PBL) pre-BIST configuration and goes into WFI and wait for SAIL communication to run BIST on APSS"
+    },
+    {
+      "type": "paragraph",
+      "text": "After Phase-1 BIST, SAIL HYP sends post BIST reset to APSS, APSS reset and the KryoGold core 0, APPS PBL initializes hardware (timer, PRNG, clocks, and so on), enables caches and memory management unit (MMU), and detects the boot device according to the boot option configuration"
+    },
+    {
+      "type": "paragraph",
+      "text": "2a. APPS PBL loads and authenticates XBL loader(region #1) from the bootdevice to the Boot IMEM"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.0%20SAIL%20Boot%20sequence/image-2024-10-29_9-14-34.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 SAIL Boot sequence/image-2024-10-29_9-14-34.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-10-29_9-14-34.png",
+      "download_link": "/download/attachments/4920972316/image-2024-10-29_9-14-34.png?version=1&modificationDate=1730164475000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-29_9-14-2.png",
+      "download_link": "/download/attachments/4920972316/image-2024-10-29_9-14-2.png?version=1&modificationDate=1730164442000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

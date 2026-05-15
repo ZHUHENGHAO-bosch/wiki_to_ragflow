@@ -1,0 +1,92 @@
+{
+  "page_id": "2509826406",
+  "title": "SM19 SoC State Monitor",
+  "version": 12,
+  "url": "/spaces/CARSFW/pages/2509826406/SM19+SoC+State+Monitor",
+  "last_modified": "2023-02-22T03:08:50.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2411012902",
+  "children": [
+    "2795568613"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "In local projects, SoC State monitor is part of SM52-Safe HMI Monitor as shown in below picture"
+    },
+    {
+      "type": "paragraph",
+      "text": "SM52 Safe HMI Monitor - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Soc State Monitor Context view"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SM19%20SoC%20State%20Monitor/SM19%20SoC%20State%20Monitor%20-%20Context%20Overview.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/SM19 SoC State Monitor/SM19 SoC State Monitor - Context Overview.bmp"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "SoC State Monitor States"
+    },
+    {
+      "type": "paragraph",
+      "text": "In Local projects below are the states of Soc State Monitor"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "State",
+        "Entry Condition"
+      ],
+      "rows": [
+        [
+          "SSM_SoC_UNDEFINED",
+          "Initial State"
+        ],
+        [
+          "SSM_SoC_PowerOFF",
+          "PS_HOLD and STR_MODE ((PS_HOLD == LOW && STR_MODE == LOW)) || (PS_HOLD == HIGH && STR_MODE == HIGH))"
+        ],
+        [
+          "SSM_SoC_PowerON",
+          "PS_HOLD and STR_MODE ((PS_HOLD == HIGH) && (STR_MODE == LOW))"
+        ],
+        [
+          "SSM_SoC_PowerON_BootNormal",
+          "INC Message with status as SSM_BOOTMODEINDICATION_NORMAL"
+        ],
+        [
+          "SSM_SoC_PowerON_BootRecovery",
+          "INC Message with status  asSSM_BOOTMODEINDICATION_RECOVERY"
+        ],
+        [
+          "SSM_Fault",
+          "PMIC Fault Init timeout Boot mode message reception timeout Invalid Boot mode status in INC message"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "SM19 SoC State Monitor - Context Overview.bmp",
+      "download_link": "/download/attachments/2509826406/SM19%20SoC%20State%20Monitor%20-%20Context%20Overview.bmp?version=1&modificationDate=1677031710000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-11-17_14-29-13.png",
+      "download_link": "/download/attachments/2509826406/image2022-11-17_14-29-13.png?version=1&modificationDate=1668675553000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

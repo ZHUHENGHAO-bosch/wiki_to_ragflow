@@ -1,0 +1,120 @@
+{
+  "page_id": "2310024392",
+  "title": "Autosar Aurix China Platform",
+  "version": 16,
+  "url": "/spaces/CARSFW/pages/2310024392/Autosar+Aurix+China+Platform",
+  "last_modified": "2024-06-11T08:50:56.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2261153311",
+  "children": [
+    "2310025962",
+    "3034549309",
+    "3011088327",
+    "2310031599",
+    "2365867025",
+    "2383057032",
+    "5983333830",
+    "3444337912",
+    "4565826946",
+    "2343244895",
+    "2929574733",
+    "6461296714",
+    "3693679982",
+    "2311851815",
+    "3048421821",
+    "2321473024",
+    "2378223127",
+    "6699192064"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "An overview - Platform Strategy"
+    },
+    {
+      "type": "paragraph",
+      "text": "Architecture"
+    },
+    {
+      "type": "paragraph",
+      "text": "Aurix - China Convergence Platform Architecture"
+    },
+    {
+      "type": "paragraph",
+      "text": "Cubas solution"
+    },
+    {
+      "type": "paragraph",
+      "text": "Aurix - China Convergence - CUBAS solution - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Lcm Architecture"
+    },
+    {
+      "type": "paragraph",
+      "text": "China Convergence - LCM Strategy"
+    },
+    {
+      "type": "paragraph",
+      "text": "Safety"
+    },
+    {
+      "type": "paragraph",
+      "text": "Aurix - China Convergence Safety - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Manifest Strategy for platform"
+    },
+    {
+      "type": "paragraph",
+      "text": "China Convergence Platform and Project - Manifest"
+    },
+    {
+      "type": "paragraph",
+      "text": "Integration Strategy"
+    },
+    {
+      "type": "paragraph",
+      "text": "China Convergence Platform integration"
+    },
+    {
+      "type": "paragraph",
+      "text": "INC Strategy"
+    },
+    {
+      "type": "paragraph",
+      "text": "Aurix Convergence platform - INC Strategy - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Aurix- Software Concept"
+    },
+    {
+      "type": "paragraph",
+      "text": "Software Concepts for Aurix Platform - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Multi Core"
+    },
+    {
+      "type": "paragraph",
+      "text": "Aurix - Multicore for China Convergence - XC-CI China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Development Plan"
+    },
+    {
+      "type": "paragraph",
+      "text": "Software Development Plan - XC-CI China - Docupedia (bosch.com)"
+    }
+  ],
+  "attachments": []
+}

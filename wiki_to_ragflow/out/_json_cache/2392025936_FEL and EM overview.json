@@ -1,0 +1,106 @@
+{
+  "page_id": "2392025936",
+  "title": "FEL and EM overview",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/2392025936/FEL+and+EM+overview",
+  "last_modified": "2023-01-13T07:53:10.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2653923512",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "We have two mechanisms to log error information into NVM memory"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "FatalErrorLogger(FEL) from CI2 Hydra Platform",
+        "ErrorMemory from CI1 Project (GM VCU)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "We need to decide for China Convergence platform which mechanism to use (FEL or ErrorMemory or both)"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "FatalErrorLogger"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Modules write data into NVM via FEL module",
+        "To read the data from NVM we need",
+        "Once the data is read, we have a parser which will convert raw data to human readable format"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/FEL%20and%20EM%20overview/FELOverview.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/FEL and EM overview/FELOverview.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "ErrorMemory"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Module write into SCC Error Memory buffer via ErrorMemory_WriteMessage",
+        "Service.ErrorMemory cyclically transfer error data to SoC ErrMem Resource Manager via INC",
+        "SoC ErrMem Resource Manager dumps error data into ErrMem file",
+        "Tester can read the error data via USB (em_trace module in SoC read data from ErrMem file on request via USB)"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/FEL%20and%20EM%20overview/ErrorMemory_Overview.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/FEL and EM overview/ErrorMemory_Overview.jpg"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "ErrorMemory_Overview.jpg",
+      "download_link": "/download/attachments/2392025936/ErrorMemory_Overview.jpg?version=1&modificationDate=1660918026000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "FELOverview.jpg",
+      "download_link": "/download/attachments/2392025936/FELOverview.jpg?version=1&modificationDate=1660917999000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-19_19-33-1.png",
+      "download_link": "/download/attachments/2392025936/image2022-8-19_19-33-1.png?version=1&modificationDate=1660917781000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-19_19-31-51.png",
+      "download_link": "/download/attachments/2392025936/image2022-8-19_19-31-51.png?version=1&modificationDate=1660917711000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-18_17-55-45.png",
+      "download_link": "/download/attachments/2392025936/image2022-8-18_17-55-45.png?version=1&modificationDate=1660825546000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-17_17-8-11.png",
+      "download_link": "/download/attachments/2392025936/image2022-8-17_17-8-11.png?version=1&modificationDate=1660736291000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

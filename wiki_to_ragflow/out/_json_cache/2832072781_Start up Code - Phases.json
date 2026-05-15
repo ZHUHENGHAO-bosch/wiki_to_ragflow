@@ -1,0 +1,33 @@
+{
+  "page_id": "2832072781",
+  "title": "Start up Code - Phases",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2832072781/Start+up+Code+-+Phases",
+  "last_modified": "2023-03-11T09:23:39.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2699330911",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Check below flow chart for Self Test sequence"
+    },
+    {
+      "type": "paragraph",
+      "text": "More details in this wiki - CerberusPF Startup Code - Notes - XC-CT Cerberus Platform - Docupedia (bosch.com)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Start%20up%20Code%20-%20Phases/StartupCodeFlowchart.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Start up Code - Phases/StartupCodeFlowchart.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "StartupCodeFlowchart.png",
+      "download_link": "/download/attachments/2832072781/StartupCodeFlowchart.png?version=1&modificationDate=1678522967000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

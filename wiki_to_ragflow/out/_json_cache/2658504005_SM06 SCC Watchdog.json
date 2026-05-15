@@ -1,0 +1,90 @@
+{
+  "page_id": "2658504005",
+  "title": "SM06 SCC Watchdog",
+  "version": 10,
+  "url": "/spaces/CARSFW/pages/2658504005/SM06+SCC+Watchdog",
+  "last_modified": "2023-01-28T09:13:45.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2411012902",
+  "children": [
+    "3346628998",
+    "3409161982",
+    "3409159425",
+    "2658514680",
+    "3566050335",
+    "3418387697",
+    "3435213310",
+    "2658504025"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Internal Hardware watchdog:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Aurix TC3xx supports two types of Watch dog"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Safety Watchdog (System level watchdog)",
+        "CPU watchdog (Each CPU has its own watchdog)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "External Watchdog handling"
+    },
+    {
+      "type": "paragraph",
+      "text": "Since we have ASIL-B requirement, it is necessary to monitor Aurix using external watchdog"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "MAX20479A"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "We will not use safety Watchdog, Since External Watch dog covers the system level watchdog monitoring"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SM06%20SCC%20Watchdog/SM7%20SCC%20Watchdog.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/SM06 SCC Watchdog/SM7 SCC Watchdog.bmp"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Startup operation:"
+    },
+    {
+      "type": "paragraph",
+      "text": "CPU0 Watchdog are active immediately after Reset/PowerOn."
+    }
+  ],
+  "attachments": [
+    {
+      "title": "SM7 SCC Watchdog.bmp",
+      "download_link": "/download/attachments/2658504005/SM7%20SCC%20Watchdog.bmp?version=1&modificationDate=1673837300000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SM7 SCC Wdg Handling.bmp",
+      "download_link": "/download/attachments/2658504005/SM7%20SCC%20Wdg%20Handling.bmp?version=1&modificationDate=1673835866000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SM7_SCC_WatchdogHandling.bmp",
+      "download_link": "/download/attachments/2658504005/SM7_SCC_WatchdogHandling.bmp?version=1&modificationDate=1673834512000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

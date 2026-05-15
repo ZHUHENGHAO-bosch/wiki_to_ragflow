@@ -1,0 +1,122 @@
+{
+  "page_id": "3409161982",
+  "title": "Calculation of SMU Recovery timer",
+  "version": 9,
+  "url": "/spaces/CARSFW/pages/3409161982/Calculation+of+SMU+Recovery+timer",
+  "last_modified": "2023-09-04T11:37:10.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2658504005",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below wiki page explains the recovery timer relation with SCU Watch dogs"
+    },
+    {
+      "type": "paragraph",
+      "text": "SMU Recovery Timer - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "This wiki page explains how the timeout value is calculated for recovery timer"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Default value of Recovery timer registers"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Calculation%20of%20SMU%20Recovery%20timer/image-2023-9-4_16-35-46.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Calculation of SMU Recovery timer/image-2023-9-4_16-35-46.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Calculation of recovery timer"
+    },
+    {
+      "type": "paragraph",
+      "text": "Recovery time duration = RTC.RTD * FSMU_FS tick time"
+    },
+    {
+      "type": "paragraph",
+      "text": "FSMU_FS tick time =1/FSMU_FS Clock"
+    },
+    {
+      "type": "paragraph",
+      "text": "FSMU_FS Clock= fBACK/FSP.PRE1"
+    },
+    {
+      "type": "paragraph",
+      "text": "fBACK=100MHZ ( internal clock )"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Initial clock value after reset"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Calculation%20of%20SMU%20Recovery%20timer/image-2023-9-4_17-0-3.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Calculation of SMU Recovery timer/image-2023-9-4_17-0-3.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Recovery timer value after Reset"
+    },
+    {
+      "type": "paragraph",
+      "text": "Recovery timer initial duration = (0x3FFF * 2)/100 MHz = 32,766/100 MHz = 0.3 ms"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Recovery timer configuration for 20ms"
+    },
+    {
+      "type": "paragraph",
+      "text": "o get the recovery time as 20ms the value to be configured is:"
+    },
+    {
+      "type": "paragraph",
+      "text": "RTC.RTD=Recovery time duration / FSMU_FS tick time"
+    },
+    {
+      "type": "paragraph",
+      "text": "=20ms/ (1/(100MHz/2))"
+    },
+    {
+      "type": "paragraph",
+      "text": "=20ms * (100MHz/2)"
+    },
+    {
+      "type": "paragraph",
+      "text": "=0.02 * 50000000"
+    },
+    {
+      "type": "paragraph",
+      "text": "=1000000  = F4240"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-9-4_17-0-3.png",
+      "download_link": "/download/attachments/3409161982/image-2023-9-4_17-0-3.png?version=1&modificationDate=1693818003000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-9-4_16-35-46.png",
+      "download_link": "/download/attachments/3409161982/image-2023-9-4_16-35-46.png?version=1&modificationDate=1693816547000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

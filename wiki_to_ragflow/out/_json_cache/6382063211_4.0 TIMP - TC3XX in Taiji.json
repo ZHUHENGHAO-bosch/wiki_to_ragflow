@@ -1,0 +1,244 @@
+{
+  "page_id": "6382063211",
+  "title": "4.0 TIMP - TC3XX in Taiji",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/6382063211/4.0+TIMP+-+TC3XX+in+Taiji",
+  "last_modified": "2025-11-05T08:20:49.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6245224039",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Currently Taiji supports only TC37x, but we have branched out and have projects running with TC38x and TC39x."
+    },
+    {
+      "type": "paragraph",
+      "text": "Now it is time to bring back the changes to platform."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tricore Version",
+        "TC377",
+        "TC38x",
+        "TC39x"
+      ],
+      "rows": [
+        [
+          "Vector",
+          "Taiji Chery 8155 Chery 8255",
+          "CCU",
+          "VCU Plus"
+        ],
+        [
+          "Cubas",
+          "Taiji Maxus",
+          "-",
+          "GHAC Fusion"
+        ],
+        [
+          "RTA-CAR",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Variant",
+        "Board",
+        "Stdcore"
+      ],
+      "rows": [
+        [
+          "TC37x",
+          "VCU Plus",
+          "Same T1J or Chery 8255 DBC"
+        ],
+        [
+          "TC38x"
+        ],
+        [
+          "TC39x"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "We will use same Taiji base for configurations like NVM, COM and Diag."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Features"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Features",
+        "Tasks",
+        "Owner",
+        "Status",
+        "Comments"
+      ],
+      "rows": [
+        [
+          "Build environment - Setup",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "TC39x - Vector",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Startup code with LD - Vector and Cubas",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Bring up OS",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "MCAL configuration - From VCU Plus",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Vector configuration - VCU plus - But don't build UAES and PATAC libraries",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "LCM - Multicore changes - Taiji LCM Support multiple Core - WdgM, BswM etc.,",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "RTMO-support 6 cores - With vector and Cubas",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Memmap generator, RAMROM metrics",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "TC39x - Cubas",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Bring up OS",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "MCAL configuration - From Fusion",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Vector configuration - VCU plus - But don't build UAES and PATAC libraries",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "............",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "TC38x",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Bring up OS",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "MCAL configuration - CCU",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Vector configuration - CCU - But don't build UAES and PATAC libraries",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

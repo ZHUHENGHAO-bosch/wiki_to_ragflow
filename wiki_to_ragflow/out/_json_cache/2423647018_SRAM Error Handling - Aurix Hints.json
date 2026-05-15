@@ -1,0 +1,72 @@
+{
+  "page_id": "2423647018",
+  "title": "SRAM Error Handling - Aurix Hints",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/2423647018/SRAM+Error+Handling+-+Aurix+Hints",
+  "last_modified": "2022-09-16T14:17:00.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2421044513",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Considerations for SRAM Error Handling is given in Aurix Safety Manual"
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "Error",
+          "Handling"
+        ],
+        [
+          "SBE correction",
+          "the alarm can be configured for no reaction"
+        ],
+        [
+          "DBE, address error detection, or ETRR overflow",
+          "First event occurrence do an Application Reset If Second error is detected within the same driver cycle, the function which uses the memory shall be considered non-operational. The system integrator has to take measures to prevent interference from the non-operational function"
+        ],
+        [
+          "Error event signaled by FAULTSTS.OPERR or FAULTSTS.MISCERR bit fields",
+          "First event occurrence do the actions as mentioned in the tables Mapping of Errors to FAULTSTS.OPERR and UCE alarm Mapping of Errors to FAULTSTS.MISCERR and ME alarm If Second error is detected within the same driver cycle, the function which uses the memory shall be considered non-operational. The system integrator has to take measures to prevent interference from the non-operational function"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Mapping of Errors to FAULTSTS.OPERR and UCE alarm"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SRAM%20Error%20Handling%20-%20Aurix%20Hints/image2022-9-16_17-40-22.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SRAM Error Handling - Aurix Hints/image2022-9-16_17-40-22.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Mapping of Errors to FAULTSTS.MISCERR and ME alarm"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SRAM%20Error%20Handling%20-%20Aurix%20Hints/image2022-9-16_17-41-5.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SRAM Error Handling - Aurix Hints/image2022-9-16_17-41-5.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-9-16_17-41-5.png",
+      "download_link": "/download/attachments/2423647018/image2022-9-16_17-41-5.png?version=1&modificationDate=1663330265000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-9-16_17-40-22.png",
+      "download_link": "/download/attachments/2423647018/image2022-9-16_17-40-22.png?version=1&modificationDate=1663330222000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

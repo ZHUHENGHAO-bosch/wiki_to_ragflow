@@ -1,0 +1,104 @@
+{
+  "page_id": "2959791315",
+  "title": "Syncup -04-2023",
+  "version": 8,
+  "url": "/spaces/CARSFW/pages/2959791315/Syncup+-04-2023",
+  "last_modified": "2023-04-20T04:46:35.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2509826984",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 20 Apr 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Praveen, Yanqiang, John, Dezhi"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pending tasks:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "To test non-verbose mode with xml in Zeekr once ECT delivers JIN John (XC-CP/ESW2-CN) - COMPLETE",
+        "To deliver non-verbose and test in Chery COMPLETED",
+        "DLT Daemon - Check VCU and take good architecture INPROGRESS",
+        "Wiki page to use non-verbose mode",
+        "Test non verbose mode works with the file saved in SoC JIN John (XC-CP/ESW2-CN)",
+        "How many dlt files will be saved in SoC and how they are clearing the files"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "EM"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pending Tasks"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Discussed one the structure. 03 Apr 2023",
+        "EM structure handling is already in Zeekr SoC",
+        "Chery is also delivered COMPLETED",
+        "Test EM with SCC in Zeekr/Chery will be started in next week",
+        "Improve EM in SoC to accommodate both QM and Safe EM logs",
+        "Intense test to make sure no logs are missed NEXT STEP",
+        "Analyze VCU EM and adapt local EM module in SoC and SCC"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Syncup%20-04-2023/image-2023-4-20_10-20-40.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Syncup -04-2023/image-2023-4-20_10-20-40.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Syncup%20-04-2023/image-2023-4-20_10-21-3.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Syncup -04-2023/image-2023-4-20_10-21-3.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "From Yanqiang"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Syncup%20-04-2023/image-2023-4-20_10-46-1.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Syncup -04-2023/image-2023-4-20_10-46-1.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-4-20_10-46-1.png",
+      "download_link": "/download/attachments/2959791315/image-2023-4-20_10-46-1.png?version=1&modificationDate=1681958761000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-20_10-21-3.png",
+      "download_link": "/download/attachments/2959791315/image-2023-4-20_10-21-3.png?version=1&modificationDate=1681957263000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-20_10-20-40.png",
+      "download_link": "/download/attachments/2959791315/image-2023-4-20_10-20-40.png?version=1&modificationDate=1681957241000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

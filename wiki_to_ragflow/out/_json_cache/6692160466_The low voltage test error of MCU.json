@@ -1,0 +1,191 @@
+{
+  "page_id": "6692160466",
+  "title": "The low voltage test error of MCU",
+  "version": 10,
+  "url": "/spaces/CARSFW/pages/6692160466/The+low+voltage+test+error+of+MCU",
+  "last_modified": "2026-01-16T02:55:03.000+01:00",
+  "last_modified_by": "JIANG Jimmy (XC-CP/ESW2-CN)",
+  "parent_id": "4204511237",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "1、Background information:"
+    },
+    {
+      "type": "paragraph",
+      "text": "MAXUS软件在做低压缓启动时，KL30电压在3.9V时MCU一直在reset，当KL30电压再上升时该reset一直存在，现象表现为MCU"
+    },
+    {
+      "type": "paragraph",
+      "text": "启动失败。"
+    },
+    {
+      "type": "paragraph",
+      "text": "2、测试数据分析如下："
+    },
+    {
+      "type": "paragraph",
+      "text": "黄色 WDI 绿色 SYS_ALIVE  蓝色 reset1 红色reset2"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/The%20low%20voltage%20test%20error%20of%20MCU/image-2026-1-15_11-14-54.png?api=v2",
+      "alt": "",
+      "local_path": "_images/The low voltage test error of MCU/image-2026-1-15_11-14-54.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "如上图，MCU复位后执行LBIST，此时外狗WDI被拉高（由HWCFG6影响），激活外狗的喂狗时序，之后外狗进入close window。"
+    },
+    {
+      "type": "paragraph",
+      "text": "但是由于LBIST执行完后大约18ms左右触发MCU冷复位且会影响WDI的电平翻转（由低变高），激活喂狗action，但外狗仍处在"
+    },
+    {
+      "type": "paragraph",
+      "text": "close window，此时喂狗属于错误喂狗时序，导致外狗RESET pin拉低，从而引发MCU的PORST拉低，导致MCU的warm power"
+    },
+    {
+      "type": "paragraph",
+      "text": "reset，这种情况循环往复出现从而导致MCU未能正确启动运行。"
+    },
+    {
+      "type": "paragraph",
+      "text": "3、Error分析如下："
+    },
+    {
+      "type": "paragraph",
+      "text": "由于TC3xx是ASIL-D标准芯片，在MCU上电且未执行PORT初始化前，需要将PORT的状态设置为已知的配置状态。该操作是由"
+    },
+    {
+      "type": "paragraph",
+      "text": "HWCFG6的状态指引的，而HWCFG6的状态是由如下图寄存器（PMSWCR5.TRISTREQ）配置指示。"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/The%20low%20voltage%20test%20error%20of%20MCU/image-2026-1-15_14-29-56.png?api=v2",
+      "alt": "",
+      "local_path": "_images/The low voltage test error of MCU/image-2026-1-15_14-29-56.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "HWCFG pin的状态在MCU reset之后是默认的weak pull-up"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/The%20low%20voltage%20test%20error%20of%20MCU/image-2026-1-15_17-54-50.png?api=v2",
+      "alt": "",
+      "local_path": "_images/The low voltage test error of MCU/image-2026-1-15_17-54-50.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/The%20low%20voltage%20test%20error%20of%20MCU/image-2026-1-15_14-32-57.png?api=v2",
+      "alt": "",
+      "local_path": "_images/The low voltage test error of MCU/image-2026-1-15_14-32-57.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/The%20low%20voltage%20test%20error%20of%20MCU/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-15%20143202.png?api=v2",
+      "alt": "",
+      "local_path": "_images/The low voltage test error of MCU/屏幕截图 2026-01-15 143202.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "PMSWCR5配置由EB实现，配置方式及生成代码如下"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/The%20low%20voltage%20test%20error%20of%20MCU/image-2026-1-15_17-13-42.png?api=v2",
+      "alt": "",
+      "local_path": "_images/The low voltage test error of MCU/image-2026-1-15_17-13-42.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/The%20low%20voltage%20test%20error%20of%20MCU/image-2026-1-15_17-16-20.png?api=v2",
+      "alt": "",
+      "local_path": "_images/The low voltage test error of MCU/image-2026-1-15_17-16-20.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/The%20low%20voltage%20test%20error%20of%20MCU/image-2026-1-16_9-53-46.png?api=v2",
+      "alt": "",
+      "local_path": "_images/The low voltage test error of MCU/image-2026-1-16_9-53-46.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "4、软件修改后测试（3.9V）"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/The%20low%20voltage%20test%20error%20of%20MCU/image-2026-1-15_17-32-17.png?api=v2",
+      "alt": "",
+      "local_path": "_images/The low voltage test error of MCU/image-2026-1-15_17-32-17.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "软件修改后测试，在MCU上电后WDI pin电平状态load HWCFG6 pin电平状态（pull-up），在执行LBIST时和LBIST完成之后，WDI"
+    },
+    {
+      "type": "paragraph",
+      "text": "电平不会发生翻转，故不会导致异常的外狗喂狗时序，此时MCU可以正确启动运行。"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2026-1-16_9-53-46.png",
+      "download_link": "/download/attachments/6692160466/image-2026-1-16_9-53-46.png?version=1&modificationDate=1768528426000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-1-15_17-54-50.png",
+      "download_link": "/download/attachments/6692160466/image-2026-1-15_17-54-50.png?version=1&modificationDate=1768470891000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-1-15_17-32-17.png",
+      "download_link": "/download/attachments/6692160466/image-2026-1-15_17-32-17.png?version=1&modificationDate=1768469537000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-1-15_17-16-20.png",
+      "download_link": "/download/attachments/6692160466/image-2026-1-15_17-16-20.png?version=1&modificationDate=1768468581000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-1-15_17-13-42.png",
+      "download_link": "/download/attachments/6692160466/image-2026-1-15_17-13-42.png?version=1&modificationDate=1768468423000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "屏幕截图 2026-01-15 143202.png",
+      "download_link": "/download/attachments/6692160466/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-15%20143202.png?version=1&modificationDate=1768458800000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-1-15_14-32-57.png",
+      "download_link": "/download/attachments/6692160466/image-2026-1-15_14-32-57.png?version=1&modificationDate=1768458777000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-1-15_14-29-56.png",
+      "download_link": "/download/attachments/6692160466/image-2026-1-15_14-29-56.png?version=1&modificationDate=1768458596000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-1-15_11-14-54.png",
+      "download_link": "/download/attachments/6692160466/image-2026-1-15_11-14-54.png?version=1&modificationDate=1768446894000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-1-15_10-50-43.png",
+      "download_link": "/download/attachments/6692160466/image-2026-1-15_10-50-43.png?version=1&modificationDate=1768445443000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-1-15_10-48-3.png",
+      "download_link": "/download/attachments/6692160466/image-2026-1-15_10-48-3.png?version=1&modificationDate=1768445283000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

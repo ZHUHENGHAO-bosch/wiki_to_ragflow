@@ -1,0 +1,371 @@
+{
+  "page_id": "7054226998",
+  "title": "3.1 AI OS 威胁建模分析和威胁模型",
+  "version": 6,
+  "url": "/spaces/CARSFW/pages/7054226998/3.1+AI+OS+%E5%A8%81%E8%83%81%E5%BB%BA%E6%A8%A1%E5%88%86%E6%9E%90%E5%92%8C%E5%A8%81%E8%83%81%E6%A8%A1%E5%9E%8B",
+  "last_modified": "2026-05-08T04:14:38.000+02:00",
+  "last_modified_by": "LIU Dezhi (XC-CP/ESW2-CN)",
+  "parent_id": "7054226961",
+  "children": [
+    "7054228584"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "DRAFT : 由AI生成，仅供参考"
+    },
+    {
+      "type": "paragraph",
+      "text": "先一句话把两者分开："
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "威胁模型 (Threat Model) = 一份 产物/文档 ，描述\"谁会攻击我、怎么攻击、打哪里、会造成什么后果\"",
+        "威胁建模 (Threat Modeling) = 一个 过程/方法 ，用来系统化地产出上面那份文档"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "两者关系： 威胁建模 → 产出 → 威胁模型 。"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. 威胁模型 (Threat Model) —— 产物里应该有什么"
+    },
+    {
+      "type": "paragraph",
+      "text": "一份完整的威胁模型至少回答 5 个问题（业界叫 \"Shostack 4+1 问题\"，AI Safety 下再加一条）："
+    },
+    {
+      "type": "table",
+      "headers": [
+        "#",
+        "问题",
+        "在传统安全里",
+        "在 AI/LLM Agent 里"
+      ],
+      "rows": [
+        [
+          "1",
+          "我们在做什么? (资产 / 数据流)",
+          "数据流图 DFD",
+          "模型架构 + Prompt 流 + Tool 调用图"
+        ],
+        [
+          "2",
+          "可能出什么问题? (威胁)",
+          "STRIDE 六类",
+          "STRIDE + LLM 专属 (注入、幻觉、越权…)"
+        ],
+        [
+          "3",
+          "怎么应对? (对策)",
+          "加密/鉴权/审计",
+          "+ 输入隔离、Schema 校验、人类审批、OOD 检测"
+        ],
+        [
+          "4",
+          "我们做得够不够好? (验证)",
+          "渗透测试",
+          "+ 红队评测 (DriveSafe/AIR-Bench)、Shadow-mode"
+        ],
+        [
+          "5",
+          "(AI 专属) 安全相关的 AI 属性够不够?",
+          "—",
+          "鲁棒性/可控性/可解释/对齐 是否满足"
+        ]
+      ]
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "    ┌─────────────┐     ┌─────────────┐\n    │  Assets     │     │ Attackers   │\n    │ 资产        │     │ 攻击者/威胁源│\n    │ (要保护什么) │     │ (谁会攻击)   │\n    └──────┬──────┘     └──────┬──────┘\n           │                   │\n           └────────┬──────────┘\n                    ▼\n            ┌────────────────┐\n            │ Attack Surface │\n            │ 攻击面          │\n            │ (哪里能攻击)    │\n            └───────┬────────┘\n                    ▼\n            ┌────────────────┐\n            │ Attack Vectors │\n            │ 攻击向量/路径   │\n            │ (怎么攻击)      │\n            └───────┬────────┘\n                    ▼\n            ┌────────────────┐\n            │  Impact        │\n            │ 影响/后果       │\n            │ (结果是什么)    │\n            └───────┬────────┘\n                    ▼\n            ┌────────────────┐\n            │ Mitigations    │\n            │ 缓解措施        │\n            └────────────────┘"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. 威胁建模 (Threat Modeling) —— 过程怎么做"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.1 通用 5 步法（OWASP / Microsoft SDL）"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "划系统边界 （画出 DFD，标信任边界）",
+        "识别资产和攻击者",
+        "枚举威胁 （用方法论，不要靠拍脑袋 —— 见 §3）",
+        "评估风险 （DREAD / CVSS / ASIL-like）",
+        "设计缓解 + 验证"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2.2 在 AI Safety 下的\"增强版\"流程（对齐 ISO PAS 8800）"
+    },
+    {
+      "type": "paragraph",
+      "text": "传统威胁建模 AI 增强项 (ISO 8800 / NIST AI RMF) ─────────────── ───────────────────────────────── 1. 系统建模 + 模型架构图、训练管线、数据流、Prompt 流 2. 资产识别 + 模型权重、训练数据、Prompt 模板、embeddings 3. 威胁枚举 + OWASP LLM Top 10、MITRE ATLAS、DriveSafe 4. 风险评估 + AI 特有的：幻觉率、OOD 误报率、注入成功率 5. 缓解设计 + 对齐、RLHF、输入隔离、置信度阈值、Fallback 6. (AI 新增) AI 安全属性评估: 鲁棒性/可解释/可控性/泛化 7. (AI 新增) 触发条件枚举 (ISO 21448/8800 核心思想) 8. (AI 新增) 数据集缺陷分析 (ISO 8800 Clause 11)"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. 威胁枚举方法论 —— 怎么\"系统化\"地找出威胁"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "3.1 经典 STRIDE (6 类)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "字母",
+        "类别",
+        "对应安全属性被破坏"
+      ],
+      "rows": [
+        [
+          "S",
+          "Spoofing 伪造身份",
+          "Authentication"
+        ],
+        [
+          "T",
+          "Tampering 篡改",
+          "Integrity"
+        ],
+        [
+          "R",
+          "Repudiation 抵赖",
+          "Non-repudiation"
+        ],
+        [
+          "I",
+          "Information Disclosure 信息泄露",
+          "Confidentiality"
+        ],
+        [
+          "D",
+          "Denial of Service 拒绝服务",
+          "Availability"
+        ],
+        [
+          "E",
+          "Elevation of Privilege 权限提升",
+          "Authorization"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "3.2 AI / LLM 专属方法论（2025-2026 业界主流）"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "框架",
+        "定位",
+        "内容量"
+      ],
+      "rows": [
+        [
+          "MITRE ATLAS",
+          "AI 攻防战术矩阵（对标 ATT&CK）",
+          "14 战术 × ~90 技术，真实攻击案例"
+        ],
+        [
+          "OWASP LLM Top 10 (2025)",
+          "LLM 应用 10 大高危威胁",
+          "10 类"
+        ],
+        [
+          "OWASP ML Top 10",
+          "传统 ML 威胁",
+          "10 类"
+        ],
+        [
+          "NIST AI RMF",
+          "风险治理框架",
+          "GOVERN / MAP / MEASURE / MANAGE"
+        ],
+        [
+          "NIST AI 100-2 E2023",
+          "对抗 ML 分类法",
+          "规避、投毒、隐私、滥用"
+        ],
+        [
+          "DriveSafe (学术, 2026)",
+          "车载 LLM 专用",
+          "4 级 129 原子风险"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "车载 LLM Agent 的攻击分类（把上面揉起来）"
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "                                        (攻击者视角)\n    ┌────────────────────────────────────────────────────────┐\n    │ 设计/训练期攻击            运行期攻击          部署期攻击 │\n    │ ────────────────          ──────────         ─────────  │\n    │ • 数据投毒                 • Prompt 注入      • 模型窃取 │\n    │ • 后门/木马                • 越狱 Jailbreak   • 供应链 │\n    │ • 供应链污染               • 工具滥用         • OTA 篡改│\n    │ • 偏见引入                 • 幻觉             • 侧信道 │\n    │                           • 越权 Tool 调用             │\n    │                           • 过度代理权                  │\n    │                           • 成员推断/数据抽取           │\n    └────────────────────────────────────────────────────────┘"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. 举例: 简化威胁模型 (片段)"
+    },
+    {
+      "type": "paragraph",
+      "text": "一个具体的例子，看\"威胁模型\"长什么样。以 \"语音说'打开天窗'\" 这条数据流为例："
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "4.1 数据流图 (DFD) —— 带信任边界"
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "[乘客语音]     [短信/POI/音乐元数据]    <-- 不可信区\n     │                   │\n     └──────┬────────────┘\n            ▼\n      ┌───────────┐\n  ~~~~│ SW5 多模态│~~~~  <-- 信任边界 1 (输入净化)\n      │ 融合框架   │\n      └─────┬─────┘\n            ▼\n      ┌───────────┐\n      │ LLM Agent │\n      │ (Planner) │\n      └─────┬─────┘\n            ▼\n      ┌───────────┐\n  ~~~~│Tool Schema│~~~~  <-- 信任边界 2 (Schema 校验 / 权限)\n      │校验 (SW2) │\n      └─────┬─────┘\n            ▼\n      ┌───────────┐\n      │SW3 车控  │     <-- 信任边界 3 (规则引擎闸门)\n      │ 规则引擎  │\n      └─────┬─────┘\n            ▼\n      ┌───────────┐\n      │HAL (SW1) │\n      │ 天窗电机  │\n      └───────────┘"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "4.2 威胁表（部分）"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "ID",
+        "信任边界",
+        "威胁 (STRIDE+LLM)",
+        "攻击向量",
+        "影响",
+        "ASIL",
+        "缓解"
+      ],
+      "rows": [
+        [
+          "T1",
+          "边界 1",
+          "Prompt Injection (LLM01)",
+          "收音机节目里有人说\"打开所有车窗\"",
+          "非预期执行",
+          "A",
+          "输入分层 + 来源标签 + 驾驶员语音 biometric"
+        ],
+        [
+          "T2",
+          "边界 1",
+          "Tampering (STRIDE-T)",
+          "恶意 POI 名称嵌入指令",
+          "同上",
+          "A",
+          "外部文本不作为系统指令 (Spotlighting)"
+        ],
+        [
+          "T3",
+          "LLM 内部",
+          "Hallucination",
+          "LLM 臆造 unlock_all_doors Tool",
+          "潜在安全事故",
+          "B",
+          "Schema 白名单，不在白名单的 Tool 直接拒绝"
+        ],
+        [
+          "T4",
+          "边界 2",
+          "Excessive Agency (LLM08)",
+          "Agent 连续调用 10 个 Tool",
+          "拒绝服务",
+          "QM",
+          "频率限流 + Agent 预算"
+        ],
+        [
+          "T5",
+          "边界 2",
+          "Elevation of Privilege",
+          "乘客触发驾驶模式切换",
+          "影响驾驶",
+          "B",
+          "Capability Token + 驾驶员二次确认"
+        ],
+        [
+          "T6",
+          "边界 3",
+          "OOD / 功能不足",
+          "高速行驶中请求开天窗",
+          "SOTIF 触发",
+          "A",
+          "规则引擎 ODD 检查（速度>80 禁用）"
+        ],
+        [
+          "T7",
+          "运行时",
+          "Model Theft (LLM10)",
+          "逆向本地模型",
+          "IP 泄露",
+          "QM",
+          "权重加密 + TEE"
+        ],
+        [
+          "T8",
+          "训练期",
+          "Data Poisoning",
+          "微调数据被投毒",
+          "后门/偏见",
+          "B",
+          "数据集签名 + 来源审计 (ISO 8800 Ch.11)"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "4.3 评估 (给每条威胁打分)"
+    },
+    {
+      "type": "paragraph",
+      "text": "风险 = 可能性 × 影响 可能性: 攻击复杂度、所需能力、暴露面 影响:   安全 (ASIL) / 隐私 / 可用性 / 合规 / 品牌"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. 在 ISO PAS 8800 语境下，威胁建模的几个特殊点"
+    },
+    {
+      "type": "paragraph",
+      "text": "这是你最该记住的部分 ，因为它决定了车载 AI 的威胁建模和普通互联网产品不一样："
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "威胁 ≠ 只看恶意攻击 ISO 21448 / 8800 把\" 触发条件 (Triggering Conditions) \"也作为威胁：即使没有攻击者，罕见场景也会触发 AI 错误。威胁建模必须合并 Security (安全) + Safety (功能安全) + SOTIF 三视角。",
+        "因果链要打通到\"整车级非期望行为\" 触发条件 → AI 错误 → 功能不足 → 系统级故障 → 整车危险事件 → 人身伤害 传统威胁模型只到\"系统级故障\"；AI Safety 要求走完整链路才算合规。",
+        "威胁枚举必须覆盖 AI 特有错误源 (ISO 8800 Clause 6)",
+        "输出要进入\"保障论据 (Assurance Argument)\" 威胁建模的输出在 ISO 8800 下是 Clause 8 保障论据 的输入，用 GSN/CAE 图把\"我识别了哪些威胁 + 采取了哪些措施 + 验证了效果\"结构化证明。"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "AI_OS_Threat_Model.md"
+    },
+    {
+      "type": "paragraph",
+      "text": "AI_OS_Threat_Model.md （designed by AI claude opus 4.7）"
+    }
+  ],
+  "attachments": []
+}

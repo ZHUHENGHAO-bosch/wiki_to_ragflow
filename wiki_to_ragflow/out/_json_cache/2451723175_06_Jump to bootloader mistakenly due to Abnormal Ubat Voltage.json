@@ -1,0 +1,82 @@
+{
+  "page_id": "2451723175",
+  "title": "06_Jump to bootloader mistakenly due to Abnormal Ubat Voltage",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/2451723175/06_Jump+to+bootloader+mistakenly+due+to+Abnormal+Ubat+Voltage",
+  "last_modified": "2023-08-09T08:16:19.000+02:00",
+  "last_modified_by": "WANG Hui (BCSC/EPA4)",
+  "parent_id": "2411995729",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Information"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Fusa will monitor Ubat Voltage (e.g. normal value is 6~30v). Fusa will reset SCC when Ubat is abnormal.",
+        "Fusa have a requirement, SCC should jump to Boot after APP resets 25 times continuously."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "GEELY Project have K30 Voltage Test in base tech: Set K30 voltage ramp-up from 5v - 30v. During the 5v, SCC will reset continuously due to fusa safety voltage monitor and jump to boot eventually. This cause test case to fail."
+    },
+    {
+      "type": "paragraph",
+      "text": "From another perspective,  if K30 is really under-voltage in the car, SCC jumped to the boot.  Driver have to disconnect the battery or upgrade the DHU to recover. This is unreasonable."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Analysis"
+    },
+    {
+      "type": "paragraph",
+      "text": "We don't count when reset caused by abnormal ubat voltage ."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Solution"
+    },
+    {
+      "type": "paragraph",
+      "text": "When abnormal voltage is detected , c all  Startup_clrResetCounter(STARTUP_APPL_RESETCOUNTER) before  reset."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fix Status"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Affected project",
+        "FixStatus",
+        "RTC/Gerrit Linkage"
+      ],
+      "rows": [
+        [
+          "GEELY",
+          "COMPLETED",
+          "https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/autosar/autosar/bosch/+/477525"
+        ],
+        [
+          "GAC",
+          "COMPLETED",
+          "https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/autosar/autosar/bosch/+/531605"
+        ],
+        [
+          "BYD",
+          "COMPLETED",
+          "已横展，已复测"
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

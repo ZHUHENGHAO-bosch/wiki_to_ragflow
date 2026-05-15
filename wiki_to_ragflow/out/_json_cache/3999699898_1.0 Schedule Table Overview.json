@@ -1,0 +1,75 @@
+{
+  "page_id": "3999699898",
+  "title": "1.0 Schedule Table Overview",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/3999699898/1.0+Schedule+Table+Overview",
+  "last_modified": "2024-02-27T11:10:27.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "3999698570",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "It is possible to create periodic and aperiodic task easily with alarms. However this way of scheduling tasks using alarms have the following limitations"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "We can perform only one action per alarm (we cannot activate multiple tasks with one alarm)",
+        "If we need a system where we need a phased sequence of task activations and guarantee some separation in time, we need to be careful how we start and stop the alarms"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "It is possible to implement a statically defined task activation mechanism using an OSEK counter and a series of auto started alarms. In the simple case, this can be achieved by specifying that the alarms are not modified once started. Run-time modifications can only be made if relative synchronization between alarms can be guaranteed. This typically means modifying the alarms while associated counter tick interrupts are disabled"
+    },
+    {
+      "type": "paragraph",
+      "text": "AUTOSAR OS addresses the limitations of alarms specified above by providing an OS object called a schedule table"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Schedule table"
+    },
+    {
+      "type": "paragraph",
+      "text": "Schedule Tables address the synchronization issue by providing an encapsulation of a statically defined set of expiry points. Each expiry point defines"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "one or more actions that must occur when it is processed where an action is the activation of a task or the setting of an event",
+        "An offset in ticks from the start of the schedule table"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Each schedule table has a duration in ticks. The duration is measured from zero and defines the modulus of the schedule table"
+    },
+    {
+      "type": "paragraph",
+      "text": "At runtime, the Operating System module will iterate over the schedule table, processing each expiry point in turn. The iteration is driven by an OSEK counter. It therefore follows that the properties of the counter have an impact on what is possible to configure on the schedule table"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20Schedule%20Table%20Overview/image-2024-2-27_18-5-41.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 Schedule Table Overview/image-2024-2-27_18-5-41.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-2-27_18-5-41.png",
+      "download_link": "/download/attachments/3999699898/image-2024-2-27_18-5-41.png?version=1&modificationDate=1709028627000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

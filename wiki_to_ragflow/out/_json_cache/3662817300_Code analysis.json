@@ -1,0 +1,25 @@
+{
+  "page_id": "3662817300",
+  "title": "Code analysis",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/3662817300/Code+analysis",
+  "last_modified": "2023-11-21T02:40:49.000+01:00",
+  "last_modified_by": "TAN Shanhe (XC-CP/ESW2-CN)",
+  "parent_id": "3283088715",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Chery as example"
+    },
+    {
+      "type": "paragraph",
+      "text": "1.The use case of retention RAM"
+    },
+    {
+      "type": "paragraph",
+      "text": "2.Set startup condition and transfer to SoC"
+    }
+  ],
+  "attachments": []
+}

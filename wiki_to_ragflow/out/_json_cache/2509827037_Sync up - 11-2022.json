@@ -1,0 +1,46 @@
+{
+  "page_id": "2509827037",
+  "title": "Sync up - 11-2022",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2509827037/Sync+up+-+11-2022",
+  "last_modified": "2022-11-17T10:07:20.000+01:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2509826984",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 17 Nov 2022"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Praveen, John"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "DLT logging:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Non-verbose xml is generated now in Zeekr. Will be delivered this week 21 Oct 2022 COMPLETED",
+        "Wiki to explain how to add non-verbose logging in each module",
+        "10 Nov 2022 ECT will deliver Vector DLT in CNCONVPF. We need to have non-verbose from Zeekr to CNCONVPF",
+        "Port non verbose to CNCONVPF",
+        "Test with one module in CNCONVPF - 30 Nov 2022",
+        "Analyze the wrapper and Dlt_if in VCU",
+        "Test with one module in Zeekr",
+        "Save the non-verbose mode in SOC and make sure parsing is done properly"
+      ]
+    }
+  ],
+  "attachments": []
+}

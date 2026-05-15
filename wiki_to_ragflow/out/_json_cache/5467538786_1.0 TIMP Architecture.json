@@ -1,0 +1,39 @@
+{
+  "page_id": "5467538786",
+  "title": "1.0 TIMP Architecture",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/5467538786/1.0+TIMP+Architecture",
+  "last_modified": "2025-03-04T03:57:32.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "5156738958",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is for TIMP Architecture overview"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "High level view"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20TIMP%20Architecture/image-2025-3-4_10-57-25.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 TIMP Architecture/image-2025-3-4_10-57-25.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2025-3-4_10-57-25.png",
+      "download_link": "/download/attachments/5467538786/image-2025-3-4_10-57-25.png?version=1&modificationDate=1741057045000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

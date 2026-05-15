@@ -1,0 +1,108 @@
+{
+  "page_id": "2476796598",
+  "title": "Multicore Design Patterns",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2476796598/Multicore+Design+Patterns",
+  "last_modified": "2023-08-08T13:13:08.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2383057032",
+  "children": [
+    "2478737789"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "There are number of design patterns to achieve Parallelization with Multicore system. We will see some of those in this page"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Master/Worker design pattern"
+    },
+    {
+      "type": "paragraph",
+      "text": "Master core (Master) executes the code until it reaches an area when it can be parallelized. Then triggers the workers in another cores (Core 1 and Core 2) to perform the computationally intensive work."
+    },
+    {
+      "type": "paragraph",
+      "text": "Once the worker finishes work, Master starts again and completes the work"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2476796598/Master_Worker.png?version=1&modificationDate=1666762191000&api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore Design Patterns/Master_Worker.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Peer design pattern"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is same as Master/worker but here Master also shares the computationally intensive work with other cores"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2476796598/Copy%20of%20Master_Worker.png?version=3&modificationDate=1666762609000&api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore Design Patterns/Copy of Master_Worker.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Pipelined design pattern"
+    },
+    {
+      "type": "paragraph",
+      "text": "In this pattern, application is divided into 'series of smaller, independent stages' - Where output of stage is input to the next"
+    },
+    {
+      "type": "paragraph",
+      "text": "Each stage can be placed in different core"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2476796598/Pipelined.png?version=1&modificationDate=1666764223000&api=v2",
+      "alt": "",
+      "local_path": "_images/Multicore Design Patterns/Pipelined.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "Pipelined",
+      "download_link": "/download/attachments/2476796598/Pipelined?version=1&modificationDate=1666764223000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Pipelined.png",
+      "download_link": "/download/attachments/2476796598/Pipelined.png?version=1&modificationDate=1666764223000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Copy of Master_Worker",
+      "download_link": "/download/attachments/2476796598/Copy%20of%20Master_Worker?version=3&modificationDate=1666762609000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Copy of Master_Worker.png",
+      "download_link": "/download/attachments/2476796598/Copy%20of%20Master_Worker.png?version=3&modificationDate=1666762609000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Master_Worker",
+      "download_link": "/download/attachments/2476796598/Master_Worker?version=1&modificationDate=1666762191000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Master_Worker.png",
+      "download_link": "/download/attachments/2476796598/Master_Worker.png?version=1&modificationDate=1666762191000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

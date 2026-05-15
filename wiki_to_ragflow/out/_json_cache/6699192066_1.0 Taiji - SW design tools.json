@@ -1,0 +1,43 @@
+{
+  "page_id": "6699192066",
+  "title": "1.0 Taiji - SW design tools",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/6699192066/1.0+Taiji+-+SW+design+tools",
+  "last_modified": "2026-01-16T07:20:55.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6699192064",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to analyze, how we do SCC architecture design in Taiji platform"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Tools"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below are the tools available and their features"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "EA - Enterprise architect",
+        "PlantUML",
+        "Mermaid",
+        "needuml",
+        "draw.io",
+        "Visio"
+      ]
+    }
+  ],
+  "attachments": []
+}

@@ -1,0 +1,38 @@
+{
+  "page_id": "4600748785",
+  "title": "7.0 SUM SSC Configuration details",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/4600748785/7.0+SUM+SSC+Configuration+details",
+  "last_modified": "2024-08-20T04:48:48.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4600744541",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to summarize the SSC configuration details."
+    },
+    {
+      "type": "paragraph",
+      "text": "Many configurations are there. refer Chapter 9.2 SUM_SSC configuration – General in SUM Vector document"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/7.0%20SUM%20SSC%20Configuration%20details/image-2024-8-14_14-45-39.png?api=v2",
+      "alt": "",
+      "local_path": "_images/7.0 SUM SSC Configuration details/image-2024-8-14_14-45-39.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-14_14-45-39.png",
+      "download_link": "/download/attachments/4600748785/image-2024-8-14_14-45-39.png?version=1&modificationDate=1723617939000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

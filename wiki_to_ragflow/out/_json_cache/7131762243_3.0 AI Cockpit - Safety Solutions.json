@@ -1,0 +1,166 @@
+{
+  "page_id": "7131762243",
+  "title": "3.0 AI Cockpit - Safety Solutions",
+  "version": 11,
+  "url": "/spaces/CARSFW/pages/7131762243/3.0+AI+Cockpit+-+Safety+Solutions",
+  "last_modified": "2026-05-12T12:35:39.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "7125011484",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to analyze the different solution to achieve safety in AI cockpit"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is only for discussion and some diagrams are AI generated"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "With SOTIF in AI Cockpit"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/7131762243/Untitled%20Diagram-1778564182037.png?version=2&modificationDate=1778565212000&api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 AI Cockpit - Safety Solutions/Untitled Diagram-1778564182037.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Use case: Seat Adjustment"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/7131762243/Untitled%20Diagram-1778573800077.png?version=2&modificationDate=1778577166000&api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 AI Cockpit - Safety Solutions/Untitled Diagram-1778573800077.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": ""
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Component overview"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.0%20AI%20Cockpit%20-%20Safety%20Solutions/image-2026-5-12_18-34-56.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 AI Cockpit - Safety Solutions/image-2026-5-12_18-34-56.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Concept with Seres"
+    },
+    {
+      "type": "paragraph",
+      "text": "Draft → Just for discussion (Created using AI)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.0%20AI%20Cockpit%20-%20Safety%20Solutions/image-2026-5-12_18-32-18.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 AI Cockpit - Safety Solutions/image-2026-5-12_18-32-18.png"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/7131762243/Untitled%20Diagram-1778567048586.png?version=4&modificationDate=1778567517000&api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 AI Cockpit - Safety Solutions/Untitled Diagram-1778567048586.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "HMI implementation on Safety Checks"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Cockpit as QM and the Target system to handle safety"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "With a Safet supervisor out of AI cockpit and Target system"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2026-5-12_18-34-56.png",
+      "download_link": "/download/attachments/7131762243/image-2026-5-12_18-34-56.png?version=1&modificationDate=1778582096000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-5-12_18-32-18.png",
+      "download_link": "/download/attachments/7131762243/image-2026-5-12_18-32-18.png?version=1&modificationDate=1778581938000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-5-12_17-53-24.png",
+      "download_link": "/download/attachments/7131762243/image-2026-5-12_17-53-24.png?version=1&modificationDate=1778579605000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Untitled Diagram-1778573800077",
+      "download_link": "/download/attachments/7131762243/Untitled%20Diagram-1778573800077?version=2&modificationDate=1778577166000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Untitled Diagram-1778573800077.png",
+      "download_link": "/download/attachments/7131762243/Untitled%20Diagram-1778573800077.png?version=2&modificationDate=1778577166000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "~Untitled Diagram-1778573800077.tmp",
+      "download_link": "/download/attachments/7131762243/~Untitled%20Diagram-1778573800077.tmp?version=40&modificationDate=1778577163000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Untitled Diagram-1778567048586",
+      "download_link": "/download/attachments/7131762243/Untitled%20Diagram-1778567048586?version=4&modificationDate=1778567517000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Untitled Diagram-1778567048586.png",
+      "download_link": "/download/attachments/7131762243/Untitled%20Diagram-1778567048586.png?version=4&modificationDate=1778567517000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "~Untitled Diagram-1778567048586.tmp",
+      "download_link": "/download/attachments/7131762243/~Untitled%20Diagram-1778567048586.tmp?version=24&modificationDate=1778567515000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-5-12_14-12-36.png",
+      "download_link": "/download/attachments/7131762243/image-2026-5-12_14-12-36.png?version=1&modificationDate=1778566356000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Untitled Diagram-1778564182037",
+      "download_link": "/download/attachments/7131762243/Untitled%20Diagram-1778564182037?version=2&modificationDate=1778565212000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Untitled Diagram-1778564182037.png",
+      "download_link": "/download/attachments/7131762243/Untitled%20Diagram-1778564182037.png?version=2&modificationDate=1778565212000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "~Untitled Diagram-1778564182037.tmp",
+      "download_link": "/download/attachments/7131762243/~Untitled%20Diagram-1778564182037.tmp?version=45&modificationDate=1778565210000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

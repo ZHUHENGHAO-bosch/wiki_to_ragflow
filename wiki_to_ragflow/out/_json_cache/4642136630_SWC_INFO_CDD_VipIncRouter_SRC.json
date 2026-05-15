@@ -1,0 +1,176 @@
+{
+  "page_id": "4642136630",
+  "title": "SWC_INFO_CDD_VipIncRouter_SRC",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/4642136630/SWC_INFO_CDD_VipIncRouter_SRC",
+  "last_modified": "2024-08-27T10:27:24.000+02:00",
+  "last_modified_by": "LI Minsheng (XC-CP/ESW2-CN)",
+  "parent_id": "4565826990",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "1. Relationship with other SWC"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_INFO_CDD_VipIncRouter_SRC/image-2024-8-27_15-55-33.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_INFO_CDD_VipIncRouter_SRC/image-2024-8-27_15-55-33.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "2. Flow Control feature"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Flow control can avoid INC channel rx buffer full, to prevent user data lost.",
+        "MCU will monitor user channel rx ring buffer state, If it higher than 80%, inform APP on Soc to stop send data.",
+        "MCU will received flow control message from Soc, to inform user SWC that stop transmit user data."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.1. MCU control rx ring buffer"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_INFO_CDD_VipIncRouter_SRC/image-2024-8-27_16-19-32.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_INFO_CDD_VipIncRouter_SRC/image-2024-8-27_16-19-32.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.2. MCU will receive flow control message to inform SWC"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_INFO_CDD_VipIncRouter_SRC/image-2024-8-27_16-18-59.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_INFO_CDD_VipIncRouter_SRC/image-2024-8-27_16-18-59.png"
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "Function name",
+          "void IncTp_GetChannelStatus(uint8 channelNumber, uint8* channelStatus)",
+          ""
+        ],
+        [
+          "Parameters (in):",
+          "channelNumber: INC channel number used by your component",
+          ""
+        ],
+        [
+          "Parameters (in-out):",
+          "None",
+          ""
+        ],
+        [
+          "Parameters (out):",
+          "channelStatus:",
+          "Bit0: 1: Open: it has been registered 0: closed"
+        ],
+        [
+          "Bit2: 1: Tx frame resend failed, report PhyErr to User 0: No PhyErr."
+        ],
+        [
+          "Bit3: 1: RxBuffer_Th_Exceed (80%) 0: RxBuffer_Th_Not_Exceed"
+        ],
+        [
+          "Bit4: 1: Both SPIs are LINK_UP 0: At least one SPI is LINK_DOWN"
+        ],
+        [
+          "Bit5: 1: TxBuffer_Th_Exceed (80%) 0: TxBuffer_Th_Not_Exceed"
+        ],
+        [
+          "Return value:",
+          "E_OK: Data is read successful. E_NOT_OK: read failed.",
+          ""
+        ],
+        [
+          "Description",
+          "This interface is called to get status of a channel",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "3. Message Transmit and reception"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.1. Message reception"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_INFO_CDD_VipIncRouter_SRC/image-2024-8-27_14-28-13.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_INFO_CDD_VipIncRouter_SRC/image-2024-8-27_14-28-13.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3.2. Message Transmission"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_INFO_CDD_VipIncRouter_SRC/image-2024-8-27_14-27-1.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_INFO_CDD_VipIncRouter_SRC/image-2024-8-27_14-27-1.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-27_16-19-32.png",
+      "download_link": "/download/attachments/4642136630/image-2024-8-27_16-19-32.png?version=1&modificationDate=1724746773000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-27_16-18-59.png",
+      "download_link": "/download/attachments/4642136630/image-2024-8-27_16-18-59.png?version=1&modificationDate=1724746740000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-27_15-55-33.png",
+      "download_link": "/download/attachments/4642136630/image-2024-8-27_15-55-33.png?version=1&modificationDate=1724745334000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-27_15-47-54.png",
+      "download_link": "/download/attachments/4642136630/image-2024-8-27_15-47-54.png?version=1&modificationDate=1724744874000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-27_15-37-23.png",
+      "download_link": "/download/attachments/4642136630/image-2024-8-27_15-37-23.png?version=1&modificationDate=1724744244000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-27_14-28-13.png",
+      "download_link": "/download/attachments/4642136630/image-2024-8-27_14-28-13.png?version=1&modificationDate=1724740094000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-27_14-27-1.png",
+      "download_link": "/download/attachments/4642136630/image-2024-8-27_14-27-1.png?version=1&modificationDate=1724740021000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-27_14-26-5.png",
+      "download_link": "/download/attachments/4642136630/image-2024-8-27_14-26-5.png?version=1&modificationDate=1724739966000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

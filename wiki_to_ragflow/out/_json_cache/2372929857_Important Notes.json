@@ -1,0 +1,44 @@
+{
+  "page_id": "2372929857",
+  "title": "Important Notes",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2372929857/Important+Notes",
+  "last_modified": "2023-03-13T06:28:57.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2321473032",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "If you enable only SCR wakeup in PMSWCR0 (Standby and Wake-up Control Register_, then Aurix can be started only when actual wakeup source is detected"
+    },
+    {
+      "type": "paragraph",
+      "text": "To make Aurix start on Power on Reset, make sure the below bit is set in PMSWCR0 register"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Important%20Notes/image2022-8-1_10-33-52.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Important Notes/image2022-8-1_10-33-52.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Important%20Notes/image2022-8-1_10-35-19.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Important Notes/image2022-8-1_10-35-19.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-8-1_10-35-19.png",
+      "download_link": "/download/attachments/2372929857/image2022-8-1_10-35-19.png?version=1&modificationDate=1659330324000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-1_10-33-52.png",
+      "download_link": "/download/attachments/2372929857/image2022-8-1_10-33-52.png?version=1&modificationDate=1659330324000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

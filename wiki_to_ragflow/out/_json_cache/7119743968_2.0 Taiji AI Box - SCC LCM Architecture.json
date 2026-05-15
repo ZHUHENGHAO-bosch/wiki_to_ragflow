@@ -1,0 +1,73 @@
+{
+  "page_id": "7119743968",
+  "title": "2.0 Taiji AI Box - SCC LCM Architecture",
+  "version": 9,
+  "url": "/spaces/CARSFW/pages/7119743968/2.0+Taiji+AI+Box+-+SCC+LCM+Architecture",
+  "last_modified": "2026-05-08T09:25:48.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "7111923828",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is summarize the SCC LCM Architecture for AI Box"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "AI Box Features for LCM"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "F.No",
+        "Feature",
+        "Effort",
+        "Comment"
+      ],
+      "rows": [
+        [
+          "1",
+          "Integrate Orin Power Manager to Taiji Base",
+          "",
+          ""
+        ],
+        [
+          "2",
+          "Adapt LcmIncDispatcher for EInc and Manual Deserialize and Serialize adaption",
+          "",
+          "2.0 Taiji AI Box - SCC LCM Architecture - XC-CT China - Docupedia"
+        ],
+        [
+          "3",
+          "",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Static Overview"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20Taiji%20AI%20Box%20-%20SCC%20LCM%20Architecture/CN_AIBox_LCM_SCC_Architecture.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 Taiji AI Box - SCC LCM Architecture/CN_AIBox_LCM_SCC_Architecture.jpg"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "CN_AIBox_LCM_SCC_Architecture.jpg",
+      "download_link": "/download/attachments/7119743968/CN_AIBox_LCM_SCC_Architecture.jpg?version=2&modificationDate=1778225124000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

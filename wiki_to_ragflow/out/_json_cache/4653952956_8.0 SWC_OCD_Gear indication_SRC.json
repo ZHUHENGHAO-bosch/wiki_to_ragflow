@@ -1,0 +1,28 @@
+{
+  "page_id": "4653952956",
+  "title": "8.0 SWC_OCD_Gear indication_SRC",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/4653952956/8.0+SWC_OCD_Gear+indication_SRC",
+  "last_modified": "2024-08-28T11:03:13.000+02:00",
+  "last_modified_by": "SUN Xitong (XC-CP/ESW2-CN)",
+  "parent_id": "4565826990",
+  "children": [
+    "4601799364",
+    "4601799990"
+  ],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Requirement :"
+    },
+    {
+      "type": "paragraph",
+      "text": "<<PIS-2085 IPC SW Specification V3.0.docx>>"
+    },
+    {
+      "type": "paragraph",
+      "text": "https://inside-share-hosted-apps.bosch.com/DMS/GetDocumentService/Document.svc/GetDocumentURL?documentID=P15S179543-2128710441-558"
+    }
+  ],
+  "attachments": []
+}

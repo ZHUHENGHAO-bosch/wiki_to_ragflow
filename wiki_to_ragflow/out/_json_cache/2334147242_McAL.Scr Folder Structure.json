@@ -1,0 +1,46 @@
+{
+  "page_id": "2334147242",
+  "title": "McAL.Scr Folder Structure",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2334147242/McAL.Scr+Folder+Structure",
+  "last_modified": "2023-03-13T06:28:36.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2334147407",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Over All Folder Structure"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/McAL.Scr%20Folder%20Structure/image2022-6-27_14-47-58.png?api=v2",
+      "alt": "",
+      "local_path": "_images/McAL.Scr Folder Structure/image2022-6-27_14-47-58.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Shared Structure"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/McAL.Scr%20Folder%20Structure/image2022-6-27_14-50-20.png?api=v2",
+      "alt": "",
+      "local_path": "_images/McAL.Scr Folder Structure/image2022-6-27_14-50-20.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-6-27_14-47-58.png",
+      "download_link": "/download/attachments/2334147242/image2022-6-27_14-47-58.png?version=1&modificationDate=1656322042000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_14-50-20.png",
+      "download_link": "/download/attachments/2334147242/image2022-6-27_14-50-20.png?version=1&modificationDate=1656322042000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

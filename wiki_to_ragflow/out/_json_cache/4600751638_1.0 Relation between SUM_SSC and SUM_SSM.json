@@ -1,0 +1,63 @@
+{
+  "page_id": "4600751638",
+  "title": "1.0 Relation between SUM_SSC and SUM_SSM",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/4600751638/1.0+Relation+between+SUM_SSC+and+SUM_SSM",
+  "last_modified": "2024-08-14T09:38:06.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4600750877",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is give an overview of the Relation between SUM_SSC and SUM_SSM"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Tx Protected message"
+    },
+    {
+      "type": "paragraph",
+      "text": "SUM_SSC is building and sending protected messages. However the calculation of the protected elements (ARC, PV, CS and CRC) is done by SUM_SSM"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"ARC” if only an ARC is used “ARC_PV” if an ARC and a PV are used “ARC_CS” if an ARC and a CS are used “ARC_CRC” if an ARC and a CRC are used"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20Relation%20between%20SUM_SSC%20and%20SUM_SSM/image-2024-8-14_15-32-32.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 Relation between SUM_SSC and SUM_SSM/image-2024-8-14_15-32-32.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Rx Protected message"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20Relation%20between%20SUM_SSC%20and%20SUM_SSM/image-2024-8-14_15-33-13.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 Relation between SUM_SSC and SUM_SSM/image-2024-8-14_15-33-13.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-14_15-33-13.png",
+      "download_link": "/download/attachments/4600751638/image-2024-8-14_15-33-13.png?version=1&modificationDate=1723620793000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-14_15-32-32.png",
+      "download_link": "/download/attachments/4600751638/image-2024-8-14_15-32-32.png?version=1&modificationDate=1723620752000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

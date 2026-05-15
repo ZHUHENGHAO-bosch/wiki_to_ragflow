@@ -1,0 +1,235 @@
+{
+  "page_id": "2799708905",
+  "title": "08_Fusa SM52 Soc Side Issue",
+  "version": 10,
+  "url": "/spaces/CARSFW/pages/2799708905/08_Fusa+SM52+Soc+Side+Issue",
+  "last_modified": "2023-05-06T04:28:36.000+02:00",
+  "last_modified_by": "LI Xiang (BCSC/ENG1)",
+  "parent_id": "2411995729",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Information"
+    },
+    {
+      "type": "paragraph",
+      "text": "Fusa SM52 Safe HMI, SCC request TT CRC From SOC Open WFD  and get the CRC value over a long link, as below picture. Now Geely project have some issue, and some improve method. Other project can refer it."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/08_Fusa%20SM52%20Soc%20Side%20Issue/image2023-3-1_20-53-58.png?api=v2",
+      "alt": "",
+      "local_path": "_images/08_Fusa SM52 Soc Side Issue/image2023-3-1_20-53-58.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "1 QNX aps issue"
+    },
+    {
+      "type": "paragraph",
+      "text": "Fusa process (inc-dispatcher, signature-unit-controller, system-info-handler)should run in System partition. But occasionally, we found fusa process run in other partition.(It is a QNX issue)"
+    },
+    {
+      "type": "paragraph",
+      "text": "It is high probability that SM52 Safe HMI - BSM(SCC side) received CRC  timeout from SOC when qnx aps issue."
+    },
+    {
+      "type": "paragraph",
+      "text": "We met two case now:"
+    },
+    {
+      "type": "paragraph",
+      "text": "a, signature-unit-controller run in pAudio"
+    },
+    {
+      "type": "paragraph",
+      "text": "b, inc-dispatcher run in pAndriod"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/08_Fusa%20SM52%20Soc%20Side%20Issue/image2023-3-1_20-54-24.png?api=v2",
+      "alt": "",
+      "local_path": "_images/08_Fusa SM52 Soc Side Issue/image2023-3-1_20-54-24.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Work around method:  After fusa process startup, pull back it  to system partition"
+    },
+    {
+      "type": "paragraph",
+      "text": "2 Inc-Dispatcher issue"
+    },
+    {
+      "type": "paragraph",
+      "text": "When inc-dispatcher run in other partition,  Inc-Dispatcher will never receive SCC message and is block by select() API; When Inc-dispatcher run in system partition, it also have block issue."
+    },
+    {
+      "type": "paragraph",
+      "text": "there are two issue here:"
+    },
+    {
+      "type": "paragraph",
+      "text": "a, Misuse QNX API select().  Should reset select() parameters before using it. (QNX API Request)."
+    },
+    {
+      "type": "paragraph",
+      "text": "b, No notification to Inc-Dispatcher when safety channel buffer full.  INC-TP need also update the code."
+    },
+    {
+      "type": "paragraph",
+      "text": "3 Ongoing: improve Fusa process priority"
+    },
+    {
+      "type": "paragraph",
+      "text": "Need improve Fusa process priority with ESA team"
+    },
+    {
+      "type": "paragraph",
+      "text": "GEELY ongoing, will select one from below after test."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "fusa process",
+        "priority",
+        "partition"
+      ],
+      "rows": [
+        [
+          "inc-dispatcher/suc/sih",
+          "30r",
+          "System"
+        ],
+        [
+          "inc-dispatcher/suc/sih",
+          "45r",
+          "System"
+        ],
+        [
+          "inc-dispatcher/suc/sih",
+          "80r",
+          "System"
+        ],
+        [
+          "inc-dispatcher/suc/sih",
+          "30r",
+          "pSafety"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "4 others/improve ( add useful log)"
+    },
+    {
+      "type": "paragraph",
+      "text": "SCC:"
+    },
+    {
+      "type": "paragraph",
+      "text": "user-1419f adds lots of useful information in SCC side. When error raised, below information will be recorded by SafeStateHandler."
+    },
+    {
+      "type": "paragraph",
+      "text": "typedef struct { BSM_Component_ID_e Component_ID ; BSM_ROI_ID_e ROI_ID ; BSM_ReturnStatus_e status ; uint8 AddInfo ; uint8 bsmTxIncTimeoutCnt ; uint16 bsmRxIncTimeoutCnt ; uint32 bsmCrc ; uint16 BsmRoistatus ; uint16 ssmIncTimeoutCnt ; uint32 ErrOutState ; uint32 deltTime ; uint32 TxTime ; } svh_TellTale_CallbackData_s ;"
+    },
+    {
+      "type": "paragraph",
+      "text": "SOC:"
+    },
+    {
+      "type": "paragraph",
+      "text": "need to add"
+    },
+    {
+      "type": "paragraph",
+      "text": "1 snapshot cluster hmi and save when checked crc error"
+    },
+    {
+      "type": "paragraph",
+      "text": "2 show system information( cpu loading etc)"
+    },
+    {
+      "type": "paragraph",
+      "text": "3 show fusa process in which partition"
+    },
+    {
+      "type": "paragraph",
+      "text": "4 other detail infor in each fusa module, help to identify  where the issue occured. ( need discuss with other project )"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Solution"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Affected Project",
+        "Variant",
+        "FixStatus",
+        "RTC/Gerrit"
+      ],
+      "rows": [
+        [
+          "GEELY",
+          "",
+          "COMPLETED",
+          "1 QNX aps issue https://rbcm-gerrit.de.bosch.com/c/external/qualcomm/qnx/snapdragon-auto-gen3-hqx-1-2-1_hlos_dev_qnx/+/569823 https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/cluster/safetyapps/signature-unit-controller/+/569831 (SUC) please check inc-dispacter/sih etc. 2 Inc-Dispatcher issue a inc-dispatcher https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/cluster/safetyapps/inc-dispatcher/+/569594 b inc-tp: https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/platform/inc_tp/+/569478"
+        ],
+        [
+          "GWM",
+          "GWM-B07 Main",
+          "COMPLETED",
+          "1 QNX aps issue https://rbcm-gerrit.de.bosch.com/c/external/qualcomm/qnx/snapdragon-auto-gen3-hqx-1-0_hlos_dev_qnx/+/584687 https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/cluster/safetyapps/signature-unit-controller/+/584694 2 Inc-Dispatcher issue a inc-dispatcher https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/cluster/safetyapps/inc-dispatcher/+/584692 b inc-tp: https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/platform/inc_tp/+/570079"
+        ],
+        [
+          "GWM-SOP10_OverSea",
+          "COMPLETED",
+          "1 QNX aps issue https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/cluster/safetyapps/signature-unit-controller/+/585136 https://rbcm-gerrit.de.bosch.com/c/external/qualcomm/qnx/snapdragon-auto-gen3-hqx-1-0_hlos_dev_qnx/+/585137 2 Inc-Dispatcher issue a inc-dispatcher https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/cluster/safetyapps/inc-dispatcher/+/585125 b inc-tp: https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/platform/inc_tp/+/584658"
+        ],
+        [
+          "GWM-SOP15",
+          "COMPLETED",
+          "1 QNX aps issue https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/cluster/safetyapps/signature-unit-controller/+/585140 https://rbcm-gerrit.de.bosch.com/c/external/qualcomm/qnx/snapdragon-auto-gen3-hqx-1-0_hlos_dev_qnx/+/585141 2 Inc-Dispatcher issue a inc-dispatcher https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/cluster/safetyapps/inc-dispatcher/+/585128 b inc-tp: 之前就有了"
+        ],
+        [
+          "BYD",
+          "",
+          "COMPLETED",
+          "[BYD][DX][SOC]put process into system partition for aps issue (I7766e79f) · Gerrit Code Review (bosch.com) [BYD][DX][SOC]reset select() parameters before call it everytime (Iaf077316) · Gerrit Code Review (bosch.com) [BYD][DX][SOC]Inc_tp: code robust for inc_tp (I8f5bbe1b) · Gerrit Code Review (bosch.com)"
+        ],
+        [
+          "GAC",
+          "",
+          "COMPLETED",
+          "1 QNX aps issue https://rbcm-gerrit.de.bosch.com/c/projects/taiji/qnx/bosch/housekeeping/qcom_qnx/+/576216 https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/cluster/safetyapps/signature-unit-controller/+/576221 2 Inc-Dispatcher issue a inc-dispatcher https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/cluster/safetyapps/inc-dispatcher/+/570086 b inc-tp: https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/qnx/bosch/platform/inc_tp/+/570114"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2023-3-1_20-54-24.png",
+      "download_link": "/download/attachments/2799708905/image2023-3-1_20-54-24.png?version=1&modificationDate=1677675264000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2023-3-1_20-53-58.png",
+      "download_link": "/download/attachments/2799708905/image2023-3-1_20-53-58.png?version=1&modificationDate=1677675239000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2023-3-1_20-52-36.png",
+      "download_link": "/download/attachments/2799708905/image2023-3-1_20-52-36.png?version=1&modificationDate=1677675156000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2023-3-1_20-52-25.png",
+      "download_link": "/download/attachments/2799708905/image2023-3-1_20-52-25.png?version=1&modificationDate=1677675145000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

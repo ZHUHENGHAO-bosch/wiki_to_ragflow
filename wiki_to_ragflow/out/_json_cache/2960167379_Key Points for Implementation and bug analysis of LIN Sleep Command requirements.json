@@ -1,0 +1,84 @@
+{
+  "page_id": "2960167379",
+  "title": "Key Points for Implementation and bug analysis of LIN Sleep Command requirements",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/2960167379/Key+Points+for+Implementation+and+bug+analysis+of+LIN+Sleep+Command+requirements",
+  "last_modified": "2023-04-19T08:46:43.000+02:00",
+  "last_modified_by": "ZHAO Wei (XC-CP/ESW2-CN)",
+  "parent_id": "2451722990",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "The Geely ECARX DHU project requires sending a Sleep Command to the LIN bus before the MCU enters sleep."
+    },
+    {
+      "type": "paragraph",
+      "text": "The implementation strategy of the Geely project is in the \"Lin_GoToSleep\" function in file \"Lin.c\", define a local variable type \"Lin_PduType\", and sent to LIN bus through \"Lin_Fp_StartTxFrame\" function. At the same time, it is important to note that in the AutoSAR ComM module, the \"Nm Variant\" of this LIN in \"ComMChannels\" should be configured as \"LIGHT\"."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Key%20Points%20for%20Implementation%20and%20bug%20analysis%20of%20LIN%20Sleep%20Command%20requirements/image-2023-4-19_14-40-38.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Key Points for Implementation and bug analysis of LIN Sleep Command requirements/image-2023-4-19_14-40-38.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Key%20Points%20for%20Implementation%20and%20bug%20analysis%20of%20LIN%20Sleep%20Command%20requirements/image-2023-4-19_14-41-11.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Key Points for Implementation and bug analysis of LIN Sleep Command requirements/image-2023-4-19_14-41-11.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "After implementing the change in power down requirements by LCM, it was found that the previously sent LIN Sleep Command was not sent to the LIN bus."
+    },
+    {
+      "type": "paragraph",
+      "text": "Debugging code found that the following functions for implementing Lin_Trcv power-off are called in \"PowerM_VIPPeripheralPowerDownCallback\" function, which is executing before the \"Lin_GoToSleep\" function called, so when LinTrcv  is turned off, LIN Sleep Command cannot be sent to the bus."
+    },
+    {
+      "type": "paragraph",
+      "text": "IoHwAb_DioWrite_LINx_TR_EN(STD_LOW); IoHwAb_DioWrite_LIN2_TR_EN(STD_LOW);"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Key%20Points%20for%20Implementation%20and%20bug%20analysis%20of%20LIN%20Sleep%20Command%20requirements/image-2023-4-19_14-42-15.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Key Points for Implementation and bug analysis of LIN Sleep Command requirements/image-2023-4-19_14-42-15.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Adjust the call position of the LinTrcv power-off functions above, call them in \"PowerM_VipPeripheralPowerDown_LastAction\" function, which is executed after the \"Lin_GoToSleep\" function.  Thus, LIN Sleep commands can be sent to the LIN bus before MCU sleep as requirements ."
+    },
+    {
+      "type": "paragraph",
+      "text": "The Zeekr project adopts the same bus topology architecture and BaseTech test cases as the Geely ECARX DHU project, so it is also necessary to pay attention to the issue of sending LIN Sleep commands."
+    },
+    {
+      "type": "paragraph",
+      "text": "Reference submission https://rbcm-gerrit.de.bosch.com/c/projects/gwm/v35/autosar/autosar/bosch/+/598239"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-4-19_14-42-15.png",
+      "download_link": "/download/attachments/2960167379/image-2023-4-19_14-42-15.png?version=1&modificationDate=1681886535000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-19_14-41-11.png",
+      "download_link": "/download/attachments/2960167379/image-2023-4-19_14-41-11.png?version=1&modificationDate=1681886471000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-19_14-40-38.png",
+      "download_link": "/download/attachments/2960167379/image-2023-4-19_14-40-38.png?version=1&modificationDate=1681886439000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-4-19_14-39-29.png",
+      "download_link": "/download/attachments/2960167379/image-2023-4-19_14-39-29.png?version=1&modificationDate=1681886370000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

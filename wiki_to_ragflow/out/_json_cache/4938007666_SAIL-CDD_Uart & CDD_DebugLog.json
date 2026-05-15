@@ -1,0 +1,136 @@
+{
+  "page_id": "4938007666",
+  "title": "SAIL-CDD_Uart & CDD_DebugLog",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/4938007666/SAIL-CDD_Uart+CDD_DebugLog",
+  "last_modified": "2024-10-30T04:04:24.000+01:00",
+  "last_modified_by": "WU Mingen (XC-CP/ESW2-CN)",
+  "parent_id": "4884496546",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "1. Functional description"
+    },
+    {
+      "type": "paragraph",
+      "text": "Universal asynchronous receiver/transmitter (UART) communication is normally used to transmit and receive serial data such as test logs or boot messages . Two UART ports are available: a Debug UART port and a VIP UART port. The UART driver gets an interrupt for a UART read/write request from the debug/VIP port. As part of the ISR processing, the UART driver calls a configured callback function for the respective UART port. Each module then takes the necessary action on received messages. The debug UART port is used to initiate test commands from a user system and collect the debug logs against that command. The VIP SoC uses VIP debug UART to get the health pings and bootup messages from the SAIL SoC."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1.1. Debug Uart:"
+    },
+    {
+      "type": "paragraph",
+      "text": "the software design block diagram as below:"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL-CDD_Uart%20&%20CDD_DebugLog/image-2024-10-30_10-18-7.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL-CDD_Uart & CDD_DebugLog/image-2024-10-30_10-18-7.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Debug_Port : 指的上位机或者外部调试板用来和SAIL SoC做交互的端口"
+    },
+    {
+      "type": "paragraph",
+      "text": "Debug_Port : the port used by the host or an external debugging board to interact with the SAIL SoC."
+    },
+    {
+      "type": "paragraph",
+      "text": "Test: 指的是SAIL内部如CAN，SPI和IPCC等内部模块的测试子模块，用来做测试触发或修改模块配置等需要实现的测试回调用例接口的测试模块"
+    },
+    {
+      "type": "paragraph",
+      "text": "Test : the internal testing submodules within SAIL, such as CAN, SPI, and IPCC modules, which are used for triggering tests or modifying module configurations. These modules implement test callback interface use cases."
+    },
+    {
+      "type": "paragraph",
+      "text": "TestFramework: 指的是高通提供的建议测试框架，DebugLOG_Module指的是高通提供的CDD_DebugLog模块"
+    },
+    {
+      "type": "paragraph",
+      "text": "TestFramework : the recommended testing framework provided by Qualcomm. DebugLOG_Module : the CDD_DebugLog module provided by Qualcomm."
+    },
+    {
+      "type": "paragraph",
+      "text": "Uart_Driver指的高通提供的CDD_Uart模块"
+    },
+    {
+      "type": "paragraph",
+      "text": "Uart_Driver :  the CDD_Uart module provided by Qualcomm."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1.2. Uart Testframework and log"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1.2.1. Add test usecase"
+    },
+    {
+      "type": "paragraph",
+      "text": "基于高通提供的测试框架，可以根据自身模块需求做相应的测试用例，例如需增加一个SPI同步发送测试用例"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "在代码工程中找到CDD_TestFramework.c, 搜索APPL_Shell_start函数，拉到函数结尾处新增如下红色框内代码，外部命令为spisynctest, 调用测试函数 spisynctest() 如在TestApp.c定义，在CDD_TestFramework.c添加头文件和依赖，如已有添加请忽略，",
+        "在代码工程中找到CDD_TestFramework.c, 搜索testframewrokhelpdoc函数，新增如下代码行，提示命令，即可在上位机moba或putty中输入help指令提示记不住的指令",
+        "完成spisynctest函数的定义即可。",
+        "In the code project, locate CDD_TestFramework.c and search for the function APPL_Shell_start. Scroll to the end of this function and add the code shown within the red box below. This will create an external command, spisynctest, which will call the test function spisynctest(). Define this function in TestApp.c. In CDD_TestFramework.c, add any necessary headers and dependencies; if they already exist, this step can be skipped.",
+        "in CDD_TestFramework.c, locate the function testframeworkhelpdoc and add a line to display a command prompt. This will enable a help prompt to list available commands when typing help in terminal interfaces such as moba or putty.",
+        "complete the definition of the spisynctest function."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL-CDD_Uart%20&%20CDD_DebugLog/image-2024-10-30_10-44-41.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL-CDD_Uart & CDD_DebugLog/image-2024-10-30_10-44-41.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SAIL-CDD_Uart%20&%20CDD_DebugLog/image-2024-10-30_10-49-2.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SAIL-CDD_Uart & CDD_DebugLog/image-2024-10-30_10-49-2.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1.2.2. print log"
+    },
+    {
+      "type": "paragraph",
+      "text": "模块需打印log可以添加头文件 #include \"CDD_DebugLog.h\" 调用上图红色框内的接口，修改字符串即可。"
+    },
+    {
+      "type": "paragraph",
+      "text": "If the module needs to print logs, include the header file `#include \"CDD_DebugLog.h\"` and call the interface within the red box shown above. Modify the string as needed."
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-10-30_10-49-2.png",
+      "download_link": "/download/attachments/4938007666/image-2024-10-30_10-49-2.png?version=1&modificationDate=1730256543000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-30_10-44-41.png",
+      "download_link": "/download/attachments/4938007666/image-2024-10-30_10-44-41.png?version=1&modificationDate=1730256281000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-10-30_10-18-7.png",
+      "download_link": "/download/attachments/4938007666/image-2024-10-30_10-18-7.png?version=1&modificationDate=1730254687000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

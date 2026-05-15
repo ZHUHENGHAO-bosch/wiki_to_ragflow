@@ -1,0 +1,111 @@
+{
+  "page_id": "2377378586",
+  "title": "Aurix - Standby Power domain",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/2377378586/Aurix+-+Standby+Power+domain",
+  "last_modified": "2023-05-09T07:26:29.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2377378063",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "1. Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "The standby domain constitutes the standby RAM, the 8-bit standby controller, the Power Management unit, the Pin Wake-up unit, the Wake-up timer, the VEXT supply monitor, and basic infrastructure components"
+    },
+    {
+      "type": "paragraph",
+      "text": "The standby domain is supplied by the EVRPR pre-regulator (VDDPD voltage) and is by default clocked by the 70 kHz internal low-power clock source in standby mode"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "2. Topologies"
+    },
+    {
+      "type": "paragraph",
+      "text": "There are two possible topologies supported for standby operation depending on the supply connection"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Standby mode with both VEXT and VEVRSB supplied via common supply rail",
+        "Standby mode with only VEVRSB domain supplied and VEXT domain switched off"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.1. Standby mode with both VEXT and VEVRSB supplied"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Aurix%20-%20Standby%20Power%20domain/image2022-8-5_14-47-10.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Aurix - Standby Power domain/image2022-8-5_14-47-10.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2.2. Standby mode with only VEVRSB domain supplied"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Aurix%20-%20Standby%20Power%20domain/image2022-8-5_14-48-14.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Aurix - Standby Power domain/image2022-8-5_14-48-14.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "3. Topology for our Projects"
+    },
+    {
+      "type": "paragraph",
+      "text": "We use the topology 2 where we switch OFF VEXT Supply to achieve sleep current consumption"
+    },
+    {
+      "type": "paragraph",
+      "text": "In SCR code, we need to Turn OFF the external supply by making SYS_U33S_SCC_PWR_ON_3V3"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Aurix%20-%20Standby%20Power%20domain/image2022-8-5_15-1-21.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Aurix - Standby Power domain/image2022-8-5_15-1-21.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Aurix%20-%20Standby%20Power%20domain/image-2023-5-9_13-26-24.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Aurix - Standby Power domain/image-2023-5-9_13-26-24.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-5-9_13-26-24.png",
+      "download_link": "/download/attachments/2377378586/image-2023-5-9_13-26-24.png?version=1&modificationDate=1683609984000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-5_15-1-21.png",
+      "download_link": "/download/attachments/2377378586/image2022-8-5_15-1-21.png?version=1&modificationDate=1659691882000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-5_14-48-14.png",
+      "download_link": "/download/attachments/2377378586/image2022-8-5_14-48-14.png?version=1&modificationDate=1659691095000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-5_14-47-10.png",
+      "download_link": "/download/attachments/2377378586/image2022-8-5_14-47-10.png?version=1&modificationDate=1659691031000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

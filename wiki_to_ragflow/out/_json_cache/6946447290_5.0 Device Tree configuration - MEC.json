@@ -1,0 +1,22 @@
+{
+  "page_id": "6946447290",
+  "title": "5.0 Device Tree configuration - MEC",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/6946447290/5.0+Device+Tree+configuration+-+MEC",
+  "last_modified": "2026-03-18T04:18:29.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6930250961",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to understand the device configuration"
+    }
+  ],
+  "attachments": []
+}

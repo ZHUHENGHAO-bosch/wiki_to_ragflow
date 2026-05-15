@@ -1,0 +1,118 @@
+{
+  "page_id": "4593454612",
+  "title": "1.0 VCU Plus SUM_SUSD",
+  "version": 8,
+  "url": "/spaces/CARSFW/pages/4593454612/1.0+VCU+Plus+SUM_SUSD",
+  "last_modified": "2024-08-12T07:33:19.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4593454448",
+  "children": [
+    "4593454945",
+    "4593456128",
+    "4593456161",
+    "4593456764"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "SUSD - Startup and Shutdown consists for 5 atomic components"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "ASM - Application State Manager",
+        "ASS - Application SWC Start/Shutdown",
+        "BVM - Battery Voltage Monitor",
+        "VP - Vehicle Power Mode",
+        "RCP - Run Crank"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "SUM SUSD is responsible of managing start and shutdown application layer, which includes all the SUMs and other SW-Cs. SUSD also notifies BSW layer to transition to Shutdown state based on notification from project specific SW-Cs"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Applicability of SUM_SUSD"
+    },
+    {
+      "type": "paragraph",
+      "text": "We can see in VCU we will use only ASM, ASS and BVM"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20VCU%20Plus%20SUM_SUSD/image-2024-8-12_13-31-59.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 VCU Plus SUM_SUSD/image-2024-8-12_13-31-59.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "SUSD Context View"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/1.0%20VCU%20Plus%20SUM_SUSD/image-2024-8-12_11-25-54.png?api=v2",
+      "alt": "",
+      "local_path": "_images/1.0 VCU Plus SUM_SUSD/image-2024-8-12_11-25-54.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Summary of SUSD Sub module Functionalities"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Submodule",
+        "Functionality"
+      ],
+      "rows": [
+        [
+          "Application State Manager",
+          "Coordinate the ECUs operational state with BswM (which controls EcuM) Monitor the Power Mode Client Perform the logic to determine when to request a change to the ECU's operational state to BswM (from Run to Sleep, Reset, or Off) Request BswM to shut down (to the shutdown target) when all SW-Cs have enabled shutdown Request BswM to remain in \"run\" when at least one SW-C has not enabled shutdown"
+        ],
+        [
+          "Battery Voltage Monitor",
+          "Process Battery Voltage Input Monitor Battery Voltage State of Charge serial data signal Provide Notification to SW-C of standardized voltage ranges: Normal, Overvoltage, Undervoltage Provide an actual battery voltage value"
+        ],
+        [
+          "Application Start / Shutdown",
+          "Maintaining list of active ECU initiated system wakeups Mapping of SW-Cs to ECU wakeups Polling of EcuM for wakeup request on behalf of SW-C Coordinator of all SW-C startup notifications Coordinator of all SW-C shutdown notifications Disable / Enable future Wakeups based on the ECU's needs (based on vehicle modes or functional needs) Fault handling mechanism for wakeups, and disable future wakeup source for subsequent cycles Provide Notification to other SW-C to Disable DTCs for <DisableDTCBatteryWakeupPeriod> following wakeup from Battery event"
+        ],
+        [
+          "Run Crank Functionality",
+          "Monitor Run Crank input from local I/O RunCrank Status Calculation based on I/O and Power Moding Inputs Fault Handling with regards to Run Crank detection"
+        ],
+        [
+          "Power Mode Client",
+          "Processing of Signals from Power Mode Master and Backup Power Mode Master Handles Error notification for fault handling of Power Mode Signal Usage PropulsionStatus Notification Calculation of ECU specific power moding state based on internal and external inputs Support Vehicle Power Moded Notification for Application, DIDs etc"
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-12_13-31-59.png",
+      "download_link": "/download/attachments/4593454612/image-2024-8-12_13-31-59.png?version=1&modificationDate=1723440719000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-12_11-25-54.png",
+      "download_link": "/download/attachments/4593454612/image-2024-8-12_11-25-54.png?version=1&modificationDate=1723433154000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-12_10-56-56.png",
+      "download_link": "/download/attachments/4593454612/image-2024-8-12_10-56-56.png?version=1&modificationDate=1723431416000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

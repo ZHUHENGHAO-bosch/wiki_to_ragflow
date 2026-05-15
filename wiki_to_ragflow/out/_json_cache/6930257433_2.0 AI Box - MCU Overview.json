@@ -1,0 +1,73 @@
+{
+  "page_id": "6930257433",
+  "title": "2.0 AI Box - MCU Overview",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/6930257433/2.0+AI+Box+-+MCU+Overview",
+  "last_modified": "2026-03-13T11:16:29.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6930250961",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to analyze the MCU chip which is MEC172x from Microchip"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Features"
+    },
+    {
+      "type": "paragraph",
+      "text": "MEC172x = Laptop / PC Embedded Controller"
+    },
+    {
+      "type": "paragraph",
+      "text": "It sits between the CPU and hardware devices and manages power, keyboard, thermal, and system control tasks ."
+    },
+    {
+      "type": "paragraph",
+      "text": "Features of MEC172x"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "ARM Cortex-M4F Embedded Processor",
+        "96 MHz Internal PLL",
+        "Package",
+        "Boot ROM Secure Boot Loader",
+        "Memory",
+        "Peripherals"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Block diagram"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/2.0%20AI%20Box%20-%20MCU%20Overview/image-2026-3-13_18-14-3.png?api=v2",
+      "alt": "",
+      "local_path": "_images/2.0 AI Box - MCU Overview/image-2026-3-13_18-14-3.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2026-3-13_18-14-3.png",
+      "download_link": "/download/attachments/6930257433/image-2026-3-13_18-14-3.png?version=1&modificationDate=1773396843000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2026-3-13_18-13-36.png",
+      "download_link": "/download/attachments/6930257433/image-2026-3-13_18-13-36.png?version=1&modificationDate=1773396816000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

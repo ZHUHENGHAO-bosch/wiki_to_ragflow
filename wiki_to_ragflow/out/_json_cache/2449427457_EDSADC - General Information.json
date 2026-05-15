@@ -1,0 +1,44 @@
+{
+  "page_id": "2449427457",
+  "title": "EDSADC - General Information",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2449427457/EDSADC+-+General+Information",
+  "last_modified": "2022-10-06T08:30:53.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2425248241",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "The Enhanced Delta-Sigma Analog-to-Digital Converter module (EDSADC) provides a series of analog input channels connected to on-chip modulators using the Delta/Sigma (DS) conversion principle"
+    },
+    {
+      "type": "paragraph",
+      "text": "Digital input channels accept data streams from external modulators. The on-chip demodulator channels convert these inputs to discrete digital values"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/EDSADC%20-%20General%20Information/image2022-10-6_11-59-29.png?api=v2",
+      "alt": "",
+      "local_path": "_images/EDSADC - General Information/image2022-10-6_11-59-29.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/EDSADC%20-%20General%20Information/image2022-10-6_12-0-41.png?api=v2",
+      "alt": "",
+      "local_path": "_images/EDSADC - General Information/image2022-10-6_12-0-41.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-10-6_12-0-41.png",
+      "download_link": "/download/attachments/2449427457/image2022-10-6_12-0-41.png?version=1&modificationDate=1665037842000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-10-6_11-59-29.png",
+      "download_link": "/download/attachments/2449427457/image2022-10-6_11-59-29.png?version=1&modificationDate=1665037769000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

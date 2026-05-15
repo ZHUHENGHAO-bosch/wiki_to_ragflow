@@ -1,0 +1,36 @@
+# Functional Safety Difference TC3xx and TC4x
+
+> Source: /spaces/CARSFW/pages/6277467483/Functional+Safety+Difference+TC3xx+and+TC4x
+> Last modified: 2026-01-08T09:20:17.000+01:00
+
+---
+
+## Overview
+
+This page is analyze the overall Safety difference between TC3xx and TC4x
+
+Overall difference can be found here - Difference between TC3XX and TC4XX - Details
+
+#### Analysis on each functional block
+
+| Functional Block | TC3xx | TC4xx | Difference |
+| --- | --- | --- | --- |
+| CPU | Supports Safe Computation ASIL D and ASIL B cases based on lock step SM[HW]:CPU:TRICORE_LOCKSTEP_SCC SM[HW]:CPU:CONTROL_REDUNDANCY SM[HW]:CPU:CONTROL_REDUNDANCY_SCC SM[HW]:CPU:SWAP_CONFIGURATION_PROTECTION If we use FuSa in non-LS memories we need below ESM ESM[SW]:CPU:DATA_INTEGRITY | In TC4xx all CPUs are provided with Lockstep so it can directly support - Safe software execution platform [ASIL D] ![warning](https://inside-docupedia.bosch.com/confluence/plugins/servlet/twitterEmojiRedirector?id=26a0) Except TC49x, where only 2 CPUs support lockstep 1.0 TC4x - Core and Memory details - XC-CT China - Docupedia HW SMs: SM[HW]:CPU:CFI_LOCKSTEP SM[HW]:CPU:CFI_LOCKSTEP_SCC SM[HW]:CPU:CFI_PFRWB_ADDRESS_MONITOR SM[HW]:CPU:CFI_WAIT_STATE_PROTECTION SM[HW]:CPU:SWAP_MAP_SELECTION SM[HW]:CPU:TRICORE_LOCKSTEP SM[HW]:CPU:TRICORE_LOCKSTEP_SCC | TC4x all CPUs are with lockstep thus supporting ASIL-D in all cores |
+| ADC | General: In TC3XX we have EVADC and ESADC HW SMs: Only generic SMs for ESADC and EVADC. No special HW safety mechanisms for these modules External SW SMs: EVADC ESM[SW]:EVADC:PLAUSIBILITY ESM[SW]:EVADC:VAREF_PLAUSIBILITY ESM[SW]:EVADC:DIVERSE_REDUNDANCY ESM[SW]:EVADC:CONFIG_CHECK EDSADC : ESM[SW]:EDSADC:PLAUSIBILITY ESM[SW]:EDSADC:VAREF_PLAUSIBILITY ESM[SW]:EDSADC:DIVERSE_REDUNDANCY | General: In TC4XX we have ESADC, TMADC and FCC HW SMs: SM[HW]:ADC:RESULT_PLAUSIBILITY: External SW SMs ![warning](https://inside-docupedia.bosch.com/confluence/plugins/servlet/twitterEmojiRedirector?id=26a0) Based on the use case we can implement the required ESM.. Not to implement all ESM mentioned below ESM[SW]:ADC:MODULE_REDUNDANCY ESM[SW]:ADC:RESULT_PLAUSIBILITY ESM[SW]:ADC:VAREF_PLAUSIBILITY ESM[SW]:ADC:BROKEN_WIRE_DETECTION ESM[SW]:ADC:ISR_MONITOR ESM[SW]:ADC:CHANNEL_CORE_SELF_DIAGNOSISl | Key difference in TC4xx they have introduced one HW SM which is SM[HW]:ADC:RESULT_PLAUSIBILITY and also some External Software SMs like ESM[SW]:ADC:BROKEN_WIRE_DETECTION and ESM[SW]:ADC:CHANNEL_CORE_SELF_DIAGNOSIS Also, more use cases were introduced like Diverse redundant ADC channels Homogenous redundant ADC channels Single input redundant ADC channels Single input single ADC channel These use cases and the respective ESMs will be analyzed in thie page 1.0 TC4x FuSa - ADC - Safety analysis - XC-CT China - Docupedia |
+| RAM (Local access) | MTU is used (Memory Test Unit) SM[HW]:CPU.DSPR:ERROR_CORRECTION SM[HW]:CPU.DSPR:ERROR_MANAGEMENT SM[HW]:CPU.DSPR:ADDRESS SM[HW]:CPU.DSPR:CONTROL SM[HW]:CPU.DSPR:SM_CONTROL SM[HW]:CPU.DSPR:REG_MONITOR SM[HW]:CPU.DSPR:REG_MONITOR_TEST | VMT is used (Volatile Memory test) SM[HW]:FB:ADDRESS SM[HW]:FB:CONTROL SM[HW]:FB:ERROR_CORRECTION SM[HW]:FB:ECC_MONITOR SM[HW]:FB:ERROR_DETECTION SM[HW]:FB:MBIST SM[HW]:FB:SM_CONTROL SM[HW]:FB:RAM_REG_MONITOR |  |
+| RAM (shared access LMU) | Special SMs for LMU SM[HW]:LMU:READ_WRITE_ECC SM[HW]:LMU:CONTROL_REDUNDANCY_SCC SM[HW]:LMU:CONTROL_REDUNDANCY | Only few variants has LMU 1.0 TC4x - variants and peripherals details - XC-CT China - Docupedia Below SMs are same as DSPR SM[HW]:LMU:ERROR_CORRECTION SM[HW]:LMU:ECC_MONITOR SM[HW]:LMU:ADDRESS SM[HW]:LMU:MBIST SM[HW]:LMU:CONTROL SM[HW]:LMU:SM_CONTROL SM[HW]:LMU:RAM_REG_MONITOR Special SMs for LMU vis SRI SM[HW]:LMU:CONTROL_REDUNDANCY SM[HW]:LMU:CONTROL_REDUNDANCY_SCC SM[HW]:LMU:READ_WRITE_ECC SM[HW]:LMU:TRANSACTION_INTEGRITY | No difference |
+| RAM (shared access non-LS CPU) | ESM[SW]:CPU:DATA_INTEGRITY | ESM[SW]:CPU:DATA_INTEGRITY | No difference Better not to use Non Lockstep CPU memory for Safety data |
+| PFLASH | SM[HW]:NVM.PFLASH:ERROR_MANAGEMENT SM[HW]:NVM.PFLASH:ERROR_CORRECTION ESM[SW]:NVM.PFLASH:WL_FAIL_DETECT ESM[SW]:NVM.PFLASH:INTEGRITY_CHECK ESM[SW]:NVM.PFLASH:UPDATE_CHECK SM[HW]:NVM.PFLASH:ECC_ONLINE_CHECKER SM[HW]:NVM.PFLASH:EDC_COMPARATOR SM[HW]:NVM.PFLASH:CONTROL_REDUNDANCY SM[HW]:NVM.PFLASH:CONTROL_REDUNDANCY_SCC SM[HW]:NVM.PFLASH:INCORRECT_OPERATION_PROTECTION SM[HW]:NVM.PFLASH:WAIT_STATE_PROTECTION SM[HW]:NVM:REDINVFF SM[HW]:NVM.PFLASH:FLASHCON_MONITOR | TC4x some variants use NVMR - TC4X - NVMR - XC-CT China - Docupedia and some uss PFLASH as TC3xx check below picture ESM[SW]:NVMR:CONFIG_READBACK ESM[SW]:NVMR:PNVM_INTEGRITY_CHECK ESM[SW]:NVMR:EEPROM_DRIVER_D ESM[SW]:NVMR:UCB_READBACK SM[HW]:NVMR:MISR SM[HW]:NVMR:PNVM_ERROR_MANAGEMENT SM[HW]:NVMR:PNVM_ECC_ONLINE_MONITOR SM[HW]:NVMR:PNVM_WAIT_STATE_PROTECTION SM[HW]:NVMR:REG_MONITOR ![](../../../../_images/Functional%20Safety%20Difference%20TC3xx%20and%20TC4x/image-2025-11-21_14-20-8.png) |  |
+| LBIST | LBIST was simple and have no scenarios and domains | SM[HW]:MCU:LBIST Two scenarios introduced Key-on LBIST : Targeting only stuck-at faults of on chip functional safety logic within each hierarchical domain Key-off LBIST : Targeting stuck-at (permanent) faults of all logic within each hierarchical domain Also they introduced domain structure - 8 domain and we can choose which domain to execute LBIST Domain No Domain Name 0 SRI 1 PMS 2 CPU 3 SRI2 4 Conv 5 SRI1 6 unused 7 unused | Domain No | Domain Name | 0 | SRI | 1 | PMS | 2 | CPU | 3 | SRI2 | 4 | Conv | 5 | SRI1 | 6 | unused | 7 | unused |  |
+| Domain No | Domain Name |
+| 0 | SRI |
+| 1 | PMS |
+| 2 | CPU |
+| 3 | SRI2 |
+| 4 | Conv |
+| 5 | SRI1 |
+| 6 | unused |
+| 7 | unused |
+| WDG |  | SM[HW]:WTU:TEMPORAL_MONITORING | Seems WDG is same as TC3xx → no big difference |
+| Interrupts | SM[HW]:IR:FFI_CONTROL SM[HW]:IR:ISP_MONITOR SM[HW]:IR:FPI_WRITE_MONITOR SM[HW]:IR:REG_MONITOR SM[HW]:IR:CFG_MONITOR ESM[SW]:IR:ISR_MONITOR | SM[HW]:IR:HW_REDUNDANCY SM[HW]:IR:HW_REDUNDANCY_SCC SM[HW]:IR:ICU_MONITOR ESM[SW]:IR:FFI_AVOIDANCE ESM[SW]:IR:CONFIG_READBACK | Many change in HW safety mechanism for interrupt ISR monitor now added to all functional blocks that comes in safety path in TC4x. In TC3x, it was generic. ESM[SW]:IR:FFI_AVOIDANCE a new ESM introduced in TC4x |
+|  |  |  |  |

@@ -1,0 +1,49 @@
+{
+  "page_id": "2825339105",
+  "title": "SMU State Machine",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2825339105/SMU+State+Machine",
+  "last_modified": "2023-03-10T07:10:12.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2379247306",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Below diagram shows the state transition of the SMU"
+    },
+    {
+      "type": "paragraph",
+      "text": "AuSM_Init → Will Call"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "AuSM_SMU_ReleaseFSP which will move SMU state to RUN - Need to discuss",
+        "AuSM_SMU_Start"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "AuSM_SMU_ActivateFSP - To activate FSP"
+    },
+    {
+      "type": "paragraph",
+      "text": "AuSM_SMU_ReleaseFSP - To release the FSP"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SMU%20State%20Machine/image2023-3-10_12-33-10.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SMU State Machine/image2023-3-10_12-33-10.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2023-3-10_12-33-10.png",
+      "download_link": "/download/attachments/2825339105/image2023-3-10_12-33-10.png?version=1&modificationDate=1678422790000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

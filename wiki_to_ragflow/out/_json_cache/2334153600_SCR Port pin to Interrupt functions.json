@@ -1,0 +1,180 @@
+{
+  "page_id": "2334153600",
+  "title": "SCR Port pin to Interrupt functions",
+  "version": 9,
+  "url": "/spaces/CARSFW/pages/2334153600/SCR+Port+pin+to+Interrupt+functions",
+  "last_modified": "2023-03-13T06:28:46.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2334147407",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "The 16 external interrupts, EXINT[15:0], are driven into the SCR from the ports"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below SCR pins are multiplexed to an External interrupt [15:0] Pin Functions and we can select the pin through MODPISEL register"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "P00.0 to P00.3",
+        "P01.0 to P01.3"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Other pins have exclusive External Interrupt Input pin functions"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "P00.4 to P00.7",
+        "P01.4 to P01.4"
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "SCR Pin",
+          "Tricore Pin",
+          "Interrupt",
+          "XINTR",
+          "Comments"
+        ],
+        [
+          "P00.0 and P01.1",
+          "P33.0 and P33.8",
+          "External Interrupt Input 3",
+          "XINTR9",
+          "So only one of P33.0 or P34.1 can be used as wakeup source"
+        ],
+        [
+          "P00.2",
+          "P33.2",
+          "External Interrupt Input 2",
+          "XINTR8",
+          ""
+        ],
+        [
+          "P00.3 and P01.3",
+          "P33.3 and P33.11",
+          "External Interrupt Input 6",
+          "XINTR9",
+          "So only one of P33.3 Or P33.11 can be used as a wakeup Source"
+        ],
+        [
+          "P00.4",
+          "P33.4",
+          "External Interrupt Input 7",
+          "XINTR10",
+          ""
+        ],
+        [
+          "P00.5",
+          "P33.5",
+          "External Interrupt Input 8",
+          "XINTR10",
+          ""
+        ],
+        [
+          "P00.6",
+          "P33.6",
+          "External Interrupt Input 9",
+          "XINTR10",
+          ""
+        ],
+        [
+          "P00.7",
+          "P33.7",
+          "External Interrupt Input 10",
+          "XINTR11",
+          ""
+        ],
+        [
+          "P01.1",
+          "P33.9",
+          "External Interrupt Input 0",
+          "XINTR0",
+          ""
+        ],
+        [
+          "P01.2",
+          "P33.10",
+          "External Interrupt Input 5",
+          "XINTR9",
+          ""
+        ],
+        [
+          "P01.4",
+          "P33.12",
+          "External Interrupt Input 11",
+          "XINTR11",
+          ""
+        ],
+        [
+          "P01.5",
+          "P33.13",
+          "External Interrupt Input 12",
+          "XINTR11",
+          ""
+        ],
+        [
+          "P01.6",
+          "P33.14",
+          "External Interrupt Input 13",
+          "XINTR12",
+          ""
+        ],
+        [
+          "P01.7",
+          "P33.15",
+          "External Interrupt Input 14",
+          "XINTR12",
+          ""
+        ],
+        [
+          "",
+          "P14.1",
+          "External Interrupt Input 15",
+          "INTR12",
+          "The pad control of this pin is in the 32 bit port module (Via PMS)"
+        ]
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SCR%20Port%20pin%20to%20Interrupt%20functions/image2022-6-28_7-46-23.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SCR Port pin to Interrupt functions/image2022-6-28_7-46-23.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SCR%20Port%20pin%20to%20Interrupt%20functions/image2022-6-27_19-13-47.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SCR Port pin to Interrupt functions/image2022-6-27_19-13-47.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-6-28_7-46-23.png",
+      "download_link": "/download/attachments/2334153600/image2022-6-28_7-46-23.png?version=1&modificationDate=1656382584000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_19-13-47.png",
+      "download_link": "/download/attachments/2334153600/image2022-6-27_19-13-47.png?version=1&modificationDate=1656337427000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_19-13-5.png",
+      "download_link": "/download/attachments/2334153600/image2022-6-27_19-13-5.png?version=1&modificationDate=1656337385000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "page_id": "4925594159",
+  "title": "3.0 SAIL RTA-OS Timer settings",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/4925594159/3.0+SAIL+RTA-OS+Timer+settings",
+  "last_modified": "2024-10-28T06:10:43.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4912206702",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to summarize how to use timer for OS."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Arm generic timer"
+    },
+    {
+      "type": "paragraph",
+      "text": "Arm architecture provides the following timers"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Timer",
+        "When is the timer present?"
+      ],
+      "rows": [
+        [
+          "EL1 physical timer",
+          "Always"
+        ],
+        [
+          "EL1 virtual timer",
+          "Always"
+        ],
+        [
+          "Non-secure EL2 physical timer",
+          "Implements EL2 and Non-secure state"
+        ],
+        [
+          "Non-secure EL2 virtual timer",
+          "Implements FEAT_VHE and Non-secure state"
+        ],
+        [
+          "Secure EL2 physical timer",
+          "Implements FEAT_SEL2"
+        ],
+        [
+          "Secure EL2 virtual timer",
+          "Implements FEAT_SEL2"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "We are going to use EL1 physical timer (Generic timer) for the RTA-OS functionality"
+    },
+    {
+      "type": "paragraph",
+      "text": "The Cortex RR52 processor does not include the system counter. This resides in the SoC. The system counter value is distributed to the Cortex®-R52 processor with a synchronous binary encoded 64-bit bus, CNTVALUEB[63:0]."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.0%20SAIL%20RTA-OS%20Timer%20settings/SAIL_Os_Timer_Architecture.jpg?api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 SAIL RTA-OS Timer settings/SAIL_Os_Timer_Architecture.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Configuring the timer for OS interrupt"
+    },
+    {
+      "type": "paragraph",
+      "text": "We configured OS counter as Software in RTA-OS tool. Which means we need to call Os_IncrementCounter_SystemTimer_Cx (X = 0, 1 and 2) for thh respective Core timer ISR"
+    },
+    {
+      "type": "paragraph",
+      "text": "And one tick is 1ms, so we the timer to generate an interrupt for 1ms"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/3.0%20SAIL%20RTA-OS%20Timer%20settings/image-2024-10-28_10-53-26.png?api=v2",
+      "alt": "",
+      "local_path": "_images/3.0 SAIL RTA-OS Timer settings/image-2024-10-28_10-53-26.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "In the StartupHook, we will configure the timer compare value CNTP_CVAL by reading the current counter value CNTPCT and adding the value equal to 1ms"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Read the current timer value (CNTPCT)",
+        "Add an 1ms to current counter value",
+        "Now configure this value in CNTP_CVAL",
+        "When timer reaches the CNTP_CVAL, we will get an ISR in respective Core."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "System counter for 1ms = 18750, we got this value from ETAS code. We need to find which document from Qualcomm gives this value."
+    },
+    {
+      "type": "paragraph",
+      "text": "Whenever the GenericCounter_ISR occurs we need to reset the CNTP_CVAL as given in above steps."
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-10-28_10-53-26.png",
+      "download_link": "/download/attachments/4925594159/image-2024-10-28_10-53-26.png?version=1&modificationDate=1730084007000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SAIL_Os_Timer_Architecture.jpg",
+      "download_link": "/download/attachments/4925594159/SAIL_Os_Timer_Architecture.jpg?version=1&modificationDate=1730082857000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

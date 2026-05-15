@@ -1,0 +1,151 @@
+{
+  "page_id": "4938201931",
+  "title": "DTS Syntax",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/4938201931/DTS+Syntax",
+  "last_modified": "2024-10-31T09:31:54.000+01:00",
+  "last_modified_by": "LIU Dezhi (XC-CP/ESW2-CN)",
+  "parent_id": "4925610374",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Device Tree Source (DTS) syntax is used to describe hardware layouts for systems, particularly in embedded Linux environments. DTS files are written in a hierarchical, tree-like structure that represents the components and properties of a device. They are compiled into Device Tree Blobs (DTBs), which the Linux kernel can then read to understand hardware configurations without needing specific drivers hard-coded."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Key Elements of DTS Syntax"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Nodes"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Represent devices or components and are organized in a nested tree structure.",
+        "Each node begins with a name (e.g., `cpu@0`, `memory`, `gpio`) and is defined with curly braces `{}`",
+        "Nodes often have labels that can be used for reference, prefixed by a backslash `&` in other parts of the DTS file."
+      ]
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "   cpu@0 {         // Node name with unit address\n       compatible = \"arm,cortex-a7\";  // Property\n       reg = <0x0>;\n   };"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Properties"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Define attributes of nodes, given as key-value pairs (e.g., `compatible = \"arm,cortex-a7\";`).",
+        "Properties can be single values, lists, or even empty (indicating a boolean true)."
+      ]
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "   memory {\n       device_type = \"memory\";\n       reg = <0x80000000 0x40000000>;  // Memory address and size\n   };"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Hierarchy and Nesting"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Nodes can be nested within other nodes, reflecting the hardware layout hierarchy.",
+        "For example, a CPU node might contain nodes for specific registers or peripherals within that CPU."
+      ]
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "  soc {                     // Top-level node\n       uart@1000 {           // Nested UART node\n           compatible = \"ns16550a\";\n           reg = <0x1000 0x100>;\n       };\n   };"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "References and Labels"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Labels can be assigned to nodes or properties for easy reference.",
+        "Labels are followed by a colon, e.g., `uart: uart@1000`."
+      ]
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "&uart {                   // Referencing the uart label\n       status = \"okay\";\n   };"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Includes and Overlays"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "`#include` statements are used to import additional files or headers.",
+        "Overlays can modify base device trees by adding, modifying, or deleting nodes and properties."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Example DTS File Structure"
+    },
+    {
+      "type": "paragraph",
+      "text": "Here's a simple DTS snippet that shows these elements in action:"
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "/dts-v1/;\n/ {\n    compatible = \"my_board\";\n\n    memory {\n        device_type = \"memory\";\n        reg = <0x80000000 0x40000000>;  // Start address and size\n    };\n\n    soc {\n        compatible = \"simple-bus\";\n        #address-cells = <1>;\n        #size-cells = <1>;\n\n        uart@1000 {\n            compatible = \"ns16550a\";\n            reg = <0x1000 0x100>;\n            interrupt-parent = <&intc>;\n            interrupts = <5>;\n        };\n\n        gpio@2000 {\n            compatible = \"my_gpio\";\n            reg = <0x2000 0x100>;\n        };\n    };\n};"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Common DTS Properties"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "compatible : Identifies the type of device.",
+        "reg : Specifies the address and size of a device in the memory map.",
+        "status : Specifies if a device is active ( okay ) or disabled ( disabled ).",
+        "interrupts : Defines interrupt numbers for devices requiring interrupts."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Compilation to DTB"
+    },
+    {
+      "type": "paragraph",
+      "text": "The DTS files are compiled to a binary form, Device Tree Blob (DTB), using the dtc.exe(Device Tree Compiler) tool:"
+    },
+    {
+      "type": "code_block",
+      "language": "",
+      "content": "dtc -I dts -O dtb -o my_device_tree.dtb my_device_tree.dts"
+    }
+  ],
+  "attachments": []
+}

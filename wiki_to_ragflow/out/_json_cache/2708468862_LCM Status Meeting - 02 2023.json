@@ -1,0 +1,318 @@
+{
+  "page_id": "2708468862",
+  "title": "LCM Status Meeting - 02 2023",
+  "version": 16,
+  "url": "/spaces/CARSFW/pages/2708468862/LCM+Status+Meeting+-+02+2023",
+  "last_modified": "2023-02-23T09:10:58.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2421032631",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date : 23 Feb 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Shanhe, Joanna, Jolin , Can"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Zeekr activity"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "LCM related log saving in Retention RAM",
+        "Diagnostic reset porting from BYD project",
+        "Code clean about IoHwAb & Dio in LCM",
+        "Discussion the root cause of debug reset issue and I2C fatalerror issue with ECT team",
+        "Multicore Startup Sync",
+        "Multi core sync shutdown and reset",
+        "LCM related memmap files generating"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "BYD activity"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Memmap for PSC and LCMC.",
+        "More handling for multicore.",
+        "STR (wait for SOC side) - Waiting for SoC",
+        "Adapt LCM EA to real implementation.",
+        "Intergrate the ECUM supervision to zeekr project.",
+        "Review LCM config in new project",
+        "Still in end of the line (   UT and Coverity and test spec  )"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Zeekr-Other"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Thermal",
+        "SoC State Monitor - FuSa"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Chery"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "LCM adaption for Chery",
+        "Test LCM use cases in Chery",
+        "Voltage",
+        "SCR is delivered - Tested with ACC"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Any changes in Zeekr shall be delivered to Chery"
+    },
+    {
+      "type": "paragraph",
+      "text": "General - Few are the project specific configuration are in PF, we need to move to project config repo. @Joanna - to come back on list"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Open points:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cyclic Reset Handling - Will be on hold till we find the Startup code responsible team",
+        "Wdg Monitoring for LCM components - Low priority",
+        "STR",
+        "SCR",
+        "HW monitoring - Very low priority",
+        "SWRS",
+        "Multicore",
+        "Aurix - Need to focus",
+        "LCM Dispatcher"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date : 09 Feb 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Shanhe, Joanna, Jolin , Can"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Zeekr activity"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Customer requirement achievement: Wakeup logic coding, Voltage management",
+        "LCM related log saving in Retention RAM",
+        "Zeekr SWRS filling in Doors",
+        "Diagnostic reset porting from BYD project",
+        "Code clean about IoHwAb&Dio in LCM",
+        "SCR pin adapter in A1 board",
+        "Discussion the root cause of debug reset issue and I2C fatalerror issue with ECT team",
+        "Multicore Startup Sync",
+        "Multi core sync shutdown and reset",
+        "LCM related memmap files generating",
+        "Comparing the A2 HW changed with A0",
+        "External WDG Testing",
+        "A2 board bring up"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "BYD activity"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "BYD Customer real car issue analysis (for now there are two issue).",
+        "Diag team function implementation.",
+        "Memmap for PSC and LCMC.",
+        "More handling for multicore.",
+        "STR (wait for SOC side) - Waiting for SoC",
+        "Adapt LCM EA to real implementation.",
+        "Intergrate the ECUM supervision to zeekr project.",
+        "Review LCM config in new project",
+        "Still in end of the line (   UT and Coverity and test spec  )"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Zeekr-Other"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Thermal",
+        "SoC State Monitor - FuSa"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Chery"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "LCM adaption for Chery",
+        "Test LCM use cases in Chery",
+        "Voltage"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Any changes in Zeekr shall be delivered to Chery"
+    },
+    {
+      "type": "paragraph",
+      "text": "General - Few are the project specific configuration are in PF, we need to move to project config repo. @Joanna - to come back on list"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Open points:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cyclic Reset Handling - Will be on hold till we find the Startup code responsible team",
+        "Wdg Monitoring for LCM components - Low priority",
+        "STR",
+        "SCR",
+        "HW monitoring - Very low priority",
+        "SWRS",
+        "Multicore",
+        "Aurix - Need to focus",
+        "LCM Dispatcher"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date : 03 Feb 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Shanhe, Joanna, John, Can"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Zeekr activity"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Customer requirement achievement: Wakeup logic coding, Voltage management",
+        "LCM related log saving in Retention RAM",
+        "Zeekr SWRS filling in Doors",
+        "Diagnostic reset porting from BYD project",
+        "Code clean about IoHwAb&Dio in LCM",
+        "SCR pin adapter in A1 board",
+        "Discussion the root cause of debug reset issue and I2C fatalerror issue with ECT team",
+        "Multicore Startup Sync",
+        "Multi core sync shutdown and reset",
+        "LCM related memmap files generating",
+        "Comparing the A2 HW changed with A0",
+        "External WDG Testing"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "BYD activity"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "BYD Customer real car issue analysis (for now there are two issue).",
+        "Diag team function implementation.",
+        "Memmap for PSC and LCMC.",
+        "More handling for multicore.",
+        "STR (wait for SOC side) - Waiting for SoC",
+        "Adapt LCM EA to real implementation.",
+        "Intergrate the ECUM supervision to zeekr project.",
+        "Review LCM config in new project",
+        "Still in end of the line (   UT and Coverity and test spec  )"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Zeekr-Other"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Thermal",
+        "SoC State Monitor - FuSa"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "General - Few are the project specific configuration are in PF, we need to move to project config repo. @Joanna - to come back on list"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Open points:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cyclic Reset Handling - Will be on hold till we find the Startup code responsible team",
+        "Wdg Monitoring for LCM components - Low priority",
+        "STR",
+        "SCR",
+        "HW monitoring - Very low prioirity",
+        "SWRS",
+        "Multicore",
+        "Aurix - Need to focus",
+        "LCM Dispatcher"
+      ]
+    }
+  ],
+  "attachments": []
+}

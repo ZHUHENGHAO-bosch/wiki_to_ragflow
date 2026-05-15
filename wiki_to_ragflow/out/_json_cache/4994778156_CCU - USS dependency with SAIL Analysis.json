@@ -1,0 +1,219 @@
+{
+  "page_id": "4994778156",
+  "title": "CCU - USS dependency with SAIL Analysis",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/4994778156/CCU+-+USS+dependency+with+SAIL+Analysis",
+  "last_modified": "2024-11-19T11:09:23.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4859844379",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to analyze the USS dependencies with SIAL domain BSW software"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Hardware connection"
+    },
+    {
+      "type": "paragraph",
+      "text": "In CCU Fusion project, USS is connected to SAIL domain like shown below"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/CCU%20-%20USS%20dependency%20with%20SAIL%20Analysis/image-2024-11-19_14-2-30.png?api=v2",
+      "alt": "",
+      "local_path": "_images/CCU - USS dependency with SAIL Analysis/image-2024-11-19_14-2-30.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "We will have two Elmos devices connected to SAIL and these two ELMOS have two channel each and each channel connects to 12 USS sensors"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "2 Elmos x 2 channels x 3 sensors = 12 USS sensors"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "SAIL connection with elmos"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Name",
+        "Description"
+      ],
+      "rows": [
+        [
+          "INTB",
+          "Interrupt from Elmos to SAIL in indicate"
+        ],
+        [
+          "",
+          ""
+        ],
+        [
+          "",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/CCU%20-%20USS%20dependency%20with%20SAIL%20Analysis/image-2024-11-19_15-29-47.png?api=v2",
+      "alt": "",
+      "local_path": "_images/CCU - USS dependency with SAIL Analysis/image-2024-11-19_15-29-47.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "The dependency of USS for SAIL is"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pin number",
+        "Description",
+        "Details",
+        "SAIL modules required for this"
+      ],
+      "rows": [
+        [
+          "SAIL_IO_55",
+          "USS_INTB-CPU_SAIL_USS_CTRL_1V8",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_56",
+          "CPU_SAIL_USS_PHTM_EN_1V8",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_56",
+          "USS_RESB-CPU_SAIL_USS_E1_CTRL_1V8",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_52",
+          "USS_DCR2B-CPU_SAIL_USS_E1_CTRL_1V8",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_53",
+          "USS_DCR1B-CPU_SAIL_USS_E2_CTRL_1V8",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_49",
+          "USS_RFC-CPU_SAIL_USS_E2_CTRL_1V8",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_59",
+          "USS_CLKREF-CPU_SAIL_USS_CTRL_1V8",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_50",
+          "USS_DCR1B-CPU_SAIL_USS_E1_CTRL_1V8",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_60",
+          "USS_DCR2B-CPU_SAIL_USS_E2_CTRL_1V8",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_",
+          "USS_RFC-CPU_SAIL_USS_E1_CTRL_1V8",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_56",
+          "USS_CSB_A-CPU_SAIL_USS_CTRL_1V8",
+          "SPI communication with Elmos",
+          ""
+        ],
+        [
+          "SAIL_IO_56",
+          "USS_CSB_B-CPU_SAIL_USS_CTRL_1V8",
+          ""
+        ],
+        [
+          "SAIL_IO_56",
+          "USS_MISO-CPU_SAIL_USS_CTRL_1V8",
+          ""
+        ],
+        [
+          "SAIL_IO_56",
+          "USS_MOSI-CPU_SAIL_USS_CTRL_1V8",
+          ""
+        ],
+        [
+          "SAIL_IO_56",
+          "USS_SCK-CPU_SAIL_USS_CTRL_1V8",
+          ""
+        ],
+        [
+          "SAIL_IO_56",
+          "USS_RESB",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_56",
+          "SDA-CPU_SAIL_USS_I2C_1V8",
+          "",
+          ""
+        ],
+        [
+          "SAIL_IO_56",
+          "SCL-CPU_SAIL_USS_I2C_1V8",
+          "",
+          ""
+        ]
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-11-19_18-4-28.png",
+      "download_link": "/download/attachments/4994778156/image-2024-11-19_18-4-28.png?version=1&modificationDate=1732010669000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-11-19_17-59-41.png",
+      "download_link": "/download/attachments/4994778156/image-2024-11-19_17-59-41.png?version=1&modificationDate=1732010381000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-11-19_15-29-47.png",
+      "download_link": "/download/attachments/4994778156/image-2024-11-19_15-29-47.png?version=1&modificationDate=1732001387000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-11-19_14-2-30.png",
+      "download_link": "/download/attachments/4994778156/image-2024-11-19_14-2-30.png?version=1&modificationDate=1731996150000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

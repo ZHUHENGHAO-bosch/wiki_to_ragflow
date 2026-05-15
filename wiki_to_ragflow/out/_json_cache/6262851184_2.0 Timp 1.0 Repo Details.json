@@ -1,0 +1,284 @@
+{
+  "page_id": "6262851184",
+  "title": "2.0 Timp 1.0 Repo Details",
+  "version": 10,
+  "url": "/spaces/CARSFW/pages/6262851184/2.0+Timp+1.0+Repo+Details",
+  "last_modified": "2025-10-15T02:44:16.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "6245224039",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to summarize the repo folder, name and repo group strategy"
+    },
+    {
+      "type": "panel",
+      "panel_type": "info",
+      "title": "Repo in Manifest sample",
+      "content": "<project groups=\"aridccubas, arfullstack\" remote=\"root\" name=\"taijiTimpPf/autosar/cubasIfxV6\" path=\"autosar/stdcore/cubasIfxv6\" revision=\"rb-taiji_timp_main_dev\"/>"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Use case to consider"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Code sharing - Restricted code - like VCU PATAC projects",
+        "AS repos and tools - Fusion with AS application",
+        "..."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Repo details"
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "Repo Short name",
+          "Repo Name",
+          "Repo Path",
+          "Groups",
+          "Restricted"
+        ],
+        [
+          "timp_autosar.xml",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "timpBswConv",
+          "taijiTimpPf/autosar/timpBswConv",
+          "autosar/timpBsw/convbase",
+          "autosar",
+          "Yes"
+        ],
+        [
+          "timpHswConv",
+          "taijiTimpPf/autosar/timpHswConv",
+          "autosar/timpHsw/convbase",
+          "autosar",
+          "Yes"
+        ],
+        [
+          "timpBswCnConv",
+          "taijiTimpPf/autosar/timpBswCnConv",
+          "autosar/timpBsw/cnConvBase",
+          "autosar",
+          "No"
+        ],
+        [
+          "timpHswCnConv",
+          "taijiTimpPf/autosar/timpHswCnConv",
+          "autosar/timpHsw/cnConvBase",
+          "autosar",
+          "No"
+        ],
+        [
+          "ifxFusa",
+          "taijiTimpPf/autosar/ifxFusa",
+          "autosar/ifxFusa",
+          "autosar",
+          "Yes"
+        ],
+        [
+          "safetyApps",
+          "taijiTimpPf/autosar/safetyApps",
+          "autosar/safetyApps",
+          "autosar",
+          "No"
+        ],
+        [
+          "cubasIfxv6",
+          "taijiTimpPf/autosar/cubasIfxV6",
+          "autosar/stdcore/cubasIfxv6",
+          "aridccubas, arfullstack",
+          "No"
+        ],
+        [
+          "RtacarIfx",
+          "taijiTimpPf/autosar/RtacarIfx",
+          "autosar/stdcore/autosar/stdcore/cubasIfxv6",
+          "aridccubas, arfullstack",
+          "No"
+        ],
+        [
+          "vectorIfx",
+          "taijiTimpPf/autosar/vectorIfx",
+          "autosar/stdcore/vectorIfx",
+          "aridcvector, arfullstack",
+          "No"
+        ],
+        [
+          "mcalIfx",
+          "taijiTimpPf/autosar/mcalIfx",
+          "autosar/stdcore/mcalIfx",
+          "autosar",
+          "Yes"
+        ],
+        [
+          "mcalsailQc",
+          "taijiTimpPf/autosar/mcalQcSail",
+          "autosar/stdcore/mcalQcSail",
+          "sail, arfullstack",
+          "No"
+        ],
+        [
+          "buildPlatform",
+          "taijiTimpPf/autosar/buildPlatform",
+          "autosar/buildPlatform",
+          "autosar",
+          "Yes"
+        ],
+        [
+          "timp_autosar_config.xml",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "ifxFusaCfg",
+          "taijiTimpPf/autosar/ifxFusaCfg",
+          "config/ifxFusaCfg",
+          "autosar",
+          "Yes"
+        ],
+        [
+          "timpBswCfgConv",
+          "taijiTimpPf/autosar/timpBswCfgConv",
+          "config/timpBswCfg/convbase",
+          "autosar",
+          "Yes"
+        ],
+        [
+          "timpHswCfgConv",
+          "taijiTimpPf/autosar/timpHswCfgConv",
+          "config/timpHswCfg/convbase",
+          "autosar",
+          "Yes"
+        ],
+        [
+          "timpBswCfgCnConv",
+          "taijiTimpPf/autosar/timpBswCfgCnConv",
+          "config/timpBswCfg/cnConvBase",
+          "autosar",
+          "No"
+        ],
+        [
+          "timpHswCfgCnConv",
+          "taijiTimpPf/autosar/timpHswCfgCnConv",
+          "config/timpHswCfg/cnConvBase",
+          "autosar",
+          "No"
+        ],
+        [
+          "toolsCfg",
+          "taijiTimpPf/autosar/toolsCfg",
+          "config/toolsCfg",
+          "autosar",
+          "No"
+        ],
+        [
+          "safetyAppsCfg",
+          "taijiTimpPf/autosar/safetyAppsCfg",
+          "config/safetyAppsCfg",
+          "autosar",
+          "No"
+        ],
+        [
+          "idc",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "IdcCubasTc3xx",
+          "taijiTimpPf/autosar/idcCubasTC37x",
+          "config/IdcCfg/stdcoreCfg/idcCubasTc3xx",
+          "aridccubas, arfullstack",
+          "No"
+        ],
+        [
+          "IdcVectorTc3xx",
+          "taijiTimpPf/autosar/idcCubasTC37x",
+          "config/IdcCfg/stdcoreCfg/idcVectorTc3xx",
+          "aridcvector, , arfullstack",
+          "No"
+        ],
+        [
+          "buildIdc",
+          "taijiTimpPf/autosar/buildidc",
+          "config/IdcCfg/buildIdc",
+          "aridcvector, aridccubas, arfullstack",
+          "No"
+        ],
+        [
+          "fusion",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "fusionCubasTc3xx",
+          "taijiTimpPf/autosar/idcCubasTC37x",
+          "config/fusionCfg/stdcoreCfg/fusionCubasTc3xx",
+          "arfusioncubas, arfullstack",
+          "No"
+        ],
+        [
+          "fusionVectorTc3xx",
+          "taijiTimpPf/autosar/idcCubasTC37x",
+          "config/fusionCfg/stdcoreCfg/fusionVectorTc3xx",
+          "arfusionvector, , arfullstack",
+          "No"
+        ],
+        [
+          "buildFusion",
+          "taijiTimpPf/autosar/buildfusion",
+          "config/fusionCfg/buildfusion",
+          "arfusioncubas, arfusionvector, arfullstack",
+          "No"
+        ],
+        [
+          "sail",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "sailCubas",
+          "taijiTimpPf/autosar/sailcubas",
+          "config/sailCfg/stdcoreCfg/sailCubas",
+          "arsail, arfullstack",
+          "No"
+        ],
+        [
+          "buildSail",
+          "taijiTimpPf/autosar/buildfusion",
+          "config/sailCfg/buildSail",
+          "arsail, arfullstack",
+          "No"
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

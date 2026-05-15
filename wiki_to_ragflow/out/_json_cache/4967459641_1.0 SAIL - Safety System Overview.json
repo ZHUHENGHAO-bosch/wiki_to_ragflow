@@ -1,0 +1,74 @@
+{
+  "page_id": "4967459641",
+  "title": "1.0 SAIL - Safety System Overview",
+  "version": 1,
+  "url": "/spaces/CARSFW/pages/4967459641/1.0+SAIL+-+Safety+System+Overview",
+  "last_modified": "2024-11-08T10:09:47.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4967458554",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "QAM8755 Safety shall cover ADAS/ADs and IVI functions"
+    },
+    {
+      "type": "paragraph",
+      "text": "ADAS and ADS use cases"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Highway autopilot (HWP)",
+        "Traffic jam assist",
+        "Automatic emergency braking and lane keep assist",
+        "Automated valet parking"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "IVI use cases"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Instrument cluster tell-tale icon display",
+        "Surround view systems with object detection and free space estimation",
+        "Rear view camera",
+        "Driver monitoring system/occupant monitoring system",
+        "e-Mirror"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Safe computing sub systems in QAM8775"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Application processor subsystem (APSS)",
+        "Graphics processing unit (GPU)",
+        "Safety island (SAIL)",
+        "Neural signal processor (NSP)",
+        "Computer vision processor (CVP)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Our focus here is on SAIL so we move towards SAIL safety"
+    },
+    {
+      "type": "paragraph",
+      "text": "SAIL domain can achieve ASIL-D level whereas APSS can achieve up to ASIL-B"
+    }
+  ],
+  "attachments": []
+}

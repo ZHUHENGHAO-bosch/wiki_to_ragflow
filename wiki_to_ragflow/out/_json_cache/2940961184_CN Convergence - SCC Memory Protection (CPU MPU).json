@@ -1,0 +1,47 @@
+{
+  "page_id": "2940961184",
+  "title": "CN Convergence - SCC Memory Protection (CPU MPU)",
+  "version": 8,
+  "url": "/spaces/CARSFW/pages/2940961184/CN+Convergence+-+SCC+Memory+Protection+CPU+MPU",
+  "last_modified": "2023-04-13T08:20:48.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2503834771",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Introduction"
+    },
+    {
+      "type": "paragraph",
+      "text": "To support memory protection which protects ASIL regions from QM access we have the following components."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Service.OsHooks",
+        "Service.ContextSwicher",
+        "Aurix.SafetyManager"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Usually, any illegal memory access will end up in Trap. All Traps are processed by OS and we enter Safe State via Service.OsHooks module."
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/CN%20Convergence%20-%20SCC%20Memory%20Protection%20(CPU%20MPU)/SM04%20Memory%20Protection.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/CN Convergence - SCC Memory Protection (CPU MPU)/SM04 Memory Protection.bmp"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "SM04 Memory Protection.bmp",
+      "download_link": "/download/attachments/2940961184/SM04%20Memory%20Protection.bmp?version=2&modificationDate=1681365680000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

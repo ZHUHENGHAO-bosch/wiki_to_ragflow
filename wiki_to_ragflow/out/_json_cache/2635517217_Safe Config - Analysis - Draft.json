@@ -1,0 +1,30 @@
+{
+  "page_id": "2635517217",
+  "title": "Safe Config - Analysis - Draft",
+  "version": 62,
+  "url": "/spaces/CARSFW/pages/2635517217/Safe+Config+-+Analysis+-+Draft",
+  "last_modified": "2023-01-13T14:02:16.000+01:00",
+  "last_modified_by": "Soorej Sudhakaran (MS/ENE-HP1-XC)",
+  "parent_id": "2615955936",
+  "children": [],
+  "content": [
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2635517217/SafeConfig.png?version=61&modificationDate=1673614934000&api=v2",
+      "alt": "",
+      "local_path": "_images/Safe Config - Analysis - Draft/SafeConfig.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "SafeConfig",
+      "download_link": "/download/attachments/2635517217/SafeConfig?version=61&modificationDate=1673614934000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "SafeConfig.png",
+      "download_link": "/download/attachments/2635517217/SafeConfig.png?version=61&modificationDate=1673614934000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

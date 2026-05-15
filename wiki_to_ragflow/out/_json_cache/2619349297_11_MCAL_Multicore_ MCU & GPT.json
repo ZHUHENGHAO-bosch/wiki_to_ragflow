@@ -1,0 +1,128 @@
+{
+  "page_id": "2619349297",
+  "title": "11_MCAL_Multicore: MCU & GPT",
+  "version": 2,
+  "url": "/spaces/CARSFW/pages/2619349297/11_MCAL_Multicore+MCU+GPT",
+  "last_modified": "2022-12-30T10:51:20.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2394052922",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "MCU Multicore"
+    },
+    {
+      "type": "paragraph",
+      "text": "In general, apart from the initialization APIs of MCU driver, other APIs may be invoked from several CPU cores in parallel with some restrictions as mentioned below"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Initialization APIs Mcu_Init(), Mcu_InitClock(), Mcu_DistributePllClock() and Mcu_DeInit() can only be invoked by the master core",
+        "DETs will be raised in case APIs are invoked with mismatch of core"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "McuMultiCoreErrorDetect - Pre-processor switch for enabling the multicore error detection and reporting"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "TRUE: Multicore error detection is enabled",
+        "FALSE: Multicore error detection is disabled"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "GPT Multicore"
+    },
+    {
+      "type": "paragraph",
+      "text": "The GPT driver supports execution of its APIs simultaneously from all CPU cores. The user should allocate resources of TOM/ATOM to CPU cores at pre-compile time using the Resource manager module"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "GPT channels can be allocated to CPU cores at pre-compile time. Predefined timers are available only after master core initialization.",
+        "GPT channel configured as Predef timer can be allocated to any core but will be controlled (started/ stopped) only by the logical master core. All slave core can access(/read) the Predef timer count",
+        "It must be ensured that GPT Channel passed as parameter while invoking an API belong to the same core on which the API is invoked",
+        "DETs will be raised in case APIs are invoked with mismatch of core and GPT Channel."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Note:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "GPT channels using GTM-TOM[i]_CH[X] and TOM[i]_CH[x+1] must be allocated to the same core as these two channels share the same interrupt line",
+        "GPT channels using GTM-ATOM[i]_CH[X] and ATOM[i]_CH[x+1] must be allocated to the same core as these two channels share the same interrupt line",
+        "Interrupts raised by individual TOM/ATOM/GPT12 channels must be serviced by the CPU core to which the TOM/ATOM/GPT12 channels have been allocated to."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Interrupt sharing by GTM Channels"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Interrupt is shared between two channel in TOM and ATOM",
+        "For example TC37x has 3 TOM units with 16 channels each"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/11_MCAL_Multicore:%20MCU%20&%20GPT/image2022-12-30_17-49-55.png?api=v2",
+      "alt": "",
+      "local_path": "_images/11_MCAL_Multicore_ MCU & GPT/image2022-12-30_17-49-55.png"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "But Interrupt Router is shared by two consecutive channels in TOM"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/11_MCAL_Multicore:%20MCU%20&%20GPT/image2022-12-30_17-50-26.png?api=v2",
+      "alt": "",
+      "local_path": "_images/11_MCAL_Multicore_ MCU & GPT/image2022-12-30_17-50-26.png"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Which means GTM-TOM[i]_CH[X] and TOM[i]_CH[x+1] must be allocated to the same core as these two channels share the same interrupt line"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-12-30_17-50-26.png",
+      "download_link": "/download/attachments/2619349297/image2022-12-30_17-50-26.png?version=1&modificationDate=1672393826000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-12-30_17-49-55.png",
+      "download_link": "/download/attachments/2619349297/image2022-12-30_17-49-55.png?version=1&modificationDate=1672393795000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "page_id": "2334147867",
+  "title": "Wakeup and ISR Configuration",
+  "version": 13,
+  "url": "/spaces/CARSFW/pages/2334147867/Wakeup+and+ISR+Configuration",
+  "last_modified": "2022-06-27T16:08:10.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2334147407",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 1: Add Wakeup Source list to shared Structure in Scr_Shared_if.h"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_15-5-14.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_15-5-14.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 2: Assign the wakeup source trigger type in Scr_EnableInterrupt:  This API will be called before entering to Standby Mode"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_15-7-27.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_15-7-27.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 3: Get the above assigned Wakeup Source in Scr code and configure the Scr register to cause an interrupt on specific edge"
+    },
+    {
+      "type": "paragraph",
+      "text": "Two types of interrupt mapping to pins in Scr (Refer 49.9.6.2 External Interrupt Control Registers)"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Type 1: Multiplexed and the type can be selected by MODPISEL register"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_15-15-22.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_15-15-22.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Type 2: Without Multiplex"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_15-16-32.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_15-16-32.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Example configuration for Type 2 - Without Multiplex:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 1: Check the pin from schematics"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_15-19-54.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_15-19-54.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 2: Get the registers involved for that pin (Refer: 49.9.6.2 External Interrupt Control Registers)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_15-20-24.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_15-20-24.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "P33.5 is mapped to EXINT8 interrupt"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 3: Find the configuration for EXICON2 register to configure on which edge we need interrupt"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_15-23-0.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_15-23-0.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 4: Find the interrupt node for the respective interrupt source ( Refer 49.9.1 Interrupt Sources )"
+    },
+    {
+      "type": "paragraph",
+      "text": "For example in above case P33.5 is mapped to EXINT8 interrupt source."
+    },
+    {
+      "type": "paragraph",
+      "text": "And from below diagram you can get interrupt node number which is XINTR10"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_15-37-33.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_15-37-33.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 5: Configure the IEN1 (Interrupt Node Enable Registers) register shown in above picture (IEN1.ECCIP0) ( Refer: 49.9.6.1 Interrupt Node Enable Registers)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_16-39-56.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_16-39-56.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 6: The Configuration of Registers for this type 2"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_17-12-6.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_17-12-6.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Make Sure this implementation is done after the below while loop (i.e Configuration will be applied once TC enters Standby mode, Since we configure wakeup source just before entering Standby mode)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_17-28-9.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_17-28-9.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Example Configuration for Type 1: With Multiplex"
+    },
+    {
+      "type": "paragraph",
+      "text": "The steps are same as above but we need configure one more register MODPISEL registers since the pins are multiplexed"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_17-14-30.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_17-14-30.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_17-15-42.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_17-15-42.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 6 (Only needed for multiplex pins) Configure MODPISEL register"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_17-20-6.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_17-20-6.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Finally configuration code will look like"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_17-21-39.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_17-21-39.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 4: Implement the ISR"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Find the interrupt node for the interrupt Source ( Refer 49.9.1 Interrupt Sources )"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_17-26-20.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_17-26-20.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Implement the ISR in Scr code (Scr_Main.c)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Inside ISR"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Check the level of the pin in Port Input Register ( refer 49.10.2.9 Port Input Register ) - Whether it should be 0 or 1"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_17-38-52.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_17-38-52.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "2. Whether the configuration is done before entering Standby Mode3"
+    },
+    {
+      "type": "paragraph",
+      "text": "3. If Point 1 and Poin2 are true, Set the Wakeup Source, so that on startup Tricore can read the Wakeup reason"
+    },
+    {
+      "type": "paragraph",
+      "text": "4. Wakeup the Tricore by setting SCRWKP to 1 in Standby Mode Wake-Up Register (SCU_STDBYWKP)"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_17-43-14.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_17-43-14.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Example of ISR Code,"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Wakeup%20and%20ISR%20Configuration/image2022-6-27_17-30-25.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Wakeup and ISR Configuration/image2022-6-27_17-30-25.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-6-27_17-43-14.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_17-43-14.png?version=1&modificationDate=1656331995000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_17-38-52.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_17-38-52.png?version=1&modificationDate=1656331732000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_17-30-25.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_17-30-25.png?version=1&modificationDate=1656331226000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_17-28-9.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_17-28-9.png?version=1&modificationDate=1656331089000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_17-26-20.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_17-26-20.png?version=1&modificationDate=1656330981000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_17-21-39.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_17-21-39.png?version=1&modificationDate=1656330700000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_17-20-6.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_17-20-6.png?version=1&modificationDate=1656330607000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_17-15-42.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_17-15-42.png?version=1&modificationDate=1656330342000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_17-14-30.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_17-14-30.png?version=1&modificationDate=1656330272000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_17-12-6.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_17-12-6.png?version=1&modificationDate=1656330127000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_16-39-56.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_16-39-56.png?version=1&modificationDate=1656328197000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_15-37-33.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_15-37-33.png?version=1&modificationDate=1656324454000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_15-23-0.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_15-23-0.png?version=1&modificationDate=1656323581000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_15-20-24.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_15-20-24.png?version=1&modificationDate=1656323425000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_15-19-54.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_15-19-54.png?version=1&modificationDate=1656323395000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_15-16-32.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_15-16-32.png?version=1&modificationDate=1656323362000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_15-15-22.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_15-15-22.png?version=1&modificationDate=1656323363000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_15-14-22.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_15-14-22.png?version=1&modificationDate=1656323363000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_15-7-27.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_15-7-27.png?version=1&modificationDate=1656323363000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-27_15-5-14.png",
+      "download_link": "/download/attachments/2334147867/image2022-6-27_15-5-14.png?version=1&modificationDate=1656323363000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

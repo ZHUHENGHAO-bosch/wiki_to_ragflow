@@ -1,0 +1,42 @@
+{
+  "page_id": "2843524223",
+  "title": "China Convergence - Unit Test Guidelines",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/2843524223/China+Convergence+-+Unit+Test+Guidelines",
+  "last_modified": "2023-03-16T08:33:11.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2321473024",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Mocks"
+    },
+    {
+      "type": "paragraph",
+      "text": "Mocks for all modules shall be kept in a centralized repo (cnconvbase/autosar/mocks)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Each module can create a folder for their mocks. With this we can reuse Mock function of a certain module in all module Unit tst"
+    },
+    {
+      "type": "paragraph",
+      "text": "Please don't create mocks inside module Unit test folder. Mocks should be in centralized repo as mentioned above"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/China%20Convergence%20-%20Unit%20Test%20Guidelines/image2023-3-16_13-24-43.png?api=v2",
+      "alt": "",
+      "local_path": "_images/China Convergence - Unit Test Guidelines/image2023-3-16_13-24-43.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2023-3-16_13-24-43.png",
+      "download_link": "/download/attachments/2843524223/image2023-3-16_13-24-43.png?version=1&modificationDate=1678944284000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

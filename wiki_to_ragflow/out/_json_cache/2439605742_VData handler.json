@@ -1,0 +1,39 @@
+{
+  "page_id": "2439605742",
+  "title": "VData handler",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/2439605742/VData+handler",
+  "last_modified": "2022-09-28T09:06:36.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2321473024",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below diagram explains the COM scope for China convergence projects"
+    },
+    {
+      "type": "image",
+      "src": "/confluence/download/attachments/2439605742/Untitled%20Diagram.png?version=10&modificationDate=1664348791000&api=v2",
+      "alt": "",
+      "local_path": "_images/VData handler/Untitled Diagram.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "Untitled Diagram",
+      "download_link": "/download/attachments/2439605742/Untitled%20Diagram?version=10&modificationDate=1664348791000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "Untitled Diagram.png",
+      "download_link": "/download/attachments/2439605742/Untitled%20Diagram.png?version=10&modificationDate=1664348791000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

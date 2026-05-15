@@ -1,0 +1,28 @@
+{
+  "page_id": "2374518997",
+  "title": "Aurix INC Message Reception - Solution 2",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2374518997/Aurix+INC+Message+Reception+-+Solution+2",
+  "last_modified": "2022-08-02T14:32:56.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2345532859",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Solution 2: Without the use of OS events for Satellite modules"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "Inc_Scc_ReadSequence_Solution2_WithoutEvent - Copy.jpg",
+      "download_link": "/download/attachments/2374518997/Inc_Scc_ReadSequence_Solution2_WithoutEvent%20-%20Copy.jpg?version=1&modificationDate=1659443566000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-2_18-0-32.png",
+      "download_link": "/download/attachments/2374518997/image2022-8-2_18-0-32.png?version=1&modificationDate=1659443432000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

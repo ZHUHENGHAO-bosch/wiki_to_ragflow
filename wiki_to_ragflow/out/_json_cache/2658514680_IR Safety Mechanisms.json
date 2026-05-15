@@ -1,0 +1,22 @@
+{
+  "page_id": "2658514680",
+  "title": "IR Safety Mechanisms",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/2658514680/IR+Safety+Mechanisms",
+  "last_modified": "2023-01-16T12:10:35.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2658504005",
+  "children": [],
+  "content": [
+    {
+      "type": "table",
+      "headers": [
+        "Safety Mechanism",
+        "Description",
+        "Alarm"
+      ],
+      "rows": []
+    }
+  ],
+  "attachments": []
+}

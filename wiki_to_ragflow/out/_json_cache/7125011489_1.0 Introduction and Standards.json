@@ -1,0 +1,198 @@
+{
+  "page_id": "7125011489",
+  "title": "1.0 Introduction and Standards",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/7125011489/1.0+Introduction+and+Standards",
+  "last_modified": "2026-05-11T02:40:27.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "7125011484",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is to summarize the safety standards needed for  AI cockpit"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Introduction"
+    },
+    {
+      "type": "paragraph",
+      "text": "Standards involved in AI Cockpit"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Standard",
+        "Description"
+      ],
+      "rows": [
+        [
+          "ISO 26262",
+          "Road vehicles — Functional safety"
+        ],
+        [
+          "ISO 21448",
+          "Road vehicles – Safety Of The Intended Functionality"
+        ],
+        [
+          "ISO/PAS 8800",
+          "Road vehicles — Safety and artificial intelligence"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Quick overview"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Phase",
+        "ISO 26262",
+        "ISO 21448 (SOTIF)",
+        "ISO/PAS 8800"
+      ],
+      "rows": [
+        [
+          "Concept",
+          "HARA → Safety Goals → ASIL",
+          "Define ODD, triggering conditions, acceptance criteria",
+          "AI safety requirements & data requirements"
+        ],
+        [
+          "Development",
+          "V-model, ASIL-tailored methods",
+          "Scenario catalog, design measures",
+          "Data lifecycle + model lifecycle"
+        ],
+        [
+          "Verification",
+          "Fault injection, MC/DC, coverage",
+          "Scenario-based simulation, real-world drives",
+          "Robustness, OOD, generalization, statistical testing"
+        ],
+        [
+          "Validation",
+          "Safety case",
+          "SOTIF case",
+          "AI assurance case"
+        ],
+        [
+          "Production",
+          "Diagnostic coverage in field",
+          "Field monitoring of triggering conditions",
+          "Monitoring data drift, model performance, OOD events"
+        ],
+        [
+          "Updates",
+          "Change impact analysis",
+          "Re-validate scenarios",
+          "Re-train + re-validate + safety re-assessme"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "SOTIF"
+    },
+    {
+      "type": "paragraph",
+      "text": "SOTIF stands for Safety Of The Intended Functionality , defined by the standard ISO 21448 . It addresses hazards that arise not from system failures, but from the limitations of the intended function itself — i.e., when a system works exactly as designed but is still unsafe due to:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Performance limitations of sensors, algorithms, or actuators (e.g., a camera blinded by sunlight, radar confused by rain).",
+        "Insufficient situational awareness (edge cases the system wasn't designed to handle).",
+        "Foreseeable misuse by the driver/user.",
+        "Unintended behavior of AI/ML-based perception or decision-making systems."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "It is especially important for ADAS (Advanced Driver Assistance Systems) and automated driving (Levels 1–5), where complex algorithms and machine learning are involved"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Aspect",
+        "ISO 26262 (Functional Safety)",
+        "ISO 21448 / SOTIF"
+      ],
+      "rows": [
+        [
+          "Hazard source",
+          "Malfunctions/failures of E/E systems",
+          "Functional insufficiencies, no malfunction needed"
+        ],
+        [
+          "Trigger",
+          "Hardware faults, software bugs",
+          "Sensor limits, algorithm gaps, unknown scenarios, misuse"
+        ],
+        [
+          "System state",
+          "System has failed",
+          "System works as specified — but spec is insufficient"
+        ],
+        [
+          "Risk classification",
+          "ASIL (QM, A–D) via S × E × C",
+          "Acceptance criteria via scenarios (Areas 1–4: known-safe, known-unsafe, unknown-unsafe, unknown-safe)"
+        ],
+        [
+          "Primary techniques",
+          "FMEA, FMEDA, FTA, redundancy, diagnostics, safety mechanisms",
+          "Scenario-based testing, statistical validation, ML model validation, simulation, field operation tests"
+        ],
+        [
+          "Validation focus",
+          "Random hardware failure metrics, fault injection",
+          "Reducing unknown/unsafe scenarios via large-scale testing"
+        ],
+        [
+          "Driver assumption",
+          "Often assumes proper use",
+          "Explicitly considers reasonably foreseeable misuse"
+        ],
+        [
+          "Best for",
+          "Brake-by-wire, steering ECUs, powertrain control",
+          "ADAS, AD, perception systems, AI/ML features"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "ISO/PAS 8800 Functional Safety for AI in Vehicles"
+    },
+    {
+      "type": "paragraph",
+      "text": "It is the first international automotive standard specifically addressing the safe development, integration, and lifecycle management of AI/ML components in road vehicles. It bridges the gap between traditional functional safety standards and the unique challenges of data-driven, machine-learned systems"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence2/download/attachments/659473334/image-2025-7-8_11-0-50.png?version=1&modificationDate=1751943650000&api=v2",
+      "alt": "image-2025-7-8_11-0-50.png",
+      "local_path": "_images/1.0 Introduction and Standards/image-2025-7-8_11-0-50.png"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence2/download/attachments/659473334/image-2025-7-10_17-47-39.png?version=1&modificationDate=1752140860000&api=v2",
+      "alt": "image-2025-7-10_17-47-39.png",
+      "local_path": "_images/1.0 Introduction and Standards/image-2025-7-10_17-47-39.png"
+    }
+  ],
+  "attachments": []
+}

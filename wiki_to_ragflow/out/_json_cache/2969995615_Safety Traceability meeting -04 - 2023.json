@@ -1,0 +1,53 @@
+{
+  "page_id": "2969995615",
+  "title": "Safety Traceability meeting -04 - 2023",
+  "version": 13,
+  "url": "/spaces/CARSFW/pages/2969995615/Safety+Traceability+meeting+-04+-+2023",
+  "last_modified": "2023-04-28T12:34:07.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2667861564",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 28 Apr 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants:  Easwar, Yanqiang, Praveen"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Follow the guideline - RE Requirements Formulation Guide - XC-CT EPL - Docupedia (bosch.com)",
+        "Meeting not happened"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 21 Apr 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants:  Easwar, Yanqiang, Praveen, Ravi"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Exchange of latest SWRS from CART",
+        "In Zeekr, View is created for exchanged CART SWRS",
+        "RM has to do exchange in Chery also Jayaraj Praveen (BCSC/ENG1) to send a mail to RM",
+        "Exchange from DNG to HI for SMs delivered by Germany CART. If this exchange is not supported by CART team, then we need to find a way by ourselves to achieve this.",
+        "Chery, Zeekr and Taiji PF - Requirement Starategy - Jayaraj Praveen (BCSC/ENG1)",
+        "Testing traceability - Project Testing team to be invited for next meeting - @ZHAO Yanqiang (XC-CT/ESW2-CN)"
+      ]
+    }
+  ],
+  "attachments": []
+}

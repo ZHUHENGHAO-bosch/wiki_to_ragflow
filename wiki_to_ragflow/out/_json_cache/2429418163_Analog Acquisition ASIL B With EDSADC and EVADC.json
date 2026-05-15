@@ -1,0 +1,60 @@
+{
+  "page_id": "2429418163",
+  "title": "Analog Acquisition ASIL B With EDSADC and EVADC",
+  "version": 5,
+  "url": "/spaces/CARSFW/pages/2429418163/Analog+Acquisition+ASIL+B+With+EDSADC+and+EVADC",
+  "last_modified": "2022-10-06T08:21:29.000+02:00",
+  "last_modified_by": "user-1f19a",
+  "parent_id": "2425248241",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Functional Use Case: Single safety-related analog signal is delivered by the system and diversely processed by the EVADC and the EDSADC. The results of the diverse processing are transported from the EVADC and the EDSADC to a system volatile memory via the CPU or the DMA and compared by the CPU"
+    },
+    {
+      "type": "table",
+      "headers": [],
+      "rows": [
+        [
+          "Safety Mechanism",
+          "Description"
+        ],
+        [
+          "ESM[SW]:EDSADC:PLAUSIBILITY",
+          "After a conversion, the Application SW shall determine the validity of result values by comparing the redundant result values of mission channel and monitor channel against each other and against system-specific limit values. If the two result values differ more than a defined band of uncertainty (owing to noise or differences in the physical paths), the Application SW shall notify the system about the presence of a fault"
+        ],
+        [
+          "ESM[SW]:EDSADC:VAREF_PLAUSIBILITY",
+          "The System Integrator shall implement a check of the ADC reference voltage (VAREF / VAGND) either by an external monitor or by internally converting a known signal and compare the result with the expected value. This check shall  be executed at least once per driving cycle or better cyclically after a predefined time or number of conversions. If the Application SW detects unexpected results during these checks, it shall notify the system about the presence of a fault"
+        ],
+        [
+          "ESM[SW]:EDSADC:DIVERSE_REDUNDANCY",
+          "The System Integrator shall implement redundant independent analog input channels using different A/D converters for each safety-relevant input signal. The Application SW shall compare the redundant result values from mission channel and monitor channel against each other and against system-specific limit values (see ESM[SW]:EDSADC:VAREF_PLAUSIBILITY and ESM[SW]:EDSADC:PLAUSIBILITY). If the redundant result values do not match within a defined band of uncertainty, the Application SW shall notify the system about the presence of a fault."
+        ]
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/Analog%20Acquisition%20ASIL%20B%20With%20EDSADC%20and%20EVADC/image2022-10-6_11-50-39.png?api=v2",
+      "alt": "",
+      "local_path": "_images/Analog Acquisition ASIL B With EDSADC and EVADC/image2022-10-6_11-50-39.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Refer this sheet for the ESM for EVADC Analog Acquisition ASIL B with EVADC - XC-CI China - Docupedia (bosch.com)"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-10-6_11-50-39.png",
+      "download_link": "/download/attachments/2429418163/image2022-10-6_11-50-39.png?version=1&modificationDate=1665037239000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-10-6_11-50-8.png",
+      "download_link": "/download/attachments/2429418163/image2022-10-6_11-50-8.png?version=1&modificationDate=1665037208000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

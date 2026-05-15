@@ -1,0 +1,47 @@
+{
+  "page_id": "3435213310",
+  "title": "WDG log - Multicore Handling - Zeekr",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/3435213310/WDG+log+-+Multicore+Handling+-+Zeekr",
+  "last_modified": "2023-09-11T04:57:13.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2658504005",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Overview - Problem statement"
+    },
+    {
+      "type": "paragraph",
+      "text": "In current design, all WDG alarms are mapped to CPU0 NMI alarm in SMU. But the PCXI of slave core cannot be read by master core."
+    },
+    {
+      "type": "paragraph",
+      "text": "Due to this we cannot store the call stack information of WDG errors in Core 1 and Core 2"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Solution"
+    },
+    {
+      "type": "paragraph",
+      "text": "Below diagram explains the solution to above problem statement where we use SMU interrupts instead of NMI for Core 1 and Core 2 CPU WDGs"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/WDG%20log%20-%20Multicore%20Handling%20-%20Zeekr/InternalWDGHandling.bmp?api=v2",
+      "alt": "",
+      "local_path": "_images/WDG log - Multicore Handling - Zeekr/InternalWDGHandling.bmp"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "InternalWDGHandling.bmp",
+      "download_link": "/download/attachments/3435213310/InternalWDGHandling.bmp?version=2&modificationDate=1694401017000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "page_id": "2384995023",
+  "title": "04_Autosar - Multicore Spinlock",
+  "version": 7,
+  "url": "/spaces/CARSFW/pages/2384995023/04_Autosar+-+Multicore+Spinlock",
+  "last_modified": "2023-04-05T05:10:58.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2383057032",
+  "children": [
+    "2917677539",
+    "2917677552",
+    "2384997422",
+    "2917677656"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "With the Multi-Core concept, a new mechanism is needed to support mutual exclusion for TASKS on different cores. This new mechanism shall not be used between TASKs on the same core because it makes no sense. In such cases the AUTOSAR Operating System returns an error"
+    },
+    {
+      "type": "paragraph",
+      "text": "A spinlock is a busy waiting mechanism that polls a (lock) variable until it becomes available"
+    },
+    {
+      "type": "paragraph",
+      "text": "Once a lock variable is occupied by a TASK/ISR2, other TASKs/ISR2s on other cores shall be unable to occupy the lock variable"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Spinlocks to Synchronize Cores"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/04_Autosar%20-%20Multicore%20Spinlock/image2022-8-10_17-5-37.png?api=v2",
+      "alt": "",
+      "local_path": "_images/04_Autosar - Multicore Spinlock/image2022-8-10_17-5-37.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2022-8-10_18-6-33.png",
+      "download_link": "/download/attachments/2384995023/image2022-8-10_18-6-33.png?version=1&modificationDate=1660134993000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-10_18-2-52.png",
+      "download_link": "/download/attachments/2384995023/image2022-8-10_18-2-52.png?version=1&modificationDate=1660134773000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-10_17-5-37.png",
+      "download_link": "/download/attachments/2384995023/image2022-8-10_17-5-37.png?version=1&modificationDate=1660131337000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-8-10_17-5-24.png",
+      "download_link": "/download/attachments/2384995023/image2022-8-10_17-5-24.png?version=1&modificationDate=1660131324000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

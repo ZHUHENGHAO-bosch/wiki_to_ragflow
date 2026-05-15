@@ -1,0 +1,552 @@
+{
+  "page_id": "4593414354",
+  "title": "SWC_HMIsw_SteeringWheelSwitch",
+  "version": 14,
+  "url": "/spaces/CARSFW/pages/4593414354/SWC_HMIsw_SteeringWheelSwitch",
+  "last_modified": "2024-08-27T08:57:58.000+02:00",
+  "last_modified_by": "LI Haixu (XC-CP/ESW2-CN)",
+  "parent_id": "4565826990",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Steering Wheel button handling -> gets LIN switch details from LIN signals and writes to Rte. Also calculates Dimming interpolation for Cluster HUD."
+    },
+    {
+      "type": "paragraph",
+      "text": "Requirement document："
+    },
+    {
+      "type": "paragraph",
+      "text": "PIS-9008_Dimming&Brightness Control---replacedbynewversion20240710.docx (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "GB5105 LIN Responder Communication Strategy Specification.pdf (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "PIS-2046_SystemSetting.docx (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Inter module dependencies"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_HMIsw_SteeringWheelSwitch/image-2024-8-21_10-40-52.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_HMIsw_SteeringWheelSwitch/image-2024-8-21_10-40-52.png"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Index",
+        "Runnable",
+        "Where be called",
+        "Description",
+        "Comment"
+      ],
+      "rows": [
+        [
+          "1",
+          "HMI_LINSwitch_Run",
+          "Rte_OsApplication_QM.c → TASK(TCI_AppTask1)",
+          "按键信号处理 调光信号处理 白天黑夜模式处理 LIN Partnumber处理",
+          "Question 1 : What is the algorithm of Dimming level and dimming display level switch to dimming value?"
+        ],
+        [
+          "2",
+          "HandleDICSwitchAction",
+          "Rte_OsApplication_QM.c → TASK(TCI_AppTask2)",
+          "更新全局变量“g_u8LIN_GP_SwitchActive”的值",
+          "Question 2 : “g_u8LIN_GP_SwitchActive”表示什么实际功能意义，看代码好像也是按键信号？ Question 3 : HMI_LINSwitch_Run中也会监控来自HMI的Queue更新消息调用到HandleDICSwitchAction，g_u8LIN_GP_SwitchActive是表示虚拟按键的功能？ Question 4 : 实现代码都有明显的语法错误？怎么能编译的过？ static void HandleDICSwitchAction( uint8 u8ActionID, uint32 u32ActionData ) { switch( u8ActionID ) { case CeOCD_LINSwitch_ACTION_LIN_SWITCH_GP: /* Read LIN Swith value from GP */ if((GetP_DIC_SWITCH_TYPER() == 3U) && (u32ActionData < 15U) ) =  (uint8)u32ActionData; break; g_u8LIN_GP_SwitchActive default: //assert( 0U );  // Invalid action break; } }"
+        ],
+        [
+          "3",
+          "LinSWInternalFaultActionHandler",
+          "Rte_OsApplication_QM.c → TASK(TCI_AppTask12)",
+          "更新全局变量“u8SWCInternalFaultActive”",
+          "Question 5 : 更新全局变量“u8SWCInternalFaultActive”在整个模块中没有被用到？"
+        ],
+        [
+          "4",
+          "LinSWSwitchStuckActionHandler",
+          "Rte_OsApplication_QM.c → TASK(TCI_AppTask12)",
+          "更新全局变量“u8SWCStuckSwitchFaultValue”",
+          "Question 6 : 更新全局变量“u8SWCStuckSwitchFaultValue”在整个模块中没有被用到？"
+        ],
+        [
+          "5",
+          "SWC_Set_DTC_Run",
+          "Rte_OsApplication_QM.c → TASK(TCI_AppTask12)",
+          "监控DTC是否触发",
+          "Question 7 : 具体每个DTC的监控条件没有找到相关文档。"
+        ],
+        [
+          "6",
+          "SWC_Set_LcFA_DTC_Run",
+          "Not be calld, and the function content is empty",
+          "",
+          ""
+        ],
+        [
+          "7",
+          "HMI_LINSwitch_Initialize",
+          "Appl_Stubs.c  → AppSWC_Init",
+          "全局变量初始化",
+          "This init runbale is not configured in Davinci tools, so there is no runnable info in \"Rte_SWC_LINButton_manager.h\""
+        ]
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Lin Button Process"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_HMIsw_SteeringWheelSwitch/image-2024-8-27_14-0-26-1.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_HMIsw_SteeringWheelSwitch/image-2024-8-27_14-0-26-1.png"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Dimming value Process"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_HMIsw_SteeringWheelSwitch/image-2024-8-21_10-43-10-1.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_HMIsw_SteeringWheelSwitch/image-2024-8-21_10-43-10-1.png"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "DTC process"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/SWC_HMIsw_SteeringWheelSwitch/image-2024-8-27_14-0-59-1.png?api=v2",
+      "alt": "",
+      "local_path": "_images/SWC_HMIsw_SteeringWheelSwitch/image-2024-8-27_14-0-59-1.png"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Index",
+        "Source Code",
+        "Function List",
+        "Comment"
+      ],
+      "rows": [
+        [
+          "1",
+          "HMI_LINSwitch.c",
+          "Gets LIN switch details from LIN signals and writes to Rte. Also calculates Dimming interpolation for Cluster HUD.",
+          ""
+        ],
+        [
+          "2",
+          "HMI_LINSwitch.h",
+          "Definition HMI_LINSwitch in Domain HMI",
+          ""
+        ],
+        [
+          "3",
+          "linswinternalfaultactionhandler.h",
+          "Declaration LinSWInternalFaultActionHandler",
+          "Declaration of only one function"
+        ],
+        [
+          "4",
+          "linswinternalfaultactionhandler_m.c",
+          "Implementation LinSWInternalFaultActionHandler",
+          "Implementation of only one function void LinSWInternalFaultActionHandler( void ) { u8SWCInternalFaultActive =   GetFU193_Action3(); } Question : Global variable of \"u8SWCInternalFaultActive\" not be used?"
+        ],
+        [
+          "5",
+          "linswswitchstuckactionhandler.h",
+          "Declaration LinSWSwitchStuckActionHandler",
+          "Declaration of only one function"
+        ],
+        [
+          "6",
+          "linswswitchstuckactionhandler_m.c",
+          "Implementation LinSWSwitchStuckActionHandler",
+          "Implementation of only one function void LinSWSwitchStuckActionHandler( void ) { u8SWCStuckSwitchFaultValue = GetFU193_Action4(); } Question : Global variable of “u8SWCStuckSwitchFaultValue” not be used in this SWC?"
+        ],
+        [
+          "7",
+          "SWC_HMIsw_SteeringWheelSwitch_S_ar.h",
+          "Encapsulation module dependent input-output interfaces.",
+          ""
+        ],
+        [
+          "8",
+          "swc_set_dtc_run.h",
+          "Definition SWC_Set_DTC_Run",
+          ""
+        ],
+        [
+          "9",
+          "swc_set_dtc_run_m.c",
+          "Report the error status to the diagnostic module based on the combination key values",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Index",
+        "Rx Port",
+        "Dependent Modules",
+        "Comment"
+      ],
+      "rows": [
+        [
+          "1",
+          "Rte_Read_SystemStateR_VeSystemState",
+          "SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "2",
+          "Rte_Read_PLCReflashStateR_Element",
+          "SWC_INFO_PowerLifeCycle",
+          ""
+        ],
+        [
+          "3",
+          "Rte_Read_SWC_InfoMulti_60_1R_SWC_InfoMulti_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "4",
+          "Rte_Read_SWC_HangUp_Mute_60_1R_SWC_HangUp_Mute_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "5",
+          "Rte_Read_SWC_VR_60_1R_SWC_VR_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "6",
+          "Rte_Read_SWC_Phone_60_1R_SWC_Phone_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "7",
+          "Rte_Read_SWC_SET_60_1R_SWC_SET_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "8",
+          "Rte_Read_SWC_Cluster_View_60_1R_SWC_Cluster_View_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "9",
+          "Rte_Read_SWC_Source_60_1R_SWC_Source_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "10",
+          "Rte_Read_SWC_Down_60_1R_SWC_Down_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "11",
+          "Rte_Read_SWC_Up_60_1R_SWC_Up_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "12",
+          "Rte_Read_SWC_VolDn_60_1R_SWC_VolDn_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "13",
+          "Rte_Read_SWC_VolUp_60_1R_SWC_VolUp_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "14",
+          "Rte_Read_SWC_FavDn_60_1R_SWC_FavDn_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "15",
+          "Rte_Read_IntDimLvlR_IntDimLvl",
+          "Com",
+          ""
+        ],
+        [
+          "16",
+          "Rte_Read_DispNtSchmAtvR_DispNtSchmAtv",
+          "Com",
+          ""
+        ],
+        [
+          "17",
+          "Rte_Read_IntDimDspLvlR_IntDimDspLvl",
+          "Com",
+          ""
+        ],
+        [
+          "18",
+          "Rte_Read_FU193_Action3R_data",
+          "SWC_HMI_EngineInterface",
+          "See Question 1."
+        ],
+        [
+          "19",
+          "Rte_Read_FU193_Action4R_data",
+          "SWC_HMI_EngineInterface",
+          "See Question 2."
+        ],
+        [
+          "20",
+          "Rte_Read_BSP_BatVltRange_StatusR_BSP_BatVltRange_Status",
+          "SWC_EA_SYS_IPC_Diag",
+          ""
+        ],
+        [
+          "21",
+          "Rte_Read_SWCAnyStckSw_60_1R_SWCAnyStckSw_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "22",
+          "Rte_Read_SWCAPINFO2_60_1R_SWCAPINFO2_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "23",
+          "Rte_Read_SWCAPINFO4_60_1R_SWCAPINFO4_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "24",
+          "HMIDequeueAction",
+          "SWC_HMI_EngineInterface",
+          "Question :  \" SWC_HMI_EngineInterface\" give virtual button and LIN button is physical button?"
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Index",
+        "Tx Port",
+        "Dependent Modules",
+        "Comment"
+      ],
+      "rows": [
+        [
+          "1",
+          "Rte_Call_HMIC_HMIUpdateData",
+          "SWC_HMI_EngineInterface",
+          ""
+        ],
+        [
+          "2",
+          "Rte_Call_HMIC_HMIUpdateIndication",
+          "SWC_HMI_EngineInterface",
+          "Note: note used."
+        ],
+        [
+          "3",
+          "Rte_Call_interpolateC_interpolate8_16",
+          "SWC_LIB_ClusterFunctions",
+          "Question : What is the algorithm of Dimming level and dimming display level switch to dimming value? Question : What means of magic number like \"32767\"? Where can we get the requirement or protocol?"
+        ],
+        [
+          "4",
+          "Rte_Write_StrWhlCtlFvrtUpSwP_StrWhlCtlFvrtUpSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "5",
+          "Rte_Write_StrWhlCtlFvrtDnSwP_StrWhlCtlFvrtDnSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "6",
+          "Rte_Write_StrWhlCtlVolUpSwP_StrWhlCtlVolUpSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "7",
+          "Rte_Write_StrWhlCtlVolDnSwP_StrWhlCtlVolDnSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "8",
+          "Rte_Write_StrWhlCtUpSwP_StrWhlCtlUpSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "9",
+          "Rte_Write_StrWhlCtDnSwP_StrWhlCtlDnSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "10",
+          "Rte_Write_StrWhlCtLftSwP_StrWhlCtlLftSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "11",
+          "Rte_Write_StrWhlCtRtSwP_StrWhlCtRtSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "12",
+          "Rte_Write_StrWhlCtSelSwP_StrWhlCtSelSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "13",
+          "Rte_Write_StrWhlCtlPshToTlkSwP_StrWhlCtlPshToTlkSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "14",
+          "Rte_Write_StrWhlCtlEndSwP_StrWhlCtlEndSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "15",
+          "Rte_Write_StrgWhlCtlInCarVcCommCtlSwP_StrgWhlCtlInCarVcCommCtlSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "16",
+          "Rte_Write_StrgWhlCtlInCarVcComIfMltSwP_StrgWhlCtlInCarVcComIfMltSw",
+          "SWC_INFO_CDD_IVIHandler, SWC_INFO_SystemState",
+          ""
+        ],
+        [
+          "17",
+          "Rte_Write_StrgWhlCtlBklgtDimVal_60_1P_StrgWhlCtlBklgtDimVal_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "18",
+          "Rte_Write_StrgWhlCtlIndDimVal_60_1P_StrgWhlCtlIndDimVal_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "19",
+          "Rte_Write_DayNightMode_60_1P_DayNightMode_60_1",
+          "SWC_INFO_CDD_IVIHandler",
+          ""
+        ],
+        [
+          "20",
+          "Rte_Write_SwitchUnit1P_StrgWhlUnit1SwStat",
+          "DiagnosticProxySwComponent, SWC_INFO_CDD_IVIHandler",
+          ""
+        ],
+        [
+          "21",
+          "Rte_Write_StrgWhlCtlDeadFrtDimVal_60_1P_StrgWhlCtlDeadFrtDimVal_60_1",
+          "Com",
+          ""
+        ],
+        [
+          "22",
+          "Rte_Write_SWCPartNumberDiagP_VeSWCPartNumberDiag",
+          "DiagnosticProxySwComponent",
+          ""
+        ],
+        [
+          "23",
+          "Rte_Call_Cdd_DtcHandler_GetSWCFaultStatus_SWC_FaultStatus",
+          "CDD_DtcHandler",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Note : There are many rx and tx port in Davinci tools and \"Rte_SWC_LINButton_manager.h\", but just used above ports in source code."
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2024-8-27_14-0-59-1.png",
+      "download_link": "/download/attachments/4593414354/image-2024-8-27_14-0-59-1.png?version=1&modificationDate=1724738459000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-27_14-0-26-1.png",
+      "download_link": "/download/attachments/4593414354/image-2024-8-27_14-0-26-1.png?version=1&modificationDate=1724738426000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-21_10-43-53-1.png",
+      "download_link": "/download/attachments/4593414354/image-2024-8-21_10-43-53-1.png?version=1&modificationDate=1724208233000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-21_10-43-10-1.png",
+      "download_link": "/download/attachments/4593414354/image-2024-8-21_10-43-10-1.png?version=1&modificationDate=1724208190000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-21_10-42-5-1.png",
+      "download_link": "/download/attachments/4593414354/image-2024-8-21_10-42-5-1.png?version=1&modificationDate=1724208125000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-21_10-40-52.png",
+      "download_link": "/download/attachments/4593414354/image-2024-8-21_10-40-52.png?version=1&modificationDate=1724208052000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-8-21_10-39-11-1.png",
+      "download_link": "/download/attachments/4593414354/image-2024-8-21_10-39-11-1.png?version=1&modificationDate=1724207951000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

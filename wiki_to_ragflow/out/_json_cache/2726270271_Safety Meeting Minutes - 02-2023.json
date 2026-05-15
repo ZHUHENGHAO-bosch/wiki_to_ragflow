@@ -1,0 +1,205 @@
+{
+  "page_id": "2726270271",
+  "title": "Safety Meeting Minutes - 02-2023",
+  "version": 18,
+  "url": "/spaces/CARSFW/pages/2726270271/Safety+Meeting+Minutes+-+02-2023",
+  "last_modified": "2023-02-28T10:00:35.000+01:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2403660548",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 28 Feb 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Senthil, Praveen, Yanqiang"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Status Updates - China Convergence - Zeekr Status - XC-CT China - Docupedia (bosch.com) - user-14275 to update the status before next call"
+    },
+    {
+      "type": "paragraph",
+      "text": "UTF is delayed by CART - CART is facing stability issues. user-14275 will discuss with CART when they can fix this issue."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Action Items:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Dependencies with CART - user-14275",
+        "HSI delivery plan - 07 Feb 2023 HW team agreed to give HSI before Feb user-914d1",
+        "TSR draft version - Priority 1",
+        "China Convergence - Zeekr Status - XC-CT China - Docupedia (bosch.com) - user-14275 to update",
+        "Follow up with CART - SCC Safe Startup - XC-CT China - Docupedia (bosch.com) - user-14275",
+        "SSR1a is on end of Feb - Priority 2",
+        "Artifacts from CART - user-14275 we need access rights. We can add this sheet into Zeekr Sharepoint - 03_Safety_Mechanisms - All Documents (bosch.com)",
+        "Watchdog monitoring",
+        "UTF another overview with an example test case - user-14275 to arrange for an training."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 22 Feb 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Praveen, Yanqiang"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "SM53, SM56 and SM12 is on hold due to scope change. Waiting for confirmation from TPM to continue these SMs"
+    },
+    {
+      "type": "paragraph",
+      "text": "user-14275 to send latest CART and ECT plan for Aurix SMs"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Action Items:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Dependencies with CART - user-14275",
+        "HSI delivery plan - 07 Feb 2023 HW team agreed to give HSI before Feb user-914d1",
+        "TSR draft version - Priority 1",
+        "Aurix - Safety Mechanism Status - XC-CI China - Docupedia (bosch.com) - user-14275 to update",
+        "Follow up with CART - SCC Safe Startup - XC-CT China - Docupedia (bosch.com) - user-14275",
+        "SSR1a is on end of Feb - Priority 2",
+        "Artifacts from CART - user-14275 we need access rights. We can add this sheet into Zeekr Sharepoint - 03_Safety_Mechanisms - All Documents (bosch.com)",
+        "Watchdog monitoring",
+        "UTF another overview with an example test case - user-14275 to arrange for an training.",
+        "RegM - we need to follow CART. There is no impact on System"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 14 Feb 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Praveen, Yanqiang, Dinesh"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "ECT to check the tool classification open items this week"
+    },
+    {
+      "type": "paragraph",
+      "text": "From next week FuSa manager is changed SUN Zhiqiang (XC-CT/EPM-CN) <Zhiqiang.SUN2@ cn.bosch.com >"
+    },
+    {
+      "type": "paragraph",
+      "text": "SM05 overview - SM05 Safe E2E Handler - XC-CT China - Docupedia (bosch.com)"
+    },
+    {
+      "type": "paragraph",
+      "text": "For requirement update of Safe TT, user-14275 to send mail and Yanqiang to follow up"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Action Items:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Dependencies with CART - user-14275",
+        "HSI delivery plan - 07 Feb 2023 HW team agreed to give HSI before Feb user-914d1",
+        "TSR draft version - Priority 1",
+        "Aurix - Safety Mechanism Status - XC-CI China - Docupedia (bosch.com) - user-14275 to update",
+        "Follow up with CART - SCC Safe Startup - XC-CT China - Docupedia (bosch.com) - user-14275",
+        "SSR1a is on end of Feb - Priority 2",
+        "Artifacts from CART - user-14275 we need access rights. We can add this sheet into Zeekr Sharepoint - 03_Safety_Mechanisms - All Documents (bosch.com)",
+        "Watchdog monitoring",
+        "UTF another overview with an example test case - user-14275 to arrange for an training.",
+        "All diagrams shall be available in EA"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 07 Feb 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Praveen, Yanqiang, Weiwei"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meeting Minutes:"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tool use case to be checked by the Safety team"
+    },
+    {
+      "type": "paragraph",
+      "text": "ECT has to plan this activity in their sprint - to complete by 03 Mar 2023"
+    },
+    {
+      "type": "paragraph",
+      "text": "From next week FuSa manager is changed SUN Zhiqiang (XC-CT/EPM-CN) <Zhiqiang.SUN2@ cn.bosch.com >"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Action Items:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Dependencies with CART - user-14275",
+        "HSI delivery plan - 07 Feb 2023 HW team agreed to give HSI before Feb user-914d1",
+        "TSR draft version - Priority 1",
+        "Aurix - Safety Mechanism Status - XC-CI China - Docupedia (bosch.com) - user-14275 to update",
+        "Follow up with CART - SCC Safe Startup - XC-CT China - Docupedia (bosch.com) - user-14275",
+        "A2 Sample date 28 Feb 2023",
+        "SSR1a is on end of Feb - Priority 2",
+        "Artifacts from CART - user-14275 we need access rights. We can add this sheet into Zeekr Sharepoint - 03_Safety_Mechanisms - All Documents (bosch.com)",
+        "E2E not protected signal",
+        "Watchdog monitoring",
+        "Safe State Handling - SM20 Safe State Handling - XC-CT China - Docupedia (bosch.com) SSH can handle SS10 - Concluded this path Handle via SSH user-14275 to schedule a discussion with CART on SSH clear API",
+        "Safe Error Memory - We dont need as an seperate SM. Now it is a part of SSH Jayaraj Praveen (BCSC/ENG1) to check with System team",
+        "Program flow monitoring - no need of an new Sm, Can we combine with SM7 Jayaraj Praveen (BCSC/ENG1) to check with System team",
+        "UTF integration into Zeekr repo",
+        "SM16 Safe Configuration - XC-CT China - Docupedia (bosch.com) user-14275 to discuss with NIU Newton (XC-CP/ESW2-CN)"
+      ]
+    }
+  ],
+  "attachments": []
+}

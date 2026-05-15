@@ -1,0 +1,168 @@
+{
+  "page_id": "2887444190",
+  "title": "8. Writing Test case using Robot file",
+  "version": 14,
+  "url": "/spaces/CARSFW/pages/2887444190/8.+Writing+Test+case+using+Robot+file",
+  "last_modified": "2023-03-29T12:40:57.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2885492965",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Steps for creating test cases"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 1: Create Module folder inside TestSuites folder"
+    },
+    {
+      "type": "paragraph",
+      "text": "Path: Config\\Autosar\\integration-test\\Service.UTFManager.Aurix\\RFW_UTF\\TestSuites"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/8.%20Writing%20Test%20case%20using%20Robot%20file/image-2023-3-28_11-18-16.png?api=v2",
+      "alt": "",
+      "local_path": "_images/8. Writing Test case using Robot file/image-2023-3-28_11-18-16.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 2: Create a .robot file with the module name."
+    },
+    {
+      "type": "paragraph",
+      "text": "Example, UTFTestLCM.robot for LCM"
+    },
+    {
+      "type": "panel",
+      "panel_type": "info",
+      "title": "Robot framework Syntax",
+      "content": "Check this link for Robot file syntax Robot Framework User Guide"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 3: Create an Test Suite. In our example, we are creating a file for LCM called UTFTestLCM.robot which is an Test Suite"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/8.%20Writing%20Test%20case%20using%20Robot%20file/image-2023-3-28_14-2-45.png?api=v2",
+      "alt": "",
+      "local_path": "_images/8. Writing Test case using Robot file/image-2023-3-28_14-2-45.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Test Suite will have different sections"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Settings - Importing test library, documenation, resource file and variable file",
+        "Keywords - creating keywords from existing lower-level keywords",
+        "Variables - Defining variables that can be used elsewhere in the test data.",
+        "Test Cases - Creating test case from available keywords.",
+        "Comments - Additional comments or data. Ignored by Robot Framework."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "First we need write the settings of a test suite."
+    },
+    {
+      "type": "paragraph",
+      "text": "Settings"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Documentation - Proper name of the Test suite",
+        "Suite Setup - Initialization for the test suite → Inside initialize launh the dlt connector as shown in example",
+        "Test setup is something that is executed before a test case, and a Test teardown is executed after a test case"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/8.%20Writing%20Test%20case%20using%20Robot%20file/image-2023-3-28_15-0-4.png?api=v2",
+      "alt": "",
+      "local_path": "_images/8. Writing Test case using Robot file/image-2023-3-28_15-0-4.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 4: Write test Cases inside test suite"
+    },
+    {
+      "type": "paragraph",
+      "text": "Test cases shall be written inside *** Test Cases *** Section."
+    },
+    {
+      "type": "paragraph",
+      "text": "In our example, we have two test cases 1. Test PSC Shutdown 2. Test PSC SOH"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/8.%20Writing%20Test%20case%20using%20Robot%20file/image-2023-3-28_15-10-17.png?api=v2",
+      "alt": "",
+      "local_path": "_images/8. Writing Test case using Robot file/image-2023-3-28_15-10-17.png"
+    },
+    {
+      "type": "panel",
+      "panel_type": "info",
+      "title": "Space between parameters",
+      "content": "For the parameters we need to double space. Wasted two days without knowing this"
+    },
+    {
+      "type": "paragraph",
+      "text": "Step 5: Example of defining an variable and using it in Test cases"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/8.%20Writing%20Test%20case%20using%20Robot%20file/image-2023-3-29_15-27-21.png?api=v2",
+      "alt": "",
+      "local_path": "_images/8. Writing Test case using Robot file/image-2023-3-29_15-27-21.png"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Link for RFW libraries"
+    },
+    {
+      "type": "paragraph",
+      "text": "RFW Automation (bosch.com)"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-3-29_15-27-21.png",
+      "download_link": "/download/attachments/2887444190/image-2023-3-29_15-27-21.png?version=1&modificationDate=1680074842000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-28_15-10-17.png",
+      "download_link": "/download/attachments/2887444190/image-2023-3-28_15-10-17.png?version=1&modificationDate=1679987417000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-28_15-0-4.png",
+      "download_link": "/download/attachments/2887444190/image-2023-3-28_15-0-4.png?version=1&modificationDate=1679986805000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-28_14-59-16.png",
+      "download_link": "/download/attachments/2887444190/image-2023-3-28_14-59-16.png?version=1&modificationDate=1679986756000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-28_14-2-45.png",
+      "download_link": "/download/attachments/2887444190/image-2023-3-28_14-2-45.png?version=1&modificationDate=1679983365000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-28_11-18-16.png",
+      "download_link": "/download/attachments/2887444190/image-2023-3-28_11-18-16.png?version=1&modificationDate=1679973496000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

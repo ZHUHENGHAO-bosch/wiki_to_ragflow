@@ -1,0 +1,77 @@
+{
+  "page_id": "3012002561",
+  "title": "4. ISRs - Types",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/3012002561/4.+ISRs+-+Types",
+  "last_modified": "2023-05-10T05:33:00.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "3011088327",
+  "children": [],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Introduction"
+    },
+    {
+      "type": "paragraph",
+      "text": "OSEK OS defines two types of ISRs"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "ISR category 1",
+        "ISR category 2"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "ISR Category 1"
+    },
+    {
+      "type": "paragraph",
+      "text": "The ISR does not use an operating system service. After the ISR is finished, processing continues exactly at the instruction where the interrupt has occurred, i.e. the interrupt has no influence on task management. ISRs of this category have the least overhead"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "ISR category 2"
+    },
+    {
+      "type": "paragraph",
+      "text": "The OSEK operating system provides an ISR-frame to prepare a run-time environment for a dedicated user routine."
+    },
+    {
+      "type": "paragraph",
+      "text": "We can call few OS APIs in ISR Category 2 as shown in below table"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "ISR Category 0 (Extension of OSEK Standard)"
+    },
+    {
+      "type": "paragraph",
+      "text": "MICROSAR OS implements category 0 ISRs to have minimal interrupt latency time especially in SC2 or SC4 systems. This is an extension to the OS standard"
+    },
+    {
+      "type": "paragraph",
+      "text": "Check which Stack is used"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.%20ISRs%20-%20Types/image-2023-5-6_16-27-4.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4. ISRs - Types/image-2023-5-6_16-27-4.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image-2023-5-6_16-27-4.png",
+      "download_link": "/download/attachments/3012002561/image-2023-5-6_16-27-4.png?version=1&modificationDate=1683361624000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

@@ -1,0 +1,498 @@
+{
+  "page_id": "5070331448",
+  "title": "03 - CUBAS RTE basic intergration",
+  "version": 24,
+  "url": "/spaces/CARSFW/pages/5070331448/03+-+CUBAS+RTE+basic+intergration",
+  "last_modified": "2024-12-03T03:01:16.000+01:00",
+  "last_modified_by": "WU Jianqiang (XC-CP/ESW2-CN)",
+  "parent_id": "5061188613",
+  "children": [],
+  "content": [],
+  "attachments": [
+    {
+      "title": "image-2024-12-3_9-16-35.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-3_9-16-35.png?version=1&modificationDate=1733188596000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_19-44-16.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_19-44-16.png?version=1&modificationDate=1733139856000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_19-42-18.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_19-42-18.png?version=1&modificationDate=1733139738000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_19-39-29.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_19-39-29.png?version=1&modificationDate=1733139569000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_19-8-12.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_19-8-12.png?version=1&modificationDate=1733137692000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_19-7-32.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_19-7-32.png?version=1&modificationDate=1733137652000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_18-52-11.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_18-52-11.png?version=1&modificationDate=1733136732000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_18-43-47.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_18-43-47.png?version=1&modificationDate=1733136228000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_18-40-53.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_18-40-53.png?version=1&modificationDate=1733136053000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_18-39-27.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_18-39-27.png?version=1&modificationDate=1733135967000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_18-9-37.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_18-9-37.png?version=1&modificationDate=1733134177000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_18-8-3.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_18-8-3.png?version=1&modificationDate=1733134083000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-54-53.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-54-53.png?version=1&modificationDate=1733133293000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-53-58.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-53-58.png?version=1&modificationDate=1733133238000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-27-10.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-27-10.png?version=1&modificationDate=1733131630000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-26-24.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-26-24.png?version=1&modificationDate=1733131584000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-17-2.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-17-2.png?version=1&modificationDate=1733131022000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-16-37.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-16-37.png?version=1&modificationDate=1733130998000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-15-5.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-15-5.png?version=1&modificationDate=1733130905000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-14-23.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-14-23.png?version=1&modificationDate=1733130863000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-13-25.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-13-25.png?version=1&modificationDate=1733130805000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-12-44.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-12-44.png?version=1&modificationDate=1733130764000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-9-43.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-9-43.png?version=1&modificationDate=1733130584000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-8-51.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-8-51.png?version=1&modificationDate=1733130532000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_17-4-8.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_17-4-8.png?version=1&modificationDate=1733130248000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-53-3.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-53-3.png?version=1&modificationDate=1733129584000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-51-47.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-51-47.png?version=1&modificationDate=1733129508000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-51-21.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-51-21.png?version=1&modificationDate=1733129481000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-48-50.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-48-50.png?version=1&modificationDate=1733129330000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-42-31.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-42-31.png?version=1&modificationDate=1733128951000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-37-0.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-37-0.png?version=1&modificationDate=1733128621000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-34-48.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-34-48.png?version=1&modificationDate=1733128488000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-32-16.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-32-16.png?version=1&modificationDate=1733128337000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-32-0.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-32-0.png?version=1&modificationDate=1733128321000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-31-39.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-31-39.png?version=1&modificationDate=1733128300000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-30-7.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-30-7.png?version=1&modificationDate=1733128207000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "rb_swc_template.zip",
+      "download_link": "/download/attachments/5070331448/rb_swc_template.zip?version=1&modificationDate=1733127405000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_16-12-59.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_16-12-59.png?version=1&modificationDate=1733127179000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_15-22-38.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_15-22-38.png?version=1&modificationDate=1733124159000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_15-16-54.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_15-16-54.png?version=1&modificationDate=1733123814000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_15-11-19.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_15-11-19.png?version=1&modificationDate=1733123479000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_15-4-40.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_15-4-40.png?version=1&modificationDate=1733123080000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_15-1-36.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_15-1-36.png?version=1&modificationDate=1733122897000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_15-1-15.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_15-1-15.png?version=1&modificationDate=1733122875000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_15-0-42.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_15-0-42.png?version=1&modificationDate=1733122843000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_14-40-52.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_14-40-52.png?version=1&modificationDate=1733121652000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_14-38-32.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_14-38-32.png?version=1&modificationDate=1733121512000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_14-24-45.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_14-24-45.png?version=1&modificationDate=1733120685000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_14-12-38.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_14-12-38.png?version=1&modificationDate=1733119958000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_14-9-12.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_14-9-12.png?version=1&modificationDate=1733119752000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2024-12-2_14-8-49.png",
+      "download_link": "/download/attachments/5070331448/image-2024-12-2_14-8-49.png?version=1&modificationDate=1733119729000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-03-01_10h47_02.png",
+      "download_link": "/download/attachments/5070331448/2023-03-01_10h47_02.png?version=1&modificationDate=1733118918000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h38_26.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h38_26.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_11h04_25.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_11h04_25.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_11h07_42.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_11h07_42.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-5-9_11-13-22.png",
+      "download_link": "/download/attachments/5070331448/image-2023-5-9_11-13-22.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_14h10_00.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_14h10_00.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-5-9_11-35-16.png",
+      "download_link": "/download/attachments/5070331448/image-2023-5-9_11-35-16.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_14h00_04.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_14h00_04.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_14h00_59.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_14h00_59.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-5-9_11-56-16.png",
+      "download_link": "/download/attachments/5070331448/image-2023-5-9_11-56-16.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_11h36_50.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_11h36_50.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_11h59_46.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_11h59_46.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-03-22_09h32_45.png",
+      "download_link": "/download/attachments/5070331448/2023-03-22_09h32_45.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-22_9-37-31.png",
+      "download_link": "/download/attachments/5070331448/image-2023-3-22_9-37-31.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-3-22_10-8-41.png",
+      "download_link": "/download/attachments/5070331448/image-2023-3-22_10-8-41.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2023-3-1_13-18-21.png",
+      "download_link": "/download/attachments/5070331448/image2023-3-1_13-18-21.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-03-01_13h12_54.png",
+      "download_link": "/download/attachments/5070331448/2023-03-01_13h12_54.png?version=1&modificationDate=1733118917000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h00_54.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h00_54.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h04_26.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h04_26.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h05_49.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h05_49.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h07_12.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h07_12.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h08_53.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h08_53.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h09_31.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h09_31.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h11_52.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h11_52.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h14_34.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h14_34.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h15_05.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h15_05.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h18_22.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h18_22.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h21_26.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h21_26.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h26_05.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h26_05.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h26_54.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h26_54.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h28_16.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h28_16.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h30_19.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h30_19.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h31_46.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h31_46.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h33_27.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h33_27.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_09h36_26.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_09h36_26.png?version=1&modificationDate=1733118916000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-04_13h33_49.png",
+      "download_link": "/download/attachments/5070331448/2023-05-04_13h33_49.png?version=1&modificationDate=1733118915000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-04_13h41_49.png",
+      "download_link": "/download/attachments/5070331448/2023-05-04_13h41_49.png?version=1&modificationDate=1733118915000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-04_13h50_40.png",
+      "download_link": "/download/attachments/5070331448/2023-05-04_13h50_40.png?version=1&modificationDate=1733118915000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-04_13h53_58.png",
+      "download_link": "/download/attachments/5070331448/2023-05-04_13h53_58.png?version=1&modificationDate=1733118915000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-04_14h26_38.png",
+      "download_link": "/download/attachments/5070331448/2023-05-04_14h26_38.png?version=1&modificationDate=1733118915000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-04_14h27_25.png",
+      "download_link": "/download/attachments/5070331448/2023-05-04_14h27_25.png?version=1&modificationDate=1733118915000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_08h48_14.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_08h48_14.png?version=1&modificationDate=1733118915000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_08h53_33.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_08h53_33.png?version=1&modificationDate=1733118915000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_08h56_28.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_08h56_28.png?version=1&modificationDate=1733118915000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "2023-05-09_08h57_41.png",
+      "download_link": "/download/attachments/5070331448/2023-05-09_08h57_41.png?version=1&modificationDate=1733118915000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image-2023-5-9_9-0-26.png",
+      "download_link": "/download/attachments/5070331448/image-2023-5-9_9-0-26.png?version=1&modificationDate=1733118915000&api=v2",
+      "local_path": ""
+    }
+  ]
+}

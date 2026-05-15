@@ -1,0 +1,128 @@
+{
+  "page_id": "2667861564",
+  "title": "Sync Meeting - 2023",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/2667861564/Sync+Meeting+-+2023",
+  "last_modified": "2023-03-02T10:59:33.000+01:00",
+  "last_modified_by": "user-14275",
+  "parent_id": "2410130115",
+  "children": [
+    "2825325172",
+    "2969995615",
+    "3006237062"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 02 Mar 2023"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Exchange from RNG to HI for SMs and making sure all traceability is maintained",
+        "Exchange from DNG to HI for SMs delivered by Germany CART. If this exchange is not supported by CART team, then we need to find a way by ourselves to achieve this.",
+        "PF CART SWRS maintenance in both Tai-ji and Zeekr , to arrive at a strategy to baseline/branching Jayaraj Praveen (BCSC/ENG1)",
+        "SWRS exchange from RNG to HI Doors PF for modules from Cerberus and Hydra",
+        "How to merge two SWRS – only Proof of concept",
+        "Wiki page",
+        "Baseline and frequency of exchange to be defined, alligned with CART user-14275",
+        "UTF availability in Zeekr - user-1f19a to confirm the date 15 Dec 2022",
+        "Testing traceability - Project Testing team to be invited for next meeting - @ZHAO Yanqiang (XC-CT/ESW2-CN)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 23 Feb 2023"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Exchange from RNG to HI for SMs and making sure all traceability is maintained",
+        "Exchange from DNG to HI for SMs delivered by Germany CART. If this exchange is not supported by CART team, then we need to find a way by ourselves to achieve this.",
+        "SWRS exchange from RNG to HI Doors PF for modules from Cerberus and Hydra",
+        "How to merge two SWRS – only Proof of concept",
+        "Wiki page"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "@Lakshmi to share the open items with CART"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 30 Jan 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Kumar, Praveen, Carven, Yanqiang"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Update SWCDD traceablity in diagram Jayaraj Praveen (BCSC/ENG1)",
+        "SWRS config and SWCDD config update for CART delivered SMs",
+        "Exchange from DNG to DOORS Classic Hi to be done Kumar Kandasamy (MS/EBS3-SWC) / user-a98fd",
+        "Concluded to have PF TSR and shall be linked with PF SWRS, to minimize review efforts for future projects,",
+        "Baseline and frequency of exchange to be defined, alligned with CART Kumar Kandasamy (MS/EBS3-SWC) user-a98fd",
+        "UTF availability in Zeekr - user-1f19a to confirm the date 15 Dec 2022",
+        "Testing traceability - Project Testing team to be invited for next meeting - @ZHAO Yanqiang (XC-CT/ESW2-CN)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 12 Jan 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Yanqiang, Kumar, Carven, Praveen, Prabu"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Update SWCDD traceablity in diagram Jayaraj Praveen (BCSC/ENG1)",
+        "SWRS config and SWCDD config update for CART delivered SMs",
+        "Concluded to have PF TSR and shall be linked with PF SWRS, to minimize review efforts for future projects,",
+        "One sample exchange from CART",
+        "UTF availability in Zeekr - user-1f19a to confirm the date 15 Dec 2022",
+        "Testing traceability - Project Testing team to be invited for next meeting - @ZHAO Yanqiang (XC-CT/ESW2-CN)",
+        "Effort for inspection review saved - to be identified based on older projects - @ZHAO Yanqiang (XC-CT/ESW2-CN)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date: 05 Jan 2023"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Participants: Easwar, Yanqiang, Kumar, Carven, Praveen, Prabu"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Open point list was not discussed. will be discussed in next meeting Henry presented the Test suit, Test case-RQM Id mapping with SWRS in DOORS Discussion happened on how to map RQM ID with SWRS",
+        "Concluded to have PF TSR and shall be linked with PF SWRS, to minimize review efforts for future projects,",
+        "One sample exchange from CART",
+        "UTF availability in Zeekr - user-1f19a to confirm the date 15 Dec 2022",
+        "Testing traceability - Project Testing team to be invited for next meeting - @ZHAO Yanqiang (XC-CT/ESW2-CN)",
+        "Effort for inspection review saved - to be identified based on older projects - @ZHAO Yanqiang (XC-CT/ESW2-CN)"
+      ]
+    }
+  ],
+  "attachments": []
+}

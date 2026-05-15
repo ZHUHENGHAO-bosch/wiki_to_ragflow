@@ -1,0 +1,99 @@
+{
+  "page_id": "4593454448",
+  "title": "7.0 VCU Plus SUM Modules",
+  "version": 4,
+  "url": "/spaces/CARSFW/pages/4593454448/7.0+VCU+Plus+SUM+Modules",
+  "last_modified": "2024-08-12T04:33:08.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "4565826946",
+  "children": [
+    "4593454612",
+    "4600744541",
+    "4600750877",
+    "4617216986",
+    "4617217973",
+    "4617232595"
+  ],
+  "content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page and its child page is to analyze the SUM module of GM"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "GM SUM Modules"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "SUM SUSD",
+        "SUM ERRH",
+        "SUM PNC",
+        "SUM SSM",
+        "SUM PNC",
+        "SUM SOH",
+        "SUM TCS",
+        "SUM LNM",
+        "SUM Global"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Abbreviations"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Abbreviations",
+        "Description"
+      ],
+      "rows": [
+        [
+          "SUM",
+          "Standard Utility Modules"
+        ],
+        [
+          "SUSD",
+          "Startup Shutdown Coordinator"
+        ],
+        [
+          "SOH",
+          "State of Health Manager"
+        ],
+        [
+          "PNC",
+          "Partial Network Coordinator"
+        ],
+        [
+          "ERRH",
+          "Error Handling Module"
+        ],
+        [
+          "TCS",
+          "Timing Client Service"
+        ],
+        [
+          "SSC",
+          "Security Service Coordinator"
+        ],
+        [
+          "SSM",
+          "Signal Status Monitor"
+        ],
+        [
+          "LNM",
+          "LIN Network Manager"
+        ]
+      ]
+    }
+  ],
+  "attachments": []
+}

@@ -1,0 +1,68 @@
+{
+  "page_id": "4120751015",
+  "title": "4.0 Aurix China Convergence Platform - Strategy",
+  "version": 3,
+  "url": "/spaces/CARSFW/pages/4120751015/4.0+Aurix+China+Convergence+Platform+-+Strategy",
+  "last_modified": "2024-04-02T05:07:21.000+02:00",
+  "last_modified_by": "Jayaraj Praveen (BCSC/ENG1)",
+  "parent_id": "2310025962",
+  "children": [],
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "The Strategy is to create a China Aurix convergence platform, where platform components for SCC side will be implemented."
+    },
+    {
+      "type": "paragraph",
+      "text": "This will make project life easy, since we have always a PF Base to start with."
+    },
+    {
+      "type": "paragraph",
+      "text": "The plan is to reuse component from below two platforms"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Cerberus Platform - Where modules related to Aurix chip is available",
+        "Hydra Platform - Reusable chip independent modules like LCM components are available"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Both are above platform deliveries shall be present in common Convergence base platform owned by a team called CART"
+    },
+    {
+      "type": "paragraph",
+      "text": "Our China Convergence Platform includes CART (Cerberus + Hydra) modules and few modules explicitly implemented for China convergence project requirements"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20Aurix%20China%20Convergence%20Platform%20-%20Strategy/image2023-2-27_13-10-33.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 Aurix China Convergence Platform - Strategy/image2023-2-27_13-10-33.png"
+    },
+    {
+      "type": "paragraph",
+      "text": "Initial Strategy (Obsolete):"
+    },
+    {
+      "type": "image",
+      "src": "https://inside-docupedia.bosch.com/confluence/download/attachments/embedded-page/CARSFW/4.0%20Aurix%20China%20Convergence%20Platform%20-%20Strategy/image2022-6-10_12-26-16.png?api=v2",
+      "alt": "",
+      "local_path": "_images/4.0 Aurix China Convergence Platform - Strategy/image2022-6-10_12-26-16.png"
+    }
+  ],
+  "attachments": [
+    {
+      "title": "image2023-2-27_13-10-33.png",
+      "download_link": "/download/attachments/4120751015/image2023-2-27_13-10-33.png?version=1&modificationDate=1712027170000&api=v2",
+      "local_path": ""
+    },
+    {
+      "title": "image2022-6-10_12-26-16.png",
+      "download_link": "/download/attachments/4120751015/image2022-6-10_12-26-16.png?version=1&modificationDate=1712027170000&api=v2",
+      "local_path": ""
+    }
+  ]
+}
