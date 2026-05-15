@@ -17,6 +17,14 @@
 
 ---
 
+## 效果展示
+
+端到端管道跑完后，RAGFlow Web UI 上的 `taiji_test` 知识库就被自动填充并完成解析。下图是一次真实运行的结果：一个由整棵 Confluence 子树合并而成的 `Autosar Platform Strategy.md` 被上传，自动切成 282 个 chunk，`general` 解析器，状态绿勾（可检索）。
+
+![RAGFlow 知识库上传 / 解析成功](docs/images/ragflow_dataset_uploaded.png)
+
+---
+
 ## 项目结构
 
 ```
