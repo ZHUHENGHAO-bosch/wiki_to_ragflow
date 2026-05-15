@@ -10,8 +10,7 @@ confluence:
   base_url: "https://inside-docupedia.bosch.com"
   context_path: "/confluence"
   username: ""                  # auth_method=basic 时必填
-  # api_token: "REDACTED_CONFLUENCE_TOKEN_1"  # Confluence PAT (bearer) 或密码 (basic)
-  api_token: "REDACTED_CONFLUENCE_TOKEN_2"  # Confluence PAT (bearer) zhu henghao
+  api_token: ""                 # Confluence PAT (bearer) 或密码 (basic) —— 请在 config.local.yaml 中覆盖，不要写入仓库
   auth_method: "bearer"
   verify_ssl: false
   timeout: 30.0
@@ -25,7 +24,7 @@ confluence:
 
 ragflow:
   base_url: "http://10.161.151.72:8880"   # RAGFlow API 端口（非 Web UI 端口）
-  api_key: "REDACTED_RAGFLOW_KEY"   # 你个人账号的 RAGFlow API key
+  api_key: ""                                            # 你个人账号的 RAGFlow API key —— 请在 config.local.yaml 中覆盖，不要写入仓库
   dataset_name: "taiji_test"      # 目标知识库名称（不存在则自动创建）
   auto_upload_after_confluence: false
   parse_after_upload: true

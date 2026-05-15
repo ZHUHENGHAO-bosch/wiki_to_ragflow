@@ -692,20 +692,31 @@ class ConfluenceDownloader:
                         # 让子节点写入时自然创建即可
                         continue
 
-                    cached = info["cached"]
-                    md_text = blocks_to_markdown(
-                        cached.get("content", []),
-                        page_title=cached.get("title", ""),
-                        page_url=cached.get("url", ""),
-                        last_modified=cached.get("last_modified", ""),
-                    )
-                    # 把 _images/... 这种"相对 output_dir"的引用改写为
-                    # "相对 MD 所在目录"。
-                    md_text = _retarget_image_refs(
-                        md_text, md_path.parent, output_dir,
-                    )
-                    md_path.parent.mkdir(parents=True, exist_ok=True)
-                    md_path.write_text(md_text, encoding="utf-8")
+                    # 单页写入失败（路径过长、非法字符等）只记错，不让整棵树
+                    # 一起崩——否则下游 ``_tree.json`` 永远写不出来。
+                    try:
+                        cached = info["cached"]
+                        md_text = blocks_to_markdown(
+                            cached.get("content", []),
+                            page_title=cached.get("title", ""),
+                            page_url=cached.get("url", ""),
+                            last_modified=cached.get("last_modified", ""),
+                        )
+                        md_text = _retarget_image_refs(
+                            md_text, md_path.parent, output_dir,
+                        )
+                        md_path.parent.mkdir(parents=True, exist_ok=True)
+                        md_path.write_text(md_text, encoding="utf-8")
+                    except Exception as e:
+                        progress.pages_failed += 1
+                        progress.errors.append(
+                            f"Write MD {info['title']!r} → {md_path}: {e}"
+                        )
+                        logger.warning(
+                            f"Skip page {pid} ({info['title']!r}) "
+                            f"due to write failure: {e}"
+                        )
+                        info["path"] = None  # _tree.json 里标记为未落盘
 
             elif not discover_only and output_format == "json":
                 # JSON 模式保持扁平输出（便于机器消费）
@@ -1002,7 +1013,12 @@ class ConfluenceDownloader:
 
     @staticmethod
     def _sanitize_filename(name: str) -> str:
-        """Convert page title to safe directory/file name."""
-        safe = re.sub(r'[<>:"/\\|?*]', "_", name)
+        """Convert page title to safe directory/file name.
+
+        与模块级 :func:`_sanitize_folder_name` 字符集一致——除 Windows 保留
+        字符外，还过滤所有控制字符 ``\\x00-\\x1f``（含 ``\\n`` ``\\r`` ``\\t``）。
+        否则一个标题里夹个换行就会让 ``mkdir`` / ``write_text`` 抛 ENOENT。
+        """
+        safe = re.sub(r'[<>:"/\\|?*\x00-\x1f]', "_", name)
         safe = safe.strip(". ")
         return safe[:200] if safe else "unnamed"
